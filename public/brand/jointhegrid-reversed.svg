@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 48" fill="none" aria-label="#jointheGRID">
+  <rect width="320" height="48" fill="#0B1220"/>
+  <g transform="translate(12, 4)">
+    <rect x="0" y="0" width="14" height="14" rx="2" fill="#2563EB"/>
+    <rect x="18" y="0" width="14" height="14" rx="2" fill="#2563EB"/>
+    <rect x="36" y="0" width="14" height="14" rx="2" fill="#60A5FA"/>
+    <rect x="0" y="18" width="14" height="14" rx="2" fill="#2563EB"/>
+    <rect x="36" y="18" width="14" height="14" rx="2" fill="#FFFFFF"/>
+    <rect x="0" y="36" width="14" height="14" rx="2" fill="#2563EB"/>
+    <rect x="18" y="36" width="14" height="14" rx="2" fill="#2563EB"/>
+    <rect x="36" y="36" width="14" height="14" rx="2" fill="#E5E7EB"/>
+    <path d="M14 7h4M32 7h4M7 14v4M7 25v4M14 43h4M32 43h4M43 25v4M43 32v4M43 21h-7" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  <text x="76" y="22" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#FFFFFF">
+    <tspan font-weight="200">#jointhe</tspan><tspan font-weight="800">GRID</tspan>
+  </text>
+  <text x="76" y="40" font-family="Inter, system-ui, sans-serif" font-size="7" font-weight="300" fill="#FFFFFF" letter-spacing="0.15em" opacity="0.8">PEOPLE | APPS | INFORMATION | TOGETHER</text>
+</svg>

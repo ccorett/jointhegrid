@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --primary-navy: #0b1220;
+  --infrastructure-blue: #2563eb;
+  --secondary-blue: #60a5fa;
+  --white: #ffffff;
+  --neutral-gray: #e5e7eb;
+  --body-text: #334155;
+  --secondary-text: #64748b;
+  --light-bg: #f8fafc;
+  --border: #e2e8f0;
+  --success: #15803d;
+  --warning: #b45309;
+  --error: #b91c1c;
+  --content-max: 1360px;
+  --padding-desktop: 64px;
+  --padding-tablet: 32px;
+  --padding-mobile: 20px;
+}
+
+@theme inline {
+  --color-primary-navy: var(--primary-navy);
+  --color-infrastructure-blue: var(--infrastructure-blue);
+  --color-secondary-blue: var(--secondary-blue);
+  --color-neutral-gray: var(--neutral-gray);
+  --color-body-text: var(--body-text);
+  --color-secondary-text: var(--secondary-text);
+  --color-light-bg: var(--light-bg);
+  --color-border: var(--border);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --font-sans: var(--font-inter);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background: var(--white);
+    color: var(--body-text);
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--infrastructure-blue);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .content-container {
+    width: 100%;
+    max-width: var(--content-max);
+    margin-inline: auto;
+    padding-inline: var(--padding-mobile);
+  }
+
+  @media (min-width: 768px) {
+    .content-container {
+      padding-inline: var(--padding-tablet);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .content-container {
+      padding-inline: var(--padding-desktop);
+    }
+  }
+
+  .grid-wordmark-light {
+    font-weight: 200;
+  }
+
+  .grid-wordmark-heavy {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .structural-line-v {
+    width: 1px;
+    background: var(--border);
+  }
+
+  .structural-line-h {
+    height: 1px;
+    background: var(--border);
+  }
+}
