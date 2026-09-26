@@ -38,7 +38,7 @@ export function PortalSidebar({ mobileOpen, onMobileClose }: PortalSidebarProps)
   const content = (
     <>
       <div className="flex h-16 items-center gap-2.5 border-b border-white/10 px-5">
-        <GridSymbol size={32} variant="favicon" />
+        <GridSymbol size={32} section="dark" />
         <GridWordmark reversed size="sm" />
       </div>
 

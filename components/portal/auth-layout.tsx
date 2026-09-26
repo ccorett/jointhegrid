@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { GridSymbol } from "@/components/brand/grid-symbol";
-import { GridWordmark } from "@/components/brand/grid-wordmark";
+import { GridLogo } from "@/components/brand/grid-logo";
 
 type AuthLayoutProps = {
   title: string;
@@ -13,10 +12,7 @@ export function AuthLayout({ title, subtitle, children }: AuthLayoutProps) {
     <div className="flex min-h-screen">
       <div className="hidden w-1/2 flex-col justify-between bg-primary-navy p-12 lg:flex">
         <div>
-          <Link href="/" className="flex items-center gap-3">
-            <GridSymbol size={40} variant="favicon" />
-            <GridWordmark reversed />
-          </Link>
+          <GridLogo reversed />
         </div>
         <div>
           <p className="text-2xl font-extralight leading-relaxed text-white/80">
@@ -35,9 +31,8 @@ export function AuthLayout({ title, subtitle, children }: AuthLayoutProps) {
 
       <div className="flex w-full flex-col justify-center px-6 py-12 lg:w-1/2 lg:px-16">
         <div className="mx-auto w-full max-w-sm">
-          <div className="mb-8 flex items-center gap-3 lg:hidden">
-            <GridSymbol size={36} variant="favicon" />
-            <GridWordmark size="sm" />
+          <div className="mb-8 lg:hidden">
+            <GridLogo />
           </div>
           <h1 className="text-2xl font-light text-primary-navy">{title}</h1>
           {subtitle && (

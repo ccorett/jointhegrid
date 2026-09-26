@@ -1,15 +1,22 @@
 # #jointhegrid Brand Assets
 
-SVG assets derived from the official brand reference. Replace with final exported assets from the design team when available.
+## GRID symbol (canonical)
 
-| File | Usage |
-|------|-------|
-| `jointhegrid-horizontal.svg` | Primary navigation logo |
-| `jointhegrid-symbol.svg` | Standalone GRID symbol |
-| `jointhegrid-favicon.svg` | Favicon and app icon |
-| `jointhegrid-monochrome.svg` | Monochrome version |
-| `jointhegrid-reversed.svg` | Dark background version |
-| `hero-connected-ecosystem.png` | Homepage hero — connected workplace graphic |
-| `interoperability-ecosystem.png` | Interoperability section — isometric ecosystem graphic |
+| File | Use |
+|------|-----|
+| `grid-symbol-light.png` | Light backgrounds (`#FFFFFF`, `#F8FAFC`, etc.) |
+| `grid-symbol-dark.png` | Dark backgrounds (`#0B1220`), favicon source |
 
-Reference image: see project assets folder for the authoritative brand sheet.
+Use `<GridSymbol theme="light" />` or `<GridSymbol theme="dark" />` only.
+
+Favicons are generated from `grid-symbol-dark.png`.
+
+## Horizontal logos
+
+| File | Use |
+|------|-----|
+| `jointhegrid-horizontal.svg` | Primary header (light) |
+| `jointhegrid-reversed.svg` | Footer / dark sections |
+| `jointhegrid-monochrome.svg` | Single-colour only |
+
+Legacy `jointhegrid-symbol.svg` and `jointhegrid-favicon.svg` are deprecated — do not use in UI.
