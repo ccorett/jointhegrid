@@ -82,7 +82,7 @@ export default function AboutPage() {
           <p className="text-lg leading-relaxed text-white/75 md:text-[19px]">
             #jointhegrid helps organizations deploy, administer and adopt digital
             workplace and AI capability with structure, control and practical
-            adoption — across teams, offices and islands.
+            adoption for organizations across the Caribbean.
           </p>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function AboutPage() {
         <div className="content-container">
           <SectionHeading
             title="Based in Trinidad & Tobago. Built to work across the Caribbean."
-            description="Digital workplace delivery does not need to stop at a border. The GRID is structured for organizations and teams working across offices, islands and markets."
+            description="Based in Trinidad & Tobago. Built to work across the Caribbean. Projects are structured around the requirements of each organization, with the appropriate delivery resources brought together for the engagement."
           />
         </div>
       </section>
