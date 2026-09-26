@@ -18,17 +18,11 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div
-      className={cn(
-        "max-w-2xl",
-        centered && "mx-auto text-center",
-        className
-      )}
-    >
+    <div className={cn("max-w-2xl", centered && "mx-auto text-center", className)}>
       {eyebrow && (
         <p
           className={cn(
-            "mb-3 text-xs font-light uppercase tracking-[0.2em]",
+            "mb-3 text-[11px] font-semibold uppercase tracking-[0.2em]",
             dark ? "text-secondary-blue" : "text-secondary-text"
           )}
         >
@@ -37,7 +31,7 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          "text-3xl font-extralight tracking-tight md:text-4xl lg:text-5xl",
+          "heading-section text-3xl md:text-4xl lg:text-[2.65rem]",
           dark ? "text-white" : "text-primary-navy"
         )}
       >
@@ -46,7 +40,7 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            "mt-4 text-base font-light leading-relaxed md:text-lg",
+            "mt-4 text-[17px] leading-relaxed md:text-lg",
             dark ? "text-white/70" : "text-secondary-text"
           )}
         >

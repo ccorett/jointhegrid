@@ -17,7 +17,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Request a consultation."
-        description="Tell us about your organization and how we can help with Google Workspace, Gemini Enterprise, or AI Credits."
+        description="Tell us about your organization and how we can help with Google Workspace and Gemini Enterprise."
       />
 
       <section className="py-16 md:py-24">

@@ -34,26 +34,26 @@ export function PageHero({
         {eyebrow && (
           <p
             className={cn(
-              "mb-4 text-xs font-light uppercase tracking-[0.2em]",
+              "mb-4 text-[11px] font-semibold uppercase tracking-[0.2em]",
               dark ? "text-secondary-blue" : "text-secondary-text"
             )}
           >
             {eyebrow}
           </p>
         )}
-        <h1 className="text-4xl font-extralight leading-tight tracking-tight md:text-5xl lg:text-6xl">
+        <h1 className="heading-hero text-4xl md:text-5xl lg:text-6xl">
           {title}
           {titleAccent && (
             <>
               <br />
-              <span className="font-normal">{titleAccent}</span>
+              <span className="text-infrastructure-blue">{titleAccent}</span>
             </>
           )}
         </h1>
         {description && (
           <p
             className={cn(
-              "mt-6 max-w-2xl text-lg font-light leading-relaxed",
+              "mt-6 max-w-2xl text-[17px] leading-relaxed md:text-lg",
               dark ? "text-white/70" : "text-secondary-text"
             )}
           >
@@ -63,11 +63,7 @@ export function PageHero({
         {(primaryCta || secondaryCta) && (
           <div className="mt-8 flex flex-wrap gap-3">
             {primaryCta && (
-              <Button
-                href={primaryCta.href}
-                variant={dark ? "primary" : "primary"}
-                size="lg"
-              >
+              <Button href={primaryCta.href} variant="primary" size="lg">
                 {primaryCta.label}
               </Button>
             )}

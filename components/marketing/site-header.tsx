@@ -35,20 +35,22 @@ function NavDropdown({
     >
       <button
         type="button"
-        className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-body-text hover:text-primary-navy"
+        className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-body-text transition-colors hover:text-primary-navy"
         aria-expanded={open}
         onClick={() => setOpen(!open)}
       >
         {label}
-        <ChevronDown className={cn("h-4 w-4 transition-transform", open && "rotate-180")} />
+        <ChevronDown
+          className={cn("h-3.5 w-3.5 opacity-60 transition-transform", open && "rotate-180")}
+        />
       </button>
       {open && (
-        <div className="absolute left-0 top-full z-50 min-w-[220px] border border-border bg-white py-2 shadow-sm">
+        <div className="absolute left-0 top-full z-50 min-w-[220px] border border-border bg-white py-1.5 shadow-lg shadow-primary-navy/5">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block px-4 py-2.5 text-sm text-body-text hover:bg-light-bg hover:text-primary-navy"
+              className="block px-4 py-2.5 text-sm text-body-text transition-colors hover:bg-light-bg hover:text-primary-navy"
             >
               {link.label}
             </Link>
@@ -63,31 +65,28 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-sm">
-      <div className="content-container flex h-16 items-center justify-between md:h-[72px]">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-white/90 backdrop-blur-md">
+      <div className="content-container flex h-[68px] items-center justify-between lg:h-[76px]">
         <GridLogo />
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main navigation">
           <NavDropdown label="Solutions" links={solutionsLinks} />
           <NavDropdown label="Services" links={servicesLinks} />
           <Link
-            href="/ai-credits"
-            className="px-3 py-2 text-sm font-medium text-body-text hover:text-primary-navy"
-          >
-            AI Credits
-          </Link>
-          <Link
             href="/about"
-            className="px-3 py-2 text-sm font-medium text-body-text hover:text-primary-navy"
+            className="px-3 py-2 text-sm font-medium text-body-text transition-colors hover:text-primary-navy"
           >
             About
           </Link>
+          <Link
+            href="/contact"
+            className="px-3 py-2 text-sm font-medium text-body-text transition-colors hover:text-primary-navy"
+          >
+            Contact
+          </Link>
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button href="/portal/sign-in" variant="ghost" size="sm">
-            Sign In
-          </Button>
+        <div className="hidden lg:block">
           <Button href="/contact" variant="primary" size="sm">
             Request a Consultation
           </Button>
@@ -107,28 +106,28 @@ export function SiteHeader() {
       {mobileOpen && (
         <div className="border-t border-border bg-white lg:hidden">
           <nav className="content-container flex flex-col py-4" aria-label="Mobile navigation">
-            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-secondary-text">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-secondary-text">
               Solutions
             </p>
             {solutionsLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-2.5 text-sm text-body-text"
+                className="py-2.5 text-sm font-medium text-body-text"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
             <div className="my-3 structural-line-h" />
-            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-secondary-text">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-secondary-text">
               Services
             </p>
             {servicesLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-2.5 text-sm text-body-text"
+                className="py-2.5 text-sm font-medium text-body-text"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -136,24 +135,27 @@ export function SiteHeader() {
             ))}
             <div className="my-3 structural-line-h" />
             <Link
-              href="/ai-credits"
-              className="py-2.5 text-sm text-body-text"
-              onClick={() => setMobileOpen(false)}
-            >
-              AI Credits
-            </Link>
-            <Link
               href="/about"
-              className="py-2.5 text-sm text-body-text"
+              className="py-2.5 text-sm font-medium text-body-text"
               onClick={() => setMobileOpen(false)}
             >
               About
             </Link>
-            <div className="mt-4 flex flex-col gap-2">
-              <Button href="/portal/sign-in" variant="secondary" size="md">
-                Sign In
-              </Button>
-              <Button href="/contact" variant="primary" size="md">
+            <Link
+              href="/contact"
+              className="py-2.5 text-sm font-medium text-body-text"
+              onClick={() => setMobileOpen(false)}
+            >
+              Contact
+            </Link>
+            <div className="mt-5">
+              <Button
+                href="/contact"
+                variant="primary"
+                size="md"
+                className="w-full"
+                onClick={() => setMobileOpen(false)}
+              >
                 Request a Consultation
               </Button>
             </div>

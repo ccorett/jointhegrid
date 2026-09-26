@@ -32,6 +32,7 @@
   --color-warning: var(--warning);
   --color-error: var(--error);
   --font-sans: var(--font-inter);
+  --font-display: var(--font-manrope);
 }
 
 @layer base {
@@ -57,6 +58,8 @@
     background: var(--white);
     color: var(--body-text);
     font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   :focus-visible {
@@ -85,13 +88,22 @@
     }
   }
 
-  .grid-wordmark-light {
-    font-weight: 200;
+  .font-display {
+    font-family: var(--font-manrope), system-ui, sans-serif;
   }
 
-  .grid-wordmark-heavy {
-    font-weight: 800;
-    letter-spacing: -0.02em;
+  .heading-hero {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .heading-section {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
   }
 
   .structural-line-v {
@@ -102,5 +114,12 @@
   .structural-line-h {
     height: 1px;
     background: var(--border);
+  }
+
+  .grid-bg-lines {
+    background-image:
+      linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+      linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+    background-size: 48px 48px;
   }
 }
