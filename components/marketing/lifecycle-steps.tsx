@@ -9,7 +9,7 @@ type LifecycleStepsProps = {
   steps: Step[];
   className?: string;
   dark?: boolean;
-  /** Full-width evenly distributed lifecycle (Deployment page). */
+  /** Full-width evenly distributed lifecycle (Deployment, Adoption). */
   layout?: "inline" | "spread";
 };
 
@@ -34,6 +34,62 @@ function StepNode({ dark }: { dark: boolean }) {
   );
 }
 
+function SpreadRow({
+  rowSteps,
+  dark,
+  connector,
+  labelClass,
+}: {
+  rowSteps: Step[];
+  dark: boolean;
+  connector: string;
+  labelClass: string;
+}) {
+  return (
+    <ol className="grid grid-cols-3 gap-x-2">
+      {rowSteps.map((step, i) => (
+        <li
+          key={step.label}
+          className="relative flex flex-col items-center px-1 text-center"
+        >
+          {i > 0 && (
+            <span
+              className={cn(
+                "pointer-events-none absolute right-1/2 top-[10px] h-px w-full",
+                connector
+              )}
+              aria-hidden
+            />
+          )}
+          {i < rowSteps.length - 1 && (
+            <span
+              className={cn(
+                "pointer-events-none absolute left-1/2 top-[10px] h-px w-full",
+                connector
+              )}
+              aria-hidden
+            />
+          )}
+          <StepNode dark={dark} />
+          <span className={cn(labelClass, "mt-4 text-[15px] sm:text-base")}>
+            {step.label}
+          </span>
+          {step.description && (
+            <p
+              className={cn(
+                "mt-1.5 max-w-[12rem] text-[15px] leading-snug md:text-base",
+                dark ? "text-white/70" : "text-secondary-text"
+              )}
+            >
+              {step.description}
+            </p>
+          )}
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 function SpreadLifecycleSteps({
   steps,
   className,
@@ -41,6 +97,11 @@ function SpreadLifecycleSteps({
 }: Omit<LifecycleStepsProps, "layout">) {
   const labelClass = stepLabelClass(dark);
   const connector = dark ? "bg-secondary-blue/35" : "bg-infrastructure-blue/35";
+  const isFourStages = steps.length === 4;
+  const desktopLabelSize = isFourStages
+    ? "mt-5 text-base lg:text-[18px] xl:text-xl"
+    : "mt-5 text-base lg:text-[17px] xl:text-lg";
+  const desktopDescSize = isFourStages ? "mt-2 max-w-[11rem] text-base" : "mt-1.5 max-w-[9.5rem] text-[15px]";
 
   return (
     <div className={cn("w-full", className)}>
@@ -62,8 +123,8 @@ function SpreadLifecycleSteps({
               {step.description && (
                 <p
                   className={cn(
-                    "mt-1 text-[15px] leading-snug",
-                    dark ? "text-white/60" : "text-secondary-text"
+                    "mt-1.5 text-[15px] leading-snug md:text-base",
+                    dark ? "text-white/70" : "text-secondary-text"
                   )}
                 >
                   {step.description}
@@ -74,113 +135,148 @@ function SpreadLifecycleSteps({
         ))}
       </ol>
 
-      {/* Tablet: 3 × 2 */}
+      {/* Tablet */}
       <div className="hidden md:block lg:hidden">
-        <ol className="grid grid-cols-3 gap-x-2">
-          {steps.slice(0, 3).map((step, i) => (
-            <li
-              key={step.label}
-              className="relative flex flex-col items-center px-1 text-center"
-            >
-              {i > 0 && (
-                <span
-                  className={cn(
-                    "pointer-events-none absolute right-1/2 top-[10px] h-px w-full",
-                    connector
-                  )}
-                  aria-hidden
-                />
-              )}
-              {i < 2 && (
-                <span
-                  className={cn(
-                    "pointer-events-none absolute left-1/2 top-[10px] h-px w-full",
-                    connector
-                  )}
-                  aria-hidden
-                />
-              )}
-              <StepNode dark={dark} />
-              <span className={cn(labelClass, "mt-4 text-[15px] sm:text-base")}>
-                {step.label}
-              </span>
-              {step.description && (
-                <p
-                  className={cn(
-                    "mt-1 max-w-[12rem] text-[14px] leading-snug",
-                    dark ? "text-white/60" : "text-secondary-text"
-                  )}
+        {isFourStages ? (
+          <>
+            <ol className="grid grid-cols-2 gap-x-4">
+              {steps.slice(0, 2).map((step, i) => (
+                <li
+                  key={step.label}
+                  className="relative flex flex-col items-center px-2 text-center"
                 >
-                  {step.description}
-                </p>
-              )}
-            </li>
-          ))}
-        </ol>
-        <div className="relative h-12 w-full" aria-hidden>
-          <span
-            className={cn(
-              "absolute left-[83.333%] top-0 h-1/2 w-px -translate-x-1/2",
-              connector
-            )}
-          />
-          <span className={cn("absolute left-[16.667%] top-1/2 h-px w-[66.667%]", connector)} />
-          <span
-            className={cn(
-              "absolute left-[16.667%] top-1/2 h-1/2 w-px -translate-x-1/2",
-              connector
-            )}
-          />
-        </div>
-        <ol className="grid grid-cols-3 gap-x-2">
-          {steps.slice(3, 6).map((step, i) => (
-            <li
-              key={step.label}
-              className="relative flex flex-col items-center px-1 text-center"
-            >
-              {i > 0 && (
-                <span
-                  className={cn(
-                    "pointer-events-none absolute right-1/2 top-[10px] h-px w-full",
-                    connector
+                  {i > 0 && (
+                    <span
+                      className={cn(
+                        "pointer-events-none absolute right-1/2 top-[10px] h-px w-full",
+                        connector
+                      )}
+                      aria-hidden
+                    />
                   )}
-                  aria-hidden
-                />
-              )}
-              {i < 2 && (
-                <span
-                  className={cn(
-                    "pointer-events-none absolute left-1/2 top-[10px] h-px w-full",
-                    connector
+                  {i < 1 && (
+                    <span
+                      className={cn(
+                        "pointer-events-none absolute left-1/2 top-[10px] h-px w-full",
+                        connector
+                      )}
+                      aria-hidden
+                    />
                   )}
-                  aria-hidden
-                />
-              )}
-              <StepNode dark={dark} />
-              <span className={cn(labelClass, "mt-4 text-[15px] sm:text-base")}>
-                {step.label}
-              </span>
-              {step.description && (
-                <p
-                  className={cn(
-                    "mt-1 max-w-[12rem] text-[14px] leading-snug",
-                    dark ? "text-white/60" : "text-secondary-text"
+                  <StepNode dark={dark} />
+                  <span className={cn(labelClass, "mt-4 text-base")}>{step.label}</span>
+                  {step.description && (
+                    <p
+                      className={cn(
+                        "mt-1.5 max-w-[14rem] text-[15px] leading-snug md:text-base",
+                        dark ? "text-white/70" : "text-secondary-text"
+                      )}
+                    >
+                      {step.description}
+                    </p>
                   )}
+                </li>
+              ))}
+            </ol>
+            <div className="relative h-12 w-full" aria-hidden>
+              <span
+                className={cn(
+                  "absolute left-[75%] top-0 h-1/2 w-px -translate-x-1/2",
+                  connector
+                )}
+              />
+              <span className={cn("absolute left-[25%] top-1/2 h-px w-[50%]", connector)} />
+              <span
+                className={cn(
+                  "absolute left-[25%] top-1/2 h-1/2 w-px -translate-x-1/2",
+                  connector
+                )}
+              />
+            </div>
+            <ol className="grid grid-cols-2 gap-x-4">
+              {steps.slice(2, 4).map((step, i) => (
+                <li
+                  key={step.label}
+                  className="relative flex flex-col items-center px-2 text-center"
                 >
-                  {step.description}
-                </p>
-              )}
-            </li>
-          ))}
-        </ol>
+                  {i > 0 && (
+                    <span
+                      className={cn(
+                        "pointer-events-none absolute right-1/2 top-[10px] h-px w-full",
+                        connector
+                      )}
+                      aria-hidden
+                    />
+                  )}
+                  {i < 1 && (
+                    <span
+                      className={cn(
+                        "pointer-events-none absolute left-1/2 top-[10px] h-px w-full",
+                        connector
+                      )}
+                      aria-hidden
+                    />
+                  )}
+                  <StepNode dark={dark} />
+                  <span className={cn(labelClass, "mt-4 text-base")}>{step.label}</span>
+                  {step.description && (
+                    <p
+                      className={cn(
+                        "mt-1.5 max-w-[14rem] text-[15px] leading-snug md:text-base",
+                        dark ? "text-white/70" : "text-secondary-text"
+                      )}
+                    >
+                      {step.description}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </>
+        ) : (
+          <>
+            <SpreadRow
+              rowSteps={steps.slice(0, 3)}
+              dark={dark}
+              connector={connector}
+              labelClass={labelClass}
+            />
+            <div className="relative h-12 w-full" aria-hidden>
+              <span
+                className={cn(
+                  "absolute left-[83.333%] top-0 h-1/2 w-px -translate-x-1/2",
+                  connector
+                )}
+              />
+              <span className={cn("absolute left-[16.667%] top-1/2 h-px w-[66.667%]", connector)} />
+              <span
+                className={cn(
+                  "absolute left-[16.667%] top-1/2 h-1/2 w-px -translate-x-1/2",
+                  connector
+                )}
+              />
+            </div>
+            <SpreadRow
+              rowSteps={steps.slice(3, 6)}
+              dark={dark}
+              connector={connector}
+              labelClass={labelClass}
+            />
+          </>
+        )}
       </div>
 
-      {/* Desktop: six stages across full width */}
-      <ol className="hidden lg:grid lg:grid-cols-6 lg:gap-0">
+      {/* Desktop: even distribution across full width */}
+      <ol
+        className={cn(
+          "hidden lg:grid lg:gap-0",
+          isFourStages ? "lg:grid-cols-4" : "lg:grid-cols-6"
+        )}
+      >
         {steps.map((step, i) => (
           <li
             key={step.label}
-            className="relative flex flex-col items-center px-2 text-center xl:px-3"
+            className="relative flex flex-col items-center px-3 text-center xl:px-4"
           >
             {i > 0 && (
               <span
@@ -201,14 +297,13 @@ function SpreadLifecycleSteps({
               />
             )}
             <StepNode dark={dark} />
-            <span className={cn(labelClass, "mt-5 text-base lg:text-[17px] xl:text-lg")}>
-              {step.label}
-            </span>
+            <span className={cn(labelClass, desktopLabelSize)}>{step.label}</span>
             {step.description && (
               <p
                 className={cn(
-                  "mt-1.5 max-w-[9.5rem] text-[15px] leading-snug",
-                  dark ? "text-white/60" : "text-secondary-text"
+                  "leading-snug",
+                  desktopDescSize,
+                  dark ? "text-white/70" : "text-secondary-text"
                 )}
               >
                 {step.description}

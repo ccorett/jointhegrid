@@ -49,13 +49,15 @@ export default function AdoptionPage() {
         <div className="content-container">
           <SectionHeading
             dark
+            centered
             title="Learn → Apply → Reinforce → Adopt"
             description="Adoption is a continuous cycle. It is not a one-time training event."
-            className="mb-6"
+            className="mb-10 max-w-4xl md:mb-12"
           />
-          <div className="panel-border-dark bg-white/5 p-6 md:p-8">
+          <div className="panel-border-dark bg-white/5 p-6 md:p-8 lg:p-10">
             <LifecycleSteps
               dark
+              layout="spread"
               steps={[
                 { label: "Learn" },
                 { label: "Apply" },
