@@ -1,15 +1,25 @@
 # #jointhegrid Brand Assets
 
-SVG assets derived from the official brand reference. Replace with final exported assets from the design team when available.
+Official artwork extracted from the supplied brand sheet (`jointhegrid-brand-sheet-reference.png`). Do not recreate logos in CSS or generic SVG blocks.
 
-| File | Usage |
-|------|-------|
-| `jointhegrid-horizontal.svg` | Primary navigation logo |
-| `jointhegrid-symbol.svg` | Standalone GRID symbol |
-| `jointhegrid-favicon.svg` | Favicon and app icon |
-| `jointhegrid-monochrome.svg` | Monochrome version |
-| `jointhegrid-reversed.svg` | Dark background version |
-| `hero-connected-ecosystem.png` | Homepage hero — connected workplace graphic |
-| `interoperability-ecosystem.png` | Interoperability section — isometric ecosystem graphic |
+## Logo system
 
-Reference image: see project assets folder for the authoritative brand sheet.
+| File | Treatment | Use |
+|------|-----------|-----|
+| `jointhegrid-primary-horizontal.png` | Primary horizontal logo | Light header, marketing |
+| `jointhegrid-standalone-symbol.png` | Standalone symbol | Compact mark on light backgrounds |
+| `jointhegrid-app-icon.png` | App / favicon icon (navy rounded square) | Favicon, app icon, GRID anchor in diagrams |
+| `jointhegrid-reversed.png` | Reversed horizontal on navy | Footer, dark sections |
+| `jointhegrid-monochrome.png` | Monochrome symbol | Print / single-colour only |
+
+## Favicons (from app icon only)
+
+- `favicon.ico`, `favicon-16.png`, `favicon-32.png`, `favicon-48.png`
+- `apple-touch-icon.png`, `favicon-180.png`, `favicon-192.png`, `favicon-512.png`
+
+## Components
+
+- `<BrandLogo variant="primary" \| "reversed" \| "monochrome" />`
+- `<GridSymbol variant="standalone" \| "app" />`
+
+Legacy `jointhegrid-*.svg` files are deprecated approximations — use PNG assets above.

@@ -13,8 +13,7 @@ import {
   LogOut,
   X,
 } from "lucide-react";
-import { GridSymbol } from "@/components/brand/grid-symbol";
-import { GridWordmark } from "@/components/brand/grid-wordmark";
+import { BrandLogo } from "@/components/brand/brand-logo";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -37,9 +36,8 @@ export function PortalSidebar({ mobileOpen, onMobileClose }: PortalSidebarProps)
 
   const content = (
     <>
-      <div className="flex h-16 items-center gap-2.5 border-b border-white/10 px-5">
-        <GridSymbol size={32} variant="favicon" />
-        <GridWordmark reversed size="sm" />
+      <div className="flex h-16 items-center border-b border-white/10 px-5">
+        <BrandLogo variant="reversed" href="/portal" height={34} />
       </div>
 
       <nav className="flex-1 space-y-0.5 px-3 py-4" aria-label="Portal navigation">

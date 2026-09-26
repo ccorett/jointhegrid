@@ -1,3 +1,4 @@
+import { BrandLogo } from "@/components/brand/brand-logo";
 import { cn } from "@/lib/utils";
 
 type GridWordmarkProps = {
@@ -7,39 +8,19 @@ type GridWordmarkProps = {
   size?: "sm" | "md" | "lg";
 };
 
+/** @deprecated Use `BrandLogo` with official horizontal artwork — HTML wordmarks are not brand-accurate. */
 export function GridWordmark({
   className,
   reversed = false,
-  showTagline = false,
   size = "md",
 }: GridWordmarkProps) {
-  const sizeClasses = {
-    sm: "text-base",
-    md: "text-xl",
-    lg: "text-2xl",
-  };
-
+  const height = size === "sm" ? 32 : size === "lg" ? 52 : 44;
   return (
-    <span className={cn("inline-flex flex-col", className)}>
-      <span
-        className={cn(
-          sizeClasses[size],
-          reversed ? "text-white" : "text-primary-navy"
-        )}
-      >
-        <span className="font-extralight">#jointhe</span>
-        <span className="font-extrabold tracking-tight">GRID</span>
-      </span>
-      {showTagline && (
-        <span
-          className={cn(
-            "mt-0.5 text-[10px] font-light uppercase tracking-[0.15em]",
-            reversed ? "text-white/80" : "text-secondary-text"
-          )}
-        >
-          People | Apps | Information | Together
-        </span>
-      )}
-    </span>
+    <BrandLogo
+      variant={reversed ? "reversed" : "primary"}
+      href="/"
+      height={height}
+      className={cn(className)}
+    />
   );
 }
