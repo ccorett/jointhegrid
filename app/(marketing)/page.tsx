@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phase1HeroGrid } from "@/components/brand/phase1-hero-grid";
 import { BrandConnectionLines } from "@/components/brand/brand-connection-lines";
 import { InteroperabilityGraphic } from "@/components/brand/interoperability-graphic";
+import { AudienceSectorsGrid } from "@/components/brand/audience-sectors-grid";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import { cn } from "@/lib/utils";
@@ -30,13 +31,6 @@ const adoptionItems = [
   "Champions programmes",
   "Workshops",
   "Usage measurement",
-];
-
-const sectors = [
-  { title: "Government & Public Sector", span: "lg:col-span-7" },
-  { title: "Enterprise", span: "lg:col-span-5" },
-  { title: "SMEs", span: "lg:col-span-5" },
-  { title: "Education", span: "lg:col-span-7" },
 ];
 
 export default function HomePage() {
@@ -298,21 +292,7 @@ export default function HomePage() {
           <h2 className="heading-section text-3xl text-primary-navy md:text-4xl">
             Built for organizations ready to work differently.
           </h2>
-          <div className="mt-12 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-12">
-            {sectors.map((sector) => (
-              <div
-                key={sector.title}
-                className={cn(
-                  "flex min-h-[120px] items-end bg-white p-8 lg:min-h-[160px]",
-                  sector.span
-                )}
-              >
-                <p className="font-display text-xl font-semibold text-primary-navy md:text-2xl">
-                  {sector.title}
-                </p>
-              </div>
-            ))}
-          </div>
+          <AudienceSectorsGrid className="mt-12" />
         </div>
       </section>
 
