@@ -42,7 +42,7 @@ export function InteroperabilityNetwork({ className }: { className?: string }) {
         <text x="280" y="204" textAnchor="middle" fill="#60A5FA" fontSize="10" fontWeight="500" fontFamily={FONT} letterSpacing="0.16em">
           DIGITAL WORKPLACE
         </text>
-        <image href="/brand/jointhegrid-app-icon.png" x="228" y="208" width="104" height="104" />
+        <image href="/brand/jointhegrid-symbol.svg" x="232" y="212" width="96" height="96" />
         <text x="280" y="340" textAnchor="middle" fill="#FFFFFF" fontSize="15" fontWeight="600" fontFamily={FONT} letterSpacing="0.04em">
           Workspace
         </text>
@@ -108,7 +108,7 @@ export function InteroperabilityNetwork({ className }: { className?: string }) {
         </text>
 
         <rect x="104" y="108" width="112" height="120" rx="8" fill="#0B1220" />
-        <image href="/brand/jointhegrid-app-icon.png" x="116" y="114" width="80" height="80" />
+        <image href="/brand/jointhegrid-symbol.svg" x="120" y="118" width="80" height="80" />
         <text x="160" y="212" textAnchor="middle" fill="#FFF" fontSize="10" fontWeight="600" fontFamily={FONT}>
           Workspace + Gemini
         </text>

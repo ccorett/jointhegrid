@@ -23,13 +23,8 @@ export const metadata: Metadata = {
   description:
     "Google Workspace and Gemini Enterprise for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
   icons: {
-    icon: [
-      { url: "/brand/favicon.ico", sizes: "32x32" },
-      { url: "/brand/favicon-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/brand/favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/brand/favicon-48.png", sizes: "48x48", type: "image/png" },
-    ],
-    apple: "/brand/apple-touch-icon.png",
+    icon: "/brand/jointhegrid-favicon.svg",
+    apple: "/brand/jointhegrid-favicon.svg",
   },
 };
 

@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <section className="flex min-h-[60vh] items-center py-20">
       <div className="content-container text-center">
-        <GridSymbol size={48} variant="app" className="mx-auto mb-6 opacity-80" />
+        <GridSymbol size={48} className="mx-auto mb-6 opacity-60" />
         <p className="mb-2 text-xs font-light uppercase tracking-[0.2em] text-secondary-text">
           404
         </p>

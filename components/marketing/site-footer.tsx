@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BrandLogo } from "@/components/brand/brand-logo";
+import { GridSymbol } from "@/components/brand/grid-symbol";
+import { GridWordmark } from "@/components/brand/grid-wordmark";
 import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
 
 const footerLinks = {
@@ -26,7 +27,10 @@ export function SiteFooter() {
       <div className="content-container py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <BrandLogo variant="reversed" href="/" height={44} />
+            <div className="flex items-center gap-3">
+              <GridSymbol size={36} variant="favicon" />
+              <GridWordmark reversed />
+            </div>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/75">
               Digital workplace solutions for organizations deploying,
               administering and adopting Google Workspace and Gemini Enterprise.

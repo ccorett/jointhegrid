@@ -1,32 +1,30 @@
 import Image from "next/image";
-import { BRAND_ASSETS, type GridSymbolVariant } from "@/lib/brand/assets";
 import { cn } from "@/lib/utils";
 
 type GridSymbolProps = {
-  /** Square display size in px */
   size?: number;
   className?: string;
-  variant?: GridSymbolVariant;
+  variant?: "default" | "favicon";
 };
 
 export function GridSymbol({
-  size = 36,
+  size = 40,
   className,
-  variant = "app",
+  variant = "default",
 }: GridSymbolProps) {
-  const asset =
-    variant === "app" ? BRAND_ASSETS.appIcon : BRAND_ASSETS.standaloneSymbol;
+  const src =
+    variant === "favicon"
+      ? "/brand/jointhegrid-favicon.svg"
+      : "/brand/jointhegrid-symbol.svg";
 
   return (
     <Image
-      src={asset.src}
-      alt={asset.alt}
-      width={asset.width}
-      height={asset.height}
-      unoptimized
-      aria-hidden={!asset.alt}
-      className={cn("shrink-0 object-contain", className)}
-      style={{ width: size, height: size }}
+      src={src}
+      alt=""
+      width={size}
+      height={size}
+      className={cn("shrink-0", className)}
+      aria-hidden
     />
   );
 }

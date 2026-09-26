@@ -1,4 +1,6 @@
-import { BrandLogo } from "@/components/brand/brand-logo";
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type GridLogoProps = {
   className?: string;
@@ -6,15 +8,32 @@ type GridLogoProps = {
   reversed?: boolean;
 };
 
-/** @deprecated Use `BrandLogo` — kept for existing imports. */
-export function GridLogo({ className, href = "/", reversed = false }: GridLogoProps) {
+export function GridLogo({
+  className,
+  href = "/",
+  reversed = false,
+}: GridLogoProps) {
+  const src = reversed
+    ? "/brand/jointhegrid-reversed.svg"
+    : "/brand/jointhegrid-horizontal.svg";
+
   return (
-    <BrandLogo
-      variant={reversed ? "reversed" : "primary"}
-      className={className}
+    <Link
       href={href}
-      height={48}
-      priority
-    />
+      className={cn(
+        "inline-flex shrink-0 items-center overflow-visible py-1",
+        className
+      )}
+    >
+      <Image
+        src={src}
+        alt="#jointheGRID"
+        width={240}
+        height={56}
+        priority
+        className="h-11 w-auto max-w-[220px] object-contain md:h-12 md:max-w-[240px]"
+        style={{ objectFit: "contain" }}
+      />
+    </Link>
   );
 }
