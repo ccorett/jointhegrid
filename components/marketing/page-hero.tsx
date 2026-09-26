@@ -1,5 +1,9 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import {
+  PageHeroVisual,
+  type PageHeroVisualKind,
+} from "@/components/marketing/page-hero-visual";
 
 type PageHeroProps = {
   eyebrow?: string;
@@ -10,6 +14,7 @@ type PageHeroProps = {
   secondaryCta?: { label: string; href: string };
   dark?: boolean;
   light?: boolean;
+  visual?: PageHeroVisualKind;
   className?: string;
 };
 
@@ -22,63 +27,81 @@ export function PageHero({
   secondaryCta,
   dark = false,
   light = false,
+  visual,
   className,
 }: PageHeroProps) {
+  const hasVisual = !!visual;
+
   return (
     <section
       className={cn(
-        "border-b border-border section-y",
+        "border-b border-border section-y-compact",
         dark ? "bg-primary-navy text-white" : light ? "bg-light-bg" : "bg-white",
         className
       )}
     >
-      <div className="content-container max-w-3xl">
-        {eyebrow && (
-          <p
-            className={cn(
-              "mb-4 text-[11px] font-semibold uppercase tracking-[0.2em]",
-              dark ? "text-secondary-blue" : "text-secondary-text"
-            )}
-          >
-            {eyebrow}
-          </p>
+      <div
+        className={cn(
+          "content-container grid items-center gap-8 lg:gap-12",
+          hasVisual && "lg:grid-cols-[1.05fr_0.95fr]"
         )}
-        <h1 className="heading-hero text-4xl md:text-5xl lg:text-6xl">
-          {title}
-          {titleAccent && (
-            <>
-              <br />
-              <span className="text-infrastructure-blue">{titleAccent}</span>
-            </>
+      >
+        <div className={cn(!hasVisual && "max-w-4xl")}>
+          {eyebrow && (
+            <p
+              className={cn(
+                "mb-3 text-[13px] font-bold uppercase tracking-[0.18em] md:text-sm",
+                dark ? "text-secondary-blue" : "text-infrastructure-blue"
+              )}
+            >
+              {eyebrow}
+            </p>
           )}
-        </h1>
-        {description && (
-          <p
+          <h1
             className={cn(
-              "mt-6 max-w-2xl text-[17px] leading-relaxed md:text-lg",
-              dark ? "text-white/70" : "text-secondary-text"
+              "heading-hero text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.75rem]",
+              dark ? "text-white" : "text-primary-navy"
             )}
           >
-            {description}
-          </p>
-        )}
-        {(primaryCta || secondaryCta) && (
-          <div className="mt-8 flex flex-wrap gap-3">
-            {primaryCta && (
-              <Button href={primaryCta.href} variant="primary" size="lg">
-                {primaryCta.label}
-              </Button>
+            {title}
+            {titleAccent && (
+              <>
+                <br />
+                <span className="text-infrastructure-blue">{titleAccent}</span>
+              </>
             )}
-            {secondaryCta && (
-              <Button
-                href={secondaryCta.href}
-                variant={dark ? "outline" : "secondary"}
-                size="lg"
-              >
-                {secondaryCta.label}
-              </Button>
-            )}
-          </div>
+          </h1>
+          {description && (
+            <p
+              className={cn(
+                "mt-4 max-w-2xl text-lg leading-snug md:text-[19px] md:leading-relaxed",
+                dark ? "text-white/75" : "text-body-text"
+              )}
+            >
+              {description}
+            </p>
+          )}
+          {(primaryCta || secondaryCta) && (
+            <div className="mt-6 flex flex-wrap gap-3">
+              {primaryCta && (
+                <Button href={primaryCta.href} variant="primary" size="lg">
+                  {primaryCta.label}
+                </Button>
+              )}
+              {secondaryCta && (
+                <Button
+                  href={secondaryCta.href}
+                  variant={dark ? "outline" : "secondary"}
+                  size="lg"
+                >
+                  {secondaryCta.label}
+                </Button>
+              )}
+            </div>
+          )}
+        </div>
+        {hasVisual && (
+          <PageHeroVisual kind={visual} className="w-full justify-self-end lg:max-w-none" />
         )}
       </div>
     </section>

@@ -13,13 +13,18 @@ type LifecycleStepsProps = {
 
 export function LifecycleSteps({ steps, className, dark = false }: LifecycleStepsProps) {
   return (
-    <div className={cn("flex flex-wrap items-center gap-2 md:gap-0", className)}>
+    <div
+      className={cn(
+        "flex flex-wrap items-center gap-x-2 gap-y-3 md:flex-nowrap md:gap-0",
+        className
+      )}
+    >
       {steps.map((step, i) => (
         <div key={step.label} className="flex items-center">
-          <div className="flex flex-col items-start md:items-center">
+          <div className="flex flex-col">
             <span
               className={cn(
-                "text-sm font-medium uppercase tracking-wider",
+                "text-[15px] font-bold uppercase tracking-wider md:text-base",
                 dark ? "text-secondary-blue" : "text-infrastructure-blue"
               )}
             >
@@ -28,8 +33,8 @@ export function LifecycleSteps({ steps, className, dark = false }: LifecycleStep
             {step.description && (
               <span
                 className={cn(
-                  "mt-1 hidden text-xs font-light md:block",
-                  dark ? "text-white/50" : "text-secondary-text"
+                  "mt-0.5 hidden text-[13px] md:block",
+                  dark ? "text-white/55" : "text-secondary-text"
                 )}
               >
                 {step.description}
@@ -39,8 +44,8 @@ export function LifecycleSteps({ steps, className, dark = false }: LifecycleStep
           {i < steps.length - 1 && (
             <span
               className={cn(
-                "mx-3 text-lg font-light md:mx-6",
-                dark ? "text-white/30" : "text-border"
+                "mx-2 text-xl font-semibold md:mx-4 lg:mx-5",
+                dark ? "text-white/35" : "text-infrastructure-blue/50"
               )}
               aria-hidden
             >

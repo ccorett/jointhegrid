@@ -3,19 +3,19 @@ import Link from "next/link";
 const services = [
   {
     href: "/deployment",
-    label: "Deploy",
+    label: "Deployment",
     description: "Configuration, migration, identity, security and rollout.",
     cta: "Plan a Deployment",
   },
   {
     href: "/administration",
-    label: "Administer",
+    label: "Administration",
     description: "Users, licences, policies, security and day to day management.",
     cta: "Explore Administration",
   },
   {
     href: "/adoption",
-    label: "Adopt",
+    label: "Adoption",
     description: "Learning, AI use cases, champions and reinforcement.",
     cta: "Explore Adoption",
   },
@@ -23,20 +23,20 @@ const services = [
 
 export function ServiceLinks() {
   return (
-    <div className="grid gap-0 border border-border md:grid-cols-3">
-      {services.map((service, i) => (
+    <div className="grid gap-px border border-border bg-border md:grid-cols-3">
+      {services.map((service) => (
         <Link
           key={service.href}
           href={service.href}
-          className={`group block p-8 transition-colors hover:bg-light-bg ${i < 2 ? "border-b border-border md:border-b-0 md:border-r" : ""}`}
+          className="group block bg-white p-6 transition-colors hover:bg-light-bg md:p-7"
         >
-          <p className="font-display text-lg font-semibold text-primary-navy group-hover:text-infrastructure-blue">
+          <p className="font-display text-xl font-bold text-primary-navy group-hover:text-infrastructure-blue md:text-[1.35rem]">
             {service.label}
           </p>
-          <p className="mt-2 text-sm leading-relaxed text-secondary-text">
+          <p className="mt-2 text-[16px] leading-snug text-body-text md:text-[17px]">
             {service.description}
           </p>
-          <span className="mt-4 inline-block text-sm font-semibold text-infrastructure-blue">
+          <span className="mt-4 inline-block text-[15px] font-semibold text-infrastructure-blue">
             {service.cta} →
           </span>
         </Link>

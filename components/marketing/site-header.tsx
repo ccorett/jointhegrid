@@ -47,7 +47,7 @@ function NavDropdown({
       <button
         type="button"
         id={`${menuId}-menu-button`}
-        className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-body-text transition-colors hover:text-primary-navy"
+        className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-body-text transition-colors hover:text-primary-navy md:text-base"
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-controls={panelId}
@@ -217,14 +217,14 @@ export function SiteHeader() {
           />
           <Link
             href="/about"
-            className="px-3 py-2 text-sm font-medium text-body-text transition-colors hover:text-primary-navy"
+            className="px-3 py-2 text-[15px] font-medium text-body-text transition-colors hover:text-primary-navy md:text-base"
             onClick={() => setOpenMenu(null)}
           >
             About
           </Link>
           <Link
             href="/contact"
-            className="px-3 py-2 text-sm font-medium text-body-text transition-colors hover:text-primary-navy"
+            className="px-3 py-2 text-[15px] font-medium text-body-text transition-colors hover:text-primary-navy md:text-base"
             onClick={() => setOpenMenu(null)}
           >
             Contact

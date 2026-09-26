@@ -38,44 +38,50 @@ export default function DigitalWorkspacePage() {
       <PageHero
         light
         eyebrow="Solutions"
+        visual="hero-grid"
         title="Your workplace."
         titleAccent="Connected."
-        description="Bring communication, collaboration, information and everyday work into one managed environment."
+        description="Communication, collaboration, information and everyday work brought into one connected environment."
         primaryCta={{ label: "Discuss Digital Workspace", href: "/contact" }}
       />
 
-      <section className="py-16 md:py-24">
+      <section className="border-b border-border bg-white section-y-compact">
         <div className="content-container">
           <SectionHeading
             title="The everyday layer of work"
             description="Most of the organization already lives here: email, calendars, documents, meetings and shared files. The question is whether that environment is set up, managed and used properly."
-            className="mb-12 max-w-3xl"
+            className="mb-8"
           />
           <CapabilityGrid items={capabilities} columns={3} />
         </div>
       </section>
 
-      <section className="border-y border-border bg-light-bg py-16 md:py-24">
-        <div className="content-container max-w-3xl">
-          <p className="text-[17px] leading-relaxed text-secondary-text">
+      <section className="border-b border-border bg-light-bg section-y-compact">
+        <div className="content-container grid gap-8 lg:grid-cols-2 lg:items-center">
+          <p className="text-lg leading-relaxed text-body-text md:text-[19px]">
             Move into a connected workplace with users, email, files and access
             planned from the start. Keep the environment under control after
             go-live. Make sure people actually use what they have been given.
           </p>
+          <div className="panel-border bg-white p-6 md:p-8">
+            <p className="text-sm font-bold uppercase tracking-wide text-infrastructure-blue">
+              Delivered through
+            </p>
+            <p className="mt-3 font-display text-2xl font-bold text-primary-navy">
+              Deployment · Administration · Adoption
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="section-y-compact">
         <div className="content-container">
-          <SectionHeading title="Deploy. Administer. Adopt." className="mb-10 max-w-xl" />
+          <SectionHeading title="Deploy. Administer. Adopt." className="mb-8" />
           <ServiceLinks />
         </div>
       </section>
 
-      <PageCtaBand
-        title="Discuss digital workspace"
-        ctaLabel="Let's Talk"
-      />
+      <PageCtaBand title="Discuss digital workspace" ctaLabel="Let's Talk" />
     </>
   );
 }

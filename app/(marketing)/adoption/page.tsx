@@ -38,32 +38,41 @@ export default function AdoptionPage() {
       <PageHero
         light
         eyebrow="Services"
+        visual="symbol-light"
         title="Make it part"
         titleAccent="of the work."
-        description="Onboarding, practical learning, AI use cases, champions and continued reinforcement."
+        description="Make new technology fit the way people actually work — onboarding, practical learning, AI use cases, champions and continued reinforcement."
         primaryCta={{ label: "Build an Adoption Programme", href: "/contact" }}
       />
 
-      <section className="py-16 md:py-24">
+      <section className="border-b border-border bg-primary-navy section-y-compact text-white">
         <div className="content-container">
-          <SectionHeading title="Learn → Apply → Reinforce → Adopt" className="mb-10" />
-          <LifecycleSteps
-            steps={[
-              { label: "Learn" },
-              { label: "Apply" },
-              { label: "Reinforce" },
-              { label: "Adopt" },
-            ]}
+          <SectionHeading
+            dark
+            title="Learn → Apply → Reinforce → Adopt"
+            description="Adoption is a continuous cycle — not a one-time training event."
+            className="mb-6"
           />
+          <div className="panel-border-dark bg-white/5 p-6 md:p-8">
+            <LifecycleSteps
+              dark
+              steps={[
+                { label: "Learn" },
+                { label: "Apply" },
+                { label: "Reinforce" },
+                { label: "Adopt" },
+              ]}
+            />
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-border bg-light-bg py-16 md:py-24">
+      <section className="section-y-compact">
         <div className="content-container">
           <SectionHeading
             title="Training sits inside adoption"
             description="Workshops, champions, executive sessions and practical AI enablement are part of one adoption programme, not a separate catalogue of courses."
-            className="mb-10 max-w-2xl"
+            className="mb-8"
           />
           <CapabilityGrid items={programmes} columns={3} />
         </div>

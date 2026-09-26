@@ -17,15 +17,15 @@ export default function PrivacyPage() {
         title="Privacy Policy"
         description="How Global Resilient Infrastructure & Digitalisation Ltd. handles information you share with us."
       />
-      <section className="py-16 md:py-24">
-        <div className="content-container max-w-3xl space-y-6 text-[17px] leading-relaxed text-secondary-text">
+      <section className="section-y-compact">
+        <div className="content-container prose-width space-y-6 text-[17px] leading-relaxed text-body-text md:text-lg">
           <p>
             Global Resilient Infrastructure &amp; Digitalisation Ltd.
             (&quot;#jointhegrid&quot;) respects your privacy. This page is a
             working placeholder pending a full legal policy. It describes our
             intended approach in plain language.
           </p>
-          <h2 className="font-display text-xl font-semibold text-primary-navy">
+          <h2 className="font-display text-xl font-bold text-primary-navy md:text-2xl">
             Information we collect
           </h2>
           <p>
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
             details you provide (such as name, organization, email and message)
             so we can respond to your request.
           </p>
-          <h2 className="font-display text-xl font-semibold text-primary-navy">
+          <h2 className="font-display text-xl font-bold text-primary-navy md:text-2xl">
             How we use information
           </h2>
           <p>
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
             improve how we support organizations. We do not sell personal
             information.
           </p>
-          <h2 className="font-display text-xl font-semibold text-primary-navy">
+          <h2 className="font-display text-xl font-bold text-primary-navy md:text-2xl">
             Contact
           </h2>
           <p>

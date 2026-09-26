@@ -46,25 +46,28 @@ export default function DeploymentPage() {
       <PageHero
         light
         eyebrow="Services"
+        visual="symbol-light"
         title="Get the foundation"
         titleAccent="right."
         description="Configuration, migration, identity, security, rollout and the move into production."
         primaryCta={{ label: "Plan a Deployment", href: "/contact" }}
       />
 
-      <section className="py-16 md:py-24">
+      <section className="border-b border-border bg-white section-y-compact">
         <div className="content-container">
-          <SectionHeading title="The deployment lifecycle" className="mb-10" />
-          <LifecycleSteps steps={lifecycle.map((label) => ({ label }))} />
+          <SectionHeading title="The deployment lifecycle" className="mb-6" />
+          <div className="panel-border bg-light-bg p-6 md:p-8">
+            <LifecycleSteps steps={lifecycle.map((label) => ({ label }))} />
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-border bg-light-bg py-16 md:py-24">
+      <section className="border-b border-border bg-light-bg section-y-compact">
         <div className="content-container">
           <SectionHeading
             title="What goes into deployment"
-            description="Each organization starts from a different place. The work covers configuration, migration paths, identity, security and a controlled move into production."
-            className="mb-10 max-w-2xl"
+            description="Each organization starts from a different place. The work covers configuration, migration paths, identity, existing systems, information, workflows, security and a controlled move into production."
+            className="mb-8"
           />
           <CapabilityGrid items={capabilities} columns={2} />
         </div>

@@ -22,7 +22,7 @@ const MARKETS: MarketRegion[] = [
     text: "#FFFFFF",
     hint: "Digital workplace at organizational scale.",
     area: "government",
-    titleClass: "text-[1.75rem] leading-[1.08] sm:text-[1.85rem] md:text-[2.15rem] lg:text-[2.35rem]",
+    titleClass: "text-[1.85rem] leading-[1.06] sm:text-[2rem] md:text-[2.35rem] lg:text-[2.65rem]",
     scaleOrigin: "bottom left",
   },
   {
@@ -32,7 +32,7 @@ const MARKETS: MarketRegion[] = [
     text: "#FFFFFF",
     hint: "Connected work across teams and operations.",
     area: "enterprise",
-    titleClass: "text-[1.5rem] leading-[1.1] md:text-[1.85rem] lg:text-[2rem]",
+    titleClass: "text-[1.65rem] leading-[1.08] md:text-[2rem] lg:text-[2.35rem]",
     scaleOrigin: "bottom left",
   },
   {
@@ -42,7 +42,7 @@ const MARKETS: MarketRegion[] = [
     text: "#0B1220",
     hint: "Modern tools without unnecessary complexity.",
     area: "smes",
-    titleClass: "text-[1.35rem] leading-[1.1] md:text-[1.55rem] lg:text-[1.7rem]",
+    titleClass: "text-[1.45rem] leading-[1.08] md:text-[1.75rem] lg:text-[2rem]",
     scaleOrigin: "bottom left",
   },
   {
@@ -52,7 +52,7 @@ const MARKETS: MarketRegion[] = [
     text: "#0B1220",
     hint: "Connected learning and administration.",
     area: "education",
-    titleClass: "text-[1.2rem] leading-[1.12] md:text-[1.35rem] lg:text-[1.45rem]",
+    titleClass: "text-[1.3rem] leading-[1.1] md:text-[1.5rem] lg:text-[1.75rem]",
     scaleOrigin: "bottom left",
   },
 ];

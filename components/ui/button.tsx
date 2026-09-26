@@ -12,13 +12,13 @@ const variantStyles: Record<ButtonVariant, string> = {
     "bg-white text-primary-navy border border-border hover:bg-light-bg",
   ghost: "bg-transparent text-primary-navy hover:bg-light-bg border border-transparent",
   outline:
-    "bg-transparent text-white border border-white/30 hover:bg-white/10",
+    "bg-transparent text-white border border-white/35 hover:bg-white/10",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "px-3 py-1.5 text-sm",
-  md: "px-5 py-2.5 text-sm",
-  lg: "px-5 py-2.5 text-sm",
+  sm: "min-h-10 px-4 py-2 text-[15px]",
+  md: "min-h-11 px-5 py-2.5 text-[15px] md:text-base",
+  lg: "min-h-[3rem] px-6 py-3 text-base md:min-h-[3.125rem]",
 };
 
 type BaseProps = {

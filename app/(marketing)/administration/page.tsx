@@ -35,26 +35,27 @@ export default function AdministrationPage() {
       <PageHero
         light
         eyebrow="Services"
+        visual="symbol-light"
         title="Keep it under"
         titleAccent="control."
         description="Users, licences, access, policies, security and the day to day management of the workplace."
         primaryCta={{ label: "Discuss Administration", href: "/contact" }}
       />
 
-      <section className="py-16 md:py-24">
+      <section className="border-b border-border bg-white section-y-compact">
         <div className="content-container">
           <SectionHeading
             title="Administration that fits your team"
-            description="Some organizations need specialist administration alongside internal ICT. Others want a dedicated partner for ongoing management. Either way, the focus stays on control, security and continuity."
-            className="mb-10 max-w-3xl"
+            description="Manage the connected workplace as an environment rather than a collection of isolated tools. Some organizations need specialist support alongside internal ICT; others want a dedicated partner for ongoing management."
+            className="mb-8"
           />
           <CapabilityGrid items={capabilities} columns={2} />
         </div>
       </section>
 
-      <section className="border-t border-border bg-light-bg py-16 md:py-24">
-        <div className="content-container max-w-3xl">
-          <p className="text-[17px] leading-relaxed text-secondary-text">
+      <section className="border-b border-border bg-light-bg section-y-compact">
+        <div className="content-container max-w-4xl">
+          <p className="text-lg leading-relaxed text-body-text md:text-[19px]">
             Keep users, licences, access, policies and security under control after
             deployment. As people join, roles change and requirements shift, the
             environment needs consistent management across the workplace and

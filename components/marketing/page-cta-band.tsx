@@ -17,21 +17,19 @@ export function PageCtaBand({
   className,
 }: PageCtaBandProps) {
   return (
-    <section className={cn("bg-primary-navy py-16 md:py-24", className)}>
-      <div className="content-container text-center">
-        <h2 className="heading-section text-2xl text-white md:text-3xl lg:text-4xl">
-          {title}
-        </h2>
-        {description && (
-          <p className="mx-auto mt-4 max-w-xl text-[17px] leading-relaxed text-white/70">
-            {description}
-          </p>
-        )}
-        <div className="mt-8">
-          <Button href={ctaHref} size="lg">
-            {ctaLabel}
-          </Button>
+    <section className={cn("border-t border-white/10 bg-primary-navy section-y-compact", className)}>
+      <div className="content-container flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <div className="max-w-2xl">
+          <h2 className="heading-section text-2xl text-white md:text-3xl lg:text-[2.25rem]">
+            {title}
+          </h2>
+          {description && (
+            <p className="mt-2 text-lg text-white/70 md:text-[19px]">{description}</p>
+          )}
         </div>
+        <Button href={ctaHref} size="lg" className="shrink-0">
+          {ctaLabel}
+        </Button>
       </div>
     </section>
   );
