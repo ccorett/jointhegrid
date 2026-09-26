@@ -26,8 +26,6 @@ const capabilities = [
   "Meetings",
   "Messaging",
   "Collaboration",
-  "Identity",
-  "Access",
   "Administration",
   "Security",
 ];
@@ -52,7 +50,11 @@ export default function DigitalWorkspacePage() {
             description="Most of the organization already lives here: email, calendars, documents, meetings and shared files. The question is whether that environment is set up, managed and used properly."
             className="mb-8"
           />
-          <CapabilityGrid items={capabilities} columns={3} />
+          <CapabilityGrid
+            items={capabilities}
+            columns={3}
+            className="md:grid-cols-3 [&_li]:py-4 md:[&_li]:py-[1.125rem] lg:[&_li]:py-5"
+          />
         </div>
       </section>
 
