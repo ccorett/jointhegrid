@@ -45,7 +45,7 @@ export default function AdministrationPage() {
         <div className="content-container">
           <SectionHeading
             title="Administration that fits your team"
-            description="Manage the connected workplace as an environment rather than a collection of isolated tools. Some organizations need specialist support alongside internal ICT; others want a dedicated partner for ongoing management."
+            description="Some organizations need specialist administration alongside internal ICT. Others want a dedicated partner for ongoing management. Either way, the focus stays on control, security and continuity."
             className="mb-10 max-w-3xl"
           />
           <CapabilityGrid items={capabilities} columns={2} />

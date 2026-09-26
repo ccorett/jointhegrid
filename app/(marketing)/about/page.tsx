@@ -42,6 +42,10 @@ export default function AboutPage() {
             <Link href="/ai-integration" className="font-medium text-infrastructure-blue hover:underline">
               AI integration
             </Link>
+            {" "}and{" "}
+            <Link href="/interoperability" className="font-medium text-infrastructure-blue hover:underline">
+              interoperability
+            </Link>
             , delivered through{" "}
             <Link href="/deployment" className="font-medium text-infrastructure-blue hover:underline">
               deployment
@@ -57,9 +61,9 @@ export default function AboutPage() {
             .
           </p>
           <p>
-            The workplace and intelligent tools still have to work with identity,
-            security, applications and workflows that are already in place. That
-            is part of the work, not an afterthought.
+            Interoperability matters. The workplace and intelligent tools still
+            have to work with identity, security, applications and workflows that
+            are already in place. That is part of the work, not an afterthought.
           </p>
         </div>
       </section>

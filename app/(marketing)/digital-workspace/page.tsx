@@ -40,7 +40,7 @@ export default function DigitalWorkspacePage() {
         eyebrow="Solutions"
         title="Your workplace."
         titleAccent="Connected."
-        description="Communication, collaboration, information and everyday work brought into one connected environment."
+        description="Bring communication, collaboration, information and everyday work into one managed environment."
         primaryCta={{ label: "Discuss Digital Workspace", href: "/contact" }}
       />
 

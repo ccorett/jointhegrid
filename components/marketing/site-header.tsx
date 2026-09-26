@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 const solutionsLinks = [
   { href: "/digital-workspace", label: "Digital Workspace" },
   { href: "/ai-integration", label: "AI Integration" },
+  { href: "/interoperability", label: "Interoperability" },
 ];
 
 const servicesLinks = [
@@ -233,7 +234,7 @@ export function SiteHeader() {
 
         <div className="hidden lg:block">
           <Button href="/contact" variant="primary" size="sm">
-            Request a Consultation
+            Let&apos;s Talk
           </Button>
         </div>
 
@@ -293,7 +294,7 @@ export function SiteHeader() {
                 className="w-full"
                 onClick={closeMobile}
               >
-                Request a Consultation
+                Let&apos;s Talk
               </Button>
             </div>
           </nav>

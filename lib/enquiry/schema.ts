@@ -13,6 +13,7 @@ export const AREAS_OF_INTEREST = [
   "Migration",
   "Administration",
   "Adoption",
+  "Interoperability",
   "Not Sure Yet",
 ] as const;
 
