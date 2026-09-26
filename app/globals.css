@@ -110,6 +110,120 @@
     line-height: 1.08;
   }
 
+  /** Lower-page section headings (regional, contact, footer-adjacent bands) */
+  .heading-region {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.028em;
+    line-height: 1.1;
+    font-size: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .heading-region {
+      font-size: 2.375rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .heading-region {
+      font-size: 2.75rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-region {
+      font-size: 3.375rem;
+    }
+  }
+
+  .heading-contact {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.028em;
+    line-height: 1.08;
+    font-size: 2.125rem;
+  }
+
+  @media (min-width: 640px) {
+    .heading-contact {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .heading-contact {
+      font-size: 2.75rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-contact {
+      font-size: 3.5rem;
+    }
+  }
+
+  .text-lead {
+    font-size: 1.125rem;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 768px) {
+    .text-lead {
+      font-size: 1.25rem;
+    }
+  }
+
+  .text-fact {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .text-fact {
+      font-size: 1.0625rem;
+    }
+  }
+
+  .text-contact-channel {
+    font-size: 1.0625rem;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 768px) {
+    .text-contact-channel {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-contact-channel {
+      font-size: 1.1875rem;
+    }
+  }
+
+  .text-form-label {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 768px) {
+    .text-form-label {
+      font-size: 1rem;
+    }
+  }
+
+  .text-form-input {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .text-form-input {
+      font-size: 1.125rem;
+    }
+  }
+
   .section-y {
     padding-block: 3rem;
   }

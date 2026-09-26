@@ -31,7 +31,7 @@ export default function PortalSupportPage() {
             </h2>
             <p className="mt-2 text-sm font-light text-secondary-text">
               Your support request has been recorded. This form is a frontend
-              placeholder—connect to your support workflow when ready.
+              placeholder. Connect to your support workflow when ready.
             </p>
           </div>
         ) : (

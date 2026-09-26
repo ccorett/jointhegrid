@@ -236,17 +236,17 @@ export default function HomePage() {
         <div className="content-container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-12">
           <div>
             <SectionLabel>Regional</SectionLabel>
-            <h2 className="heading-section mt-2 text-[2rem] md:text-[2.75rem] lg:text-[3.25rem]">
+            <h2 className="heading-region mt-2 text-primary-navy">
               Based in Trinidad &amp; Tobago. Built to work across the Caribbean.
             </h2>
-            <p className="mt-4 text-lg text-body-text md:text-[19px]">
+            <p className="text-lead mt-4 text-body-text">
               #jointhegrid supports organizations with digital workplace and AI
-              integration — with deployment, administration and adoption delivered
+              integration, with deployment, administration and adoption delivered
               for the way the region works.
             </p>
           </div>
           <div className="panel-border bg-light-bg p-7 md:p-8">
-            <ul className="space-y-4 text-[17px] md:text-lg">
+            <ul className="text-fact space-y-4">
               <li className="flex justify-between gap-4 border-b border-border pb-4">
                 <span className="font-bold text-primary-navy">Headquarters</span>
                 <span className="text-body-text">Trinidad &amp; Tobago</span>
@@ -266,33 +266,33 @@ export default function HomePage() {
         <div className="content-container grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <SectionLabel tone="dark">Contact</SectionLabel>
-            <h2 className="heading-section mt-2 text-[2rem] md:text-[2.75rem] lg:text-[3.25rem]">
+            <h2 className="heading-contact mt-2">
               Ready to talk about your workplace?
             </h2>
-            <p className="mt-4 max-w-lg text-lg text-white/75 md:text-[19px]">
+            <p className="text-lead mt-4 max-w-lg text-white/80">
               Send an enquiry or reach the team directly.
             </p>
-            <div className="mt-8 space-y-5 border-t border-white/10 pt-8">
+            <div className="mt-8 space-y-6 border-t border-white/10 pt-8">
               <div>
-                <p className="text-[13px] font-bold uppercase tracking-wider text-white/45 md:text-sm">
+                <p className="text-form-label font-semibold text-white/70">
                   Email
                 </p>
                 <a
                   href={`mailto:${SALES_EMAIL}`}
-                  className="mt-1 block text-lg font-semibold text-secondary-blue hover:text-white md:text-xl"
+                  className="text-contact-channel mt-1 block font-semibold text-secondary-blue hover:text-white"
                 >
                   {SALES_EMAIL}
                 </a>
               </div>
               <div>
-                <p className="text-[13px] font-bold uppercase tracking-wider text-white/45 md:text-sm">
+                <p className="text-form-label font-semibold text-white/70">
                   WhatsApp
                 </p>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 block text-lg font-semibold text-white/90 hover:text-white md:text-xl"
+                  className="text-contact-channel mt-1 block font-semibold text-white/90 hover:text-white"
                 >
                   {PHONE_DISPLAY}
                 </a>

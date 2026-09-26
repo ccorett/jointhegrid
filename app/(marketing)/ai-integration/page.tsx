@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "AI Integration",
   description:
-    "Workplace AI with access controls, governance and adoption — integrated with the people, information and workflows already in your organization.",
+    "Workplace AI with access controls, governance and adoption, integrated with the people, information and workflows already in your organization.",
   path: "/ai-integration",
   keywords: [
     "workplace AI Caribbean",
@@ -46,7 +46,7 @@ export default function AiIntegrationPage() {
         <div className="content-container">
           <SectionHeading
             title="Workplace AI, not a side project"
-            description="Intelligent tools are most useful when they sit inside how the organization already works — with sensible controls, clear access and adoption that matches real roles."
+            description="Intelligent tools are most useful when they sit inside how the organization already works, with sensible controls, clear access and adoption that matches real roles."
             className="mb-8"
           />
           <CapabilityGrid items={focusAreas} columns={2} />

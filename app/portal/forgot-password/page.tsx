@@ -22,7 +22,7 @@ export default function ForgotPasswordPage() {
         <div className="rounded-xl border border-border bg-light-bg p-6 text-center">
           <p className="text-sm font-light text-secondary-text">
             If an account exists for that email, a reset link will be sent.
-            This is a frontend placeholder—connect authentication when ready.
+            This is a frontend placeholder. Connect authentication when ready.
           </p>
           <Link
             href="/portal/sign-in"

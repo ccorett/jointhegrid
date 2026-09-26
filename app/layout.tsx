@@ -17,7 +17,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jointhegrid.com"),
   title: {
-    default: "#jointhegrid — Digital Workspace + AI Integration",
+    default: "#jointhegrid | Digital Workspace + AI Integration",
     template: "%s | #jointhegrid",
   },
   description:

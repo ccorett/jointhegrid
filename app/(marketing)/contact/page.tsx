@@ -21,34 +21,34 @@ export default function ContactPage() {
       <div className="content-container grid gap-10 lg:grid-cols-2 lg:gap-14">
         <div>
           <SectionLabel tone="dark">Contact</SectionLabel>
-          <h1 className="heading-hero mt-2 text-[2.5rem] md:text-[2.75rem] lg:text-[3.25rem]">
+          <h1 className="heading-contact mt-2">
             Let&apos;s talk about your workplace.
           </h1>
-          <p className="mt-4 max-w-lg text-lg text-white/75 md:text-[19px]">
+          <p className="text-lead mt-4 max-w-lg text-white/80">
             Planning a deployment, ongoing administration or adoption support?
             Send an enquiry or reach the team directly.
           </p>
-          <div className="mt-8 space-y-5 border-t border-white/10 pt-8">
+          <div className="mt-8 space-y-6 border-t border-white/10 pt-8">
             <div>
-              <p className="text-[13px] font-bold uppercase tracking-wider text-white/45 md:text-sm">
+              <p className="text-form-label font-semibold text-white/70">
                 Email
               </p>
               <a
                 href={`mailto:${SALES_EMAIL}`}
-                className="mt-1 block text-lg font-semibold text-secondary-blue hover:text-white md:text-xl"
+                className="text-contact-channel mt-1 block font-semibold text-secondary-blue hover:text-white"
               >
                 {SALES_EMAIL}
               </a>
             </div>
             <div>
-              <p className="text-[13px] font-bold uppercase tracking-wider text-white/45 md:text-sm">
+              <p className="text-form-label font-semibold text-white/70">
                 WhatsApp
               </p>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1 block text-lg font-semibold text-white/90 hover:text-white md:text-xl"
+                className="text-contact-channel mt-1 block font-semibold text-white/90 hover:text-white"
               >
                 {PHONE_DISPLAY}
               </a>

@@ -27,26 +27,26 @@ export function SiteFooter() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <GridLogo reversed symbolOnlyBelowSm={false} symbolSize={36} />
-            <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-white/65">
-              Digital workplace and AI integration — deployment, administration
+            <p className="mt-4 max-w-sm text-base leading-relaxed text-white/70 md:text-[17px] md:leading-relaxed lg:text-lg">
+              Digital workplace and AI integration, with deployment, administration
               and adoption for organizations across the Caribbean.
             </p>
-            <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/40">
+            <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/45 md:text-sm">
               People · Apps · Information · AI · Together
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8">
             <div>
-              <h3 className="text-[10px] font-bold uppercase tracking-wider text-white/45">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-white/50">
                 Solutions
               </h3>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-3 space-y-2.5">
                 {footerLinks.solutions.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[13px] text-white/70 hover:text-white"
+                      className="text-[15px] text-white/75 hover:text-white md:text-base"
                     >
                       {link.label}
                     </Link>
@@ -55,15 +55,15 @@ export function SiteFooter() {
               </ul>
             </div>
             <div>
-              <h3 className="text-[10px] font-bold uppercase tracking-wider text-white/45">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-white/50">
                 Services
               </h3>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-3 space-y-2.5">
                 {footerLinks.services.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[13px] text-white/70 hover:text-white"
+                      className="text-[15px] text-white/75 hover:text-white md:text-base"
                     >
                       {link.label}
                     </Link>
@@ -72,15 +72,15 @@ export function SiteFooter() {
               </ul>
             </div>
             <div>
-              <h3 className="text-[10px] font-bold uppercase tracking-wider text-white/45">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-white/50">
                 Company
               </h3>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-3 space-y-2.5">
                 {footerLinks.company.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[13px] text-white/70 hover:text-white"
+                      className="text-[15px] text-white/75 hover:text-white md:text-base"
                     >
                       {link.label}
                     </Link>
@@ -89,10 +89,10 @@ export function SiteFooter() {
               </ul>
             </div>
             <div>
-              <h3 className="text-[10px] font-bold uppercase tracking-wider text-white/45">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-white/50">
                 Contact
               </h3>
-              <ul className="mt-3 space-y-2 text-[13px]">
+              <ul className="mt-3 space-y-2.5 text-[15px] md:text-base">
                 <li>
                   <a
                     href={`mailto:${SALES_EMAIL}`}
@@ -117,7 +117,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6">
-          <p className="text-[11px] text-white/40">
+          <p className="text-[13px] text-white/45 md:text-sm">
             © {new Date().getFullYear()} Global Resilient Infrastructure &amp;
             Digitalisation Ltd.
           </p>

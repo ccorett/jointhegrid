@@ -64,7 +64,7 @@ export function TransactionTable({ transactions, compact = false }: TransactionT
               </td>
               {!compact && (
                 <td className="py-3 pr-4 font-light text-secondary-text">
-                  {txn.amount != null ? formatCurrency(txn.amount) : "—"}
+                  {txn.amount != null ? formatCurrency(txn.amount) : "N/A"}
                 </td>
               )}
               <td className="py-3">

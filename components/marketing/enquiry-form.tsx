@@ -17,7 +17,7 @@ const initialState: SendEnquiryResult | null = null;
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-1.5 text-sm text-error" role="alert">
+    <p id={id} className="mt-1.5 text-base text-error md:text-[17px]" role="alert">
       {message}
     </p>
   );
@@ -25,7 +25,7 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 
 function inputClass(hasError: boolean, dark: boolean) {
   return cn(
-    "w-full rounded-sm border px-3.5 py-2.5 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-infrastructure-blue/40",
+    "text-form-input w-full rounded-sm border px-3.5 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-infrastructure-blue/40",
     dark
       ? cn(
           "border-white/15 bg-[#0f1729] text-white placeholder:text-white/35 focus:border-secondary-blue",
@@ -40,8 +40,8 @@ function inputClass(hasError: boolean, dark: boolean) {
 
 function labelClass(dark: boolean) {
   return cn(
-    "mb-1.5 block text-xs font-semibold uppercase tracking-wide",
-    dark ? "text-white/70" : "text-primary-navy"
+    "text-form-label mb-2 block font-semibold",
+    dark ? "text-white/85" : "text-primary-navy"
   );
 }
 
@@ -109,18 +109,18 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
       action={formAction}
       noValidate
       className={cn(
-        "rounded-sm border p-5 md:p-6",
+        "rounded-sm border p-6 md:p-7",
         dark ? "panel-border-dark bg-[#0f1729]" : "border-border bg-white"
       )}
       aria-describedby={errors.form ? "form-error" : undefined}
     >
       {errors.form && (
-        <p id="form-error" className="mb-4 text-sm text-error" role="alert">
+        <p id="form-error" className="mb-4 text-base text-error md:text-[17px]" role="alert">
           {errors.form}
         </p>
       )}
       {state?.status === "error" && (
-        <p className="mb-4 text-sm text-error" role="alert">
+        <p className="mb-4 text-base text-error md:text-[17px]" role="alert">
           {state.message}
         </p>
       )}
@@ -272,7 +272,12 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
       </div>
 
       <div className="mt-8">
-        <Button type="submit" size="lg" disabled={pending} className="w-full sm:w-auto">
+        <Button
+          type="submit"
+          size="lg"
+          disabled={pending}
+          className="w-full text-[15px] md:text-[17px] sm:w-auto"
+        >
           {pending ? "Sending…" : "Send Enquiry"}
         </Button>
       </div>

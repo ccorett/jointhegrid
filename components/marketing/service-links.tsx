@@ -33,10 +33,10 @@ export function ServiceLinks() {
           <p className="font-display text-xl font-bold text-primary-navy group-hover:text-infrastructure-blue md:text-[1.35rem]">
             {service.label}
           </p>
-          <p className="mt-2 text-[16px] leading-snug text-body-text md:text-[17px]">
+          <p className="text-lead mt-2 leading-snug text-body-text">
             {service.description}
           </p>
-          <span className="mt-4 inline-block text-[15px] font-semibold text-infrastructure-blue">
+          <span className="mt-4 inline-block text-[15px] font-semibold text-infrastructure-blue md:text-base">
             {service.cta} →
           </span>
         </Link>

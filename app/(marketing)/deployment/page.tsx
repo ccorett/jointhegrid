@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Deployment",
   description:
-    "Digital workplace deployment, migration and rollout — configuration, identity, security and production across the Caribbean.",
+    "Digital workplace deployment, migration and rollout: configuration, identity, security and production across the Caribbean.",
   path: "/deployment",
   keywords: [
     "digital workplace deployment",

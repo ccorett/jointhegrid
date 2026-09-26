@@ -64,10 +64,10 @@ export default function DigitalWorkspacePage() {
             go-live. Make sure people actually use what they have been given.
           </p>
           <div className="panel-border bg-white p-6 md:p-8">
-            <p className="text-sm font-bold uppercase tracking-wide text-infrastructure-blue">
+            <p className="text-[15px] font-bold uppercase tracking-wide text-infrastructure-blue md:text-base">
               Delivered through
             </p>
-            <p className="mt-3 font-display text-2xl font-bold text-primary-navy">
+            <p className="mt-3 font-display text-2xl font-bold text-primary-navy md:text-[1.75rem]">
               Deployment · Administration · Adoption
             </p>
           </div>

@@ -40,7 +40,7 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            "mt-3 text-lg leading-relaxed md:text-[19px]",
+            "text-lead mt-3",
             dark ? "text-white/75" : "text-body-text"
           )}
         >

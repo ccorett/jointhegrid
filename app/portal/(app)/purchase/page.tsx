@@ -41,7 +41,7 @@ export default function PortalPurchasePage() {
           <p className="mt-2 text-sm font-light text-secondary-text">
             Your request for {formatCredits(credits)} credits (
             {formatCurrency(total, currency)}) has been submitted. Payment
-            processing is not yet connected—this is a development placeholder.
+            processing is not yet connected. This is a development placeholder.
           </p>
           <Button href="/portal" variant="secondary" className="mt-6">
             Return to Overview

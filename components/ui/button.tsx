@@ -18,7 +18,7 @@ const variantStyles: Record<ButtonVariant, string> = {
 const sizeStyles: Record<ButtonSize, string> = {
   sm: "min-h-10 px-4 py-2 text-[15px]",
   md: "min-h-11 px-5 py-2.5 text-[15px] md:text-base",
-  lg: "min-h-[3rem] px-6 py-3 text-base md:min-h-[3.125rem]",
+  lg: "min-h-[3rem] px-6 py-3 text-[15px] md:min-h-[3.125rem] md:text-[17px]",
 };
 
 type BaseProps = {

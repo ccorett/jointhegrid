@@ -81,7 +81,7 @@ export const MOCK_TRANSACTIONS = [
   {
     id: "txn-001",
     date: "2026-09-14T10:30:00Z",
-    description: "Workplace AI usage — September",
+    description: "Workplace AI usage, September",
     type: "Usage" as const,
     credits: -120,
     amount: null,
@@ -90,7 +90,7 @@ export const MOCK_TRANSACTIONS = [
   {
     id: "txn-002",
     date: "2026-09-10T14:00:00Z",
-    description: "Credit purchase — 5,000 credits",
+    description: "Credit purchase, 5,000 credits",
     type: "Purchase" as const,
     credits: 5000,
     amount: 50.0,
@@ -117,7 +117,7 @@ export const MOCK_TRANSACTIONS = [
   {
     id: "txn-005",
     date: "2026-09-01T08:00:00Z",
-    description: "Credit purchase — 10,000 credits",
+    description: "Credit purchase, 10,000 credits",
     type: "Purchase" as const,
     credits: 10000,
     amount: 100.0,
@@ -126,7 +126,7 @@ export const MOCK_TRANSACTIONS = [
   {
     id: "txn-006",
     date: "2026-08-28T11:20:00Z",
-    description: "Purchase request — pending approval",
+    description: "Purchase request, pending approval",
     type: "Purchase" as const,
     credits: 2500,
     amount: 25.0,

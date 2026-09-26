@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Administration",
   description:
-    "Digital workplace administration — users, licences, access, policies, security and day to day management for Caribbean organizations.",
+    "Digital workplace administration: users, licences, access, policies, security and day to day management for Caribbean organizations.",
   path: "/administration",
   keywords: [
     "digital workplace administration",

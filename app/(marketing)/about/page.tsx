@@ -77,7 +77,7 @@ export default function AboutPage() {
           <SectionHeading
             dark
             title="People. Apps. Information. AI. Together."
-            description="The GRID is the connected layer — not a catalogue of disconnected tools."
+            description="The GRID is the connected layer. It is not a catalogue of disconnected tools."
           />
           <p className="text-lg leading-relaxed text-white/75 md:text-[19px]">
             #jointhegrid helps organizations deploy, administer and adopt digital

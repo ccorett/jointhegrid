@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Adoption",
   description:
-    "Digital workplace and AI adoption — training, enablement and reinforcement for Caribbean organizations.",
+    "Digital workplace and AI adoption: training, enablement and reinforcement for Caribbean organizations.",
   path: "/adoption",
   keywords: [
     "digital workplace adoption",
@@ -41,7 +41,7 @@ export default function AdoptionPage() {
         visual="symbol-light"
         title="Make it part"
         titleAccent="of the work."
-        description="Make new technology fit the way people actually work — onboarding, practical learning, AI use cases, champions and continued reinforcement."
+        description="Make new technology fit the way people actually work: onboarding, practical learning, AI use cases, champions and continued reinforcement."
         primaryCta={{ label: "Build an Adoption Programme", href: "/contact" }}
       />
 
@@ -50,7 +50,7 @@ export default function AdoptionPage() {
           <SectionHeading
             dark
             title="Learn → Apply → Reinforce → Adopt"
-            description="Adoption is a continuous cycle — not a one-time training event."
+            description="Adoption is a continuous cycle. It is not a one-time training event."
             className="mb-6"
           />
           <div className="panel-border-dark bg-white/5 p-6 md:p-8">
