@@ -1,14 +1,22 @@
-import type { Metadata } from "next";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { LifecycleSteps } from "@/components/marketing/lifecycle-steps";
-import { Button } from "@/components/ui/button";
+import { CapabilityGrid } from "@/components/marketing/capability-grid";
+import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Deployment",
   description:
-    "Structured Google Workspace and Gemini Enterprise deployment, migration and rollout services.",
-};
+    "Google Workspace and Gemini Enterprise deployment, migration and rollout services in Trinidad & Tobago and the Caribbean.",
+  path: "/deployment",
+  keywords: [
+    "Google Workspace deployment",
+    "Microsoft 365 to Google Workspace migration",
+    "Google Workspace Caribbean",
+    "Gemini Enterprise deployment",
+  ],
+});
 
 const lifecycle = [
   "Discover",
@@ -22,7 +30,7 @@ const lifecycle = [
 const capabilities = [
   "Workspace configuration",
   "Gemini deployment",
-  "Microsoft migration",
+  "Microsoft 365 migration",
   "Identity integration",
   "Security configuration",
   "Data migration",
@@ -36,44 +44,35 @@ export default function DeploymentPage() {
   return (
     <>
       <PageHero
+        light
         eyebrow="Services"
         title="Move with confidence."
-        description="Structured deployment services for Google Workspace and Gemini Enterprise—from discovery through production rollout and hypercare."
+        description="Structured deployment for Google Workspace and Gemini Enterprise—from discovery and configuration through migration, pilot, production rollout and hypercare."
         primaryCta={{ label: "Plan Your Deployment", href: "/contact" }}
       />
 
-      <section className="border-b border-border py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="content-container">
-          <SectionHeading title="The deployment lifecycle." className="mb-10" />
-          <LifecycleSteps
-            steps={lifecycle.map((label) => ({ label }))}
-            className="mb-12"
-          />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((item) => (
-              <div
-                key={item}
-                className="border-l-2 border-infrastructure-blue/30 py-2 pl-4 text-sm font-light text-body-text"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
+          <SectionHeading title="The deployment lifecycle" className="mb-10" />
+          <LifecycleSteps steps={lifecycle.map((label) => ({ label }))} />
         </div>
       </section>
 
-      <section className="bg-primary-navy py-16 md:py-24">
-        <div className="content-container text-center">
-          <h2 className="text-2xl font-extralight text-white md:text-3xl">
-            Plan your deployment with #jointhegrid
-          </h2>
-          <div className="mt-6">
-            <Button href="/contact" size="lg">
-              Plan Your Deployment
-            </Button>
-          </div>
+      <section className="border-t border-border bg-light-bg py-16 md:py-24">
+        <div className="content-container">
+          <SectionHeading
+            title="What deployment includes"
+            description="Every organization is different. We align configuration, migration and rollout to your identity systems, security requirements and operational readiness."
+            className="mb-10 max-w-2xl"
+          />
+          <CapabilityGrid items={capabilities} columns={2} />
         </div>
       </section>
+
+      <PageCtaBand
+        title="Plan a deployment with #jointhegrid"
+        ctaLabel="Plan Your Deployment"
+      />
     </>
   );
 }

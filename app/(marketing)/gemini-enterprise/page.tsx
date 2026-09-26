@@ -1,94 +1,82 @@
-import type { Metadata } from "next";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
-import { Button } from "@/components/ui/button";
+import { CapabilityGrid } from "@/components/marketing/capability-grid";
+import { ServiceLinks } from "@/components/marketing/service-links";
+import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Gemini Enterprise",
   description:
-    "Enterprise Gemini deployment, administration, governance and adoption for Caribbean organizations.",
-};
+    "Gemini Enterprise deployment, governance and adoption integrated with your Google Workspace digital workplace across the Caribbean.",
+  path: "/gemini-enterprise",
+  keywords: [
+    "Gemini Enterprise Caribbean",
+    "Gemini Enterprise Trinidad and Tobago",
+    "AI integration Caribbean",
+    "Google Workspace AI",
+  ],
+});
 
 const focusAreas = [
-  {
-    title: "Deployment",
-    description:
-      "Configure Gemini for your organization with appropriate access controls, licensing and integration with Google Workspace.",
-  },
-  {
-    title: "Administration",
-    description:
-      "Manage organizational settings, user access, policies and governance frameworks for responsible AI use.",
-  },
-  {
-    title: "Governance",
-    description:
-      "Establish guidelines, guardrails and oversight structures for enterprise AI adoption.",
-  },
-  {
-    title: "Organizational Workflows",
-    description:
-      "Integrate Gemini into the ways your teams already work—meetings, documents, email and collaboration.",
-  },
-  {
-    title: "Employee Adoption",
-    description:
-      "Training and reinforcement programmes that help people use Gemini effectively and responsibly.",
-  },
-  {
-    title: "Role-Based Use Cases",
-    description:
-      "Identify and enable practical applications across departments—from operations to leadership.",
-  },
+  "Organizational integration",
+  "Employee use",
+  "Administration",
+  "Governance",
+  "Responsible use",
+  "Role-based applications",
+  "Adoption programmes",
+  "Learning and enablement",
 ];
 
 export default function GeminiEnterprisePage() {
   return (
     <>
       <PageHero
-        title="Bring Gemini into"
-        titleAccent="the way your organization works."
-        description="Gemini Enterprise brings AI capabilities into organizational work—with the deployment, administration, controls and adoption required for enterprise use."
+        light
+        eyebrow="Solutions"
+        title="AI, integrated into the way"
+        titleAccent="your organization works."
+        description="Gemini Enterprise brings AI into organizational work alongside Google Workspace—with deployment, administration, governance and adoption designed for enterprise use, not isolated experiments."
         primaryCta={{ label: "Discuss Gemini Enterprise", href: "/contact" }}
       />
 
-      <section className="border-b border-border py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="content-container">
           <SectionHeading
-            title="Enterprise AI, responsibly deployed."
-            description="Gemini is most valuable when it is integrated into how your organization already operates—not treated as a standalone experiment. We help you deploy, govern and adopt Gemini as part of your connected digital workplace."
-            className="mb-12"
+            title="AI inside the workplace—not beside it."
+            description="#jointhegrid is a digital workplace specialist, not a generic AI consultancy. We help you integrate Gemini into the systems, workflows and responsibilities your organization already has."
+            className="mb-12 max-w-3xl"
           />
-          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-3">
-            {focusAreas.map((area, i) => (
-              <div
-                key={area.title}
-                className={`border-b border-border py-8 ${i % 3 !== 2 ? "lg:border-r" : ""} ${i % 2 === 0 ? "md:border-r" : ""} md:px-6`}
-              >
-                <h3 className="mb-3 text-base font-semibold text-primary-navy">
-                  {area.title}
-                </h3>
-                <p className="text-sm font-light leading-relaxed text-secondary-text">
-                  {area.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <CapabilityGrid items={focusAreas} columns={2} />
         </div>
       </section>
 
-      <section className="bg-primary-navy py-16 md:py-24">
-        <div className="content-container text-center">
-          <h2 className="text-2xl font-extralight text-white md:text-3xl">
-            Discuss Gemini Enterprise for your organization
+      <section className="border-y border-border bg-primary-navy py-16 text-white md:py-24">
+        <div className="content-container max-w-3xl">
+          <h2 className="heading-section text-2xl md:text-3xl">
+            Governance and adoption together
           </h2>
-          <div className="mt-6">
-            <Button href="/contact" size="lg">
-              Discuss Gemini Enterprise
-            </Button>
-          </div>
+          <p className="mt-5 text-[17px] leading-relaxed text-white/70">
+            Effective Gemini use depends on clear policies, appropriate access,
+            administrator capability and programmes that help people apply AI
+            responsibly in their roles. We connect Gemini deployment to the same
+            Deploy, Administer, Adopt discipline we apply to Workspace.
+          </p>
         </div>
       </section>
+
+      <section className="py-16 md:py-24">
+        <div className="content-container">
+          <SectionHeading title="How we support Gemini Enterprise" className="mb-10" />
+          <ServiceLinks />
+        </div>
+      </section>
+
+      <PageCtaBand
+        title="Discuss Gemini Enterprise for your organization"
+        ctaLabel="Discuss Gemini Enterprise"
+      />
     </>
   );
 }

@@ -1,27 +1,35 @@
-import type { Metadata } from "next";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { LifecycleSteps } from "@/components/marketing/lifecycle-steps";
-import { Button } from "@/components/ui/button";
+import { CapabilityGrid } from "@/components/marketing/capability-grid";
+import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Adoption",
   description:
-    "Google Workspace and Gemini Enterprise adoption programmes, training, workshops and reinforcement.",
-};
+    "Google Workspace and Gemini Enterprise adoption, training, champions programmes and reinforcement across the Caribbean.",
+  path: "/adoption",
+  keywords: [
+    "Google Workspace adoption",
+    "Google Workspace training Caribbean",
+    "Gemini enablement",
+    "digital workplace adoption",
+  ],
+});
 
 const programmes = [
   "Employee onboarding",
-  "Workspace training",
-  "Gemini training",
-  "Executive programmes",
-  "ICT administrator programmes",
+  "Workspace learning",
+  "Gemini enablement",
+  "Executive sessions",
+  "Manager programmes",
+  "Administrator learning",
   "Department champions",
   "Workshops",
   "Office hours",
   "Learning resources",
   "Usage measurement",
-  "Feedback collection",
   "Reinforcement activities",
 ];
 
@@ -29,15 +37,16 @@ export default function AdoptionPage() {
   return (
     <>
       <PageHero
+        light
         eyebrow="Services"
         title="Turn access into adoption."
-        description="Deployment gives your organization access to technology. Adoption ensures people actually use it—turning investment into organizational value."
+        description="Access to technology is only the start. Adoption programmes help people use Google Workspace and Gemini effectively—turning deployment into organizational value."
         primaryCta={{ label: "Build an Adoption Programme", href: "/contact" }}
       />
 
-      <section className="border-b border-border py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="content-container">
-          <SectionHeading title="The adoption journey." className="mb-10" />
+          <SectionHeading title="The adoption journey" className="mb-10" />
           <LifecycleSteps
             steps={[
               { label: "Learn" },
@@ -45,33 +54,25 @@ export default function AdoptionPage() {
               { label: "Reinforce" },
               { label: "Adopt" },
             ]}
-            className="mb-12"
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {programmes.map((item) => (
-              <div
-                key={item}
-                className="border-l-2 border-infrastructure-blue/30 py-2 pl-4 text-sm font-light text-body-text"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      <section className="bg-primary-navy py-16 md:py-24">
-        <div className="content-container text-center">
-          <h2 className="text-2xl font-extralight text-white md:text-3xl">
-            Build an adoption programme for your organization
-          </h2>
-          <div className="mt-6">
-            <Button href="/contact" size="lg">
-              Build an Adoption Programme
-            </Button>
-          </div>
+      <section className="border-t border-border bg-light-bg py-16 md:py-24">
+        <div className="content-container">
+          <SectionHeading
+            title="Training lives inside Adoption"
+            description="We do not treat training as a separate service line. Learning, workshops, champions and reinforcement are part of how we help your organization adopt the workplace you have invested in."
+            className="mb-10 max-w-2xl"
+          />
+          <CapabilityGrid items={programmes} columns={3} />
         </div>
       </section>
+
+      <PageCtaBand
+        title="Build an adoption programme with #jointhegrid"
+        ctaLabel="Build an Adoption Programme"
+      />
     </>
   );
 }

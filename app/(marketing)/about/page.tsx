@@ -1,66 +1,81 @@
-import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
-import { Button } from "@/components/ui/button";
+import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About",
   description:
-    "About #jointhegrid — specialist digital workplace solutions from Trinidad & Tobago for the Caribbean.",
-};
+    "About #jointhegrid — Digital Workspace + AI Integration specialists based in Trinidad & Tobago, serving the Caribbean.",
+  path: "/about",
+  keywords: [
+    "digital workplace Caribbean",
+    "Google Workspace Trinidad and Tobago",
+    "Gemini Enterprise Caribbean",
+  ],
+});
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
+        light
         eyebrow="About"
-        title="Specialist digital workplace capability."
-        description="#jointhegrid is Global Resilient Infrastructure & Digitalisation Ltd.—a specialist digital workplace solutions company focused on Google Workspace and Gemini Enterprise."
+        title="Focused on better ways of working."
+        description="Global Resilient Infrastructure & Digitalisation Ltd. (#jointhegrid) specializes in Digital Workspace + AI Integration for organizations across the Caribbean."
       />
 
-      <section className="border-b border-border py-16 md:py-24">
-        <div className="content-container max-w-3xl">
-          <SectionHeading
-            title="What we do."
-            description="We help organizations deploy, administer, and adopt Google Workspace and Gemini Enterprise. Our three service pillars—Deploy, Administer, Adopt—cover the full lifecycle of workplace technology."
-            className="mb-12"
-          />
-          <div className="space-y-6 font-light leading-relaxed text-secondary-text">
-            <p>
-              The GRID represents the connected digital environment where people,
-              applications and information work together. We build and maintain
-              that environment for organizations across the Caribbean.
-            </p>
-            <p>
-              Beyond our core services, we operate the AI Credits platform—a
-              client-facing product that allows organizations to purchase and
-              manage AI credit allocations through one account.
-            </p>
-          </div>
+      <section className="py-16 md:py-24">
+        <div className="content-container max-w-3xl space-y-8 text-[17px] leading-relaxed text-secondary-text">
+          <p>
+            <strong className="font-medium text-primary-navy">#jointhegrid</strong>{" "}
+            helps organizations deploy, administer and adopt{" "}
+            <strong className="font-medium text-primary-navy">Google Workspace</strong>{" "}
+            and{" "}
+            <strong className="font-medium text-primary-navy">Gemini Enterprise</strong>
+            . We bring people, applications, information and AI together within a
+            connected digital workplace.
+          </p>
+          <p>
+            Our services follow three pillars—{" "}
+            <Link href="/deployment" className="font-medium text-infrastructure-blue hover:underline">
+              Deploy
+            </Link>
+            ,{" "}
+            <Link href="/administration" className="font-medium text-infrastructure-blue hover:underline">
+              Administer
+            </Link>
+            ,{" "}
+            <Link href="/adoption" className="font-medium text-infrastructure-blue hover:underline">
+              Adopt
+            </Link>
+            —covering implementation through ongoing management and organizational
+            adoption.
+          </p>
+          <p>
+            Interoperability is central to how we work. Your workplace does not
+            exist in isolation; we help Google technologies operate effectively
+            alongside identity systems, security platforms, applications and
+            workflows you already depend on.
+          </p>
         </div>
       </section>
 
-      <section className="border-b border-border py-16 md:py-24">
-        <div className="content-container max-w-3xl">
+      <section className="border-y border-border bg-light-bg py-16 md:py-24">
+        <div className="content-container">
           <SectionHeading
             title="Built in the Caribbean. Connected beyond it."
-            description="#jointhegrid is building specialist digital workplace capability from Trinidad & Tobago for organizations across the Caribbean."
+            description="Based in Trinidad & Tobago, #jointhegrid is building specialist digital workplace capability for organizations across the Caribbean."
+            className="max-w-3xl"
           />
         </div>
       </section>
 
-      <section className="bg-primary-navy py-16 md:py-24">
-        <div className="content-container text-center">
-          <h2 className="text-2xl font-extralight text-white md:text-3xl">
-            Ready to connect with us?
-          </h2>
-          <div className="mt-6">
-            <Button href="/contact" size="lg">
-              Request a Consultation
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageCtaBand
+        title="Ready to talk about your workplace?"
+        ctaLabel="Request a Consultation"
+      />
     </>
   );
 }

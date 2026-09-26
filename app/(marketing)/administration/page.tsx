@@ -1,23 +1,30 @@
-import type { Metadata } from "next";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
-import { Button } from "@/components/ui/button";
+import { CapabilityGrid } from "@/components/marketing/capability-grid";
+import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Administration",
   description:
-    "Google Workspace and Gemini Enterprise administration, security, licensing and ongoing management.",
-};
+    "Google Workspace and Gemini Enterprise administration, licensing, security and ongoing management for Caribbean organizations.",
+  path: "/administration",
+  keywords: [
+    "Google Workspace administration",
+    "Google Workspace Caribbean",
+    "Gemini Enterprise administration",
+  ],
+});
 
 const capabilities = [
   "Workspace administration",
   "Gemini administration",
   "User lifecycle management",
   "Groups and organizational units",
-  "Licensing management",
+  "Licensing",
   "Security policies",
   "Support and troubleshooting",
-  "Reporting and analytics",
+  "Reporting",
   "Vendor escalation",
   "Optimization and review",
 ];
@@ -26,44 +33,41 @@ export default function AdministrationPage() {
   return (
     <>
       <PageHero
+        light
         eyebrow="Services"
-        title="Keep the GRID working."
-        description="Ongoing administration services for Google Workspace and Gemini Enterprise—keeping your connected digital workplace secure, optimized and supported."
+        title="Keep your workplace working."
+        description="Ongoing administration keeps Google Workspace and Gemini Enterprise secure, licensed and optimized—so your digital workplace continues to support the organization."
         primaryCta={{ label: "Discuss Administration", href: "/contact" }}
       />
 
-      <section className="border-b border-border py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="content-container">
           <SectionHeading
-            title="Administration that complements your team."
-            description="Whether your organization has an internal ICT team or needs dedicated Google administration, #jointhegrid provides ongoing management, security and support for your digital workplace."
-            className="mb-12"
+            title="Specialist administration alongside your team"
+            description="#jointhegrid can complement your internal ICT team with Google-focused administration, or provide ongoing specialist management where you need dedicated capability."
+            className="mb-10 max-w-3xl"
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((item) => (
-              <div
-                key={item}
-                className="border-l-2 border-infrastructure-blue/30 py-2 pl-4 text-sm font-light text-body-text"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
+          <CapabilityGrid items={capabilities} columns={2} />
         </div>
       </section>
 
-      <section className="bg-primary-navy py-16 md:py-24">
-        <div className="content-container text-center">
-          <h2 className="text-2xl font-extralight text-white md:text-3xl">
-            Discuss administration for your organization
+      <section className="border-t border-border bg-light-bg py-16 md:py-24">
+        <div className="content-container max-w-3xl">
+          <h2 className="heading-section text-2xl text-primary-navy md:text-3xl">
+            Consistency after go-live
           </h2>
-          <div className="mt-6">
-            <Button href="/contact" size="lg">
-              Discuss Administration
-            </Button>
-          </div>
+          <p className="mt-5 text-[17px] leading-relaxed text-secondary-text">
+            Deployment establishes the environment. Administration keeps users,
+            policies and integrations aligned as people join, roles change and
+            requirements evolve—across both Workspace and Gemini.
+          </p>
         </div>
       </section>
+
+      <PageCtaBand
+        title="Discuss administration for your organization"
+        ctaLabel="Discuss Administration"
+      />
     </>
   );
 }

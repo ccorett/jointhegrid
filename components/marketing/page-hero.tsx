@@ -9,6 +9,7 @@ type PageHeroProps = {
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   dark?: boolean;
+  light?: boolean;
   className?: string;
 };
 
@@ -20,13 +21,14 @@ export function PageHero({
   primaryCta,
   secondaryCta,
   dark = false,
+  light = false,
   className,
 }: PageHeroProps) {
   return (
     <section
       className={cn(
         "border-b border-border py-16 md:py-24 lg:py-28",
-        dark ? "bg-primary-navy text-white" : "bg-white",
+        dark ? "bg-primary-navy text-white" : light ? "bg-light-bg" : "bg-white",
         className
       )}
     >
