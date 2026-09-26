@@ -5,9 +5,9 @@ import { BrandConnectionLines } from "@/components/brand/brand-connection-lines"
 import { InteroperabilityGraphic } from "@/components/brand/interoperability-graphic";
 import { AudienceSectorsGrid } from "@/components/brand/audience-sectors-grid";
 import { Button } from "@/components/ui/button";
-import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
-import { cn } from "@/lib/utils";
-
+import { EnquiryForm } from "@/components/marketing/enquiry-form";
+import { SectionEyebrow } from "@/components/marketing/section-eyebrow";
+import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
 export const metadata: Metadata = {
   title: "Digital Workplace + AI Integration",
   description:
@@ -21,6 +21,89 @@ export const metadata: Metadata = {
   ],
 };
 
+const solutions = [
+  {
+    pillar: "Pillar 01",
+    label: "Digital Workspace",
+    title: "Where everyday work comes together.",
+    body: "Communication, collaboration, information and everyday work brought into one connected environment.",
+    capabilities: [
+      "Email & calendar",
+      "Documents & files",
+      "Meetings & messaging",
+      "Collaboration",
+      "Identity & access",
+      "Administration & security",
+    ],
+    href: "/digital-workspace",
+    cta: "Explore Digital Workspace",
+  },
+  {
+    pillar: "Pillar 02",
+    label: "AI Integration",
+    title: "Intelligence inside the workplace.",
+    body: "Intelligent tools introduced into the workplace with the access, information and controls required for organizational use.",
+    capabilities: [
+      "Workplace AI",
+      "Information access",
+      "Organizational use",
+      "Access controls",
+      "Governance",
+      "Practical adoption",
+    ],
+    href: "/ai-integration",
+    cta: "Explore AI Integration",
+  },
+];
+
+const services = [
+  {
+    num: "01",
+    name: "Deployment",
+    headline: "Get the foundation right.",
+    body: "Configuration, migration, identity, security, rollout and the move into production.",
+    capabilities: [
+      "Discover & configure",
+      "Identity integration",
+      "Existing systems & workflows",
+      "Migration & rollout",
+      "Hypercare",
+    ],
+    href: "/deployment",
+    cta: "Plan a Deployment",
+  },
+  {
+    num: "02",
+    name: "Administration",
+    headline: "Keep it under control.",
+    body: "Users, licences, access, policies, security and day to day management of the connected workplace.",
+    capabilities: [
+      "User lifecycle",
+      "Licences & access",
+      "Security policies",
+      "Reporting & support",
+      "Environment review",
+    ],
+    href: "/administration",
+    cta: "Explore Administration",
+  },
+  {
+    num: "03",
+    name: "Adoption",
+    headline: "Make it part of the work.",
+    body: "Onboarding, practical learning, AI use cases, champions and continued reinforcement.",
+    capabilities: [
+      "Onboarding",
+      "Workshops & champions",
+      "AI use cases",
+      "Executive sessions",
+      "Usage reinforcement",
+    ],
+    href: "/adoption",
+    cta: "Explore Adoption",
+  },
+];
+
 const adoptionItems = [
   "Employee onboarding",
   "Practical learning",
@@ -32,72 +115,56 @@ const adoptionItems = [
   "Usage measurement",
 ];
 
-const solutions = [
-  {
-    num: "01",
-    label: "Digital Workspace",
-    title: "Where everyday work comes together.",
-    body: "Communication, collaboration, files, meetings and the work that happens every day — in one managed environment.",
-    href: "/digital-workspace",
-    cta: "Explore Digital Workspace",
-  },
-  {
-    num: "02",
-    label: "AI Integration",
-    title: "Intelligence inside the workplace.",
-    body: "Bring intelligent tools into the workplace with the access, controls and structure required for organizational use.",
-    href: "/ai-integration",
-    cta: "Explore AI Integration",
-  },
-  {
-    num: "03",
-    label: "Interoperability",
-    title: "Connected to what you already have.",
-    body: "Connect the workplace with the identity, applications, information and workflows already in place.",
-    href: "/interoperability",
-    cta: "Explore Interoperability",
-  },
-];
-
 export default function HomePage() {
   return (
     <>
-      <section className="relative border-b border-border bg-light-bg">
-        <div className="content-container relative grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:py-24 xl:py-28">
-          <div className="max-w-xl lg:max-w-none lg:py-4">
-            <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-secondary-text">
-              Digital Workplace + AI Integration
-            </p>
-            <h1 className="heading-hero text-[2.5rem] text-primary-navy sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[5rem]">
+      {/* Hero */}
+      <section className="border-b border-border bg-white">
+        <div className="content-container grid items-center gap-8 py-10 md:py-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 lg:py-14">
+          <div className="max-w-xl lg:max-w-none">
+            <SectionEyebrow index="01" label="Digital Workplace + AI Integration" />
+            <h1 className="heading-hero mt-4 text-[2.35rem] text-primary-navy sm:text-5xl md:text-[3.25rem] lg:text-[3.5rem]">
               Bring your workplace
               <br />
               together.
             </h1>
-            <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-body-text md:text-lg">
+            <p className="mt-4 max-w-lg text-[15px] leading-snug text-body-text md:text-base">
               One connected environment for the people, applications, information
               and intelligent tools your organization depends on.
             </p>
-            <p className="font-display mt-4 text-lg font-semibold text-primary-navy md:text-xl">
-              Deployment. Administration. Adoption.
+            <p className="font-display mt-3 text-sm font-bold uppercase tracking-wide text-primary-navy">
+              Deployment · Administration · Adoption
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Button href="/contact" size="lg">
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              <Button href="/contact" size="md">
                 Let&apos;s Talk
               </Button>
-              <Button href="#solutions" variant="secondary" size="lg">
+              <Button href="#solutions" variant="secondary" size="md">
                 Explore Solutions
               </Button>
             </div>
+            <div className="mt-8 hidden divide-x divide-border border border-border sm:flex">
+              {["Deploy", "Administer", "Adopt"].map((item) => (
+                <span
+                  key={item}
+                  className="flex-1 px-4 py-2.5 text-center text-[11px] font-semibold uppercase tracking-wider text-secondary-text"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
-          <Phase1HeroGrid className="lg:translate-x-4" />
+          <Phase1HeroGrid className="lg:max-h-[min(52vh,520px)] lg:justify-self-end" />
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-primary-navy py-20 md:py-28 lg:py-32">
+      {/* Principles */}
+      <section className="relative overflow-hidden bg-primary-navy section-y">
         <BrandConnectionLines />
-        <div className="content-container relative">
-          <div className="max-w-4xl">
-            <h2 className="heading-section text-4xl text-white sm:text-5xl md:text-[3.25rem] lg:text-[3.75rem]">
+        <div className="content-container relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <div>
+            <SectionEyebrow index="02" label="The GRID" tone="dark" />
+            <h2 className="heading-section mt-4 text-3xl text-white sm:text-4xl md:text-[2.75rem]">
               People.
               <br />
               Apps.
@@ -106,70 +173,68 @@ export default function HomePage() {
               <br />
               AI.
             </h2>
-            <p className="font-display mt-8 text-2xl font-semibold text-secondary-blue md:text-3xl">
+            <p className="font-display mt-5 text-xl font-bold text-secondary-blue md:text-2xl">
               Together on the GRID.
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/70 md:text-[19px]">
-              The modern workplace is connected. Communication, information,
-              applications and intelligent tools need to work as one environment,
-              not as separate pieces.
-            </p>
           </div>
+          <p className="max-w-md text-[15px] leading-relaxed text-white/70 lg:pb-1">
+            The modern workplace is connected. Communication, information,
+            applications and intelligent tools need to work as one environment,
+            not as separate pieces.
+          </p>
         </div>
       </section>
 
-      <section id="solutions" className="scroll-mt-24 border-b border-border py-20 md:py-28">
+      {/* Solutions */}
+      <section id="solutions" className="scroll-mt-20 border-b border-border bg-light-bg section-y">
         <div className="content-container">
-          <h2 className="heading-section max-w-3xl text-4xl text-primary-navy md:text-5xl lg:text-[3.25rem]">
-            The connected
-            <br />
-            workplace.
+          <SectionEyebrow index="03" label="Solutions" />
+          <h2 className="heading-section mt-3 max-w-2xl text-3xl text-primary-navy md:text-4xl">
+            The connected workplace.
           </h2>
 
-          <div className="mt-16 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-0">
-            {solutions.map((item, i) => (
-              <div
-                key={item.num}
-                className={cn(
-                  "border-t border-border py-12 lg:border-t-0 lg:px-8 lg:py-0",
-                  i === 0 && "lg:pl-0",
-                  i === 1 && "lg:border-x lg:border-border",
-                  i === 2 && "lg:pr-0"
-                )}
-              >
-                <p className="font-display text-5xl font-bold text-primary-navy/10 md:text-6xl">
-                  {item.num}
+          <div className="mt-8 grid border border-border bg-border lg:grid-cols-2 lg:gap-px">
+            {solutions.map((item) => (
+              <article key={item.label} className="bg-white p-6 md:p-8 lg:p-9">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-infrastructure-blue">
+                  {item.pillar} · {item.label}
                 </p>
-                <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-infrastructure-blue">
-                  {item.label}
-                </p>
-                <h3 className="heading-section mt-2 text-2xl text-primary-navy md:text-[1.65rem]">
+                <h3 className="heading-section mt-3 text-xl text-primary-navy md:text-2xl">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[16px] leading-relaxed text-secondary-text">
+                <p className="mt-3 text-[15px] leading-snug text-secondary-text">
                   {item.body}
                 </p>
+                <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                  {item.capabilities.map((cap) => (
+                    <li
+                      key={cap}
+                      className="border-l-2 border-infrastructure-blue/50 py-0.5 pl-3 text-[13px] font-medium text-body-text"
+                    >
+                      {cap}
+                    </li>
+                  ))}
+                </ul>
                 <Link
                   href={item.href}
                   className="mt-6 inline-flex text-sm font-semibold text-infrastructure-blue hover:underline"
                 >
                   {item.cta} →
                 </Link>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative bg-gradient-to-br from-[#EFF6FF] via-light-bg to-white py-20 md:py-28">
+      {/* Information value */}
+      <section className="border-b border-border bg-white section-y">
         <div className="content-container max-w-3xl">
-          <h2 className="heading-section text-3xl text-primary-navy md:text-4xl lg:text-[2.75rem]">
-            Your information already has value.
-            <span className="mt-2 block text-infrastructure-blue">
-              Make more of it.
-            </span>
+          <h2 className="heading-section text-2xl text-primary-navy md:text-3xl">
+            Your information already has value.{" "}
+            <span className="text-infrastructure-blue">Make more of it.</span>
           </h2>
-          <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
+          <p className="mt-4 text-[15px] leading-relaxed text-secondary-text">
             A connected workplace brings information and collaboration together.
             Intelligent tools add another way to work with that information, find
             what matters and move work forward — with the controls the
@@ -178,113 +243,92 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-primary-navy py-20 text-white md:py-28 lg:py-32">
+      {/* Services */}
+      <section id="services" className="scroll-mt-20 bg-primary-navy section-y text-white">
         <div className="content-container">
-          <h2 className="heading-section max-w-3xl text-3xl md:text-4xl lg:text-[2.85rem]">
+          <SectionEyebrow index="04" label="Services" tone="dark" />
+          <h2 className="heading-section mt-3 max-w-2xl text-3xl md:text-4xl">
             Three things have to go right.
           </h2>
-          <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-white/65">
+          <p className="mt-3 max-w-xl text-[15px] text-white/65">
             The environment has to be deployed properly, managed consistently and
             used confidently.
           </p>
 
-          <div className="mt-16 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-0">
-            {[
-              {
-                num: "01",
-                title: "Deploy",
-                headline: "Get the foundation right.",
-                body: "Configuration, migration, identity, security, rollout and the move into production.",
-                href: "/deployment",
-                cta: "Plan a Deployment",
-              },
-              {
-                num: "02",
-                title: "Administer",
-                headline: "Keep it under control.",
-                body: "Users, licences, access, policies, security and the day to day management of the workplace.",
-                href: "/administration",
-                cta: "Explore Administration",
-              },
-              {
-                num: "03",
-                title: "Adopt",
-                headline: "Make it part of the work.",
-                body: "Onboarding, practical learning, AI use cases, champions and continued reinforcement across the organization.",
-                href: "/adoption",
-                cta: "Explore Adoption",
-              },
-            ].map((pillar, i) => (
-              <div
-                key={pillar.num}
-                className={cn(
-                  "border-t border-white/10 py-12 lg:border-t-0 lg:px-8 lg:py-0",
-                  i === 0 && "lg:pl-0",
-                  i === 1 && "lg:border-x lg:border-white/10",
-                  i === 2 && "lg:pr-0"
-                )}
-              >
-                <p className="font-display text-6xl font-bold text-white/10 md:text-7xl">
-                  {pillar.num}
+          <div className="mt-8 grid border border-white/12 bg-white/10 lg:grid-cols-3 lg:gap-px">
+            {services.map((item) => (
+              <article key={item.num} className="bg-primary-navy p-6 md:p-7">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-white/20 text-xs font-bold text-secondary-blue">
+                    {item.num}
+                  </span>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-secondary-blue">
+                      {item.name}
+                    </p>
+                    <h3 className="heading-section mt-1 text-lg md:text-xl">
+                      {item.headline}
+                    </h3>
+                  </div>
+                </div>
+                <p className="mt-4 text-[14px] leading-snug text-white/65">
+                  {item.body}
                 </p>
-                <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary-blue">
-                  {pillar.title}
-                </p>
-                <h3 className="heading-section mt-2 text-2xl md:text-3xl">
-                  {pillar.headline}
-                </h3>
-                <p className="mt-4 text-[16px] leading-relaxed text-white/65">
-                  {pillar.body}
-                </p>
+                <ul className="mt-4 space-y-1.5 border-t border-white/10 pt-4">
+                  {item.capabilities.map((cap) => (
+                    <li key={cap} className="text-[13px] text-white/75">
+                      · {cap}
+                    </li>
+                  ))}
+                </ul>
                 <Link
-                  href={pillar.href}
-                  className="mt-6 inline-flex text-sm font-semibold text-white hover:text-secondary-blue"
+                  href={item.href}
+                  className="mt-5 inline-flex text-sm font-semibold text-white hover:text-secondary-blue"
                 >
-                  {pillar.cta} →
+                  {item.cta} →
                 </Link>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-border py-20 md:py-28">
-        <div className="content-container grid min-w-0 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16 xl:gap-20">
+      {/* Nothing works in isolation */}
+      <section className="border-b border-border bg-white section-y">
+        <div className="content-container grid min-w-0 items-center gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-12">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-infrastructure-blue">
-              Interoperability
-            </p>
-            <h2 className="heading-section mt-3 text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
+            <SectionEyebrow index="05" label="Interoperability" />
+            <h2 className="heading-section mt-3 text-2xl text-primary-navy md:text-3xl lg:text-[2.35rem]">
               Nothing works in{" "}
               <span className="text-infrastructure-blue">isolation.</span>
             </h2>
-            <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
-              Your digital workplace sits within a larger ecosystem. #jointhegrid
-              helps it work seamlessly with the systems, applications and workflows
-              your organization already relies on.
+            <p className="mt-4 text-[15px] leading-relaxed text-secondary-text">
+              Your digital workplace still has to work with everything around it.
+              Identity, applications, information, security and existing workflows
+              all form part of the environment.
             </p>
-            <Link
-              href="/interoperability"
-              className="mt-6 inline-flex text-sm font-semibold text-infrastructure-blue hover:underline"
-            >
-              Explore Interoperability →
-            </Link>
+            <p className="mt-4 text-[14px] leading-relaxed text-secondary-text">
+              #jointhegrid helps your workplace connect with the systems,
+              applications and workflows your organization already relies on.
+            </p>
           </div>
-          <InteroperabilityGraphic />
+          <InteroperabilityGraphic className="border border-border bg-light-bg p-3 md:p-4" />
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
+      {/* Adoption */}
+      <section className="border-b border-border bg-light-bg section-y">
         <div className="content-container">
-          <h2 className="heading-section max-w-3xl text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
+          <SectionEyebrow index="06" label="Adoption" />
+          <h2 className="heading-section mt-3 max-w-2xl text-2xl text-primary-navy md:text-3xl">
             Access isn&apos;t adoption.
           </h2>
-          <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-secondary-text">
+          <p className="mt-3 max-w-2xl text-[15px] text-secondary-text">
             Giving someone access does not mean the technology becomes part of
             their work. Adoption takes practical learning, relevant use cases and
             reinforcement after launch.
           </p>
-          <p className="font-display mt-8 flex flex-wrap items-center gap-2 text-sm font-semibold uppercase tracking-wider text-infrastructure-blue sm:text-base">
+          <p className="font-display mt-5 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider text-infrastructure-blue">
             <span>Learn</span>
             <span className="text-border">→</span>
             <span>Apply</span>
@@ -293,60 +337,116 @@ export default function HomePage() {
             <span className="text-border">→</span>
             <span>Adopt</span>
           </p>
-          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-6 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
             {adoptionItems.map((item) => (
               <li
                 key={item}
-                className="border-l-2 border-infrastructure-blue/40 py-1 pl-4 text-[15px] text-body-text"
+                className="bg-white px-4 py-3 text-[13px] font-medium text-body-text"
               >
                 {item}
               </li>
             ))}
           </ul>
-          <div className="mt-10">
-            <Button href="/adoption" variant="secondary" size="lg">
+          <div className="mt-6">
+            <Button href="/adoption" variant="secondary" size="md">
               Explore Adoption
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-border bg-light-bg py-20 md:py-24">
+      {/* Markets */}
+      <section className="bg-primary-navy section-y text-white">
         <div className="content-container">
-          <h2 className="heading-section text-3xl text-primary-navy md:text-4xl">
+          <SectionEyebrow index="07" label="Markets" tone="dark" />
+          <h2 className="heading-section mt-3 max-w-2xl text-2xl md:text-3xl">
             Built for organizations ready to work differently.
           </h2>
-          <AudienceSectorsGrid className="mt-12" />
+          <AudienceSectorsGrid className="mt-8" onDark />
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
-        <div className="content-container max-w-3xl">
-          <h2 className="heading-section text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
-            Built for the way the Caribbean works.
-          </h2>
-          <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
-            Based in Trinidad &amp; Tobago. Built to work across the Caribbean.
-          </p>
-          <p className="mt-4 text-[17px] leading-relaxed text-secondary-text md:text-lg">
-            Digital workplace delivery does not need to stop at a border. The GRID
-            is structured for organizations and teams working across offices,
-            islands and markets.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-primary-navy py-20 md:py-28">
-        <div className="content-container text-center">
-          <h2 className="heading-section text-3xl text-white md:text-4xl lg:text-[2.75rem]">
-            Ready to talk about your workplace?
-          </h2>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <Button href="/contact" size="lg">
-              Let&apos;s Talk
-            </Button>
-            <WhatsAppButton variant="primary" />
+      {/* Regional */}
+      <section className="border-b border-border bg-white section-y">
+        <div className="content-container grid gap-8 lg:grid-cols-2 lg:gap-12">
+          <div>
+            <SectionEyebrow index="08" label="Regional" />
+            <h2 className="heading-section mt-3 text-2xl text-primary-navy md:text-3xl">
+              Built for the way the Caribbean works.
+            </h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-secondary-text">
+              Based in Trinidad &amp; Tobago. Built to work across the Caribbean.
+              Digital workplace delivery does not need to stop at a border.
+            </p>
           </div>
+          <div className="panel-border bg-light-bg p-6 md:p-7">
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-infrastructure-blue">
+              Regional delivery
+            </p>
+            <ul className="mt-4 space-y-3 text-[14px] text-body-text">
+              <li className="flex justify-between gap-4 border-b border-border pb-3">
+                <span className="font-semibold text-primary-navy">Headquarters</span>
+                <span className="text-secondary-text">Trinidad &amp; Tobago</span>
+              </li>
+              <li className="flex justify-between gap-4 border-b border-border pb-3">
+                <span className="font-semibold text-primary-navy">Coverage</span>
+                <span className="text-secondary-text">Caribbean region</span>
+              </li>
+              <li className="flex justify-between gap-4">
+                <span className="font-semibold text-primary-navy">Delivery model</span>
+                <span className="text-right text-secondary-text">
+                  Cross-island teams, offices &amp; markets
+                </span>
+              </li>
+            </ul>
+            <p className="mt-5 text-[14px] leading-relaxed text-secondary-text">
+              The GRID is structured for organizations working across offices,
+              islands and markets — not limited to a single territory.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="scroll-mt-20 bg-primary-navy section-y text-white">
+        <div className="content-container grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
+          <div>
+            <SectionEyebrow index="09" label="Contact" tone="dark" />
+            <h2 className="heading-section mt-3 text-2xl md:text-3xl lg:text-[2.25rem]">
+              Ready to talk about your workplace?
+            </h2>
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
+              Planning a deployment, ongoing administration or adoption support?
+              Send an enquiry or reach the team directly.
+            </p>
+            <div className="mt-8 space-y-5 border-t border-white/10 pt-8">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-wider text-white/45">
+                  Email
+                </p>
+                <a
+                  href={`mailto:${SALES_EMAIL}`}
+                  className="mt-1 block text-base font-semibold text-secondary-blue hover:text-white"
+                >
+                  {SALES_EMAIL}
+                </a>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-wider text-white/45">
+                  WhatsApp
+                </p>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 block text-base font-semibold text-white/90 hover:text-white"
+                >
+                  {PHONE_DISPLAY}
+                </a>
+              </div>
+            </div>
+          </div>
+          <EnquiryForm variant="dark" />
         </div>
       </section>
     </>

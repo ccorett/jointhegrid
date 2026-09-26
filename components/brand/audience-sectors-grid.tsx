@@ -128,17 +128,30 @@ function RegionContent({ market }: { market: MarketRegion }) {
   );
 }
 
-export function AudienceSectorsGrid({ className }: { className?: string }) {
+export function AudienceSectorsGrid({
+  className,
+  onDark = false,
+}: {
+  className?: string;
+  onDark?: boolean;
+}) {
+  const frame = onDark
+    ? "border-white/15 bg-white/10"
+    : "border-border bg-border";
+
   return (
     <div className={className}>
       {/* Desktop / tablet weighted mosaic */}
       <div
-        className="relative hidden overflow-hidden border border-border bg-border md:block"
+        className={cn("relative hidden overflow-hidden border md:block", frame)}
         role="list"
         aria-label="Markets we serve"
       >
         <div
-          className="relative grid min-h-[420px] w-full gap-px bg-border lg:min-h-[480px]"
+          className={cn(
+            "relative grid min-h-[420px] w-full gap-px lg:min-h-[460px]",
+            onDark ? "bg-white/10" : "bg-border"
+          )}
           style={{
             gridTemplateColumns: "35fr 41fr 24fr",
             gridTemplateRows: "46.2fr 53.8fr",
@@ -173,7 +186,7 @@ export function AudienceSectorsGrid({ className }: { className?: string }) {
 
       {/* Mobile — vertical emphasis stack */}
       <div
-        className="flex flex-col gap-px border border-border bg-border md:hidden"
+        className={cn("flex flex-col gap-px border md:hidden", frame)}
         role="list"
         aria-label="Markets we serve"
       >

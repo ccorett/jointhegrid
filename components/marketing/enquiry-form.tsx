@@ -23,14 +23,34 @@ function FieldError({ id, message }: { id: string; message?: string }) {
   );
 }
 
-function inputClass(hasError: boolean) {
+function inputClass(hasError: boolean, dark: boolean) {
   return cn(
-    "w-full rounded-lg border px-4 py-2.5 text-sm text-body-text transition-colors focus:border-infrastructure-blue focus:outline-none focus:ring-2 focus:ring-infrastructure-blue/30",
-    hasError ? "border-error" : "border-border"
+    "w-full rounded-sm border px-3.5 py-2.5 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-infrastructure-blue/40",
+    dark
+      ? cn(
+          "border-white/15 bg-[#0f1729] text-white placeholder:text-white/35 focus:border-secondary-blue",
+          hasError && "border-error"
+        )
+      : cn(
+          "border-border text-body-text focus:border-infrastructure-blue focus:ring-infrastructure-blue/30",
+          hasError && "border-error"
+        )
   );
 }
 
-export function EnquiryForm() {
+function labelClass(dark: boolean) {
+  return cn(
+    "mb-1.5 block text-xs font-semibold uppercase tracking-wide",
+    dark ? "text-white/70" : "text-primary-navy"
+  );
+}
+
+type EnquiryFormProps = {
+  variant?: "light" | "dark";
+};
+
+export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
+  const dark = variant === "dark";
   const [state, formAction, pending] = useActionState(
     submitEnquiryAction,
     initialState
@@ -88,7 +108,10 @@ export function EnquiryForm() {
       ref={formRef}
       action={formAction}
       noValidate
-      className="rounded-xl border border-border bg-white p-6 md:p-8"
+      className={cn(
+        "rounded-sm border p-5 md:p-6",
+        dark ? "panel-border-dark bg-[#0f1729]" : "border-border bg-white"
+      )}
       aria-describedby={errors.form ? "form-error" : undefined}
     >
       {errors.form && (
@@ -110,7 +133,7 @@ export function EnquiryForm() {
 
       <div className="space-y-5">
         <div>
-          <label htmlFor="fullName" className="mb-1.5 block text-sm font-medium text-primary-navy">
+          <label htmlFor="fullName" className={labelClass(dark)}>
             Full Name <span className="text-error">*</span>
           </label>
           <input
@@ -122,13 +145,13 @@ export function EnquiryForm() {
             maxLength={120}
             aria-invalid={!!errors.fullName}
             aria-describedby={errors.fullName ? "fullName-error" : undefined}
-            className={inputClass(!!errors.fullName)}
+            className={inputClass(!!errors.fullName, dark)}
           />
           <FieldError id="fullName-error" message={errors.fullName} />
         </div>
 
         <div>
-          <label htmlFor="organization" className="mb-1.5 block text-sm font-medium text-primary-navy">
+          <label htmlFor="organization" className={labelClass(dark)}>
             Organization <span className="text-error">*</span>
           </label>
           <input
@@ -140,13 +163,13 @@ export function EnquiryForm() {
             maxLength={200}
             aria-invalid={!!errors.organization}
             aria-describedby={errors.organization ? "organization-error" : undefined}
-            className={inputClass(!!errors.organization)}
+            className={inputClass(!!errors.organization, dark)}
           />
           <FieldError id="organization-error" message={errors.organization} />
         </div>
 
         <div>
-          <label htmlFor="workEmail" className="mb-1.5 block text-sm font-medium text-primary-navy">
+          <label htmlFor="workEmail" className={labelClass(dark)}>
             Work Email <span className="text-error">*</span>
           </label>
           <input
@@ -158,13 +181,13 @@ export function EnquiryForm() {
             maxLength={254}
             aria-invalid={!!errors.workEmail}
             aria-describedby={errors.workEmail ? "workEmail-error" : undefined}
-            className={inputClass(!!errors.workEmail)}
+            className={inputClass(!!errors.workEmail, dark)}
           />
           <FieldError id="workEmail-error" message={errors.workEmail} />
         </div>
 
         <div>
-          <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-primary-navy">
+          <label htmlFor="phone" className={labelClass(dark)}>
             Phone / WhatsApp
           </label>
           <input
@@ -175,13 +198,13 @@ export function EnquiryForm() {
             maxLength={40}
             aria-invalid={!!errors.phone}
             aria-describedby={errors.phone ? "phone-error" : undefined}
-            className={inputClass(!!errors.phone)}
+            className={inputClass(!!errors.phone, dark)}
           />
           <FieldError id="phone-error" message={errors.phone} />
         </div>
 
         <div>
-          <label htmlFor="organizationSize" className="mb-1.5 block text-sm font-medium text-primary-navy">
+          <label htmlFor="organizationSize" className={labelClass(dark)}>
             Organization Size <span className="text-error">*</span>
           </label>
           <select
@@ -191,7 +214,7 @@ export function EnquiryForm() {
             defaultValue=""
             aria-invalid={!!errors.organizationSize}
             aria-describedby={errors.organizationSize ? "organizationSize-error" : undefined}
-            className={inputClass(!!errors.organizationSize)}
+            className={inputClass(!!errors.organizationSize, dark)}
           >
             <option value="" disabled>
               Select size
@@ -206,7 +229,7 @@ export function EnquiryForm() {
         </div>
 
         <div>
-          <label htmlFor="areaOfInterest" className="mb-1.5 block text-sm font-medium text-primary-navy">
+          <label htmlFor="areaOfInterest" className={labelClass(dark)}>
             Area of Interest <span className="text-error">*</span>
           </label>
           <select
@@ -216,7 +239,7 @@ export function EnquiryForm() {
             defaultValue=""
             aria-invalid={!!errors.areaOfInterest}
             aria-describedby={errors.areaOfInterest ? "areaOfInterest-error" : undefined}
-            className={inputClass(!!errors.areaOfInterest)}
+            className={inputClass(!!errors.areaOfInterest, dark)}
           >
             <option value="" disabled>
               Select area
@@ -231,7 +254,7 @@ export function EnquiryForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-primary-navy">
+          <label htmlFor="message" className={labelClass(dark)}>
             What are you looking to achieve? <span className="text-error">*</span>
           </label>
           <textarea
@@ -242,7 +265,7 @@ export function EnquiryForm() {
             maxLength={4000}
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? "message-error" : undefined}
-            className={inputClass(!!errors.message)}
+            className={inputClass(!!errors.message, dark)}
           />
           <FieldError id="message-error" message={errors.message} />
         </div>

@@ -6,7 +6,6 @@ const footerLinks = {
   solutions: [
     { href: "/digital-workspace", label: "Digital Workspace" },
     { href: "/ai-integration", label: "AI Integration" },
-    { href: "/interoperability", label: "Interoperability" },
   ],
   services: [
     { href: "/deployment", label: "Deployment" },
@@ -24,47 +23,30 @@ const footerLinks = {
 export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-primary-navy text-white">
-      <div className="content-container py-16 md:py-20">
-        <div className="grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <GridLogo reversed symbolOnlyBelowSm={false} symbolSize={40} />
-            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/75">
-              Digital workplace solutions for organizations deploying,
-              deploying, administering and adopting connected digital workplaces
-              with AI integration.
+      <div className="content-container py-10 md:py-12">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-4">
+            <GridLogo reversed symbolOnlyBelowSm={false} symbolSize={36} />
+            <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-white/65">
+              Digital workplace and AI integration — deployment, administration
+              and adoption for organizations across the Caribbean.
             </p>
-            <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.18em] text-white/45">
-              People | Apps | Information | AI | Together
+            <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/40">
+              People · Apps · Information · AI · Together
             </p>
-            <div className="mt-8 space-y-2 text-sm">
-              <a
-                href={`mailto:${SALES_EMAIL}`}
-                className="block font-medium text-secondary-blue hover:text-white"
-              >
-                {SALES_EMAIL}
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block font-medium text-white/80 hover:text-white"
-              >
-                {PHONE_DISPLAY}
-              </a>
-            </div>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-3 lg:col-span-7 lg:gap-8">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8">
             <div>
-              <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-wider text-white/45">
+              <h3 className="text-[10px] font-bold uppercase tracking-wider text-white/45">
                 Solutions
               </h3>
-              <ul className="space-y-2.5">
+              <ul className="mt-3 space-y-2">
                 {footerLinks.solutions.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/75 transition-colors hover:text-white"
+                      className="text-[13px] text-white/70 hover:text-white"
                     >
                       {link.label}
                     </Link>
@@ -72,17 +54,16 @@ export function SiteFooter() {
                 ))}
               </ul>
             </div>
-
             <div>
-              <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-wider text-white/45">
+              <h3 className="text-[10px] font-bold uppercase tracking-wider text-white/45">
                 Services
               </h3>
-              <ul className="space-y-2.5">
+              <ul className="mt-3 space-y-2">
                 {footerLinks.services.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/75 transition-colors hover:text-white"
+                      className="text-[13px] text-white/70 hover:text-white"
                     >
                       {link.label}
                     </Link>
@@ -90,31 +71,55 @@ export function SiteFooter() {
                 ))}
               </ul>
             </div>
-
             <div>
-              <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-wider text-white/45">
+              <h3 className="text-[10px] font-bold uppercase tracking-wider text-white/45">
                 Company
               </h3>
-              <ul className="space-y-2.5">
+              <ul className="mt-3 space-y-2">
                 {footerLinks.company.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/75 transition-colors hover:text-white"
+                      className="text-[13px] text-white/70 hover:text-white"
                     >
                       {link.label}
                     </Link>
                   </li>
                 ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-[10px] font-bold uppercase tracking-wider text-white/45">
+                Contact
+              </h3>
+              <ul className="mt-3 space-y-2 text-[13px]">
+                <li>
+                  <a
+                    href={`mailto:${SALES_EMAIL}`}
+                    className="text-secondary-blue hover:text-white"
+                  >
+                    {SALES_EMAIL}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white"
+                  >
+                    {PHONE_DISPLAY}
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 border-t border-white/10 pt-8">
-          <p className="text-xs text-white/40">
+        <div className="mt-10 border-t border-white/10 pt-6">
+          <p className="text-[11px] text-white/40">
             © {new Date().getFullYear()} Global Resilient Infrastructure &amp;
-            Digitalisation Ltd. All rights reserved.
+            Digitalisation Ltd.
           </p>
         </div>
       </div>

@@ -13,10 +13,12 @@
   --success: #15803d;
   --warning: #b45309;
   --error: #b91c1c;
-  --content-max: 1360px;
-  --padding-desktop: 64px;
-  --padding-tablet: 32px;
+  --content-max: 1320px;
+  --padding-desktop: 48px;
+  --padding-tablet: 28px;
   --padding-mobile: 20px;
+  --section-y: 4.5rem;
+  --section-y-md: 5.5rem;
 }
 
 @theme inline {
@@ -94,16 +96,34 @@
 
   .heading-hero {
     font-family: var(--font-manrope), system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
   }
 
   .heading-section {
     font-family: var(--font-manrope), system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.028em;
+    line-height: 1.08;
+  }
+
+  .section-y {
+    padding-block: var(--section-y);
+  }
+
+  @media (min-width: 768px) {
+    .section-y {
+      padding-block: var(--section-y-md);
+    }
+  }
+
+  .panel-border {
+    border: 1px solid var(--border);
+  }
+
+  .panel-border-dark {
+    border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .structural-line-v {

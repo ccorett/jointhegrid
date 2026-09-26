@@ -192,9 +192,9 @@ export function SiteHeader() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-border/80 bg-white/90 backdrop-blur-md"
+      className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-sm"
     >
-      <div className="content-container flex min-h-[72px] items-center justify-between py-2 lg:min-h-[80px]">
+      <div className="content-container flex min-h-[64px] items-center justify-between py-1.5 lg:min-h-[68px]">
         <GridLogo symbolSize={40} />
 
         <nav

@@ -27,7 +27,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "border-b border-border py-16 md:py-24 lg:py-28",
+        "border-b border-border section-y",
         dark ? "bg-primary-navy text-white" : light ? "bg-light-bg" : "bg-white",
         className
       )}
