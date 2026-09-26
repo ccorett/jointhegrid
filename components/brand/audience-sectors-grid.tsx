@@ -2,183 +2,203 @@
 
 import { cn } from "@/lib/utils";
 
-type SectorCell = {
+type MarketRegion = {
   id: string;
-  title: string;
+  index: string;
+  title: string[];
   bg: string;
   text: string;
-  accent: "government" | "enterprise" | "smes" | "education";
+  hint: string;
+  /** Desktop grid area */
+  area: string;
+  titleClass: string;
+  scaleOrigin: string;
 };
 
-const SECTORS: SectorCell[] = [
+const MARKETS: MarketRegion[] = [
   {
     id: "government",
-    title: "Government & Public Sector",
+    index: "01",
+    title: ["Government", "& Public Sector"],
     bg: "#0B1220",
     text: "#FFFFFF",
-    accent: "government",
+    hint: "Digital workplace at organizational scale.",
+    area: "government",
+    titleClass: "text-[1.75rem] leading-[1.08] sm:text-[1.85rem] md:text-[2.15rem] lg:text-[2.35rem]",
+    scaleOrigin: "bottom left",
   },
   {
     id: "enterprise",
-    title: "Enterprise",
+    index: "02",
+    title: ["Enterprise"],
     bg: "#2563EB",
     text: "#FFFFFF",
-    accent: "enterprise",
+    hint: "Connected work across teams and operations.",
+    area: "enterprise",
+    titleClass: "text-[1.5rem] leading-[1.1] md:text-[1.85rem] lg:text-[2rem]",
+    scaleOrigin: "bottom left",
   },
   {
     id: "smes",
-    title: "SMEs",
+    index: "03",
+    title: ["SMEs"],
     bg: "#F8FAFC",
     text: "#0B1220",
-    accent: "smes",
+    hint: "Modern tools without unnecessary complexity.",
+    area: "smes",
+    titleClass: "text-[1.35rem] leading-[1.1] md:text-[1.55rem] lg:text-[1.7rem]",
+    scaleOrigin: "bottom left",
   },
   {
     id: "education",
-    title: "Education",
+    index: "04",
+    title: ["Education"],
     bg: "#60A5FA",
     text: "#0B1220",
-    accent: "education",
+    hint: "Connected learning and administration.",
+    area: "education",
+    titleClass: "text-[1.2rem] leading-[1.12] md:text-[1.35rem] lg:text-[1.45rem]",
+    scaleOrigin: "bottom left",
   },
 ];
 
-const HOVER_MS = "duration-300";
+/** Mobile stack heights — relative emphasis 35 : 30 : 22 : 13 */
+const MOBILE_MIN_H: Record<string, string> = {
+  government: "min-h-[220px] sm:min-h-[240px]",
+  enterprise: "min-h-[188px] sm:min-h-[200px]",
+  smes: "min-h-[138px] sm:min-h-[148px]",
+  education: "min-h-[96px] sm:min-h-[104px]",
+};
 
-function SectorAccent({ variant }: { variant: SectorCell["accent"] }) {
-  const base =
-    "pointer-events-none absolute transition-transform transition-opacity ease-out " +
-    HOVER_MS;
-
-  if (variant === "government") {
-    return (
-      <svg
-        viewBox="0 0 88 88"
-        aria-hidden
-        className={cn(
-          base,
-          "top-0 right-0 h-[5.5rem] w-[5.5rem] opacity-[0.55] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-80"
-        )}
-      >
-        <rect x="48" y="12" width="14" height="14" fill="#2563EB" />
-        <rect x="66" y="12" width="14" height="14" fill="#60A5FA" />
-        <rect x="48" y="30" width="14" height="14" fill="#2563EB" />
-        <rect x="66" y="30" width="14" height="14" fill="#2563EB" />
-        <path
-          d="M62 19h4M48 37h14"
-          stroke="#60A5FA"
-          strokeWidth="2"
-          strokeLinecap="square"
-          vectorEffect="non-scaling-stroke"
-        />
-      </svg>
-    );
-  }
-
-  if (variant === "enterprise") {
-    return (
-      <svg
-        viewBox="0 0 96 72"
-        aria-hidden
-        className={cn(
-          base,
-          "top-0 right-0 h-16 w-20 opacity-[0.22] group-hover:translate-x-1 group-hover:opacity-35"
-        )}
-      >
-        <rect x="52" y="8" width="12" height="12" fill="#FFFFFF" fillOpacity="0.9" />
-        <rect x="68" y="8" width="12" height="12" fill="#60A5FA" />
-        <rect x="52" y="24" width="12" height="12" fill="#60A5FA" fillOpacity="0.85" />
-        <rect x="68" y="24" width="12" height="12" fill="#FFFFFF" fillOpacity="0.75" />
-        <path d="M64 14h4M64 30h4" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.5" />
-      </svg>
-    );
-  }
-
-  if (variant === "smes") {
-    return (
-      <svg
-        viewBox="0 0 72 72"
-        aria-hidden
-        className={cn(
-          base,
-          "bottom-0 right-0 h-16 w-16 opacity-70 group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:opacity-95"
-        )}
-      >
-        <rect x="28" y="36" width="12" height="12" fill="#2563EB" />
-        <rect x="44" y="36" width="12" height="12" fill="#60A5FA" />
-        <rect x="28" y="52" width="12" height="12" fill="#2563EB" />
-        <path d="M40 42v4M44 48h12" stroke="#2563EB" strokeWidth="2" strokeLinecap="square" />
-      </svg>
-    );
-  }
-
+function MarketMapGeometry() {
   return (
     <svg
-      viewBox="0 0 80 80"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
       aria-hidden
-      className={cn(
-        base,
-        "top-0 right-0 h-[4.5rem] w-[4.5rem] opacity-[0.35] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-55"
-      )}
+      className="pointer-events-none absolute inset-0 h-full w-full"
     >
-      <rect x="44" y="16" width="12" height="12" fill="#0B1220" />
-      <rect x="60" y="16" width="12" height="12" fill="#0B1220" fillOpacity="0.75" />
-      <rect x="44" y="32" width="12" height="12" fill="#0B1220" fillOpacity="0.85" />
-      <path d="M56 22h4M56 38h4" stroke="#0B1220" strokeWidth="1.5" strokeOpacity="0.6" />
+      {/* Module bridging Government ↔ Enterprise */}
+      <rect x="33.2" y="18" width="4.2" height="4.2" fill="#2563EB" />
+      <rect x="37.8" y="18" width="4.2" height="4.2" fill="#60A5FA" />
+      <rect x="33.2" y="22.8" width="4.2" height="4.2" fill="#2563EB" opacity="0.85" />
+      <path
+        d="M35.3 20.1h2.5M35.3 24.9v2.2"
+        stroke="#60A5FA"
+        strokeWidth="0.45"
+        vectorEffect="non-scaling-stroke"
+      />
+
+      {/* Structure crossing Enterprise ↓ SMEs */}
+      <rect x="58" y="44.5" width="3.6" height="3.6" fill="#FFFFFF" opacity="0.35" />
+      <rect x="58" y="48.5" width="3.6" height="3.6" fill="#60A5FA" opacity="0.55" />
+      <path d="M59.8 46.3v4.2" stroke="#FFFFFF" strokeWidth="0.35" opacity="0.5" />
+
+      {/* SMEs ↔ Education join */}
+      <rect x="73.5" y="72" width="3.4" height="3.4" fill="#2563EB" />
+      <rect x="77.3" y="72" width="3.4" height="3.4" fill="#0B1220" opacity="0.55" />
+      <path d="M75.2 73.7h4.2" stroke="#2563EB" strokeWidth="0.4" />
+
+      {/* Lower-left accent on Government */}
+      <rect x="8" y="78" width="3.8" height="3.8" fill="#2563EB" opacity="0.7" />
+      <rect x="12.2" y="82.2" width="3.8" height="3.8" fill="#60A5FA" opacity="0.65" />
     </svg>
+  );
+}
+
+function RegionContent({ market }: { market: MarketRegion }) {
+  return (
+    <div className="relative flex h-full min-h-[inherit] flex-col justify-end p-6 md:p-8 lg:p-9">
+      <p
+        className="mb-2 text-[10px] font-medium tracking-[0.22em] opacity-45"
+        style={{ color: market.text }}
+      >
+        {market.index}
+      </p>
+      <h3
+        className={cn("font-display font-semibold tracking-[-0.02em]", market.titleClass)}
+        style={{ color: market.text }}
+      >
+        {market.title.map((line) => (
+          <span key={line} className="block">
+            {line}
+          </span>
+        ))}
+      </h3>
+      <p
+        className={cn(
+          "mt-0 max-h-0 overflow-hidden text-[13px] leading-snug opacity-0",
+          "transition-all duration-[350ms] ease-out",
+          "md:group-hover:mt-3 md:group-hover:max-h-16 md:group-hover:opacity-75"
+        )}
+        style={{ color: market.text }}
+      >
+        {market.hint}
+      </p>
+    </div>
   );
 }
 
 export function AudienceSectorsGrid({ className }: { className?: string }) {
   return (
-    <div
-      className={cn(
-        "grid grid-cols-1 border border-border sm:grid-cols-2",
-        className
-      )}
-      role="list"
-      aria-label="Organizations we work with"
-    >
-      {SECTORS.map((sector, index) => {
-        const isLeftCol = index % 2 === 0;
+    <div className={className}>
+      {/* Desktop / tablet weighted mosaic */}
+      <div
+        className="relative hidden overflow-hidden border border-border bg-border md:block"
+        role="list"
+        aria-label="Markets we serve"
+      >
+        <div
+          className="relative grid min-h-[420px] w-full gap-px bg-border lg:min-h-[480px]"
+          style={{
+            gridTemplateColumns: "35fr 41fr 24fr",
+            gridTemplateRows: "46.2fr 53.8fr",
+            gridTemplateAreas: `
+              "government enterprise enterprise"
+              "government smes education"
+            `,
+          }}
+        >
+          <MarketMapGeometry />
 
-        return (
-          <article
-            key={sector.id}
-            role="listitem"
-            className={cn(
-              "group relative min-h-[148px] overflow-hidden border-border sm:min-h-[200px] lg:min-h-[240px]",
-              index < 3 && "border-b border-border",
-              (index === 2 || index === 3) && "sm:border-b-0",
-              isLeftCol && "sm:border-r sm:border-border"
-            )}
-            style={{ backgroundColor: sector.bg, color: sector.text }}
-          >
-            <div
+          {MARKETS.map((market) => (
+            <article
+              key={market.id}
+              role="listitem"
               className={cn(
-                "absolute inset-0 opacity-0 transition-opacity ease-out group-hover:opacity-100",
-                HOVER_MS,
-                sector.id === "government" && "bg-[#111827]",
-                sector.id === "enterprise" && "bg-[#1D4ED8]",
-                sector.id === "smes" && "bg-[#F1F5F9]",
-                sector.id === "education" && "bg-[#3B82F6]"
+                "group relative overflow-hidden transition-transform duration-[350ms] ease-out",
+                "md:hover:z-10 md:hover:scale-[1.025] motion-reduce:md:hover:scale-100"
               )}
-              aria-hidden
-            />
+              style={{
+                gridArea: market.area,
+                backgroundColor: market.bg,
+                color: market.text,
+                transformOrigin: market.scaleOrigin,
+              }}
+            >
+              <RegionContent market={market} />
+            </article>
+          ))}
+        </div>
+      </div>
 
-            <SectorAccent variant={sector.accent} />
-
-            <div className="relative flex h-full min-h-[inherit] flex-col justify-end p-7 md:p-9 lg:p-10">
-              <h3
-                className={cn(
-                  "font-display max-w-[16rem] text-[1.35rem] font-semibold leading-[1.15] tracking-[-0.02em] sm:max-w-[14rem] sm:text-2xl md:max-w-[18rem] md:text-[1.65rem] lg:text-[1.85rem]",
-                  sector.id === "government" && "sm:max-w-[20rem] lg:max-w-[22rem]"
-                )}
-              >
-                {sector.title}
-              </h3>
-            </div>
+      {/* Mobile — vertical emphasis stack */}
+      <div
+        className="flex flex-col gap-px border border-border bg-border md:hidden"
+        role="list"
+        aria-label="Markets we serve"
+      >
+        {MARKETS.map((market) => (
+          <article
+            key={market.id}
+            role="listitem"
+            className={cn("relative overflow-hidden", MOBILE_MIN_H[market.id])}
+            style={{ backgroundColor: market.bg, color: market.text }}
+          >
+            <RegionContent market={market} />
           </article>
-        );
-      })}
+        ))}
+      </div>
     </div>
   );
 }
