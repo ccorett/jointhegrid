@@ -10,7 +10,6 @@ import { cn } from "@/lib/utils";
 const solutionsLinks = [
   { href: "/digital-workspace", label: "Digital Workspace" },
   { href: "/ai-integration", label: "AI Integration" },
-  { href: "/interoperability", label: "Interoperability" },
 ];
 
 const servicesLinks = [
