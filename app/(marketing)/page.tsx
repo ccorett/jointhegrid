@@ -237,7 +237,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-b border-border py-20 md:py-28">
-        <div className="content-container grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="content-container grid min-w-0 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16 xl:gap-20">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-infrastructure-blue">
               Interoperability
