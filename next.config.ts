@@ -19,11 +19,6 @@ const nextConfig: NextConfig = {
         destination: "/ai-integration",
         permanent: true,
       },
-      {
-        source: "/interoperability",
-        destination: "/",
-        permanent: true,
-      },
     ];
   },
 };

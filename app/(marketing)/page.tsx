@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phase1HeroGrid } from "@/components/brand/phase1-hero-grid";
 import { BrandConnectionLines } from "@/components/brand/brand-connection-lines";
 import { InteroperabilityGraphic } from "@/components/brand/interoperability-graphic";
+import { AudienceSectorsGrid } from "@/components/brand/audience-sectors-grid";
 import { Button } from "@/components/ui/button";
 import { EnquiryForm } from "@/components/marketing/enquiry-form";
 import { SectionLabel } from "@/components/marketing/section-label";
@@ -276,7 +277,8 @@ export default function HomePage() {
       <section className="border-b border-border bg-white section-y">
         <div className="content-container grid items-stretch gap-8 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:gap-10">
           <div className="flex flex-col">
-            <h2 className="heading-section text-[2rem] md:text-[2.75rem] lg:text-[3rem]">
+            <SectionLabel>Interoperability</SectionLabel>
+            <h2 className="heading-section mt-2 text-[2rem] md:text-[2.75rem] lg:text-[3rem]">
               Nothing works in{" "}
               <span className="text-infrastructure-blue">isolation.</span>
             </h2>
@@ -332,6 +334,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-primary-navy section-y text-white">
+        <div className="content-container">
+          <SectionLabel tone="dark">Markets</SectionLabel>
+          <h2 className="heading-section mt-2 max-w-3xl text-[2rem] md:text-[2.75rem] lg:text-[3.25rem]">
+            Built for organizations ready to work differently.
+          </h2>
+          <AudienceSectorsGrid className="mt-8" onDark />
+        </div>
+      </section>
+
       <section className="border-b border-border bg-white section-y">
         <div className="content-container grid gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
@@ -341,35 +353,27 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-lg text-body-text md:text-[19px]">
               Based in Trinidad &amp; Tobago. Built to work across the Caribbean.
-            </p>
-            <p className="mt-4 text-lg text-body-text md:text-[19px]">
-              Projects are structured around the requirements of each organization,
-              with the appropriate delivery resources brought together for the
-              engagement.
+              Digital workplace delivery does not need to stop at a border.
             </p>
           </div>
           <div className="panel-border bg-light-bg p-7 md:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-infrastructure-blue">
-              Project team model
+              Regional delivery
             </p>
-            <p className="mt-4 text-[17px] leading-relaxed text-body-text md:text-lg">
-              A focused team assembled around the requirements of each engagement.
-            </p>
-            <ul className="mt-5 space-y-2.5 border-t border-border pt-5 text-[16px] text-body-text md:text-[17px]">
-              <li>· Project coordination</li>
-              <li>· Technical delivery</li>
-              <li>· Administration</li>
-              <li>· Adoption support</li>
-              <li>· Specialist partner involvement where required</li>
-            </ul>
-            <ul className="mt-6 space-y-4 border-t border-border pt-5 text-[17px]">
-              <li className="flex justify-between gap-4">
+            <ul className="mt-5 space-y-4 text-[17px]">
+              <li className="flex justify-between gap-4 border-b border-border pb-4">
                 <span className="font-bold text-primary-navy">Headquarters</span>
                 <span className="text-body-text">Trinidad &amp; Tobago</span>
               </li>
-              <li className="flex justify-between gap-4">
-                <span className="font-bold text-primary-navy">Service reach</span>
+              <li className="flex justify-between gap-4 border-b border-border pb-4">
+                <span className="font-bold text-primary-navy">Coverage</span>
                 <span className="text-body-text">Caribbean region</span>
+              </li>
+              <li className="flex justify-between gap-4">
+                <span className="font-bold text-primary-navy">Delivery model</span>
+                <span className="text-right text-body-text">
+                  Cross-island teams, offices &amp; markets
+                </span>
               </li>
             </ul>
           </div>
