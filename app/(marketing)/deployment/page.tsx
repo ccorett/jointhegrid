@@ -55,10 +55,15 @@ export default function DeploymentPage() {
 
       <section className="border-b border-border bg-white section-y-compact">
         <div className="content-container">
-          <SectionHeading title="The deployment lifecycle" className="mb-6" />
-          <div className="panel-border bg-light-bg p-6 md:p-8">
-            <LifecycleSteps steps={lifecycle.map((label) => ({ label }))} />
-          </div>
+          <SectionHeading
+            title="The deployment lifecycle"
+            centered
+            className="mb-10 md:mb-12"
+          />
+          <LifecycleSteps
+            layout="spread"
+            steps={lifecycle.map((label) => ({ label }))}
+          />
         </div>
       </section>
 
