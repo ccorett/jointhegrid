@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const INTEROP_IMAGE = "/brand/hero-connected-ecosystem.png";
+const INTEROP_IMAGE = "/brand/interoperability-ecosystem.png";
 
 export function InteroperabilityGraphic({ className }: { className?: string }) {
   const [visible, setVisible] = useState(false);
@@ -28,13 +28,13 @@ export function InteroperabilityGraphic({ className }: { className?: string }) {
   }, [reduced]);
 
   return (
-    <figure className={cn("relative mx-auto w-full max-w-[700px]", className)}>
+    <figure className={cn("relative mx-auto w-full max-w-[700px] lg:max-w-none", className)}>
       <Image
         src={INTEROP_IMAGE}
-        alt="Connected ecosystem showing people, applications, identity, workflows, information and security integrated with the digital workplace and Gemini."
-        width={903}
-        height={845}
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 700px"
+        alt="Isometric view of the digital workplace connected to people, identity, applications, information, workflows, and security on the GRID."
+        width={1020}
+        height={941}
+        sizes="(max-width: 1024px) 100vw, 50vw"
         className={cn(
           "h-auto w-full select-none",
           !reduced && "transition-[opacity,transform] duration-700 ease-out",

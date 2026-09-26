@@ -243,12 +243,13 @@ export default function HomePage() {
               Interoperability
             </p>
             <h2 className="heading-section mt-3 text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
-              Everything works better when it works together.
+              Nothing works in{" "}
+              <span className="text-infrastructure-blue">isolation.</span>
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
-              Organizations depend on multiple technologies. Google Workspace and
-              Gemini Enterprise need to operate alongside identity, security,
-              applications, information and the workflows already in place.
+              Your digital workplace sits within a larger ecosystem. #jointhegrid
+              helps it work seamlessly with the systems, applications and workflows
+              your organization already relies on.
             </p>
           </div>
           <InteroperabilityGraphic />

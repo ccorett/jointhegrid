@@ -9,6 +9,8 @@ SVG assets derived from the official brand reference. Replace with final exporte
 | `jointhegrid-favicon.svg` | Favicon and app icon |
 | `jointhegrid-monochrome.svg` | Monochrome version |
 | `jointhegrid-reversed.svg` | Dark background version |
-| `hero-connected-ecosystem.png` | Homepage hero and interoperability — connected ecosystem graphic |
+| `hero-connected-ecosystem.png` | Homepage hero — connected workplace graphic |
+| `interoperability-section-full.png` | Interoperability section source artboard |
+| `interoperability-ecosystem.png` | Interoperability section — isometric ecosystem graphic |
 
 Reference image: see project assets folder for the authoritative brand sheet.
