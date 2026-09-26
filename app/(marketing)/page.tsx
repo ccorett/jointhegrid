@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Phase1HeroGrid } from "@/components/brand/phase1-hero-grid";
 import { BrandConnectionLines } from "@/components/brand/brand-connection-lines";
-import { InteroperabilityGraphic } from "@/components/brand/interoperability-graphic";
+import { NothingWorksIsolationGraphic } from "@/components/brand/nothing-works-isolation-graphic";
 import { AudienceSectorsGrid } from "@/components/brand/audience-sectors-grid";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
@@ -37,7 +37,7 @@ const solutions = [
     num: "01",
     label: "Digital Workspace",
     title: "Where everyday work comes together.",
-    body: "Communication, collaboration, files, meetings and the work that happens every day — in one managed environment.",
+    body: "Communication, collaboration, information and everyday work brought into one connected environment.",
     href: "/digital-workspace",
     cta: "Explore Digital Workspace",
   },
@@ -45,17 +45,9 @@ const solutions = [
     num: "02",
     label: "AI Integration",
     title: "Intelligence inside the workplace.",
-    body: "Bring intelligent tools into the workplace with the access, controls and structure required for organizational use.",
+    body: "Intelligent tools introduced into the workplace with the access, information and controls required for organizational use.",
     href: "/ai-integration",
     cta: "Explore AI Integration",
-  },
-  {
-    num: "03",
-    label: "Interoperability",
-    title: "Connected to what you already have.",
-    body: "Connect the workplace with the identity, applications, information and workflows already in place.",
-    href: "/interoperability",
-    cta: "Explore Interoperability",
   },
 ];
 
@@ -126,15 +118,14 @@ export default function HomePage() {
             workplace.
           </h2>
 
-          <div className="mt-16 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-0">
+          <div className="mt-16 lg:mt-20 lg:grid lg:grid-cols-2 lg:gap-0">
             {solutions.map((item, i) => (
               <div
                 key={item.num}
                 className={cn(
                   "border-t border-border py-12 lg:border-t-0 lg:px-8 lg:py-0",
-                  i === 0 && "lg:pl-0",
-                  i === 1 && "lg:border-x lg:border-border",
-                  i === 2 && "lg:pr-0"
+                  i === 0 && "lg:pl-0 lg:pr-14",
+                  i === 1 && "lg:border-l lg:border-border lg:pr-0 lg:pl-14"
                 )}
               >
                 <p className="font-display text-5xl font-bold text-primary-navy/10 md:text-6xl">
@@ -251,26 +242,17 @@ export default function HomePage() {
       <section className="border-b border-border py-20 md:py-28">
         <div className="content-container grid min-w-0 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16 xl:gap-20">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-infrastructure-blue">
-              Interoperability
-            </p>
-            <h2 className="heading-section mt-3 text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
+            <h2 className="heading-section text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
               Nothing works in{" "}
               <span className="text-infrastructure-blue">isolation.</span>
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
-              Your digital workplace sits within a larger ecosystem. #jointhegrid
-              helps it work seamlessly with the systems, applications and workflows
-              your organization already relies on.
+              Your digital workplace still has to work with everything around it.
+              Identity, applications, information, security and existing workflows
+              all form part of the environment.
             </p>
-            <Link
-              href="/interoperability"
-              className="mt-6 inline-flex text-sm font-semibold text-infrastructure-blue hover:underline"
-            >
-              Explore Interoperability →
-            </Link>
           </div>
-          <InteroperabilityGraphic />
+          <NothingWorksIsolationGraphic />
         </div>
       </section>
 

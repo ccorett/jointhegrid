@@ -6,7 +6,6 @@ const footerLinks = {
   solutions: [
     { href: "/digital-workspace", label: "Digital Workspace" },
     { href: "/ai-integration", label: "AI Integration" },
-    { href: "/interoperability", label: "Interoperability" },
   ],
   services: [
     { href: "/deployment", label: "Deployment" },

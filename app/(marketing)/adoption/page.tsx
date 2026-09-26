@@ -40,7 +40,7 @@ export default function AdoptionPage() {
         eyebrow="Services"
         title="Make it part"
         titleAccent="of the work."
-        description="Onboarding, practical learning, AI use cases, champions and continued reinforcement."
+        description="Make new technology fit the way people actually work — onboarding, practical learning, AI use cases, champions and continued reinforcement."
         primaryCta={{ label: "Build an Adoption Programme", href: "/contact" }}
       />
 

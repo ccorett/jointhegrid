@@ -37,7 +37,7 @@ export default function AiIntegrationPage() {
         eyebrow="Solutions"
         title="AI that fits"
         titleAccent="the workplace."
-        description="Put intelligent tools closer to the information, workflows and people already doing the work."
+        description="Intelligent tools introduced into the workplace with the access, information and controls required for organizational use."
         primaryCta={{ label: "Discuss AI Integration", href: "/contact" }}
       />
 

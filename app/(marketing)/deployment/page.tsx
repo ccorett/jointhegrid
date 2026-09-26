@@ -63,7 +63,7 @@ export default function DeploymentPage() {
         <div className="content-container">
           <SectionHeading
             title="What goes into deployment"
-            description="Each organization starts from a different place. The work covers configuration, migration paths, identity, security and a controlled move into production."
+            description="Each organization starts from a different place. The work covers configuration, migration paths, identity, existing systems, information, workflows, security and a controlled move into production."
             className="mb-10 max-w-2xl"
           />
           <CapabilityGrid items={capabilities} columns={2} />
