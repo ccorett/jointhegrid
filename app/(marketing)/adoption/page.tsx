@@ -8,19 +8,19 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Adoption",
   description:
-    "Google Workspace and Gemini adoption, training and enablement for Caribbean organizations.",
+    "Digital workplace and AI adoption — training, enablement and reinforcement for Caribbean organizations.",
   path: "/adoption",
   keywords: [
-    "Google Workspace adoption",
-    "Google Workspace training Caribbean",
-    "Gemini enablement",
+    "digital workplace adoption",
+    "workplace training Caribbean",
+    "AI adoption workplace",
   ],
 });
 
 const programmes = [
   "Employee onboarding",
-  "Workspace learning",
-  "Gemini enablement",
+  "Workplace learning",
+  "AI use cases",
   "Executive sessions",
   "Manager programmes",
   "Administrator learning",
@@ -38,8 +38,9 @@ export default function AdoptionPage() {
       <PageHero
         light
         eyebrow="Services"
-        title="Turn access into adoption."
-        description="Licences alone do not change how people work. Adoption is practical learning, relevant use cases and reinforcement after launch."
+        title="Make it part"
+        titleAccent="of the work."
+        description="Onboarding, practical learning, AI use cases, champions and continued reinforcement."
         primaryCta={{ label: "Build an Adoption Programme", href: "/contact" }}
       />
 
@@ -61,7 +62,7 @@ export default function AdoptionPage() {
         <div className="content-container">
           <SectionHeading
             title="Training sits inside adoption"
-            description="Workshops, champions, executive sessions and Gemini enablement are part of one adoption programme, not a separate catalogue of courses."
+            description="Workshops, champions, executive sessions and practical AI enablement are part of one adoption programme, not a separate catalogue of courses."
             className="mb-10 max-w-2xl"
           />
           <CapabilityGrid items={programmes} columns={3} />

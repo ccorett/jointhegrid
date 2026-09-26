@@ -7,12 +7,12 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "About #jointhegrid: Digital Workspace + AI Integration from Trinidad & Tobago across the Caribbean.",
+    "About #jointhegrid: Digital Workplace + AI Integration from Trinidad & Tobago across the Caribbean.",
   path: "/about",
   keywords: [
     "digital workplace Caribbean",
-    "Google Workspace Trinidad and Tobago",
-    "Gemini Enterprise Caribbean",
+    "AI integration Caribbean",
+    "Trinidad and Tobago digital workplace",
   ],
 });
 
@@ -35,12 +35,16 @@ export default function AboutPage() {
           </p>
           <p>
             Specialization sits in{" "}
-            <Link href="/google-workspace" className="font-medium text-infrastructure-blue hover:underline">
-              Google Workspace
-            </Link>{" "}
-            and{" "}
-            <Link href="/gemini-enterprise" className="font-medium text-infrastructure-blue hover:underline">
-              Gemini Enterprise
+            <Link href="/digital-workspace" className="font-medium text-infrastructure-blue hover:underline">
+              digital workplace
+            </Link>
+            ,{" "}
+            <Link href="/ai-integration" className="font-medium text-infrastructure-blue hover:underline">
+              AI integration
+            </Link>
+            {" "}and{" "}
+            <Link href="/interoperability" className="font-medium text-infrastructure-blue hover:underline">
+              interoperability
             </Link>
             , delivered through{" "}
             <Link href="/deployment" className="font-medium text-infrastructure-blue hover:underline">
@@ -49,17 +53,17 @@ export default function AboutPage() {
             ,{" "}
             <Link href="/administration" className="font-medium text-infrastructure-blue hover:underline">
               administration
-            </Link>{" "}
-            and{" "}
+            </Link>
+            {" "}and{" "}
             <Link href="/adoption" className="font-medium text-infrastructure-blue hover:underline">
               adoption
             </Link>
             .
           </p>
           <p>
-            Interoperability matters. Workspace and Gemini still have to work with
-            identity, security, applications and workflows that are already in
-            place. That is part of the work, not an afterthought.
+            Interoperability matters. The workplace and intelligent tools still
+            have to work with identity, security, applications and workflows that
+            are already in place. That is part of the work, not an afterthought.
           </p>
         </div>
       </section>

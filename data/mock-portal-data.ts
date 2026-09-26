@@ -23,7 +23,7 @@ export const MOCK_RECENT_ACTIVITY = [
   {
     id: "1",
     date: "2026-09-14T10:30:00Z",
-    description: "Gemini Enterprise usage",
+    description: "Workplace AI usage",
     type: "Usage" as const,
     credits: -120,
     amount: null,
@@ -42,7 +42,7 @@ export const MOCK_RECENT_ACTIVITY = [
   {
     id: "3",
     date: "2026-09-08T09:15:00Z",
-    description: "Gemini Enterprise usage",
+    description: "Workplace AI usage",
     type: "Usage" as const,
     credits: -85,
     amount: null,
@@ -81,7 +81,7 @@ export const MOCK_TRANSACTIONS = [
   {
     id: "txn-001",
     date: "2026-09-14T10:30:00Z",
-    description: "Gemini Enterprise usage — September",
+    description: "Workplace AI usage — September",
     type: "Usage" as const,
     credits: -120,
     amount: null,
@@ -99,7 +99,7 @@ export const MOCK_TRANSACTIONS = [
   {
     id: "txn-003",
     date: "2026-09-08T09:15:00Z",
-    description: "Gemini Enterprise usage",
+    description: "Workplace AI usage",
     type: "Usage" as const,
     credits: -85,
     amount: null,

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | #jointhegrid",
   },
   description:
-    "Google Workspace and Gemini Enterprise for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
+    "Digital workplace and AI integration for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
   icons: {
     icon: [
       { url: "/brand/favicon.ico", sizes: "32x32" },

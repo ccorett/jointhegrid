@@ -4,8 +4,9 @@ import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
 
 const footerLinks = {
   solutions: [
-    { href: "/google-workspace", label: "Google Workspace" },
-    { href: "/gemini-enterprise", label: "Gemini Enterprise" },
+    { href: "/digital-workspace", label: "Digital Workspace" },
+    { href: "/ai-integration", label: "AI Integration" },
+    { href: "/interoperability", label: "Interoperability" },
   ],
   services: [
     { href: "/deployment", label: "Deployment" },
@@ -29,7 +30,8 @@ export function SiteFooter() {
             <GridLogo reversed symbolOnlyBelowSm={false} symbolSize={40} />
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/75">
               Digital workplace solutions for organizations deploying,
-              administering and adopting Google Workspace and Gemini Enterprise.
+              deploying, administering and adopting connected digital workplaces
+              with AI integration.
             </p>
             <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.18em] text-white/45">
               People | Apps | Information | AI | Together

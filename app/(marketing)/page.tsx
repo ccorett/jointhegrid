@@ -11,26 +11,52 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Digital Workplace + AI Integration",
   description:
-    "Google Workspace and Gemini Enterprise for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
+    "Digital workplace and AI integration for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
   keywords: [
-    "Google Workspace Trinidad and Tobago",
-    "Google Workspace Caribbean",
-    "Gemini Enterprise Caribbean",
-    "digital workplace solutions",
-    "Google Workspace deployment",
-    "Google Workspace adoption",
+    "digital workplace Caribbean",
+    "digital workplace Trinidad and Tobago",
+    "AI integration workplace",
+    "workplace deployment Caribbean",
+    "workplace adoption",
   ],
 };
 
 const adoptionItems = [
   "Employee onboarding",
-  "Workspace learning",
-  "Gemini enablement",
+  "Practical learning",
+  "AI use cases",
   "Executive sessions",
   "Administrator learning",
   "Champions programmes",
   "Workshops",
   "Usage measurement",
+];
+
+const solutions = [
+  {
+    num: "01",
+    label: "Digital Workspace",
+    title: "Where everyday work comes together.",
+    body: "Communication, collaboration, files, meetings and the work that happens every day — in one managed environment.",
+    href: "/digital-workspace",
+    cta: "Explore Digital Workspace",
+  },
+  {
+    num: "02",
+    label: "AI Integration",
+    title: "Intelligence inside the workplace.",
+    body: "Bring intelligent tools into the workplace with the access, controls and structure required for organizational use.",
+    href: "/ai-integration",
+    cta: "Explore AI Integration",
+  },
+  {
+    num: "03",
+    label: "Interoperability",
+    title: "Connected to what you already have.",
+    body: "Connect the workplace with the identity, applications, information and workflows already in place.",
+    href: "/interoperability",
+    cta: "Explore Interoperability",
+  },
 ];
 
 export default function HomePage() {
@@ -40,7 +66,7 @@ export default function HomePage() {
         <div className="content-container relative grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:py-24 xl:py-28">
           <div className="max-w-xl lg:max-w-none lg:py-4">
             <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-secondary-text">
-              Digital Workspace + AI Integration
+              Digital Workplace + AI Integration
             </p>
             <h1 className="heading-hero text-[2.5rem] text-primary-navy sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[5rem]">
               Bring your workplace
@@ -48,8 +74,8 @@ export default function HomePage() {
               together.
             </h1>
             <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-body-text md:text-lg">
-              Google Workspace and Gemini Enterprise connected around the way your
-              organization actually works.
+              One connected environment for the people, applications, information
+              and intelligent tools your organization depends on.
             </p>
             <p className="font-display mt-4 text-lg font-semibold text-primary-navy md:text-xl">
               Deployment. Administration. Adoption.
@@ -95,51 +121,42 @@ export default function HomePage() {
       <section id="solutions" className="scroll-mt-24 border-b border-border py-20 md:py-28">
         <div className="content-container">
           <h2 className="heading-section max-w-3xl text-4xl text-primary-navy md:text-5xl lg:text-[3.25rem]">
-            The workplace.
+            The connected
             <br />
-            Now with intelligence built in.
+            workplace.
           </h2>
 
-          <div className="relative mt-16 grid gap-0 lg:grid-cols-2">
-            <div className="relative border-b border-border py-12 lg:border-b-0 lg:border-r lg:py-16 lg:pr-14">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-infrastructure-blue">
-                Digital Workplace
-              </p>
-              <h3 className="heading-section mt-3 text-3xl text-primary-navy md:text-4xl">
-                Where work happens.
-              </h3>
-              <p className="mt-5 text-[17px] leading-relaxed text-secondary-text">
-                Email. Meetings. Documents. Files. Communication. Collaboration.
-                One environment for the work that happens every day.
-              </p>
-              <Link
-                href="/google-workspace"
-                className="mt-8 inline-flex text-sm font-semibold text-infrastructure-blue hover:underline"
+          <div className="mt-16 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-0">
+            {solutions.map((item, i) => (
+              <div
+                key={item.num}
+                className={cn(
+                  "border-t border-border py-12 lg:border-t-0 lg:px-8 lg:py-0",
+                  i === 0 && "lg:pl-0",
+                  i === 1 && "lg:border-x lg:border-border",
+                  i === 2 && "lg:pr-0"
+                )}
               >
-                Explore Google Workspace →
-              </Link>
-            </div>
-
-            <div className="hidden w-px bg-gradient-to-b from-transparent via-infrastructure-blue/40 to-transparent lg:absolute lg:left-1/2 lg:top-12 lg:block lg:h-[calc(100%-6rem)] lg:-translate-x-1/2" />
-
-            <div className="py-12 lg:py-16 lg:pl-14">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-infrastructure-blue">
-                AI Integration
-              </p>
-              <h3 className="heading-section mt-3 text-3xl text-primary-navy md:text-4xl">
-                Intelligence where work happens.
-              </h3>
-              <p className="mt-5 text-[17px] leading-relaxed text-secondary-text">
-                Bring AI into the same environment your people already use, with
-                the access, controls and adoption needed for organizational use.
-              </p>
-              <Link
-                href="/gemini-enterprise"
-                className="mt-8 inline-flex text-sm font-semibold text-infrastructure-blue hover:underline"
-              >
-                Explore Gemini Enterprise →
-              </Link>
-            </div>
+                <p className="font-display text-5xl font-bold text-primary-navy/10 md:text-6xl">
+                  {item.num}
+                </p>
+                <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-infrastructure-blue">
+                  {item.label}
+                </p>
+                <h3 className="heading-section mt-2 text-2xl text-primary-navy md:text-[1.65rem]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-[16px] leading-relaxed text-secondary-text">
+                  {item.body}
+                </p>
+                <Link
+                  href={item.href}
+                  className="mt-6 inline-flex text-sm font-semibold text-infrastructure-blue hover:underline"
+                >
+                  {item.cta} →
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -153,9 +170,10 @@ export default function HomePage() {
             </span>
           </h2>
           <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
-            Workspace brings the organization&apos;s information and collaboration
-            together. Gemini adds another way to work with that information, find
-            what matters and move work forward.
+            A connected workplace brings information and collaboration together.
+            Intelligent tools add another way to work with that information, find
+            what matters and move work forward — with the controls the
+            organization requires.
           </p>
         </div>
       </section>
@@ -166,7 +184,7 @@ export default function HomePage() {
             Three things have to go right.
           </h2>
           <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-white/65">
-            The technology has to be deployed properly, managed consistently and
+            The environment has to be deployed properly, managed consistently and
             used confidently.
           </p>
 
@@ -184,7 +202,7 @@ export default function HomePage() {
                 num: "02",
                 title: "Administer",
                 headline: "Keep it under control.",
-                body: "Users, licences, access, policies, security, support and the day to day management of the environment.",
+                body: "Users, licences, access, policies, security and the day to day management of the workplace.",
                 href: "/administration",
                 cta: "Explore Administration",
               },
@@ -192,7 +210,7 @@ export default function HomePage() {
                 num: "03",
                 title: "Adopt",
                 headline: "Make it part of the work.",
-                body: "Onboarding, practical learning, Gemini use cases, champions and continued reinforcement across the organization.",
+                body: "Onboarding, practical learning, AI use cases, champions and continued reinforcement across the organization.",
                 href: "/adoption",
                 cta: "Explore Adoption",
               },
@@ -245,6 +263,12 @@ export default function HomePage() {
               helps it work seamlessly with the systems, applications and workflows
               your organization already relies on.
             </p>
+            <Link
+              href="/interoperability"
+              className="mt-6 inline-flex text-sm font-semibold text-infrastructure-blue hover:underline"
+            >
+              Explore Interoperability →
+            </Link>
           </div>
           <InteroperabilityGraphic />
         </div>
@@ -256,7 +280,7 @@ export default function HomePage() {
             Access isn&apos;t adoption.
           </h2>
           <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-secondary-text">
-            Giving someone a licence does not mean the technology becomes part of
+            Giving someone access does not mean the technology becomes part of
             their work. Adoption takes practical learning, relevant use cases and
             reinforcement after launch.
           </p>

@@ -7,12 +7,13 @@ export const ORGANIZATION_SIZES = [
 ] as const;
 
 export const AREAS_OF_INTEREST = [
-  "Google Workspace",
-  "Gemini Enterprise",
-  "Workspace Deployment",
-  "Microsoft 365 Migration",
+  "Digital Workspace",
+  "AI Integration",
+  "Deployment",
+  "Migration",
   "Administration",
   "Adoption",
+  "Interoperability",
   "Not Sure Yet",
 ] as const;
 

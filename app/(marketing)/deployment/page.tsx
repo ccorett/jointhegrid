@@ -8,12 +8,13 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Deployment",
   description:
-    "Google Workspace and Gemini Enterprise deployment, migration and rollout across the Caribbean.",
+    "Digital workplace deployment, migration and rollout — configuration, identity, security and production across the Caribbean.",
   path: "/deployment",
   keywords: [
-    "Google Workspace deployment",
-    "Microsoft 365 to Google Workspace migration",
-    "Google Workspace Caribbean",
+    "digital workplace deployment",
+    "workplace migration Caribbean",
+    "email and platform migration",
+    "workplace rollout",
   ],
 });
 
@@ -27,9 +28,9 @@ const lifecycle = [
 ];
 
 const capabilities = [
-  "Workspace configuration",
-  "Gemini deployment",
-  "Microsoft 365 migration",
+  "Environment configuration",
+  "AI integration setup",
+  "Platform migration",
   "Identity integration",
   "Security configuration",
   "Data migration",
@@ -45,8 +46,9 @@ export default function DeploymentPage() {
       <PageHero
         light
         eyebrow="Services"
-        title="Move with confidence."
-        description="From first planning through production and hypercare: configuration, migration, identity, security and rollout for Google Workspace and Gemini Enterprise."
+        title="Get the foundation"
+        titleAccent="right."
+        description="Configuration, migration, identity, security, rollout and the move into production."
         primaryCta={{ label: "Plan a Deployment", href: "/contact" }}
       />
 

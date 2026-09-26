@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: false,
       },
+      {
+        source: "/google-workspace",
+        destination: "/digital-workspace",
+        permanent: true,
+      },
+      {
+        source: "/gemini-enterprise",
+        destination: "/ai-integration",
+        permanent: true,
+      },
     ];
   },
 };

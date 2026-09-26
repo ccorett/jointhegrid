@@ -1,6 +1,6 @@
 # #jointhegrid
 
-Marketing website for **Global Resilient Infrastructure & Digitalisation Ltd.** — Digital Workspace + AI Integration (Google Workspace and Gemini Enterprise).
+Marketing website for **Global Resilient Infrastructure & Digitalisation Ltd.** — Digital Workplace + AI Integration.
 
 ## Stack
 

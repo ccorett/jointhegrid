@@ -4,8 +4,9 @@ const BASE = "https://jointhegrid.com";
 
 const routes = [
   "",
-  "/google-workspace",
-  "/gemini-enterprise",
+  "/digital-workspace",
+  "/ai-integration",
+  "/interoperability",
   "/deployment",
   "/administration",
   "/adoption",

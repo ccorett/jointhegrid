@@ -16,7 +16,7 @@ const services = [
   {
     href: "/adoption",
     label: "Adopt",
-    description: "Learning, Gemini use cases, champions and reinforcement.",
+    description: "Learning, AI use cases, champions and reinforcement.",
     cta: "Explore Adoption",
   },
 ];

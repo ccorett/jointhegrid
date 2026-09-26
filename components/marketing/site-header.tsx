@@ -8,8 +8,9 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const solutionsLinks = [
-  { href: "/google-workspace", label: "Google Workspace" },
-  { href: "/gemini-enterprise", label: "Gemini Enterprise" },
+  { href: "/digital-workspace", label: "Digital Workspace" },
+  { href: "/ai-integration", label: "AI Integration" },
+  { href: "/interoperability", label: "Interoperability" },
 ];
 
 const servicesLinks = [

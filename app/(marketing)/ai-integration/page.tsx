@@ -6,45 +6,46 @@ import { PageCtaBand } from "@/components/marketing/page-cta-band";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Gemini Enterprise",
+  title: "AI Integration",
   description:
-    "Gemini Enterprise integration, governance and adoption alongside Google Workspace for Caribbean organizations.",
-  path: "/gemini-enterprise",
+    "Workplace AI with access controls, governance and adoption — integrated with the people, information and workflows already in your organization.",
+  path: "/ai-integration",
   keywords: [
-    "Gemini Enterprise Caribbean",
-    "Gemini Enterprise Trinidad and Tobago",
-    "AI integration Caribbean",
+    "workplace AI Caribbean",
+    "AI integration digital workplace",
+    "organizational AI adoption",
+    "AI governance workplace",
   ],
 });
 
 const focusAreas = [
-  "Organizational integration",
-  "Employee use",
-  "Administration",
+  "Workplace AI",
+  "Information access",
+  "Organizational use",
+  "Access controls",
   "Governance",
-  "Responsible use",
-  "Role-based applications",
-  "Adoption programmes",
-  "Learning and enablement",
+  "Administration",
+  "Practical use cases",
+  "Adoption",
 ];
 
-export default function GeminiEnterprisePage() {
+export default function AiIntegrationPage() {
   return (
     <>
       <PageHero
         light
         eyebrow="Solutions"
-        title="AI, integrated into the way"
-        titleAccent="your organization works."
-        description="Gemini belongs in the same digital workplace as email, files and meetings: deployed with clear access, governed properly and adopted through practical use."
-        primaryCta={{ label: "Discuss Gemini Enterprise", href: "/contact" }}
+        title="AI that fits"
+        titleAccent="the workplace."
+        description="Put intelligent tools closer to the information, workflows and people already doing the work."
+        primaryCta={{ label: "Discuss AI Integration", href: "/contact" }}
       />
 
       <section className="py-16 md:py-24">
         <div className="content-container">
           <SectionHeading
             title="Workplace AI, not a side project"
-            description="Gemini Enterprise is most useful when it sits inside how the organization already works. That means integration with Workspace, sensible controls and adoption that matches real roles."
+            description="Intelligent tools are most useful when they sit inside how the organization already works — with sensible controls, clear access and adoption that matches real roles."
             className="mb-12 max-w-3xl"
           />
           <CapabilityGrid items={focusAreas} columns={2} />
@@ -54,9 +55,9 @@ export default function GeminiEnterprisePage() {
       <section className="border-y border-border bg-primary-navy py-16 text-white md:py-24">
         <div className="content-container max-w-3xl">
           <p className="text-[17px] leading-relaxed text-white/70">
-            Put Gemini into everyday work with practical use cases, guided learning
+            Bring AI into everyday work with practical use cases, guided learning
             and clear governance. The same deployment, administration and adoption
-            discipline applies here as it does to Workspace.
+            discipline applies here as it does to the rest of the workplace.
           </p>
         </div>
       </section>
@@ -68,10 +69,7 @@ export default function GeminiEnterprisePage() {
         </div>
       </section>
 
-      <PageCtaBand
-        title="Discuss Gemini Enterprise"
-        ctaLabel="Discuss Gemini Enterprise"
-      />
+      <PageCtaBand title="Discuss AI integration" ctaLabel="Let's Talk" />
     </>
   );
 }
