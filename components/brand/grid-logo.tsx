@@ -18,14 +18,21 @@ export function GridLogo({
     : "/brand/jointhegrid-horizontal.svg";
 
   return (
-    <Link href={href} className={cn("inline-block shrink-0", className)}>
+    <Link
+      href={href}
+      className={cn(
+        "inline-flex shrink-0 items-center overflow-visible py-1",
+        className
+      )}
+    >
       <Image
         src={src}
-        alt="#jointheGRID — Digital Workplace Solutions"
-        width={220}
-        height={48}
+        alt="#jointheGRID"
+        width={240}
+        height={56}
         priority
-        className="h-10 w-auto md:h-11"
+        className="h-11 w-auto max-w-[220px] object-contain md:h-12 md:max-w-[240px]"
+        style={{ objectFit: "contain" }}
       />
     </Link>
   );

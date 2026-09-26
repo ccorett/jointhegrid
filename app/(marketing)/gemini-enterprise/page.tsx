@@ -8,13 +8,12 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Gemini Enterprise",
   description:
-    "Gemini Enterprise deployment, governance and adoption integrated with your Google Workspace digital workplace across the Caribbean.",
+    "Gemini Enterprise integration, governance and adoption alongside Google Workspace for Caribbean organizations.",
   path: "/gemini-enterprise",
   keywords: [
     "Gemini Enterprise Caribbean",
     "Gemini Enterprise Trinidad and Tobago",
     "AI integration Caribbean",
-    "Google Workspace AI",
   ],
 });
 
@@ -37,15 +36,15 @@ export default function GeminiEnterprisePage() {
         eyebrow="Solutions"
         title="AI, integrated into the way"
         titleAccent="your organization works."
-        description="Gemini Enterprise brings AI into organizational work alongside Google Workspace—with deployment, administration, governance and adoption designed for enterprise use, not isolated experiments."
+        description="Gemini belongs in the same digital workplace as email, files and meetings: deployed with clear access, governed properly and adopted through practical use."
         primaryCta={{ label: "Discuss Gemini Enterprise", href: "/contact" }}
       />
 
       <section className="py-16 md:py-24">
         <div className="content-container">
           <SectionHeading
-            title="AI inside the workplace—not beside it."
-            description="#jointhegrid is a digital workplace specialist, not a generic AI consultancy. We help you integrate Gemini into the systems, workflows and responsibilities your organization already has."
+            title="Workplace AI, not a side project"
+            description="Gemini Enterprise is most useful when it sits inside how the organization already works. That means integration with Workspace, sensible controls and adoption that matches real roles."
             className="mb-12 max-w-3xl"
           />
           <CapabilityGrid items={focusAreas} columns={2} />
@@ -54,27 +53,23 @@ export default function GeminiEnterprisePage() {
 
       <section className="border-y border-border bg-primary-navy py-16 text-white md:py-24">
         <div className="content-container max-w-3xl">
-          <h2 className="heading-section text-2xl md:text-3xl">
-            Governance and adoption together
-          </h2>
-          <p className="mt-5 text-[17px] leading-relaxed text-white/70">
-            Effective Gemini use depends on clear policies, appropriate access,
-            administrator capability and programmes that help people apply AI
-            responsibly in their roles. We connect Gemini deployment to the same
-            Deploy, Administer, Adopt discipline we apply to Workspace.
+          <p className="text-[17px] leading-relaxed text-white/70">
+            Put Gemini into everyday work with practical use cases, guided learning
+            and clear governance. The same deployment, administration and adoption
+            discipline applies here as it does to Workspace.
           </p>
         </div>
       </section>
 
       <section className="py-16 md:py-24">
         <div className="content-container">
-          <SectionHeading title="How we support Gemini Enterprise" className="mb-10" />
+          <SectionHeading title="Deploy. Administer. Adopt." className="mb-10 max-w-xl" />
           <ServiceLinks />
         </div>
       </section>
 
       <PageCtaBand
-        title="Discuss Gemini Enterprise for your organization"
+        title="Discuss Gemini Enterprise"
         ctaLabel="Discuss Gemini Enterprise"
       />
     </>

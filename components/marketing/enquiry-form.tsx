@@ -70,7 +70,7 @@ export function EnquiryForm() {
         <p className="mt-4 text-[17px] leading-relaxed text-secondary-text">
           Your message has been validated and recorded (reference{" "}
           <span className="font-mono text-sm">{state.referenceId.slice(0, 8)}</span>
-          ). Email delivery to our team is still being connected—please use
+          ). Email delivery to our team is still being connected. Please use
           WhatsApp if you need a faster response.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">

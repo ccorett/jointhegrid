@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Contact",
   description:
-    "Contact #jointhegrid about Google Workspace and Gemini Enterprise—digital workplace and AI integration across the Caribbean.",
+    "Contact #jointhegrid about Google Workspace and Gemini Enterprise across the Caribbean.",
   path: "/contact",
   keywords: [
     "Google Workspace Trinidad and Tobago",

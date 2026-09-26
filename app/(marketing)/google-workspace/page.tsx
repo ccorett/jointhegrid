@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Google Workspace",
   description:
-    "Google Workspace deployment, administration and adoption for organizations in Trinidad & Tobago and the Caribbean.",
+    "Google Workspace deployment, administration and adoption for organizations across the Caribbean.",
   path: "/google-workspace",
   keywords: [
     "Google Workspace Trinidad and Tobago",
@@ -16,11 +16,10 @@ export const metadata = pageMetadata({
     "Google Workspace deployment",
     "Google Workspace administration",
     "Google Workspace adoption",
-    "digital workplace Trinidad and Tobago",
   ],
 });
 
-const apps = [
+const capabilities = [
   "Gmail",
   "Calendar",
   "Drive",
@@ -42,49 +41,40 @@ export default function GoogleWorkspacePage() {
         eyebrow="Solutions"
         title="Your digital workplace."
         titleAccent="Connected."
-        description="Google Workspace is the foundation of your organization's digital workplace—where communication, collaboration and information come together under one secure, manageable environment."
+        description="Google Workspace is the foundation: communication, files, meetings and collaboration in one place, with the administration and security controls the organization needs."
         primaryCta={{ label: "Discuss Google Workspace", href: "/contact" }}
       />
 
       <section className="py-16 md:py-24">
         <div className="content-container">
           <SectionHeading
-            title="Where your organization works every day."
-            description="Workspace is not a list of apps—it is the connected layer your people use to communicate, create and coordinate. #jointhegrid helps you deploy, administer and adopt that environment so it works for your organization."
+            title="The everyday layer of work"
+            description="Most of the organization already lives here: email, calendars, documents, meetings and shared files. The question is whether that environment is set up, managed and used properly."
             className="mb-12 max-w-3xl"
           />
-          <CapabilityGrid items={apps} columns={3} />
+          <CapabilityGrid items={capabilities} columns={3} />
         </div>
       </section>
 
       <section className="border-y border-border bg-light-bg py-16 md:py-24">
         <div className="content-container max-w-3xl">
-          <h2 className="heading-section text-2xl text-primary-navy md:text-3xl">
-            Outcomes, not a product catalogue
-          </h2>
-          <p className="mt-5 text-[17px] leading-relaxed text-secondary-text">
-            We focus on how Gmail, Drive, Meet and the rest of Workspace support
-            organizational productivity—backed by the administration and security
-            controls you need. Migration from legacy systems (including Microsoft
-            environments), identity integration and rollout planning are part of
-            how we help you build a workplace that stays connected as you grow.
+          <p className="text-[17px] leading-relaxed text-secondary-text">
+            Move to Google Workspace with users, email, files and access planned
+            from the start. Keep the environment under control after go-live. Make
+            sure people actually use what they have been given.
           </p>
         </div>
       </section>
 
       <section className="py-16 md:py-24">
         <div className="content-container">
-          <SectionHeading
-            title="Deploy. Administer. Adopt."
-            description="Google Workspace is most valuable when it is implemented well, managed consistently and used effectively."
-            className="mb-10 max-w-2xl"
-          />
+          <SectionHeading title="Deploy. Administer. Adopt." className="mb-10 max-w-xl" />
           <ServiceLinks />
         </div>
       </section>
 
       <PageCtaBand
-        title="Discuss Google Workspace for your organization"
+        title="Discuss Google Workspace"
         ctaLabel="Discuss Google Workspace"
       />
     </>

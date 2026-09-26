@@ -4,17 +4,20 @@ const services = [
   {
     href: "/deployment",
     label: "Deploy",
-    description: "Implementation, migration and rollout.",
+    description: "Configuration, migration, identity, security and rollout.",
+    cta: "Plan a Deployment",
   },
   {
     href: "/administration",
     label: "Administer",
-    description: "Ongoing management, security and support.",
+    description: "Users, licences, policies, security and day to day management.",
+    cta: "Explore Administration",
   },
   {
     href: "/adoption",
     label: "Adopt",
-    description: "Learning, enablement and reinforcement.",
+    description: "Learning, Gemini use cases, champions and reinforcement.",
+    cta: "Explore Adoption",
   },
 ];
 
@@ -34,7 +37,7 @@ export function ServiceLinks() {
             {service.description}
           </p>
           <span className="mt-4 inline-block text-sm font-semibold text-infrastructure-blue">
-            Learn more →
+            {service.cta} →
           </span>
         </Link>
       ))}

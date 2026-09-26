@@ -194,7 +194,7 @@ export function SiteHeader() {
       ref={headerRef}
       className="sticky top-0 z-50 border-b border-border/80 bg-white/90 backdrop-blur-md"
     >
-      <div className="content-container flex h-[68px] items-center justify-between lg:h-[76px]">
+      <div className="content-container flex min-h-[72px] items-center justify-between py-2 lg:min-h-[80px]">
         <GridLogo />
 
         <nav
@@ -233,7 +233,7 @@ export function SiteHeader() {
 
         <div className="hidden lg:block">
           <Button href="/contact" variant="primary" size="sm">
-            Request a Consultation
+            Let&apos;s Talk
           </Button>
         </div>
 
@@ -293,7 +293,7 @@ export function SiteHeader() {
                 className="w-full"
                 onClick={closeMobile}
               >
-                Request a Consultation
+                Let&apos;s Talk
               </Button>
             </div>
           </nav>

@@ -8,11 +8,11 @@ export function ContactInfoPanel() {
         Contact
       </p>
       <h2 className="heading-section mt-3 text-2xl text-primary-navy md:text-3xl">
-        Speak with our team
+        Speak with the team
       </h2>
       <p className="mt-4 text-[17px] leading-relaxed text-secondary-text">
-        Whether you are planning a deployment, need ongoing administration, or
-        want to improve adoption—we are here to help.
+        Planning a deployment, need ongoing administration, or working through
+        adoption? Start here.
       </p>
 
       <div className="mt-10 space-y-8">

@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Administration",
   description:
-    "Google Workspace and Gemini Enterprise administration, licensing, security and ongoing management for Caribbean organizations.",
+    "Google Workspace and Gemini Enterprise administration, licensing and security for Caribbean organizations.",
   path: "/administration",
   keywords: [
     "Google Workspace administration",
@@ -36,15 +36,15 @@ export default function AdministrationPage() {
         light
         eyebrow="Services"
         title="Keep your workplace working."
-        description="Ongoing administration keeps Google Workspace and Gemini Enterprise secure, licensed and optimized—so your digital workplace continues to support the organization."
+        description="After go-live, the environment still needs attention: users, licences, access, policies, security and the day to day work of keeping Workspace and Gemini running properly."
         primaryCta={{ label: "Discuss Administration", href: "/contact" }}
       />
 
       <section className="py-16 md:py-24">
         <div className="content-container">
           <SectionHeading
-            title="Specialist administration alongside your team"
-            description="#jointhegrid can complement your internal ICT team with Google-focused administration, or provide ongoing specialist management where you need dedicated capability."
+            title="Administration that fits your team"
+            description="Some organizations need specialist Google administration alongside internal ICT. Others want a dedicated partner for ongoing management. Either way, the focus stays on control, security and continuity."
             className="mb-10 max-w-3xl"
           />
           <CapabilityGrid items={capabilities} columns={2} />
@@ -53,21 +53,15 @@ export default function AdministrationPage() {
 
       <section className="border-t border-border bg-light-bg py-16 md:py-24">
         <div className="content-container max-w-3xl">
-          <h2 className="heading-section text-2xl text-primary-navy md:text-3xl">
-            Consistency after go-live
-          </h2>
-          <p className="mt-5 text-[17px] leading-relaxed text-secondary-text">
-            Deployment establishes the environment. Administration keeps users,
-            policies and integrations aligned as people join, roles change and
-            requirements evolve—across both Workspace and Gemini.
+          <p className="text-[17px] leading-relaxed text-secondary-text">
+            Keep users, licences, access, policies and security under control after
+            deployment. As people join, roles change and requirements shift, the
+            environment needs consistent management across Workspace and Gemini.
           </p>
         </div>
       </section>
 
-      <PageCtaBand
-        title="Discuss administration for your organization"
-        ctaLabel="Discuss Administration"
-      />
+      <PageCtaBand title="Discuss administration" ctaLabel="Discuss Administration" />
     </>
   );
 }

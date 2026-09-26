@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "About #jointhegrid — Digital Workspace + AI Integration specialists based in Trinidad & Tobago, serving the Caribbean.",
+    "About #jointhegrid: Digital Workspace + AI Integration from Trinidad & Tobago across the Caribbean.",
   path: "/about",
   keywords: [
     "digital workplace Caribbean",
@@ -23,59 +23,57 @@ export default function AboutPage() {
         light
         eyebrow="About"
         title="Focused on better ways of working."
-        description="Global Resilient Infrastructure & Digitalisation Ltd. (#jointhegrid) specializes in Digital Workspace + AI Integration for organizations across the Caribbean."
+        description="#jointhegrid is operated by Global Resilient Infrastructure & Digitalisation Ltd., based in Trinidad & Tobago."
       />
 
       <section className="py-16 md:py-24">
-        <div className="content-container max-w-3xl space-y-8 text-[17px] leading-relaxed text-secondary-text">
+        <div className="content-container max-w-3xl space-y-6 text-[17px] leading-relaxed text-secondary-text">
           <p>
-            <strong className="font-medium text-primary-navy">#jointhegrid</strong>{" "}
-            helps organizations deploy, administer and adopt{" "}
-            <strong className="font-medium text-primary-navy">Google Workspace</strong>{" "}
-            and{" "}
-            <strong className="font-medium text-primary-navy">Gemini Enterprise</strong>
-            . We bring people, applications, information and AI together within a
-            connected digital workplace.
+            The focus is the Caribbean: organizations that want a practical way to
+            bring digital workplace technology, AI and people into one connected
+            environment.
           </p>
           <p>
-            Our services follow three pillars—{" "}
+            Specialization sits in{" "}
+            <Link href="/google-workspace" className="font-medium text-infrastructure-blue hover:underline">
+              Google Workspace
+            </Link>{" "}
+            and{" "}
+            <Link href="/gemini-enterprise" className="font-medium text-infrastructure-blue hover:underline">
+              Gemini Enterprise
+            </Link>
+            , delivered through{" "}
             <Link href="/deployment" className="font-medium text-infrastructure-blue hover:underline">
-              Deploy
+              deployment
             </Link>
             ,{" "}
             <Link href="/administration" className="font-medium text-infrastructure-blue hover:underline">
-              Administer
-            </Link>
-            ,{" "}
+              administration
+            </Link>{" "}
+            and{" "}
             <Link href="/adoption" className="font-medium text-infrastructure-blue hover:underline">
-              Adopt
+              adoption
             </Link>
-            —covering implementation through ongoing management and organizational
-            adoption.
+            .
           </p>
           <p>
-            Interoperability is central to how we work. Your workplace does not
-            exist in isolation; we help Google technologies operate effectively
-            alongside identity systems, security platforms, applications and
-            workflows you already depend on.
+            Interoperability matters. Workspace and Gemini still have to work with
+            identity, security, applications and workflows that are already in
+            place. That is part of the work, not an afterthought.
           </p>
         </div>
       </section>
 
       <section className="border-y border-border bg-light-bg py-16 md:py-24">
-        <div className="content-container">
+        <div className="content-container max-w-3xl">
           <SectionHeading
-            title="Built in the Caribbean. Connected beyond it."
-            description="Based in Trinidad & Tobago, #jointhegrid is building specialist digital workplace capability for organizations across the Caribbean."
-            className="max-w-3xl"
+            title="Based in Trinidad & Tobago. Built to work across the Caribbean."
+            description="Digital workplace delivery does not need to stop at a border. The GRID is structured for organizations and teams working across offices, islands and markets."
           />
         </div>
       </section>
 
-      <PageCtaBand
-        title="Ready to talk about your workplace?"
-        ctaLabel="Request a Consultation"
-      />
+      <PageCtaBand title="Ready to talk?" ctaLabel="Let's Talk" />
     </>
   );
 }

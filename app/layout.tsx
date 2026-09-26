@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | #jointhegrid",
   },
   description:
-    "#jointhegrid helps organizations deploy, administer and adopt Google Workspace and Gemini Enterprise—creating a connected digital workplace.",
+    "Google Workspace and Gemini Enterprise for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
   icons: {
     icon: "/brand/jointhegrid-favicon.svg",
     apple: "/brand/jointhegrid-favicon.svg",

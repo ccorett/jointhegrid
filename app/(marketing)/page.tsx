@@ -8,9 +8,9 @@ import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Digital Workspace + AI Integration",
+  title: "Digital Workplace + AI Integration",
   description:
-    "#jointhegrid helps organizations deploy, administer and adopt Google Workspace and Gemini Enterprise—creating a connected digital workplace where people, information and intelligent tools work together.",
+    "Google Workspace and Gemini Enterprise for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
   keywords: [
     "Google Workspace Trinidad and Tobago",
     "Google Workspace Caribbean",
@@ -20,8 +20,6 @@ export const metadata: Metadata = {
     "Google Workspace adoption",
   ],
 };
-
-const workspaceApps = ["Gmail", "Drive", "Meet", "Chat", "Docs", "Sheets", "Calendar"];
 
 const adoptionItems = [
   "Employee onboarding",
@@ -44,8 +42,7 @@ const sectors = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-border bg-light-bg">
+      <section className="relative border-b border-border bg-light-bg">
         <div
           className="pointer-events-none absolute inset-0 grid-bg-lines opacity-[0.45]"
           aria-hidden
@@ -56,22 +53,20 @@ export default function HomePage() {
               Digital Workspace + AI Integration
             </p>
             <h1 className="heading-hero text-[2.5rem] text-primary-navy sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[5rem]">
-              Bring your workplace together.
-            </h1>
-            <p className="font-display mt-6 text-xl font-semibold leading-snug text-primary-navy sm:text-2xl md:text-[1.65rem]">
-              People. Apps.
+              Bring your workplace
               <br />
-              Information. AI.
-            </p>
-            <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-body-text md:text-lg">
-              #jointhegrid helps organizations deploy, administer and adopt Google
-              Workspace and Gemini Enterprise—creating a connected digital
-              workplace where people, information and intelligent tools work
               together.
+            </h1>
+            <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-body-text md:text-lg">
+              Google Workspace and Gemini Enterprise connected around the way your
+              organization actually works.
+            </p>
+            <p className="font-display mt-4 text-lg font-semibold text-primary-navy md:text-xl">
+              Deployment. Administration. Adoption.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button href="/contact" size="lg">
-                Request a Consultation
+                Let&apos;s Talk
               </Button>
               <Button href="#solutions" variant="secondary" size="lg">
                 Explore Solutions
@@ -82,7 +77,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Brand statement */}
       <section className="relative overflow-hidden bg-primary-navy py-20 md:py-28 lg:py-32">
         <BrandConnectionLines />
         <div className="content-container relative">
@@ -97,24 +91,23 @@ export default function HomePage() {
               AI.
             </h2>
             <p className="font-display mt-8 text-2xl font-semibold text-secondary-blue md:text-3xl">
-              Connected on the GRID.
+              Together on the GRID.
             </p>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/70 md:text-[19px]">
-              A modern workplace is more than a collection of tools. #jointhegrid
-              connects the technology, administration and people required to make
-              digital work effective.
+              The modern workplace is connected. Communication, information,
+              applications and intelligent tools need to work as one environment,
+              not as separate pieces.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Solutions */}
       <section id="solutions" className="scroll-mt-24 border-b border-border py-20 md:py-28">
         <div className="content-container">
           <h2 className="heading-section max-w-3xl text-4xl text-primary-navy md:text-5xl lg:text-[3.25rem]">
-            One workplace.
+            The workplace.
             <br />
-            Two powerful layers.
+            Now with intelligence built in.
           </h2>
 
           <div className="relative mt-16 grid gap-0 lg:grid-cols-2">
@@ -126,19 +119,9 @@ export default function HomePage() {
                 Where work happens.
               </h3>
               <p className="mt-5 text-[17px] leading-relaxed text-secondary-text">
-                Google Workspace brings communication, collaboration, information
-                and organizational productivity into one connected environment.
+                Email. Meetings. Documents. Files. Communication. Collaboration.
+                One environment for the work that happens every day.
               </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {workspaceApps.map((app) => (
-                  <span
-                    key={app}
-                    className="rounded-md border border-border bg-light-bg px-3 py-1 text-xs font-medium text-body-text"
-                  >
-                    {app}
-                  </span>
-                ))}
-              </div>
               <Link
                 href="/google-workspace"
                 className="mt-8 inline-flex text-sm font-semibold text-infrastructure-blue hover:underline"
@@ -157,9 +140,8 @@ export default function HomePage() {
                 Intelligence where work happens.
               </h3>
               <p className="mt-5 text-[17px] leading-relaxed text-secondary-text">
-                Gemini Enterprise brings AI into organizational work—with the
-                deployment, administration, governance and adoption required for
-                enterprise use alongside Google Workspace.
+                Bring AI into the same environment your people already use, with
+                the access, controls and adoption needed for organizational use.
               </p>
               <Link
                 href="/gemini-enterprise"
@@ -172,75 +154,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Workspace + AI */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#EFF6FF] via-light-bg to-white py-20 md:py-28">
-        <div className="content-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h2 className="heading-section text-3xl text-primary-navy md:text-4xl lg:text-[2.75rem]">
-              Your workplace already has the information.
-              <span className="mt-2 block text-infrastructure-blue">
-                AI helps your people work with it.
-              </span>
-            </h2>
-          </div>
-          <div className="relative border-l-2 border-infrastructure-blue/30 pl-8 md:pl-12">
-            {[
-              "PEOPLE",
-              "GOOGLE WORKSPACE",
-              "INFORMATION",
-              "GEMINI",
-              "BETTER WORK",
-            ].map((step, i, arr) => (
-              <div key={step} className="relative pb-10 last:pb-0">
-                {i < arr.length - 1 && (
-                  <span
-                    className="absolute -left-[calc(2rem+5px)] top-8 hidden h-[calc(100%-1rem)] w-px bg-infrastructure-blue/25 md:-left-[calc(3rem+5px)] md:block"
-                    aria-hidden
-                  />
-                )}
-                <p className="font-display text-lg font-semibold tracking-wide text-primary-navy md:text-xl">
-                  {step}
-                </p>
-                {i < arr.length - 1 && (
-                  <span className="mt-2 inline-block text-infrastructure-blue md:hidden" aria-hidden>
-                    ↓
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
+      <section className="relative bg-gradient-to-br from-[#EFF6FF] via-light-bg to-white py-20 md:py-28">
+        <div className="content-container max-w-3xl">
+          <h2 className="heading-section text-3xl text-primary-navy md:text-4xl lg:text-[2.75rem]">
+            Your information already has value.
+            <span className="mt-2 block text-infrastructure-blue">
+              Make more of it.
+            </span>
+          </h2>
+          <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
+            Workspace brings the organization&apos;s information and collaboration
+            together. Gemini adds another way to work with that information, find
+            what matters and move work forward.
+          </p>
         </div>
       </section>
 
-      {/* Deploy. Administer. Adopt. */}
       <section className="bg-primary-navy py-20 text-white md:py-28 lg:py-32">
         <div className="content-container">
           <h2 className="heading-section max-w-3xl text-3xl md:text-4xl lg:text-[2.85rem]">
-            We don&apos;t just give you the tools.
-            <span className="mt-2 block text-secondary-blue">
-              We make the workplace work.
-            </span>
+            Three things have to go right.
           </h2>
+          <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-white/65">
+            The technology has to be deployed properly, managed consistently and
+            used confidently.
+          </p>
 
-          <div className="mt-16 space-y-0 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-0 lg:space-y-0">
+          <div className="mt-16 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-0">
             {[
               {
                 num: "01",
                 title: "Deploy",
-                headline: "Build the foundation.",
-                body: "Migration, configuration, identity, security, rollout and implementation.",
+                headline: "Get the foundation right.",
+                body: "Configuration, migration, identity, security, rollout and the move into production.",
+                href: "/deployment",
+                cta: "Plan a Deployment",
               },
               {
                 num: "02",
                 title: "Administer",
-                headline: "Keep it working.",
-                body: "Users, licences, security, policies, support and ongoing management.",
+                headline: "Keep it under control.",
+                body: "Users, licences, access, policies, security, support and the day to day management of the environment.",
+                href: "/administration",
+                cta: "Explore Administration",
               },
               {
                 num: "03",
                 title: "Adopt",
-                headline: "Make it valuable.",
-                body: "Onboarding, learning, Gemini enablement, champions, workshops and reinforcement.",
+                headline: "Make it part of the work.",
+                body: "Onboarding, practical learning, Gemini use cases, champions and continued reinforcement across the organization.",
+                href: "/adoption",
+                cta: "Explore Adoption",
               },
             ].map((pillar, i) => (
               <div
@@ -265,16 +229,10 @@ export default function HomePage() {
                   {pillar.body}
                 </p>
                 <Link
-                  href={
-                    pillar.title === "Deploy"
-                      ? "/deployment"
-                      : pillar.title === "Administer"
-                        ? "/administration"
-                        : "/adoption"
-                  }
+                  href={pillar.href}
                   className="mt-6 inline-flex text-sm font-semibold text-white hover:text-secondary-blue"
                 >
-                  Learn more →
+                  {pillar.cta} →
                 </Link>
               </div>
             ))}
@@ -282,30 +240,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Interoperability */}
       <section className="border-b border-border py-20 md:py-28">
         <div className="content-container grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <h2 className="heading-section text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
-              Your workplace doesn&apos;t exist in isolation.
+              Nothing works in isolation.
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
-              #jointhegrid helps Google Workspace and Gemini Enterprise operate
-              effectively within the identity systems, applications, security
-              environments and workflows your organization already depends on.
+              Google Workspace and Gemini Enterprise still need to fit the systems
+              already in place. Identity, security, applications, information and
+              existing workflows remain part of the picture.
             </p>
           </div>
           <InteroperabilityNetwork />
         </div>
       </section>
 
-      {/* Adoption */}
       <section className="py-20 md:py-28">
         <div className="content-container">
           <h2 className="heading-section max-w-3xl text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
-            Technology doesn&apos;t transform an organization.
-            <span className="mt-2 block">People using it does.</span>
+            Access isn&apos;t adoption.
           </h2>
+          <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-secondary-text">
+            Giving someone a licence does not mean the technology becomes part of
+            their work. Adoption takes practical learning, relevant use cases and
+            reinforcement after launch.
+          </p>
           <p className="font-display mt-8 flex flex-wrap items-center gap-2 text-sm font-semibold uppercase tracking-wider text-infrastructure-blue sm:text-base">
             <span>Learn</span>
             <span className="text-border">→</span>
@@ -333,7 +293,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Who we work with */}
       <section className="border-y border-border bg-light-bg py-20 md:py-24">
         <div className="content-container">
           <h2 className="heading-section text-3xl text-primary-navy md:text-4xl">
@@ -357,64 +316,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Caribbean */}
-      <section className="relative overflow-hidden py-20 md:py-28">
-        <svg
-          className="pointer-events-none absolute right-0 top-1/2 hidden h-[280px] w-[320px] -translate-y-1/2 opacity-[0.12] lg:block"
-          viewBox="0 0 200 180"
-          aria-hidden
-        >
-          {[
-            [120, 40],
-            [140, 55],
-            [155, 70],
-            [130, 85],
-            [100, 95],
-            [85, 110],
-            [110, 120],
-            [145, 100],
-          ].map(([cx, cy], i) => (
-            <g key={i}>
-              <circle cx={cx} cy={cy} r="4" fill="#2563EB" />
-              {i > 0 && (
-                <line
-                  x1={120}
-                  y1={40}
-                  x2={cx}
-                  y2={cy}
-                  stroke="#2563EB"
-                  strokeWidth="0.5"
-                />
-              )}
-            </g>
-          ))}
-        </svg>
-        <div className="content-container relative max-w-3xl">
+      <section className="py-20 md:py-28">
+        <div className="content-container max-w-3xl">
           <h2 className="heading-section text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
-            Built in the Caribbean.
-            <span className="mt-2 block text-infrastructure-blue">
-              Connected beyond it.
-            </span>
+            Built for the way the Caribbean works.
           </h2>
           <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
-            Based in Trinidad &amp; Tobago, #jointhegrid is building specialist
-            digital workplace capability for organizations across the Caribbean.
+            Based in Trinidad &amp; Tobago. Built to work across the Caribbean.
+          </p>
+          <p className="mt-4 text-[17px] leading-relaxed text-secondary-text md:text-lg">
+            Digital workplace delivery does not need to stop at a border. The GRID
+            is structured for organizations and teams working across offices,
+            islands and markets.
           </p>
         </div>
       </section>
 
-      {/* Contact CTA */}
       <section className="bg-primary-navy py-20 md:py-28">
         <div className="content-container text-center">
           <h2 className="heading-section text-3xl text-white md:text-4xl lg:text-[2.75rem]">
-            Ready to build a better way to work?
+            Ready to talk about your workplace?
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-lg text-white/70">
-            Let&apos;s talk about your digital workplace.
-          </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Button href="/contact" size="lg">
-              Request a Consultation
+              Let&apos;s Talk
             </Button>
             <WhatsAppButton variant="primary" />
           </div>
