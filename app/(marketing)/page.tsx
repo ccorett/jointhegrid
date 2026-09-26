@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Phase1HeroGrid } from "@/components/brand/phase1-hero-grid";
 import { BrandConnectionLines } from "@/components/brand/brand-connection-lines";
-import { InteroperabilityNetwork } from "@/components/brand/interoperability-network";
+import { InteroperabilityGraphic } from "@/components/brand/interoperability-graphic";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import { cn } from "@/lib/utils";
@@ -239,16 +239,19 @@ export default function HomePage() {
       <section className="border-b border-border py-20 md:py-28">
         <div className="content-container grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <h2 className="heading-section text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
-              Nothing works in isolation.
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-infrastructure-blue">
+              Interoperability
+            </p>
+            <h2 className="heading-section mt-3 text-3xl text-primary-navy md:text-4xl lg:text-[2.65rem]">
+              Everything works better when it works together.
             </h2>
             <p className="mt-6 text-[17px] leading-relaxed text-secondary-text md:text-lg">
-              Google Workspace and Gemini Enterprise still need to fit the systems
-              already in place. Identity, security, applications, information and
-              existing workflows remain part of the picture.
+              Organizations depend on multiple technologies. Google Workspace and
+              Gemini Enterprise need to operate alongside identity, security,
+              applications, information and the workflows already in place.
             </p>
           </div>
-          <InteroperabilityNetwork />
+          <InteroperabilityGraphic />
         </div>
       </section>
 
