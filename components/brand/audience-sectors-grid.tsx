@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 
 type MarketRegion = {
   id: string;
-  index: string;
   title: string[];
   bg: string;
   text: string;
@@ -18,7 +17,6 @@ type MarketRegion = {
 const MARKETS: MarketRegion[] = [
   {
     id: "government",
-    index: "01",
     title: ["Government", "& Public Sector"],
     bg: "#0B1220",
     text: "#FFFFFF",
@@ -29,7 +27,6 @@ const MARKETS: MarketRegion[] = [
   },
   {
     id: "enterprise",
-    index: "02",
     title: ["Enterprise"],
     bg: "#2563EB",
     text: "#FFFFFF",
@@ -40,7 +37,6 @@ const MARKETS: MarketRegion[] = [
   },
   {
     id: "smes",
-    index: "03",
     title: ["SMEs"],
     bg: "#F8FAFC",
     text: "#0B1220",
@@ -51,7 +47,6 @@ const MARKETS: MarketRegion[] = [
   },
   {
     id: "education",
-    index: "04",
     title: ["Education"],
     bg: "#60A5FA",
     text: "#0B1220",
@@ -108,13 +103,7 @@ function MarketMapGeometry() {
 
 function RegionContent({ market }: { market: MarketRegion }) {
   return (
-    <div className="relative flex h-full min-h-[inherit] flex-col justify-end p-6 md:p-8 lg:p-9">
-      <p
-        className="mb-2 text-[10px] font-medium tracking-[0.22em] opacity-45"
-        style={{ color: market.text }}
-      >
-        {market.index}
-      </p>
+    <div className="relative flex h-full min-h-[inherit] flex-col items-center justify-center p-6 text-center md:p-8 lg:p-9">
       <h3
         className={cn("font-display font-semibold tracking-[-0.02em]", market.titleClass)}
         style={{ color: market.text }}
@@ -127,7 +116,7 @@ function RegionContent({ market }: { market: MarketRegion }) {
       </h3>
       <p
         className={cn(
-          "mt-0 max-h-0 overflow-hidden text-[13px] leading-snug opacity-0",
+          "mt-0 max-h-0 max-w-[18rem] overflow-hidden text-[13px] leading-snug opacity-0",
           "transition-all duration-[350ms] ease-out",
           "md:group-hover:mt-3 md:group-hover:max-h-16 md:group-hover:opacity-75"
         )}
