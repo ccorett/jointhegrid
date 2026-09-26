@@ -26,7 +26,7 @@ export function SiteFooter() {
       <div className="content-container py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <GridLogo reversed />
+            <GridLogo reversed symbolOnlyBelowSm={false} symbolSize={40} />
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/75">
               Digital workplace solutions for organizations deploying,
               administering and adopting Google Workspace and Gemini Enterprise.

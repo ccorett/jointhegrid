@@ -15,8 +15,8 @@ Favicons are generated from `grid-symbol-dark.png`.
 
 | File | Use |
 |------|-----|
-| `jointhegrid-horizontal.svg` | Primary header (light) |
-| `jointhegrid-reversed.svg` | Footer / dark sections |
+| `jointhegrid-horizontal.svg` | Deprecated (placeholder geometry — use `<GridLogo />`) |
+| `jointhegrid-reversed.svg` | Deprecated (placeholder geometry — use `<GridLogo reversed />`) |
 | `jointhegrid-monochrome.svg` | Single-colour only |
 
 Legacy `jointhegrid-symbol.svg` and `jointhegrid-favicon.svg` are deprecated — do not use in UI.

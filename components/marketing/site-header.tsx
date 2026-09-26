@@ -195,7 +195,7 @@ export function SiteHeader() {
       className="sticky top-0 z-50 border-b border-border/80 bg-white/90 backdrop-blur-md"
     >
       <div className="content-container flex min-h-[72px] items-center justify-between py-2 lg:min-h-[80px]">
-        <GridLogo />
+        <GridLogo symbolSize={40} />
 
         <nav
           className="relative z-20 hidden items-center gap-0.5 lg:flex"
