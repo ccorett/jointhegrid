@@ -14,7 +14,6 @@ export function InteroperabilityNetwork({ className }: { className?: string }) {
         "relative mx-auto w-full min-h-[340px] max-w-[700px] lg:min-h-[480px]",
         className
       )}
-      aria-hidden
     >
       <svg
         viewBox="0 0 560 500"

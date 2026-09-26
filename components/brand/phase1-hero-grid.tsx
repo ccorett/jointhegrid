@@ -78,7 +78,6 @@ export function Phase1HeroGrid({ className }: { className?: string }) {
         "relative mx-auto w-full min-h-[320px] max-w-[620px] sm:min-h-[420px] lg:min-h-[500px] lg:max-w-[580px]",
         className
       )}
-      aria-hidden
     >
       <svg
         viewBox="0 0 440 360"
