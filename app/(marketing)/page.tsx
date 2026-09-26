@@ -43,10 +43,6 @@ export default function HomePage() {
   return (
     <>
       <section className="relative border-b border-border bg-light-bg">
-        <div
-          className="pointer-events-none absolute inset-0 grid-bg-lines opacity-[0.45]"
-          aria-hidden
-        />
         <div className="content-container relative grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:py-24 xl:py-28">
           <div className="max-w-xl lg:max-w-none lg:py-4">
             <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-secondary-text">

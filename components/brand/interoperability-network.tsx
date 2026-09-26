@@ -2,101 +2,124 @@
 
 import { cn } from "@/lib/utils";
 
-const MODULE = { w: 18, h: 10, rx: 2.5, cell: 14, gap: 4 };
+const FONT = "Inter, system-ui, sans-serif";
 
-type NodeDef = {
-  id: string;
-  label: string;
-  x: number;
-  y: number;
-  primary?: boolean;
-};
-
-const NODES: NodeDef[] = [
-  { id: "identity", label: "IDENTITY", x: 12, y: 18 },
-  { id: "applications", label: "APPLICATIONS", x: 88, y: 18 },
-  { id: "people", label: "PEOPLE", x: 12, y: 50 },
-  { id: "workflows", label: "WORKFLOWS", x: 88, y: 50 },
-  { id: "information", label: "INFORMATION", x: 12, y: 82 },
-  { id: "security", label: "SECURITY", x: 88, y: 82 },
-];
-
-const HUB = { x: 50, y: 50 };
-
-function moduleWidth(label: string) {
-  return label.length > 10 ? 28 : 20;
-}
-
+/**
+ * Connected Stack — layered modular system (not hub-and-spoke).
+ */
 export function InteroperabilityNetwork({ className }: { className?: string }) {
   return (
-    <div className={cn("w-full max-w-lg mx-auto", className)} aria-hidden>
-      <svg viewBox="0 0 100 100" className="w-full" preserveAspectRatio="xMidYMid meet">
-        {/* Orthogonal guides */}
-        <line x1="50" y1="12" x2="50" y2="88" stroke="#E2E8F0" strokeWidth="0.35" vectorEffect="non-scaling-stroke" />
-        <line x1="12" y1="50" x2="88" y2="50" stroke="#E2E8F0" strokeWidth="0.35" vectorEffect="non-scaling-stroke" />
-
-        {NODES.map((node) => (
-          <path
-            key={node.id}
-            d={`M ${HUB.x} ${HUB.y} L ${node.x} ${node.y}`}
-            fill="none"
-            stroke="#2563EB"
-            strokeWidth="0.45"
-            strokeOpacity="0.35"
-            vectorEffect="non-scaling-stroke"
-          />
-        ))}
-
-        {NODES.map((node) => {
-          const w = moduleWidth(node.label);
-          return (
-            <g key={node.id}>
-              <rect
-                x={node.x - w / 2}
-                y={node.y - MODULE.h / 2}
-                width={w}
-                height={MODULE.h}
-                rx={MODULE.rx}
-                fill="#F8FAFC"
-                stroke="#2563EB"
-                strokeWidth="0.4"
-                strokeOpacity="0.55"
-                vectorEffect="non-scaling-stroke"
-              />
-              <text
-                x={node.x}
-                y={node.y + 1.2}
-                textAnchor="middle"
-                fill="#334155"
-                fontSize="2.6"
-                fontWeight="600"
-                letterSpacing="0.03em"
-              >
-                {node.label}
-              </text>
-            </g>
-          );
-        })}
-
-        {/* Hub: Workspace + Gemini */}
-        <rect
-          x={HUB.x - 22}
-          y={HUB.y - 11}
-          width="44"
-          height="22"
-          rx="3"
-          fill="#0B1220"
-        />
-        <rect x={HUB.x - 18} y={HUB.y - 7} width="5" height="5" rx="1" fill="#2563EB" />
-        <rect x={HUB.x - 10} y={HUB.y - 7} width="5" height="5" rx="1" fill="#2563EB" />
-        <rect x={HUB.x - 2} y={HUB.y - 7} width="5" height="5" rx="1" fill="#60A5FA" />
-        <rect x={HUB.x - 18} y={HUB.y + 1} width="5" height="5" rx="1" fill="#2563EB" />
-        <text x={HUB.x} y={HUB.y - 1} textAnchor="middle" fill="#FFFFFF" fontSize="2.5" fontWeight="600">
-          WORKSPACE
+    <div
+      className={cn(
+        "relative mx-auto w-full min-h-[340px] max-w-[700px] lg:min-h-[480px]",
+        className
+      )}
+      aria-hidden
+    >
+      <svg
+        viewBox="0 0 560 500"
+        className="hidden h-auto w-full md:block"
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        aria-label="Layered digital workplace stack with identity, applications, information, workflows and security"
+      >
+        {/* WORKFLOWS — horizontal layer */}
+        <rect x="40" y="28" width="480" height="36" rx="4" fill="#EFF6FF" stroke="#E2E8F0" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+        <text x="280" y="51" textAnchor="middle" fill="#64748B" fontSize="11" fontWeight="500" fontFamily={FONT} letterSpacing="0.14em">
+          WORKFLOWS
         </text>
-        <text x={HUB.x} y={HUB.y + 3.5} textAnchor="middle" fill="#60A5FA" fontSize="2.3" fontWeight="600">
-          + GEMINI
+
+        {/* Zone modules */}
+        <rect x="40" y="84" width="156" height="76" rx="6" fill="#FFFFFF" stroke="#E2E8F0" strokeWidth="1.5" />
+        <rect x="384" y="84" width="136" height="292" rx="6" fill="#FFFFFF" stroke="#E2E8F0" strokeWidth="1.5" />
+        <rect x="40" y="176" width="128" height="200" rx="6" fill="#F8FAFC" stroke="#2563EB" strokeWidth="1" strokeOpacity="0.35" />
+
+        {/* SECURITY — horizontal layer through the stack */}
+        <rect x="40" y="248" width="480" height="28" rx="3" fill="#0B1220" fillOpacity="0.06" />
+        <line x1="40" y1="262" x2="520" y2="262" stroke="#2563EB" strokeWidth="0.75" strokeOpacity="0.2" vectorEffect="non-scaling-stroke" />
+
+        {/* Central core */}
+        <rect x="184" y="168" width="192" height="208" rx="8" fill="#0B1220" />
+        <text x="280" y="204" textAnchor="middle" fill="#60A5FA" fontSize="10" fontWeight="500" fontFamily={FONT} letterSpacing="0.16em">
+          DIGITAL WORKPLACE
         </text>
+        <image href="/brand/jointhegrid-symbol.svg" x="232" y="212" width="96" height="96" />
+        <text x="280" y="340" textAnchor="middle" fill="#FFFFFF" fontSize="15" fontWeight="600" fontFamily={FONT} letterSpacing="0.04em">
+          Workspace
+        </text>
+        <text x="280" y="360" textAnchor="middle" fill="#60A5FA" fontSize="13" fontWeight="600" fontFamily={FONT}>
+          + Gemini
+        </text>
+
+        {/* Short joins into core */}
+        <rect x="168" y="118" width="16" height="4" fill="#2563EB" opacity="0.4" />
+        <rect x="368" y="118" width="16" height="4" fill="#2563EB" opacity="0.4" />
+        <rect x="168" y="256" width="16" height="4" fill="#2563EB" opacity="0.35" />
+        <rect x="276" y="376" width="8" height="16" fill="#2563EB" opacity="0.35" />
+
+        {/* Information base */}
+        <rect x="112" y="392" width="336" height="76" rx="6" fill="#FFFFFF" stroke="#E2E8F0" strokeWidth="1.5" />
+        <text x="280" y="436" textAnchor="middle" fill="#334155" fontSize="12" fontWeight="500" fontFamily={FONT} letterSpacing="0.12em">
+          INFORMATION
+        </text>
+
+        <text x="118" y="128" textAnchor="middle" fill="#334155" fontSize="12" fontWeight="500" fontFamily={FONT} letterSpacing="0.12em">
+          PEOPLE
+        </text>
+        <text x="452" y="128" textAnchor="middle" fill="#334155" fontSize="12" fontWeight="500" fontFamily={FONT} letterSpacing="0.12em">
+          APPLICATIONS
+        </text>
+        <text x="104" y="278" textAnchor="middle" fill="#334155" fontSize="12" fontWeight="500" fontFamily={FONT} letterSpacing="0.12em">
+          IDENTITY
+        </text>
+        <text x="504" y="266" textAnchor="end" fill="#64748B" fontSize="10" fontWeight="500" fontFamily={FONT} letterSpacing="0.14em">
+          SECURITY
+        </text>
+      </svg>
+
+      {/* Mobile */}
+      <svg
+        viewBox="0 0 320 380"
+        className="h-auto w-full md:hidden"
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        aria-label="Connected workplace stack on mobile"
+      >
+        <text x="160" y="22" textAnchor="middle" fill="#64748B" fontSize="9" fontWeight="500" fontFamily={FONT} letterSpacing="0.12em">
+          WORKFLOWS
+        </text>
+        <line x1="32" y1="28" x2="288" y2="28" stroke="#2563EB" strokeWidth="0.5" opacity="0.25" vectorEffect="non-scaling-stroke" />
+        <text x="288" y="44" textAnchor="end" fill="#64748B" fontSize="8" fontWeight="500" fontFamily={FONT} letterSpacing="0.1em">
+          SECURITY
+        </text>
+
+        <rect x="28" y="52" width="80" height="52" rx="5" fill="#FFF" stroke="#E2E8F0" strokeWidth="1.5" />
+        <text x="68" y="84" textAnchor="middle" fill="#334155" fontSize="10" fontWeight="500" fontFamily={FONT} letterSpacing="0.1em">
+          PEOPLE
+        </text>
+
+        <rect x="212" y="52" width="80" height="52" rx="5" fill="#FFF" stroke="#E2E8F0" strokeWidth="1.5" />
+        <text x="252" y="84" textAnchor="middle" fill="#334155" fontSize="10" fontWeight="500" fontFamily={FONT} letterSpacing="0.1em">
+          APPLICATIONS
+        </text>
+
+        <rect x="28" y="116" width="72" height="64" rx="5" fill="#F8FAFC" stroke="#2563EB" strokeOpacity="0.35" strokeWidth="1" />
+        <text x="64" y="152" textAnchor="middle" fill="#334155" fontSize="9" fontWeight="500" fontFamily={FONT} letterSpacing="0.1em">
+          IDENTITY
+        </text>
+
+        <rect x="104" y="108" width="112" height="120" rx="8" fill="#0B1220" />
+        <image href="/brand/jointhegrid-symbol.svg" x="120" y="118" width="80" height="80" />
+        <text x="160" y="212" textAnchor="middle" fill="#FFF" fontSize="10" fontWeight="600" fontFamily={FONT}>
+          Workspace + Gemini
+        </text>
+
+        <rect x="220" y="116" width="72" height="64" rx="5" fill="#FFF" stroke="#E2E8F0" strokeWidth="1.5" />
+        <text x="256" y="152" textAnchor="middle" fill="#334155" fontSize="9" fontWeight="500" fontFamily={FONT} letterSpacing="0.08em">
+          INFORMATION
+        </text>
+
+        <rect x="156" y="228" width="8" height="12" fill="#2563EB" opacity="0.35" />
       </svg>
     </div>
   );
