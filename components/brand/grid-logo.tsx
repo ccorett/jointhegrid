@@ -26,7 +26,7 @@ export function GridLogo({
     <Link
       href={href}
       className={cn(
-        "inline-flex shrink-0 items-center gap-2.5 overflow-visible py-1 sm:gap-3",
+        "inline-flex shrink-0 items-center gap-2.5 overflow-visible sm:gap-3",
         className
       )}
     >

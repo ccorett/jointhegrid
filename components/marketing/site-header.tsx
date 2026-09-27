@@ -18,9 +18,14 @@ const servicesLinks = [
   { href: "/adoption", label: "Adoption" },
 ];
 
+/** Shared height so links, dropdowns, and CTA align on one baseline row */
+const desktopNavRowHeight = "min-h-11";
+
 /** Desktop primary navigation */
-const desktopNavLinkClass =
-  "rounded-sm px-3.5 py-2.5 text-[17px] font-medium leading-snug text-body-text transition-colors hover:text-primary-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2 lg:px-4 lg:text-[18px]";
+const desktopNavLinkClass = cn(
+  desktopNavRowHeight,
+  "inline-flex items-center rounded-sm px-3.5 text-[17px] font-medium leading-none text-body-text transition-colors hover:text-primary-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2 lg:px-4 lg:text-[18px]"
+);
 
 const desktopDropdownItemClass =
   "block px-4 py-3 text-base leading-snug text-body-text transition-colors hover:bg-light-bg hover:text-primary-navy focus-visible:bg-light-bg focus-visible:text-primary-navy focus-visible:outline-none lg:px-5 lg:py-3.5 lg:text-[17px]";
@@ -60,11 +65,11 @@ function NavDropdown({
   };
 
   return (
-    <div className="relative">
+    <div className="relative flex items-center">
       <button
         type="button"
         id={`${menuId}-menu-button`}
-        className={cn(desktopNavLinkClass, "gap-1.5")}
+        className={cn(desktopNavLinkClass, "gap-1.5 whitespace-nowrap")}
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-controls={panelId}
@@ -76,7 +81,7 @@ function NavDropdown({
         {label}
         <ChevronDown
           className={cn(
-            "h-4 w-4 opacity-60 transition-transform lg:h-[18px] lg:w-[18px]",
+            "size-4 shrink-0 opacity-60 transition-transform lg:size-[18px]",
             isOpen && "rotate-180"
           )}
         />
@@ -221,36 +226,44 @@ export function SiteHeader() {
       className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-sm"
     >
       <div className="content-container flex min-h-[4rem] items-center justify-between gap-3 py-2 sm:min-h-[4.25rem] lg:min-h-[4.75rem] lg:py-2.5">
-        <GridLogo symbolSize={44} className="sm:[&_span]:text-lg lg:[&_span]:text-xl" />
+        <GridLogo
+          symbolSize={44}
+          className="shrink-0 py-0 sm:[&_span]:text-lg lg:[&_span]:text-xl"
+        />
 
-        <nav
-          className="relative z-20 hidden items-center gap-1 lg:flex xl:gap-1.5"
-          aria-label="Main navigation"
-        >
-          <NavDropdown
-            menuId="solutions"
-            label="Solutions"
-            links={solutionsLinks}
-            openMenu={openMenu}
-            setOpenMenu={setOpenMenu}
-          />
-          <NavDropdown
-            menuId="services"
-            label="Services"
-            links={servicesLinks}
-            openMenu={openMenu}
-            setOpenMenu={setOpenMenu}
-          />
-          <Link href="/about" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
-            About
-          </Link>
-          <Link href="/contact" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
-            Contact
-          </Link>
-        </nav>
+        <div className="hidden items-center gap-2 lg:flex xl:gap-3">
+          <nav
+            className="relative z-20 flex items-center gap-0.5 xl:gap-1"
+            aria-label="Main navigation"
+          >
+            <NavDropdown
+              menuId="solutions"
+              label="Solutions"
+              links={solutionsLinks}
+              openMenu={openMenu}
+              setOpenMenu={setOpenMenu}
+            />
+            <NavDropdown
+              menuId="services"
+              label="Services"
+              links={servicesLinks}
+              openMenu={openMenu}
+              setOpenMenu={setOpenMenu}
+            />
+            <Link href="/about" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
+              About
+            </Link>
+            <Link href="/contact" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
+              Contact
+            </Link>
+          </nav>
 
-        <div className="hidden shrink-0 lg:block">
-          <Button href="/contact" variant="primary" size="md" className="text-[16px] lg:text-[17px]">
+          <Button
+            href="/contact"
+            variant="primary"
+            size="md"
+            className={cn(desktopNavRowHeight, "shrink-0 text-[16px] lg:text-[17px]")}
+          >
             Let&apos;s Talk
           </Button>
         </div>
