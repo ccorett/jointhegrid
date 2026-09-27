@@ -20,9 +20,10 @@ export function GridWordmark({
   };
 
   return (
-    <span className={cn("inline-flex flex-col", className)}>
+    <span className={cn("inline-flex flex-col justify-center", className)}>
       <span
         className={cn(
+          "leading-none",
           sizeClasses[size],
           reversed ? "text-white" : "text-primary-navy"
         )}
