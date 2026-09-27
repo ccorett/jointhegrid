@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_LETS_TALK_URL } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
 type PageCtaBandProps = {
@@ -13,9 +14,13 @@ export function PageCtaBand({
   title = "Ready to talk?",
   description,
   ctaLabel,
-  ctaHref = "/contact",
+  ctaHref,
   className,
 }: PageCtaBandProps) {
+  const href =
+    ctaHref ??
+    (ctaLabel === "Let's Talk" ? WHATSAPP_LETS_TALK_URL : "/contact");
+
   return (
     <section className={cn("border-t border-white/10 bg-primary-navy section-y-compact", className)}>
       <div className="content-container flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
@@ -27,7 +32,7 @@ export function PageCtaBand({
             <p className="text-lead mt-3 text-white/75">{description}</p>
           )}
         </div>
-        <Button href={ctaHref} size="lg" className="shrink-0">
+        <Button href={href} size="lg" className="shrink-0">
           {ctaLabel}
         </Button>
       </div>

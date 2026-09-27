@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { GridLogo } from "@/components/brand/grid-logo";
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_LETS_TALK_URL } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
 const solutionsLinks = [
@@ -266,7 +267,7 @@ export function SiteHeader() {
           </nav>
 
           <Button
-            href="/contact"
+            href={WHATSAPP_LETS_TALK_URL}
             variant="primary"
             size="md"
             className={cn(desktopNavRowHeight, "shrink-0 text-[16px] lg:text-[17px]")}
@@ -323,7 +324,7 @@ export function SiteHeader() {
             </Link>
             <div className="mt-6">
               <Button
-                href="/contact"
+                href={WHATSAPP_LETS_TALK_URL}
                 variant="primary"
                 size="lg"
                 className="w-full text-[16px]"

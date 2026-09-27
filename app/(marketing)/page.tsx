@@ -5,7 +5,12 @@ import { BrandConnectionLines } from "@/components/brand/brand-connection-lines"
 import { Button } from "@/components/ui/button";
 import { EnquiryForm } from "@/components/marketing/enquiry-form";
 import { SectionLabel } from "@/components/marketing/section-label";
-import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
+import {
+  PHONE_DISPLAY,
+  SALES_EMAIL,
+  WHATSAPP_LETS_TALK_URL,
+  WHATSAPP_URL,
+} from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Digital Workplace + AI Integration",
@@ -113,7 +118,7 @@ export default function HomePage() {
               People · Information · Apps · AI
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/contact" size="lg">
+              <Button href={WHATSAPP_LETS_TALK_URL} size="lg">
                 Let&apos;s Talk
               </Button>
               <Button href="#solutions" variant="secondary" size="lg">

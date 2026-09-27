@@ -50,6 +50,22 @@ export const Button = forwardRef<
   );
 
   if (href) {
+    const isExternal =
+      href.startsWith("http://") || href.startsWith("https://");
+
+    if (isExternal) {
+      return (
+        <a
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes}
+          {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+        />
+      );
+    }
+
     return (
       <Link
         ref={ref as React.Ref<HTMLAnchorElement>}
