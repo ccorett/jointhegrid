@@ -109,8 +109,8 @@ export default function HomePage() {
               One connected environment for the people, applications, information
               and intelligent tools your organization depends on.
             </p>
-            <p className="font-display mt-4 text-base font-bold uppercase tracking-wide text-primary-navy md:text-lg">
-              People · Apps · Information · AI
+            <p className="font-display mt-4 max-w-xl text-lg font-bold uppercase tracking-wide text-primary-navy md:text-xl lg:text-[1.35rem] lg:leading-snug">
+              People · Information · Apps · AI
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/contact" size="lg">
@@ -132,9 +132,9 @@ export default function HomePage() {
           <h2 className="heading-section mt-3 text-[2rem] sm:text-4xl md:text-[2.75rem] lg:text-[3.5rem]">
             People.
             <br />
-            Apps.
-            <br />
             Information.
+            <br />
+            Apps.
             <br />
             AI.
           </h2>

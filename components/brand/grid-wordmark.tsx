@@ -38,7 +38,7 @@ export function GridWordmark({
             reversed ? "text-white/80" : "text-secondary-text"
           )}
         >
-          People | Apps | Information | AI
+          People | Information | Apps | AI
         </span>
       )}
     </span>

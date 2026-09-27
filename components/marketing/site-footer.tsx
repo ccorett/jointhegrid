@@ -31,8 +31,8 @@ export function SiteFooter() {
               Digital workplace and AI integration, with deployment, administration
               and adoption for organizations across the Caribbean.
             </p>
-            <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/45 md:text-sm">
-              People · Apps · Information · AI
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-white/55 md:text-base lg:text-[17px] lg:leading-snug">
+              People · Information · Apps · AI
             </p>
           </div>
 
