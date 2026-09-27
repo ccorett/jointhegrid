@@ -1,6 +1,6 @@
 # #jointhegrid
 
-Marketing website for **Global Resilient Infrastructure & Digitalisation Ltd.** — Digital Workplace + AI Integration.
+Marketing website for **#jointhegrid**. Digital Workplace + AI Integration.
 
 ## Stack
 

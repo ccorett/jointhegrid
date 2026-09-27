@@ -118,8 +118,7 @@ export function SiteFooter() {
 
         <div className="mt-10 border-t border-white/10 pt-6">
           <p className="text-[13px] text-white/45 md:text-sm">
-            © {new Date().getFullYear()} Global Resilient Infrastructure &amp;
-            Digitalisation Ltd.
+            © {new Date().getFullYear()} #jointhegrid
           </p>
         </div>
       </div>

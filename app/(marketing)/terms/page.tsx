@@ -20,9 +20,8 @@ export default function TermsPage() {
       <section className="section-y-compact">
         <div className="content-container prose-width space-y-6 text-[17px] leading-relaxed text-body-text md:text-lg">
           <p>
-            These terms apply to your use of websites and digital services
-            operated by Global Resilient Infrastructure &amp; Digitalisation Ltd.
-            (&quot;#jointhegrid&quot;). This is a placeholder summary until
+            These terms apply to your use of the #jointhegrid website and
+            related digital services. This is a placeholder summary until
             formal terms are published.
           </p>
           <h2 className="font-display text-xl font-bold text-primary-navy md:text-2xl">

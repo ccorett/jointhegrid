@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Privacy Policy",
-  description: "Privacy policy for #jointhegrid and Global Resilient Infrastructure & Digitalisation Ltd.",
+  description: "Privacy policy for #jointhegrid.",
   path: "/privacy",
 });
 
@@ -15,13 +15,12 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="Legal"
         title="Privacy Policy"
-        description="How Global Resilient Infrastructure & Digitalisation Ltd. handles information you share with us."
+        description="How #jointhegrid handles information you share with us."
       />
       <section className="section-y-compact">
         <div className="content-container prose-width space-y-6 text-[17px] leading-relaxed text-body-text md:text-lg">
           <p>
-            Global Resilient Infrastructure &amp; Digitalisation Ltd.
-            (&quot;#jointhegrid&quot;) respects your privacy. This page is a
+            #jointhegrid respects your privacy. This page is a
             working placeholder pending a full legal policy. It describes our
             intended approach in plain language.
           </p>

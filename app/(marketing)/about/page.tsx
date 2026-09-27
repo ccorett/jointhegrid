@@ -26,7 +26,7 @@ export default function AboutPage() {
         visual="symbol-light"
         title="Focused on better"
         titleAccent="ways of working."
-        description="#jointhegrid is operated by Global Resilient Infrastructure & Digitalisation Ltd., based in Trinidad & Tobago."
+        description="#jointhegrid is based in Trinidad & Tobago."
       />
 
       <section className="border-b border-border bg-white section-y-compact">

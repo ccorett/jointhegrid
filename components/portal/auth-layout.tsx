@@ -25,7 +25,7 @@ export function AuthLayout({ title, subtitle, children }: AuthLayoutProps) {
           </p>
         </div>
         <p className="text-xs font-light text-white/30">
-          Global Resilient Infrastructure &amp; Digitalisation Ltd.
+          #jointhegrid
         </p>
       </div>
 
