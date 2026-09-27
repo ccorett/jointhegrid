@@ -36,7 +36,7 @@ export function Phase1HeroGrid({ className }: { className?: string }) {
     >
       <Image
         src={HERO_IMAGE}
-        alt="The GRID digital workplace and AI integration ecosystem connecting people, applications, identity, workflows, information, and security."
+        alt="GRID digital workplace and AI integration ecosystem connecting people, applications, identity, workflows, information, and security."
         width={903}
         height={845}
         priority

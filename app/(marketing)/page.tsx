@@ -240,7 +240,7 @@ export default function HomePage() {
               Based in Trinidad &amp; Tobago. Built to work across the Caribbean.
             </h2>
             <p className="text-lead mt-4 text-body-text">
-              #jointhegrid supports organizations with digital workplace and AI
+              GRID supports organizations with digital workplace and AI
               integration, with deployment, administration and adoption delivered
               for the way the region works.
             </p>

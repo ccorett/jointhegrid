@@ -15,12 +15,12 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="Legal"
         title="Privacy Policy"
-        description="How #jointhegrid handles information you share with us."
+        description="How GRID handles information you share with us."
       />
       <section className="section-y-compact">
         <div className="content-container prose-width space-y-6 text-[17px] leading-relaxed text-body-text md:text-lg">
           <p>
-            #jointhegrid respects your privacy. This page is a
+            GRID respects your privacy. This page is a
             working placeholder pending a full legal policy. It describes our
             intended approach in plain language.
           </p>

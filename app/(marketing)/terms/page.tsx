@@ -21,7 +21,7 @@ export default function TermsPage() {
         <div className="content-container prose-width space-y-6 text-[17px] leading-relaxed text-body-text md:text-lg">
           <p>
             These terms apply to your use of the #jointhegrid website and
-            related digital services. This is a placeholder summary until
+            related digital services from GRID. This is a placeholder summary until
             formal terms are published.
           </p>
           <h2 className="font-display text-xl font-bold text-primary-navy md:text-2xl">

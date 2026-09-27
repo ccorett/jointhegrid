@@ -26,7 +26,7 @@ export default function AboutPage() {
         visual="symbol-light"
         title="Focused on better"
         titleAccent="ways of working."
-        description="#jointhegrid is based in Trinidad & Tobago."
+        description="GRID is based in Trinidad & Tobago."
       />
 
       <section className="border-b border-border bg-white section-y-compact">
@@ -77,10 +77,10 @@ export default function AboutPage() {
           <SectionHeading
             dark
             title="People. Apps. Information. AI. Together."
-            description="The GRID is the connected layer. It is not a catalogue of disconnected tools."
+            description="GRID is the connected layer. It is not a catalogue of disconnected tools."
           />
           <p className="text-lg leading-relaxed text-white/75 md:text-[19px]">
-            #jointhegrid helps organizations deploy, administer and adopt digital
+            GRID helps organizations deploy, administer and adopt digital
             workplace and AI capability with structure, control and practical
             adoption for organizations across the Caribbean.
           </p>
