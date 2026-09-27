@@ -4,6 +4,7 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { GridLogo } from "@/components/brand/grid-logo";
+import { GridHorizontalLogo } from "@/components/brand/grid-horizontal-logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -139,9 +140,10 @@ function MobileAccordion({
         {label}
         <ChevronDown
           className={cn(
-            "h-4 w-4 opacity-60 transition-transform",
+            "size-5 shrink-0 opacity-60 transition-transform",
             expanded && "rotate-180"
           )}
+          aria-hidden
         />
       </button>
       {expanded && (
@@ -225,10 +227,15 @@ export function SiteHeader() {
       ref={headerRef}
       className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-sm"
     >
-      <div className="content-container flex min-h-[4rem] items-center justify-between gap-3 py-2 sm:min-h-[4.25rem] lg:min-h-[4.75rem] lg:py-2.5">
+      <div className="content-container flex min-h-[4rem] items-center justify-between gap-2 py-2 sm:min-h-[4.25rem] lg:min-h-[4.75rem] lg:gap-3 lg:py-2.5">
+        <GridHorizontalLogo
+          className="lg:hidden"
+          onNavigate={mobileOpen ? closeMobile : undefined}
+        />
         <GridLogo
           symbolSize={44}
-          className="shrink-0 py-0 sm:[&_span]:text-lg lg:[&_span]:text-xl"
+          symbolOnlyBelowSm={false}
+          className="hidden shrink-0 py-0 lg:inline-flex sm:[&_span]:text-lg lg:[&_span]:text-xl"
         />
 
         <div className="hidden items-center gap-2 lg:flex xl:gap-3">
@@ -270,7 +277,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="relative z-20 -me-1 inline-flex min-h-[2.75rem] min-w-[2.75rem] items-center justify-center rounded-lg p-2.5 text-primary-navy lg:hidden"
+          className="relative z-20 ms-auto inline-flex min-h-[2.75rem] min-w-[2.75rem] shrink-0 items-center justify-center rounded-lg pe-0.5 ps-2.5 text-primary-navy lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -280,8 +287,14 @@ export function SiteHeader() {
       </div>
 
       {mobileOpen && (
-        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-border bg-white lg:hidden sm:max-h-[calc(100dvh-4.25rem)]">
-          <nav className="content-container flex flex-col py-3 pb-5" aria-label="Mobile navigation">
+        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-white lg:hidden sm:max-h-[calc(100dvh-4.25rem)]">
+          <nav
+            className="content-container flex flex-col py-3 pb-8"
+            aria-label="Mobile navigation"
+          >
+            <Link href="/" className={mobileNavLinkClass} onClick={closeMobile}>
+              Home
+            </Link>
             <MobileAccordion
               label="Solutions"
               links={solutionsLinks}
