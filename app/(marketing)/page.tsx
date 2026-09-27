@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const solutions = [
   {
     label: "Digital Workspace",
-    title: "Where everyday work comes together.",
+    title: "Where everyday work is connected.",
     body: "Communication, collaboration, information and everyday work brought into one connected environment.",
     capabilities: [
       "Email & calendar",
@@ -103,16 +103,14 @@ export default function HomePage() {
           <div>
             <SectionLabel>Digital Workplace + AI Integration</SectionLabel>
             <h1 className="heading-hero mt-3 text-[2.5rem] text-primary-navy sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]">
-              Bring your workplace
-              <br />
-              together.
+              Connect your workplace.
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-snug text-body-text md:text-[19px] md:leading-relaxed">
               One connected environment for the people, applications, information
               and intelligent tools your organization depends on.
             </p>
             <p className="font-display mt-4 text-base font-bold uppercase tracking-wide text-primary-navy md:text-lg">
-              People · Apps · Information · AI · Together
+              People · Apps · Information · AI
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/contact" size="lg">
@@ -140,9 +138,6 @@ export default function HomePage() {
             <br />
             AI.
           </h2>
-          <p className="font-display mt-5 text-xl font-bold text-secondary-blue md:text-2xl">
-            Together.
-          </p>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 md:text-[19px]">
             The modern workplace is connected. Communication, information,
             applications and intelligent tools need to work as one environment,

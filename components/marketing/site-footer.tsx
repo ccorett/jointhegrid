@@ -32,7 +32,7 @@ export function SiteFooter() {
               and adoption for organizations across the Caribbean.
             </p>
             <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/45 md:text-sm">
-              People · Apps · Information · AI · Together
+              People · Apps · Information · AI
             </p>
           </div>
 

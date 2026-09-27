@@ -76,7 +76,7 @@ export default function AboutPage() {
         <div className="content-container grid gap-8 lg:grid-cols-2">
           <SectionHeading
             dark
-            title="People. Apps. Information. AI. Together."
+            title="People. Apps. Information. AI."
             description="GRID is the connected layer. It is not a catalogue of disconnected tools."
           />
           <p className="text-lg leading-relaxed text-white/75 md:text-[19px]">
