@@ -18,6 +18,23 @@ const servicesLinks = [
   { href: "/adoption", label: "Adoption" },
 ];
 
+/** Desktop primary navigation */
+const desktopNavLinkClass =
+  "rounded-sm px-3.5 py-2.5 text-[17px] font-medium leading-snug text-body-text transition-colors hover:text-primary-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2 lg:px-4 lg:text-[18px]";
+
+const desktopDropdownItemClass =
+  "block px-4 py-3 text-base leading-snug text-body-text transition-colors hover:bg-light-bg hover:text-primary-navy focus-visible:bg-light-bg focus-visible:text-primary-navy focus-visible:outline-none lg:px-5 lg:py-3.5 lg:text-[17px]";
+
+/** Mobile drawer navigation */
+const mobileNavLinkClass =
+  "flex min-h-[3rem] items-center border-b border-border/60 py-3 text-base font-medium leading-snug text-body-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2";
+
+const mobileAccordionButtonClass =
+  "flex min-h-[3rem] w-full items-center justify-between py-3 text-base font-medium leading-snug text-body-text";
+
+const mobileSubLinkClass =
+  "flex min-h-[2.75rem] items-center py-2.5 pl-1 text-[15px] leading-snug text-body-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2 sm:text-base";
+
 type OpenMenu = "solutions" | "services" | null;
 
 type NavDropdownProps = {
@@ -47,7 +64,7 @@ function NavDropdown({
       <button
         type="button"
         id={`${menuId}-menu-button`}
-        className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-body-text transition-colors hover:text-primary-navy md:text-base"
+        className={cn(desktopNavLinkClass, "gap-1.5")}
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-controls={panelId}
@@ -59,7 +76,7 @@ function NavDropdown({
         {label}
         <ChevronDown
           className={cn(
-            "h-3.5 w-3.5 opacity-60 transition-transform",
+            "h-4 w-4 opacity-60 transition-transform lg:h-[18px] lg:w-[18px]",
             isOpen && "rotate-180"
           )}
         />
@@ -69,15 +86,15 @@ function NavDropdown({
           id={panelId}
           role="menu"
           aria-labelledby={`${menuId}-menu-button`}
-          className="absolute left-0 top-full z-[100] min-w-[220px] pt-1"
+          className="absolute left-0 top-full z-[100] min-w-[240px] pt-1.5"
         >
-          <div className="border border-border bg-white py-1.5 shadow-lg shadow-primary-navy/5">
+          <div className="border border-border bg-white py-2 shadow-lg shadow-primary-navy/5">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 role="menuitem"
-                className="block px-4 py-2.5 text-sm text-body-text transition-colors hover:bg-light-bg hover:text-primary-navy focus-visible:bg-light-bg focus-visible:text-primary-navy focus-visible:outline-none"
+                className={desktopDropdownItemClass}
                 onClick={() => setOpenMenu(null)}
               >
                 {link.label}
@@ -109,7 +126,7 @@ function MobileAccordion({
     <div className="border-b border-border/60 last:border-b-0">
       <button
         type="button"
-        className="flex w-full items-center justify-between py-3 text-sm font-medium text-body-text"
+        className={mobileAccordionButtonClass}
         aria-expanded={expanded}
         aria-controls={panelId}
         onClick={onToggle}
@@ -123,12 +140,12 @@ function MobileAccordion({
         />
       </button>
       {expanded && (
-        <div id={panelId} className="pb-2 pl-3">
+        <div id={panelId} className="pb-3 pl-2">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block py-2.5 text-sm text-body-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2"
+              className={mobileSubLinkClass}
               onClick={onNavigate}
             >
               {link.label}
@@ -189,16 +206,25 @@ export function SiteHeader() {
     }
   }, [mobileOpen]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [mobileOpen]);
+
   return (
     <header
       ref={headerRef}
       className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-sm"
     >
-      <div className="content-container flex min-h-[64px] items-center justify-between py-1.5 lg:min-h-[68px]">
-        <GridLogo symbolSize={40} />
+      <div className="content-container flex min-h-[4rem] items-center justify-between gap-3 py-2 sm:min-h-[4.25rem] lg:min-h-[4.75rem] lg:py-2.5">
+        <GridLogo symbolSize={44} className="sm:[&_span]:text-lg lg:[&_span]:text-xl" />
 
         <nav
-          className="relative z-20 hidden items-center gap-0.5 lg:flex"
+          className="relative z-20 hidden items-center gap-1 lg:flex xl:gap-1.5"
           aria-label="Main navigation"
         >
           <NavDropdown
@@ -215,42 +241,34 @@ export function SiteHeader() {
             openMenu={openMenu}
             setOpenMenu={setOpenMenu}
           />
-          <Link
-            href="/about"
-            className="px-3 py-2 text-[15px] font-medium text-body-text transition-colors hover:text-primary-navy md:text-base"
-            onClick={() => setOpenMenu(null)}
-          >
+          <Link href="/about" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
             About
           </Link>
-          <Link
-            href="/contact"
-            className="px-3 py-2 text-[15px] font-medium text-body-text transition-colors hover:text-primary-navy md:text-base"
-            onClick={() => setOpenMenu(null)}
-          >
+          <Link href="/contact" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
             Contact
           </Link>
         </nav>
 
-        <div className="hidden lg:block">
-          <Button href="/contact" variant="primary" size="sm">
+        <div className="hidden shrink-0 lg:block">
+          <Button href="/contact" variant="primary" size="md" className="text-[16px] lg:text-[17px]">
             Let&apos;s Talk
           </Button>
         </div>
 
         <button
           type="button"
-          className="relative z-20 inline-flex items-center justify-center rounded-lg p-2 text-primary-navy lg:hidden"
+          className="relative z-20 -me-1 inline-flex min-h-[2.75rem] min-w-[2.75rem] items-center justify-center rounded-lg p-2.5 text-primary-navy lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {mobileOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-border bg-white lg:hidden">
-          <nav className="content-container flex flex-col py-2" aria-label="Mobile navigation">
+        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-border bg-white lg:hidden sm:max-h-[calc(100dvh-4.25rem)]">
+          <nav className="content-container flex flex-col py-3 pb-5" aria-label="Mobile navigation">
             <MobileAccordion
               label="Solutions"
               links={solutionsLinks}
@@ -271,26 +289,18 @@ export function SiteHeader() {
               }}
               onNavigate={closeMobile}
             />
-            <Link
-              href="/about"
-              className="border-b border-border/60 py-3 text-sm font-medium text-body-text"
-              onClick={closeMobile}
-            >
+            <Link href="/about" className={mobileNavLinkClass} onClick={closeMobile}>
               About
             </Link>
-            <Link
-              href="/contact"
-              className="border-b border-border/60 py-3 text-sm font-medium text-body-text"
-              onClick={closeMobile}
-            >
+            <Link href="/contact" className={mobileNavLinkClass} onClick={closeMobile}>
               Contact
             </Link>
-            <div className="mt-5 pb-4">
+            <div className="mt-6">
               <Button
                 href="/contact"
                 variant="primary"
-                size="md"
-                className="w-full"
+                size="lg"
+                className="w-full text-[16px]"
                 onClick={closeMobile}
               >
                 Let&apos;s Talk
