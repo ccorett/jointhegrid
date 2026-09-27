@@ -4,7 +4,6 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { GridLogo } from "@/components/brand/grid-logo";
-import { GridHorizontalLogo } from "@/components/brand/grid-horizontal-logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -228,9 +227,10 @@ export function SiteHeader() {
       className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-sm"
     >
       <div className="content-container flex min-h-[4rem] items-center justify-between gap-2 py-2 sm:min-h-[4.25rem] lg:min-h-[4.75rem] lg:gap-3 lg:py-2.5">
-        <GridHorizontalLogo
-          className="lg:hidden"
-          onNavigate={mobileOpen ? closeMobile : undefined}
+        <GridLogo
+          symbolSize={40}
+          symbolOnlyBelowSm={false}
+          className="min-w-0 max-w-[calc(100%-3.25rem)] shrink py-0 lg:hidden sm:max-w-[calc(100%-3.5rem)] sm:[&_span]:text-lg [&_span]:text-base"
         />
         <GridLogo
           symbolSize={44}
