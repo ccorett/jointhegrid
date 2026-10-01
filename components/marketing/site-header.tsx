@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 const solutionsLinks = [
   { href: "/digital-workspace", label: "Digital Workspace" },
   { href: "/ai-integration", label: "AI Integration" },
+  { href: "/cloud-infrastructure", label: "Cloud Infrastructure" },
 ];
 
 const servicesLinks = [

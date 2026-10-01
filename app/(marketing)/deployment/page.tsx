@@ -28,15 +28,15 @@ const lifecycle = [
 ];
 
 const capabilities = [
-  "Environment configuration",
+  "Cloud environment setup",
+  "Infrastructure configuration",
+  "Application and workload migration",
   "AI integration setup",
   "Platform migration",
   "Identity integration",
   "Security configuration",
   "Data migration",
-  "Pilot programmes",
   "Production rollout",
-  "Validation",
   "Hypercare support",
 ];
 
@@ -71,7 +71,7 @@ export default function DeploymentPage() {
         <div className="content-container">
           <SectionHeading
             title="What goes into deployment"
-            description="Each organization starts from a different place. The work covers configuration, migration paths, identity, existing systems, information, workflows, security and a controlled move into production."
+            description="Each organization starts from a different place. The work covers cloud environment setup, infrastructure configuration, application and workload migration, identity, data, security and a controlled move into production."
             className="mb-8"
           />
           <CapabilityGrid items={capabilities} columns={2} />

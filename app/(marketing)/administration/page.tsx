@@ -18,15 +18,15 @@ export const metadata = pageMetadata({
 
 const capabilities = [
   "Workplace administration",
+  "Cloud resource management",
+  "Monitoring and alerting",
   "AI access administration",
   "User lifecycle management",
-  "Groups and organizational units",
-  "Licensing",
+  "Access and licensing",
   "Security policies",
-  "Support and troubleshooting",
-  "Reporting",
-  "Platform escalation",
-  "Optimization and review",
+  "Backup coordination",
+  "Cost management",
+  "Ongoing cloud administration",
 ];
 
 export default function AdministrationPage() {
@@ -46,7 +46,7 @@ export default function AdministrationPage() {
         <div className="content-container">
           <SectionHeading
             title="Administration that fits your team"
-            description="Manage the connected workplace as an environment rather than a collection of isolated tools. Some organizations need specialist support alongside internal ICT; others want a dedicated partner for ongoing management."
+            description="Manage the connected workplace and cloud resources as one operational picture. Some organizations need specialist support alongside internal ICT; others want a dedicated partner for ongoing management."
             className="mb-8"
           />
           <CapabilityGrid items={capabilities} columns={2} />
@@ -56,10 +56,9 @@ export default function AdministrationPage() {
       <section className="border-b border-border bg-light-bg section-y-compact">
         <div className="content-container max-w-4xl">
           <p className="text-lg leading-relaxed text-body-text md:text-[19px]">
-            Keep users, licences, access, policies and security under control after
-            deployment. As people join, roles change and requirements shift, the
-            environment needs consistent management across the workplace and
-            integrated AI tools.
+            Keep users, resources, access, policies and security under control after
+            deployment. Monitoring, backup and cost need regular attention alongside
+            workplace platforms and integrated AI tools.
           </p>
         </div>
       </section>

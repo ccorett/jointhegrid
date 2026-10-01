@@ -6,6 +6,7 @@ const routes = [
   "",
   "/digital-workspace",
   "/ai-integration",
+  "/cloud-infrastructure",
   "/deployment",
   "/administration",
   "/adoption",

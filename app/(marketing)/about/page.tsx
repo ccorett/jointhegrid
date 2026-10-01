@@ -38,13 +38,17 @@ export default function AboutPage() {
               environment.
             </p>
             <p>
-              Specialization sits in{" "}
+              GRID focuses on{" "}
               <Link href="/digital-workspace" className="font-semibold text-infrastructure-blue hover:underline">
                 digital workplace
               </Link>
-              {" "}and{" "}
+              ,{" "}
               <Link href="/ai-integration" className="font-semibold text-infrastructure-blue hover:underline">
                 AI integration
+              </Link>
+              {" "}and{" "}
+              <Link href="/cloud-infrastructure" className="font-semibold text-infrastructure-blue hover:underline">
+                cloud infrastructure
               </Link>
               , delivered through{" "}
               <Link href="/deployment" className="font-semibold text-infrastructure-blue hover:underline">

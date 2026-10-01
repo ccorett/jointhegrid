@@ -56,6 +56,21 @@ const solutions = [
     href: "/ai-integration",
     cta: "Explore AI Integration",
   },
+  {
+    label: "Cloud Infrastructure",
+    title: "Cloud built for the systems behind the work.",
+    body: "Secure environments for applications, data and digital workloads.",
+    capabilities: [
+      "Environment setup",
+      "Compute & storage",
+      "Workload migration",
+      "Identity & security",
+      "Monitoring",
+      "Ongoing administration",
+    ],
+    href: "/cloud-infrastructure",
+    cta: "Explore Cloud Infrastructure",
+  },
 ];
 
 const services = [
@@ -155,9 +170,9 @@ export default function HomePage() {
         <div className="content-container">
           <SectionLabel>Solutions</SectionLabel>
           <h2 className="heading-section mt-2 text-[2rem] text-primary-navy md:text-[2.75rem] lg:text-[3.25rem]">
-            Digital Workspace and AI Integration.
+            Digital Workspace, AI Integration and Cloud Infrastructure.
           </h2>
-          <div className="mt-8 grid gap-px border border-border bg-border lg:grid-cols-2">
+          <div className="mt-8 grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((item) => (
               <article key={item.label} className="bg-white p-7 md:p-9 lg:p-10">
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-infrastructure-blue">
