@@ -121,16 +121,17 @@ export default function HomePage() {
       <section className="border-b border-border bg-white section-y-compact">
         <div className="content-container grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>
-            <SectionLabel>Digital Workplace + AI Integration</SectionLabel>
-            <h1 className="heading-hero mt-3 text-[2.5rem] text-primary-navy sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]">
-              Connect your workplace.
-            </h1>
-            <p className="mt-4 max-w-xl text-lg leading-snug text-body-text md:text-[19px] md:leading-relaxed">
-              One connected environment for the people, applications, information
-              and intelligent tools your organization depends on.
+            <p className="max-w-xl text-base font-bold leading-snug text-infrastructure-blue md:text-lg lg:text-xl">
+              Digital Workspace · AI Integration · Cloud Infrastructure
             </p>
+            <h1 className="heading-hero mt-3 text-[2.5rem] text-primary-navy sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]">
+              Everything connects here.
+            </h1>
             <p className="font-display mt-4 max-w-xl text-lg font-bold uppercase tracking-wide text-primary-navy md:text-xl lg:text-[1.35rem] lg:leading-snug">
               People · Information · Apps · AI
+            </p>
+            <p className="font-display mt-3 max-w-xl text-lg font-bold tracking-wide text-primary-navy md:text-xl lg:text-[1.35rem] lg:leading-snug">
+              #jointheGRID.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={WHATSAPP_LETS_TALK_URL} size="lg">
