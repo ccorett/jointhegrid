@@ -1,6 +1,6 @@
 # Enquiry delivery
 
-Enquiries from `/contact` and the homepage block are validated server-side and sent by email via **Nodemailer** (`lib/mail.ts`).
+Enquiries from `/enquiry` and the homepage block are validated server-side and sent by email via **Nodemailer** (`lib/mail.ts`).
 
 **Destination:** `CONTACT_TO_EMAIL` (default `sales@grid.co.tt`)
 

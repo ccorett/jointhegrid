@@ -7,7 +7,7 @@ export const metadata = pageMetadata({
   title: "Enquiry",
   description:
     "Enquire about Digital Workspace and Enterprise Intelligence from #jointhegrid across the Caribbean.",
-  path: "/contact",
+  path: "/enquiry",
   keywords: [
     "digital workspace Trinidad and Tobago",
     "digital workspace Caribbean",

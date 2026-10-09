@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-
-const BASE = "https://jointhegrid.com";
+import { SITE_ORIGIN } from "@/lib/site-url";
 
 type PageMeta = {
   title: string;
@@ -19,11 +18,11 @@ export function pageMetadata({
     title,
     description,
     keywords: keywords.length ? keywords : undefined,
-    alternates: { canonical: `${BASE}${path}` },
+    alternates: { canonical: `${SITE_ORIGIN}${path}` },
     openGraph: {
       title: `${title} | #jointhegrid`,
       description,
-      url: `${BASE}${path}`,
+      url: `${SITE_ORIGIN}${path}`,
       siteName: "#jointhegrid",
       type: "website",
     },

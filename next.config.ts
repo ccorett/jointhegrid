@@ -5,9 +5,20 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/ai-credits",
-        destination: "/",
-        permanent: false,
+        source: "/:path*",
+        has: [{ type: "host", value: "www.jointhegrid.net" }],
+        destination: "https://jointhegrid.net/:path*",
+        permanent: true,
+      },
+      {
+        source: "/contact",
+        destination: "/enquiry",
+        permanent: true,
+      },
+      {
+        source: "/enterprise-intelligence",
+        destination: "/ai-integration",
+        permanent: true,
       },
       {
         source: "/google-workspace",
@@ -16,22 +27,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/gemini-enterprise",
-        destination: "/enterprise-intelligence",
+        destination: "/ai-integration",
         permanent: true,
       },
       {
-        source: "/ai-integration",
-        destination: "/enterprise-intelligence",
+        source: "/hosting",
+        destination: "/cloud-infrastructure",
         permanent: true,
       },
       {
-        source: "/cloud-infrastructure",
-        destination: "/",
+        source: "/ai-credits",
+        destination: "/digital-workspace",
         permanent: true,
       },
       {
         source: "/interoperability",
-        destination: "/",
+        destination: "/digital-workspace",
         permanent: true,
       },
     ];

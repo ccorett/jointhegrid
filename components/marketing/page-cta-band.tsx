@@ -19,7 +19,7 @@ export function PageCtaBand({
 }: PageCtaBandProps) {
   const href =
     ctaHref ??
-    (ctaLabel === "Let's Talk" ? WHATSAPP_LETS_TALK_URL : "/contact");
+    (ctaLabel === "Let's Talk" ? WHATSAPP_LETS_TALK_URL : "/enquiry");
 
   return (
     <section className={cn("border-t border-white/10 bg-primary-navy section-y-compact", className)}>

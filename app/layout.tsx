@@ -14,14 +14,19 @@ const manrope = Manrope({
   weight: ["500", "600", "700"],
 });
 
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jointhegrid.com"),
+  metadataBase: new URL("https://jointhegrid.net"),
   title: {
     default: "#jointhegrid | Digital Workspace + Enterprise Intelligence",
     template: "%s | #jointhegrid",
   },
   description:
     "Digital Workspace and Enterprise Intelligence for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
+  ...(googleSiteVerification
+    ? { verification: { google: googleSiteVerification } }
+    : {}),
   icons: {
     icon: [
       { url: "/brand/favicon.ico", sizes: "32x32" },

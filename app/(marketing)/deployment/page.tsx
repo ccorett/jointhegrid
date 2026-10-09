@@ -50,7 +50,7 @@ export default function DeploymentPage() {
         title="Get the foundation"
         titleAccent="right."
         description="Implement and configure digital workspace and enterprise intelligence solutions, including applicable migrations, security, integration, testing and rollout."
-        primaryCta={{ label: "Plan a Deployment", href: "/contact" }}
+        primaryCta={{ label: "Plan a Deployment", href: "/enquiry" }}
       />
 
       <section className="border-b border-border bg-white section-y-compact">

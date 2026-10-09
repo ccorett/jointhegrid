@@ -44,7 +44,7 @@ export default function TermsPage() {
               {SALES_EMAIL}
             </a>{" "}
             or visit our{" "}
-            <Link href="/contact" className="font-medium text-infrastructure-blue hover:underline">
+            <Link href="/enquiry" className="font-medium text-infrastructure-blue hover:underline">
               contact page
             </Link>
             .

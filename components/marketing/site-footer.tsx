@@ -5,7 +5,7 @@ import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
 const footerLinks = {
   solutions: [
     { href: "/digital-workspace", label: "Digital Workspace" },
-    { href: "/enterprise-intelligence", label: "Enterprise Intelligence" },
+    { href: "/ai-integration", label: "Enterprise Intelligence" },
   ],
   services: [
     { href: "/deployment", label: "Deployment" },
@@ -14,7 +14,7 @@ const footerLinks = {
   ],
   company: [
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Enquiry" },
+    { href: "/enquiry", label: "Enquiry" },
     { href: "/privacy", label: "Privacy" },
     { href: "/terms", label: "Terms" },
   ],

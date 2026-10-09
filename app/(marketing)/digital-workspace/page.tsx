@@ -41,7 +41,7 @@ export default function DigitalWorkspacePage() {
         title="Connect your people,"
         titleAccent="information and applications."
         description="Secure, integrated productivity and collaboration that brings communication, file sharing and administration into one connected digital environment."
-        primaryCta={{ label: "Discuss Digital Workspace", href: "/contact" }}
+        primaryCta={{ label: "Discuss Digital Workspace", href: "/enquiry" }}
       />
 
       <section className="border-b border-border bg-white section-y-compact">

@@ -54,7 +54,7 @@ const solutions = [
       "Access governance",
       "Adoption and guidance",
     ],
-    href: "/enterprise-intelligence",
+    href: "/ai-integration",
     cta: "Explore Enterprise Intelligence",
   },
 ];

@@ -42,7 +42,7 @@ export default function AdoptionPage() {
         title="Make it part"
         titleAccent="of the work."
         description="Help employees and organisations use digital workspace and enterprise intelligence successfully through onboarding, practical training, guidance, workshops and continuous improvement."
-        primaryCta={{ label: "Build an Adoption Programme", href: "/contact" }}
+        primaryCta={{ label: "Build an Adoption Programme", href: "/enquiry" }}
       />
 
       <section className="border-b border-border bg-primary-navy section-y-compact text-white">

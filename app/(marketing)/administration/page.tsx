@@ -40,7 +40,7 @@ export default function AdministrationPage() {
         title="Keep it under"
         titleAccent="control."
         description="Manage access, configuration, security, licences, governance, performance and ongoing technical support for both core solutions."
-        primaryCta={{ label: "Discuss Administration", href: "/contact" }}
+        primaryCta={{ label: "Discuss Administration", href: "/enquiry" }}
       />
 
       <section className="border-b border-border bg-white section-y-compact">

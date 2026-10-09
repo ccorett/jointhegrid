@@ -9,7 +9,7 @@ export const metadata = pageMetadata({
   title: "Enterprise Intelligence",
   description:
     "Enterprise search, connected knowledge and intelligent assistance with secure access to organisational information. Deployment, administration and adoption across the Caribbean.",
-  path: "/enterprise-intelligence",
+  path: "/ai-integration",
   keywords: [
     "enterprise intelligence Caribbean",
     "enterprise search",
@@ -42,7 +42,7 @@ export default function EnterpriseIntelligencePage() {
         title="Information that works"
         titleAccent="for the organisation."
         description="Make organisational information accessible, searchable and useful through intelligent search, connected knowledge and enterprise assistance."
-        primaryCta={{ label: "Discuss Enterprise Intelligence", href: "/contact" }}
+        primaryCta={{ label: "Discuss Enterprise Intelligence", href: "/enquiry" }}
       />
 
       <section className="border-b border-border bg-white section-y-compact">

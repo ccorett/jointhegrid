@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
+import { SITE_ORIGIN } from "@/lib/site-url";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/portal/", "/portal"],
+      disallow: ["/portal", "/portal/"],
     },
-    sitemap: "https://jointhegrid.com/sitemap.xml",
+    sitemap: `${SITE_ORIGIN}/sitemap.xml`,
   };
 }
