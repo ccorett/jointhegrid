@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { GridLogo } from "@/components/brand/grid-logo";
 
 type AuthLayoutProps = {

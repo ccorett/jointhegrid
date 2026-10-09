@@ -207,13 +207,6 @@ export function SiteHeader() {
   }, [openMenu]);
 
   useEffect(() => {
-    if (!mobileOpen) {
-      setMobileSolutionsOpen(false);
-      setMobileServicesOpen(false);
-    }
-  }, [mobileOpen]);
-
-  useEffect(() => {
     if (!mobileOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -279,7 +272,13 @@ export function SiteHeader() {
         <button
           type="button"
           className="relative z-20 ms-auto inline-flex min-h-[2.75rem] min-w-[2.75rem] shrink-0 items-center justify-center rounded-lg pe-0.5 ps-2.5 text-primary-navy lg:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={() => {
+            if (mobileOpen) {
+              closeMobile();
+            } else {
+              setMobileOpen(true);
+            }
+          }}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
