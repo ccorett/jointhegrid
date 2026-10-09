@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { GridLogo } from "@/components/brand/grid-logo";
 import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
+import { cn } from "@/lib/utils";
+
+const footerLinkClass = cn(
+  "inline-flex min-h-11 items-center text-[15px] text-white/80 hover:text-white md:text-base",
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-blue focus-visible:ring-offset-2 focus-visible:ring-offset-primary-navy"
+);
 
 const footerLinks = {
   solutions: [
     { href: "/digital-workspace", label: "Digital Workspace" },
     { href: "/ai-integration", label: "Enterprise Intelligence" },
+    { href: "/cloud-infrastructure", label: "Cloud Infrastructure" },
   ],
   services: [
     { href: "/deployment", label: "Deployment" },
@@ -27,28 +34,25 @@ export function SiteFooter() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <GridLogo reversed symbolOnlyBelowSm={false} symbolSize={36} />
-            <p className="mt-4 max-w-sm text-base leading-relaxed text-white/70 md:text-[17px] md:leading-relaxed lg:text-lg">
+            <p className="mt-4 max-w-sm text-base leading-relaxed text-white/80 md:text-[17px] md:leading-relaxed lg:text-lg">
               Digital Workspace and Enterprise Intelligence, delivered through
               deployment, administration and adoption for organizations across
               the Caribbean.
             </p>
-            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-white/55 md:text-base lg:text-[17px] lg:leading-snug">
+            <p className="mt-3 text-[15px] font-semibold uppercase tracking-[0.12em] text-white/70 md:text-base lg:text-[17px] lg:leading-snug">
               People · Information · Apps · AI
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white/50">
+              <h3 className="text-[15px] font-bold uppercase tracking-wider text-white/70 md:text-base">
                 Solutions
               </h3>
-              <ul className="mt-3 space-y-2.5">
+              <ul className="mt-3 space-y-1">
                 {footerLinks.solutions.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-[15px] text-white/75 hover:text-white md:text-base"
-                    >
+                    <Link href={link.href} className={footerLinkClass}>
                       {link.label}
                     </Link>
                   </li>
@@ -56,16 +60,13 @@ export function SiteFooter() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white/50">
+              <h3 className="text-[15px] font-bold uppercase tracking-wider text-white/70 md:text-base">
                 Services
               </h3>
-              <ul className="mt-3 space-y-2.5">
+              <ul className="mt-3 space-y-1">
                 {footerLinks.services.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-[15px] text-white/75 hover:text-white md:text-base"
-                    >
+                    <Link href={link.href} className={footerLinkClass}>
                       {link.label}
                     </Link>
                   </li>
@@ -73,16 +74,13 @@ export function SiteFooter() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white/50">
+              <h3 className="text-[15px] font-bold uppercase tracking-wider text-white/70 md:text-base">
                 Company
               </h3>
-              <ul className="mt-3 space-y-2.5">
+              <ul className="mt-3 space-y-1">
                 {footerLinks.company.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-[15px] text-white/75 hover:text-white md:text-base"
-                    >
+                    <Link href={link.href} className={footerLinkClass}>
                       {link.label}
                     </Link>
                   </li>
@@ -90,15 +88,12 @@ export function SiteFooter() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white/50">
+              <h3 className="text-[15px] font-bold uppercase tracking-wider text-white/70 md:text-base">
                 Contact
               </h3>
-              <ul className="mt-3 space-y-2.5 text-[15px] md:text-base">
+              <ul className="mt-3 space-y-1 text-[15px] md:text-base">
                 <li>
-                  <a
-                    href={`mailto:${SALES_EMAIL}`}
-                    className="text-secondary-blue hover:text-white"
-                  >
+                  <a href={`mailto:${SALES_EMAIL}`} className={footerLinkClass}>
                     {SALES_EMAIL}
                   </a>
                 </li>
@@ -107,7 +102,7 @@ export function SiteFooter() {
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/70 hover:text-white"
+                    className={footerLinkClass}
                   >
                     {PHONE_DISPLAY}
                   </a>
@@ -118,7 +113,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6">
-          <p className="text-[13px] text-white/45 md:text-sm">
+          <p className="text-[15px] text-white/65 md:text-base">
             © {new Date().getFullYear()} #jointhegrid
           </p>
         </div>

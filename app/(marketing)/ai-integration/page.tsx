@@ -80,7 +80,7 @@ export default function EnterpriseIntelligencePage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-primary-navy section-y-compact text-white">
+      <section className="border-b border-border bg-dark-band section-y-compact text-white">
         <div className="content-container max-w-4xl">
           <p className="text-lg leading-relaxed text-white/75 md:text-[19px]">
             Employees spend less time searching and more time using information

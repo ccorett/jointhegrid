@@ -24,16 +24,20 @@ function FieldError({ id, message }: { id: string; message?: string }) {
   );
 }
 
+const fieldFocusClass =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2";
+
 function inputClass(hasError: boolean, dark: boolean) {
   return cn(
-    "text-form-input w-full rounded-sm border px-3.5 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-infrastructure-blue/40",
+    "text-form-input min-h-11 w-full rounded-sm border px-3.5 py-3 transition-colors",
+    fieldFocusClass,
     dark
       ? cn(
-          "border-white/15 bg-[#0f1729] text-white placeholder:text-white/35 focus:border-secondary-blue",
+          "border-white/15 bg-primary-navy text-white placeholder:text-white/50 focus-visible:border-secondary-blue focus-visible:ring-secondary-blue/50 focus-visible:ring-offset-dark-band",
           hasError && "border-error"
         )
       : cn(
-          "border-border text-body-text focus:border-infrastructure-blue focus:ring-infrastructure-blue/30",
+          "border-border text-body-text focus-visible:border-infrastructure-blue focus-visible:ring-infrastructure-blue/40",
           hasError && "border-error"
         )
   );
@@ -68,7 +72,11 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
 
   if (state?.status === "delivered") {
     return (
-      <div className="rounded-xl border border-border bg-white p-8 md:p-10">
+      <div
+        className="rounded-xl border border-border bg-white p-8 md:p-10"
+        role="status"
+        aria-live="polite"
+      >
         <h2 className="heading-section text-2xl text-primary-navy md:text-3xl">
           Thanks. Your enquiry is on the GRID.
         </h2>
@@ -89,10 +97,14 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
       noValidate
       className={cn(
         "rounded-sm border p-6 md:p-7",
-        dark ? "panel-border-dark bg-[#0f1729]" : "border-border bg-white"
+        dark ? "panel-border-dark bg-primary-navy" : "border-border bg-white"
       )}
       aria-describedby={errors.form ? "form-error" : undefined}
     >
+      <div aria-live="polite" aria-atomic="true" className="sr-only">
+        {state?.status === "validation_error" ? "Please correct the errors below." : null}
+        {state?.status === "error" ? "Enquiry could not be sent." : null}
+      </div>
       {errors.form && (
         <p id="form-error" className="mb-4 text-base text-error md:text-[17px]" role="alert">
           {errors.form}
@@ -130,6 +142,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             name="fullName"
             type="text"
             required
+            aria-required="true"
             autoComplete="name"
             maxLength={120}
             aria-invalid={!!errors.fullName}
@@ -148,6 +161,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             name="organization"
             type="text"
             required
+            aria-required="true"
             autoComplete="organization"
             maxLength={200}
             aria-invalid={!!errors.organization}
@@ -166,6 +180,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             name="workEmail"
             type="email"
             required
+            aria-required="true"
             autoComplete="email"
             maxLength={254}
             aria-invalid={!!errors.workEmail}
@@ -200,12 +215,13 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             id="organizationSize"
             name="organizationSize"
             required
+            aria-required="true"
             defaultValue=""
             aria-invalid={!!errors.organizationSize}
             aria-describedby={errors.organizationSize ? "organizationSize-error" : undefined}
             className={inputClass(!!errors.organizationSize, dark)}
           >
-            <option value="" disabled>
+            <option value="" disabled hidden>
               Select size
             </option>
             {ORGANIZATION_SIZES.map((size) => (
@@ -225,12 +241,13 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             id="areaOfInterest"
             name="areaOfInterest"
             required
+            aria-required="true"
             defaultValue=""
             aria-invalid={!!errors.areaOfInterest}
             aria-describedby={errors.areaOfInterest ? "areaOfInterest-error" : undefined}
             className={inputClass(!!errors.areaOfInterest, dark)}
           >
-            <option value="" disabled>
+            <option value="" disabled hidden>
               Select area
             </option>
             {AREAS_OF_INTEREST.map((area) => (
@@ -251,6 +268,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             name="message"
             rows={5}
             required
+            aria-required="true"
             maxLength={4000}
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? "message-error" : undefined}
@@ -265,7 +283,8 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
           type="submit"
           size="lg"
           disabled={pending}
-          className="w-full text-[15px] md:text-[17px] sm:w-auto"
+          aria-busy={pending}
+          className="w-full text-base sm:w-auto md:text-[17px]"
         >
           {pending ? "Sending..." : "Send Enquiry"}
         </Button>

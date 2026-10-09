@@ -132,7 +132,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-primary-navy section-y text-white">
+      <section className="relative overflow-hidden bg-dark-band section-y text-white">
         <BrandConnectionLines />
         <div className="content-container relative max-w-4xl">
           <SectionLabel tone="dark">Connected workplace</SectionLabel>
@@ -183,7 +183,7 @@ export default function HomePage() {
                 </ul>
                 <Link
                   href={item.href}
-                  className="mt-6 inline-flex text-[15px] font-semibold text-infrastructure-blue hover:underline md:text-base"
+                  className="mt-6 inline-flex min-h-11 items-center text-base font-semibold text-infrastructure-blue hover:underline"
                 >
                   {item.cta} →
                 </Link>
@@ -193,7 +193,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="scroll-mt-20 bg-primary-navy section-y text-white">
+      <section id="services" className="scroll-mt-20 bg-dark-band section-y text-white">
         <div className="content-container">
           <SectionLabel tone="dark">Services</SectionLabel>
           <h2 className="heading-section mt-2 text-[2rem] md:text-[2.75rem] lg:text-[3.25rem]">
@@ -224,7 +224,7 @@ export default function HomePage() {
                 </ul>
                 <Link
                   href={item.href}
-                  className="mt-5 inline-flex text-[15px] font-semibold text-white hover:text-secondary-blue md:text-base"
+                  className="mt-5 inline-flex min-h-11 items-center text-base font-semibold text-white hover:text-secondary-blue"
                 >
                   {item.cta} →
                 </Link>
@@ -264,7 +264,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-20 border-t border-white/10 bg-primary-navy section-y text-white">
+      <section id="contact" className="scroll-mt-20 border-t border-white/10 bg-dark-band section-y text-white">
         <div className="content-container grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <SectionLabel tone="dark">Enquiry</SectionLabel>

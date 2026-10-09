@@ -20,7 +20,7 @@ export default function ContactPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[...breadcrumbs]} />
-    <section className="bg-primary-navy section-y text-white">
+    <section className="bg-dark-band section-y text-white">
       <div className="content-container grid gap-10 lg:grid-cols-2 lg:gap-14">
         <div>
           <SectionLabel tone="dark">Enquiry</SectionLabel>

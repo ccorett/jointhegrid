@@ -4,8 +4,11 @@
 
 | File | Use |
 |------|-----|
-| `grid-symbol-light.png` | Light backgrounds (`#FFFFFF`, `#F8FAFC`, etc.) |
-| `grid-symbol-dark.png` | Dark backgrounds (`#0B1220`), favicon source |
+| `grid-symbol-light.webp` | Light backgrounds (runtime via `<GridSymbol />`) |
+| `grid-symbol-dark.webp` | Dark backgrounds (runtime via `<GridSymbol />`) |
+| `grid-symbol-light.png` / `grid-symbol-dark.png` | Source masters (not referenced in UI) |
+| `hero-connected-ecosystem.webp` | Homepage and solution hero artwork |
+| `hero-connected-ecosystem.png` | Source master for hero |
 
 Use `<GridSymbol theme="light" />` or `<GridSymbol theme="dark" />` only.
 

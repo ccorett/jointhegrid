@@ -166,7 +166,7 @@ export default function CloudInfrastructurePage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-primary-navy section-y-compact text-white">
+      <section className="border-b border-border bg-dark-band section-y-compact text-white">
         <div className="content-container grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-10">
           <div>
             <SectionHeading dark title="Managed after launch." />

@@ -48,7 +48,7 @@ export default function AdoptionPage() {
         primaryCta={{ label: "Build an Adoption Programme", href: "/enquiry" }}
       />
 
-      <section className="border-b border-border bg-primary-navy section-y-compact text-white">
+      <section className="border-b border-border bg-dark-band section-y-compact text-white">
         <div className="content-container">
           <SectionHeading
             dark

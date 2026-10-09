@@ -75,14 +75,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-primary-navy section-y-compact text-white">
+      <section className="border-b border-border bg-dark-band section-y-compact text-white">
         <div className="content-container grid gap-8 lg:grid-cols-2">
           <SectionHeading
             dark
             title="People. Information. Apps. AI."
             description="Everything connects here. #jointheGRID."
           />
-          <p className="text-lg leading-relaxed text-white/75 md:text-[19px]">
+          <p className="text-lg leading-relaxed text-white/80 md:text-[19px]">
             THE GRID deploys, administers and adopts Digital Workspace and
             Enterprise Intelligence with structure, control and practical
             enablement for organizations across the Caribbean.

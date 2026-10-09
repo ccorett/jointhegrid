@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --dark-band: #060d18;
   --primary-navy: #0b1220;
   --infrastructure-blue: #2563eb;
   --secondary-blue: #60a5fa;
@@ -20,6 +21,7 @@
 }
 
 @theme inline {
+  --color-dark-band: var(--dark-band);
   --color-primary-navy: var(--primary-navy);
   --color-infrastructure-blue: var(--infrastructure-blue);
   --color-secondary-blue: var(--secondary-blue);
@@ -224,13 +226,13 @@
   }
 
   .text-form-label {
-    font-size: 0.9375rem;
+    font-size: 1rem;
     line-height: 1.4;
   }
 
   @media (min-width: 768px) {
     .text-form-label {
-      font-size: 1rem;
+      font-size: 1.0625rem;
     }
   }
 
@@ -293,5 +295,25 @@
   .structural-line-h {
     height: 1px;
     background: var(--border);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: var(--padding-mobile);
+    top: 0.75rem;
+    z-index: 100;
+    transform: translateY(-200%);
+    border-radius: 0.125rem;
+    background: var(--white);
+    padding: 0.625rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-navy);
+    box-shadow: 0 0 0 2px var(--infrastructure-blue);
+    transition: transform 0.15s ease;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
   }
 }

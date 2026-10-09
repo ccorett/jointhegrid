@@ -20,7 +20,7 @@ export function Phase1HeroGrid({
   return (
     <figure
       className={cn(
-        "relative mx-auto w-full min-h-0 max-w-[620px] shrink-0 overflow-hidden",
+        "relative mx-auto w-full min-h-0 max-w-[620px] shrink-0",
         className
       )}
       style={{

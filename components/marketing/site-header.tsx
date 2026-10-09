@@ -6,47 +6,54 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { GridLogo } from "@/components/brand/grid-logo";
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_LETS_TALK_URL } from "@/lib/contact";
+import {
+  servicesNavLinks,
+  solutionsNavLinks,
+} from "@/lib/marketing-nav";
 import { cn } from "@/lib/utils";
-
-const solutionsLinks = [
-  { href: "/digital-workspace", label: "Digital Workspace" },
-  { href: "/ai-integration", label: "Enterprise Intelligence" },
-];
-
-const servicesLinks = [
-  { href: "/deployment", label: "Deployment" },
-  { href: "/administration", label: "Administration" },
-  { href: "/adoption", label: "Adoption" },
-];
 
 /** Shared height so links, dropdowns, and CTA align on one baseline row */
 const desktopNavRowHeight = "min-h-11";
 
+const focusRingClass =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2";
+
 /** Desktop primary navigation */
 const desktopNavLinkClass = cn(
   desktopNavRowHeight,
-  "inline-flex items-center rounded-sm px-3.5 text-[17px] font-medium leading-none text-body-text transition-colors hover:text-primary-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2 lg:px-4 lg:text-[18px]"
+  "inline-flex items-center rounded-sm px-3.5 text-[17px] font-medium leading-none text-body-text transition-colors hover:text-primary-navy",
+  focusRingClass,
+  "lg:px-4 lg:text-[18px]"
 );
 
-const desktopDropdownItemClass =
-  "block px-4 py-3 text-base leading-snug text-body-text transition-colors hover:bg-light-bg hover:text-primary-navy focus-visible:bg-light-bg focus-visible:text-primary-navy focus-visible:outline-none lg:px-5 lg:py-3.5 lg:text-[17px]";
+const desktopDropdownItemClass = cn(
+  "block px-4 py-3.5 text-base leading-snug text-body-text transition-colors hover:bg-light-bg hover:text-primary-navy",
+  focusRingClass,
+  "lg:px-5 lg:py-3.5 lg:text-[17px]"
+);
 
 /** Mobile drawer navigation */
-const mobileNavLinkClass =
-  "flex min-h-[3rem] items-center border-b border-border/60 py-3 text-base font-medium leading-snug text-body-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2";
+const mobileNavLinkClass = cn(
+  "flex min-h-[3rem] items-center border-b border-border/60 py-3 text-base font-medium leading-snug text-body-text",
+  focusRingClass
+);
 
-const mobileAccordionButtonClass =
-  "flex min-h-[3rem] w-full items-center justify-between py-3 text-base font-medium leading-snug text-body-text";
+const mobileAccordionButtonClass = cn(
+  "flex min-h-[3rem] w-full items-center justify-between border-b border-border/60 py-3 text-left text-base font-medium leading-snug text-body-text",
+  focusRingClass
+);
 
-const mobileSubLinkClass =
-  "flex min-h-[2.75rem] items-center py-2.5 pl-1 text-[15px] leading-snug text-body-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-infrastructure-blue focus-visible:ring-offset-2 sm:text-base";
+const mobileSubLinkClass = cn(
+  "flex min-h-[3rem] items-center py-2.5 pl-3 text-base leading-snug text-body-text",
+  focusRingClass
+);
 
 type OpenMenu = "solutions" | "services" | null;
 
 type NavDropdownProps = {
   menuId: "solutions" | "services";
   label: string;
-  links: { href: string; label: string }[];
+  links: readonly { href: string; label: string }[];
   openMenu: OpenMenu;
   setOpenMenu: (menu: OpenMenu) => void;
 };
@@ -78,6 +85,16 @@ function NavDropdown({
           e.stopPropagation();
           toggle();
         }}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowDown" && !isOpen) {
+            e.preventDefault();
+            setOpenMenu(menuId);
+          }
+          if (e.key === "Escape" && isOpen) {
+            e.preventDefault();
+            setOpenMenu(null);
+          }
+        }}
       >
         {label}
         <ChevronDown
@@ -85,28 +102,27 @@ function NavDropdown({
             "size-4 shrink-0 opacity-60 transition-transform lg:size-[18px]",
             isOpen && "rotate-180"
           )}
+          aria-hidden
         />
       </button>
       {isOpen && (
         <div
           id={panelId}
-          role="menu"
-          aria-labelledby={`${menuId}-menu-button`}
-          className="absolute left-0 top-full z-[100] min-w-[240px] pt-1.5"
+          className="absolute left-0 top-full z-[100] min-w-[260px] pt-1.5"
         >
-          <div className="border border-border bg-white py-2 shadow-lg shadow-primary-navy/5">
+          <ul className="border border-border bg-white py-2 shadow-lg shadow-primary-navy/5">
             {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                role="menuitem"
-                className={desktopDropdownItemClass}
-                onClick={() => setOpenMenu(null)}
-              >
-                {link.label}
-              </Link>
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={desktopDropdownItemClass}
+                  onClick={() => setOpenMenu(null)}
+                >
+                  {link.label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       )}
     </div>
@@ -121,7 +137,7 @@ function MobileAccordion({
   onNavigate,
 }: {
   label: string;
-  links: { href: string; label: string }[];
+  links: readonly { href: string; label: string }[];
   expanded: boolean;
   onToggle: () => void;
   onNavigate: () => void;
@@ -129,13 +145,19 @@ function MobileAccordion({
   const panelId = useId();
 
   return (
-    <div className="border-b border-border/60 last:border-b-0">
+    <div>
       <button
         type="button"
         className={mobileAccordionButtonClass}
         aria-expanded={expanded}
         aria-controls={panelId}
         onClick={onToggle}
+        onKeyDown={(e) => {
+          if (e.key === "Escape" && expanded) {
+            e.preventDefault();
+            onToggle();
+          }
+        }}
       >
         {label}
         <ChevronDown
@@ -146,25 +168,30 @@ function MobileAccordion({
           aria-hidden
         />
       </button>
-      {expanded && (
-        <div id={panelId} className="pb-3 pl-2">
-          {links.map((link) => (
+      <ul
+        id={panelId}
+        hidden={!expanded}
+        className="border-b border-border/60 pb-3 pl-1"
+      >
+        {links.map((link) => (
+          <li key={link.href}>
             <Link
-              key={link.href}
               href={link.href}
               className={mobileSubLinkClass}
               onClick={onNavigate}
+              tabIndex={expanded ? undefined : -1}
             >
               {link.label}
             </Link>
-          ))}
-        </div>
-      )}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 export function SiteHeader() {
+  const mobileNavId = useId();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<OpenMenu>(null);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
@@ -193,7 +220,6 @@ export function SiteHeader() {
       }
     }
 
-    // Defer so the same click that opened the menu does not bubble to document.
     const timer = window.setTimeout(() => {
       document.addEventListener("click", handleClickOutside);
     }, 0);
@@ -214,6 +240,16 @@ export function SiteHeader() {
       document.body.style.overflow = prev;
     };
   }, [mobileOpen]);
+
+  const openSolutions = () => {
+    setMobileSolutionsOpen((v) => !v);
+    setMobileServicesOpen(false);
+  };
+
+  const openServices = () => {
+    setMobileServicesOpen((v) => !v);
+    setMobileSolutionsOpen(false);
+  };
 
   return (
     <header
@@ -240,19 +276,19 @@ export function SiteHeader() {
             <NavDropdown
               menuId="solutions"
               label="Solutions"
-              links={solutionsLinks}
+              links={solutionsNavLinks}
               openMenu={openMenu}
               setOpenMenu={setOpenMenu}
             />
             <NavDropdown
               menuId="services"
               label="Services"
-              links={servicesLinks}
+              links={servicesNavLinks}
               openMenu={openMenu}
               setOpenMenu={setOpenMenu}
             />
             <Link href="/about" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
-              Company
+              About
             </Link>
             <Link href="/enquiry" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
               Enquiry
@@ -271,7 +307,10 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="relative z-20 ms-auto inline-flex min-h-[2.75rem] min-w-[2.75rem] shrink-0 items-center justify-center rounded-lg pe-0.5 ps-2.5 text-primary-navy lg:hidden"
+          className={cn(
+            "relative z-20 ms-auto inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg pe-0.5 ps-2.5 text-primary-navy lg:hidden",
+            focusRingClass
+          )}
           onClick={() => {
             if (mobileOpen) {
               closeMobile();
@@ -280,6 +319,7 @@ export function SiteHeader() {
             }
           }}
           aria-expanded={mobileOpen}
+          aria-controls={mobileNavId}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
@@ -287,7 +327,10 @@ export function SiteHeader() {
       </div>
 
       {mobileOpen && (
-        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-white lg:hidden sm:max-h-[calc(100dvh-4.25rem)]">
+        <div
+          id={mobileNavId}
+          className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-white lg:hidden sm:max-h-[calc(100dvh-4.25rem)]"
+        >
           <nav
             className="content-container flex flex-col py-3 pb-8"
             aria-label="Mobile navigation"
@@ -297,26 +340,20 @@ export function SiteHeader() {
             </Link>
             <MobileAccordion
               label="Solutions"
-              links={solutionsLinks}
+              links={solutionsNavLinks}
               expanded={mobileSolutionsOpen}
-              onToggle={() => {
-                setMobileSolutionsOpen((v) => !v);
-                setMobileServicesOpen(false);
-              }}
+              onToggle={openSolutions}
               onNavigate={closeMobile}
             />
             <MobileAccordion
               label="Services"
-              links={servicesLinks}
+              links={servicesNavLinks}
               expanded={mobileServicesOpen}
-              onToggle={() => {
-                setMobileServicesOpen((v) => !v);
-                setMobileSolutionsOpen(false);
-              }}
+              onToggle={openServices}
               onNavigate={closeMobile}
             />
             <Link href="/about" className={mobileNavLinkClass} onClick={closeMobile}>
-              Company
+              About
             </Link>
             <Link href="/enquiry" className={mobileNavLinkClass} onClick={closeMobile}>
               Enquiry
@@ -326,7 +363,7 @@ export function SiteHeader() {
                 href={WHATSAPP_LETS_TALK_URL}
                 variant="primary"
                 size="lg"
-                className="w-full text-[16px]"
+                className="w-full text-base"
                 onClick={closeMobile}
               >
                 Let&apos;s Talk

@@ -22,7 +22,7 @@ export function SectionHeading({
       {eyebrow && (
         <p
           className={cn(
-            "mb-2 text-[13px] font-bold uppercase tracking-[0.18em] md:text-sm",
+            "mb-2 text-[15px] font-bold uppercase tracking-[0.18em] md:text-base",
             dark ? "text-secondary-blue" : "text-infrastructure-blue"
           )}
         >
