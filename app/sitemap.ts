@@ -5,8 +5,7 @@ const BASE = "https://jointhegrid.com";
 const routes = [
   "",
   "/digital-workspace",
-  "/ai-integration",
-  "/cloud-infrastructure",
+  "/enterprise-intelligence",
   "/deployment",
   "/administration",
   "/adoption",

@@ -13,13 +13,14 @@ import {
 } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Digital Workplace + AI Integration",
+  title: "Digital Workspace + Enterprise Intelligence",
   description:
-    "Digital workplace and AI integration for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
+    "Digital Workspace and Enterprise Intelligence for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
   keywords: [
-    "digital workplace Caribbean",
+    "digital workspace Caribbean",
+    "enterprise intelligence",
+    "enterprise search Caribbean",
     "digital workplace Trinidad and Tobago",
-    "AI integration workplace",
     "workplace deployment Caribbean",
     "workplace adoption",
   ],
@@ -28,48 +29,33 @@ export const metadata: Metadata = {
 const solutions = [
   {
     label: "Digital Workspace",
-    title: "Where everyday work is connected.",
-    body: "Communication, collaboration, information and everyday work brought into one connected environment.",
+    title: "Connect people and enable secure, productive collaboration.",
+    body: "Communication, productivity, file sharing and administration in one connected digital environment.",
     capabilities: [
-      "Email & calendar",
-      "Documents & files",
-      "Meetings & messaging",
-      "Collaboration",
-      "Identity & access",
-      "Administration & security",
+      "Email and communication",
+      "Productivity and collaboration",
+      "Document and file sharing",
+      "Meetings and messaging",
+      "Migration and deployment",
+      "Identity, security and support",
     ],
     href: "/digital-workspace",
     cta: "Explore Digital Workspace",
   },
   {
-    label: "AI Integration",
-    title: "Intelligence inside the workplace.",
-    body: "Intelligent tools introduced into the workplace with the access, information and controls required for organizational use.",
+    label: "Enterprise Intelligence",
+    title: "Make organisational information accessible, searchable and useful.",
+    body: "Intelligent search, connected knowledge and enterprise assistance with secure access to information.",
     capabilities: [
-      "Workplace AI",
-      "Information access",
-      "Organizational use",
-      "Access controls",
-      "Governance",
-      "Practical adoption",
+      "Enterprise search",
+      "Knowledge retrieval",
+      "Natural-language queries",
+      "Connected information sources",
+      "Access governance",
+      "Adoption and guidance",
     ],
-    href: "/ai-integration",
-    cta: "Explore AI Integration",
-  },
-  {
-    label: "Cloud Infrastructure",
-    title: "Cloud built for the systems behind the work.",
-    body: "Secure environments for applications, data and digital workloads.",
-    capabilities: [
-      "Environment setup",
-      "Compute & storage",
-      "Workload migration",
-      "Identity & security",
-      "Monitoring",
-      "Ongoing administration",
-    ],
-    href: "/cloud-infrastructure",
-    cta: "Explore Cloud Infrastructure",
+    href: "/enterprise-intelligence",
+    cta: "Explore Enterprise Intelligence",
   },
 ];
 
@@ -77,7 +63,7 @@ const services = [
   {
     name: "Deployment",
     headline: "Get the foundation right.",
-    body: "Configuration, migration, identity, security, rollout and the move into production.",
+    body: "Implement and configure digital workspace and enterprise intelligence solutions, including migrations, security, integration and rollout.",
     capabilities: [
       "Discover & configure",
       "Identity & existing systems",
@@ -90,7 +76,7 @@ const services = [
   {
     name: "Administration",
     headline: "Keep it under control.",
-    body: "Users, licences, access, policies, security and day to day management of the connected workplace.",
+    body: "Manage access, configuration, security, licences, governance and ongoing technical support across both solutions.",
     capabilities: [
       "User lifecycle",
       "Licences & access",
@@ -103,7 +89,7 @@ const services = [
   {
     name: "Adoption",
     headline: "Make it part of the work.",
-    body: "Onboarding, practical learning, AI use cases, champions and continued reinforcement.",
+    body: "Onboarding, practical training, workshops, engagement and continuous improvement so people use the solutions confidently.",
     capabilities: [
       "Onboarding",
       "Workshops & champions",
@@ -122,7 +108,7 @@ export default function HomePage() {
         <div className="content-container grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>
             <p className="max-w-xl text-base font-bold leading-snug text-infrastructure-blue md:text-lg lg:text-xl">
-              Digital Workspace · AI Integration · Cloud Infrastructure
+              Digital Workspace + Enterprise Intelligence
             </p>
             <h1 className="heading-hero mt-3 text-[2.5rem] text-primary-navy sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]">
               Everything connects here.
@@ -171,9 +157,9 @@ export default function HomePage() {
         <div className="content-container">
           <SectionLabel>Solutions</SectionLabel>
           <h2 className="heading-section mt-2 text-[2rem] text-primary-navy md:text-[2.75rem] lg:text-[3.25rem]">
-            Digital Workspace, AI Integration and Cloud Infrastructure.
+            Digital Workspace and Enterprise Intelligence.
           </h2>
-          <div className="mt-8 grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-px border border-border bg-border lg:grid-cols-2">
             {solutions.map((item) => (
               <article key={item.label} className="bg-white p-7 md:p-9 lg:p-10">
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-infrastructure-blue">
@@ -214,8 +200,8 @@ export default function HomePage() {
             Deployment. Administration. Adoption.
           </h2>
           <p className="mt-3 max-w-2xl text-lg text-white/70 md:text-[19px]">
-            The environment has to be deployed properly, managed consistently and
-            used confidently.
+            THE GRID&apos;s delivery capabilities apply across both solutions:
+            implement properly, manage consistently and adopt with purpose.
           </p>
           <div className="mt-8 grid gap-px border border-white/15 bg-white/10 lg:grid-cols-3">
             {services.map((item) => (
@@ -256,8 +242,8 @@ export default function HomePage() {
               Based in Trinidad &amp; Tobago. Built to work across the Caribbean.
             </h2>
             <p className="text-lead mt-4 text-body-text">
-              GRID supports organizations with digital workplace and AI
-              integration, with deployment, administration and adoption delivered
+              GRID supports organizations with Digital Workspace and Enterprise
+              Intelligence, with deployment, administration and adoption delivered
               for the way the region works.
             </p>
           </div>

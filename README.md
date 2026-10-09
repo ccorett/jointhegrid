@@ -1,6 +1,6 @@
 # #jointhegrid
 
-Marketing website for **#jointhegrid**. Digital Workplace + AI Integration.
+Marketing website for **#jointhegrid**. Digital Workspace + Enterprise Intelligence.
 
 ## Stack
 

@@ -16,7 +16,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/gemini-enterprise",
-        destination: "/ai-integration",
+        destination: "/enterprise-intelligence",
+        permanent: true,
+      },
+      {
+        source: "/ai-integration",
+        destination: "/enterprise-intelligence",
+        permanent: true,
+      },
+      {
+        source: "/cloud-infrastructure",
+        destination: "/",
         permanent: true,
       },
       {

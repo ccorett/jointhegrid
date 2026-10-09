@@ -17,11 +17,11 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jointhegrid.com"),
   title: {
-    default: "#jointhegrid | Digital Workspace + AI Integration",
+    default: "#jointhegrid | Digital Workspace + Enterprise Intelligence",
     template: "%s | #jointhegrid",
   },
   description:
-    "Digital workplace and AI integration for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
+    "Digital Workspace and Enterprise Intelligence for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
   icons: {
     icon: [
       { url: "/brand/favicon.ico", sizes: "32x32" },

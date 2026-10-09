@@ -10,8 +10,7 @@ import { cn } from "@/lib/utils";
 
 const solutionsLinks = [
   { href: "/digital-workspace", label: "Digital Workspace" },
-  { href: "/ai-integration", label: "AI Integration" },
-  { href: "/cloud-infrastructure", label: "Cloud Infrastructure" },
+  { href: "/enterprise-intelligence", label: "Enterprise Intelligence" },
 ];
 
 const servicesLinks = [
@@ -260,10 +259,10 @@ export function SiteHeader() {
               setOpenMenu={setOpenMenu}
             />
             <Link href="/about" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
-              About
+              Company
             </Link>
             <Link href="/contact" className={desktopNavLinkClass} onClick={() => setOpenMenu(null)}>
-              Contact
+              Enquiry
             </Link>
           </nav>
 
@@ -318,10 +317,10 @@ export function SiteHeader() {
               onNavigate={closeMobile}
             />
             <Link href="/about" className={mobileNavLinkClass} onClick={closeMobile}>
-              About
+              Company
             </Link>
             <Link href="/contact" className={mobileNavLinkClass} onClick={closeMobile}>
-              Contact
+              Enquiry
             </Link>
             <div className="mt-6">
               <Button

@@ -4,19 +4,19 @@ const services = [
   {
     href: "/deployment",
     label: "Deployment",
-    description: "Configuration, migration, identity, security and rollout.",
+    description: "Configuration, migration, integration, security and rollout for both solutions.",
     cta: "Plan a Deployment",
   },
   {
     href: "/administration",
     label: "Administration",
-    description: "Users, licences, policies, security and day to day management.",
+    description: "Access, configuration, security, licences, governance and support.",
     cta: "Explore Administration",
   },
   {
     href: "/adoption",
     label: "Adoption",
-    description: "Learning, AI use cases, champions and reinforcement.",
+    description: "Onboarding, training, workshops, engagement and reinforcement.",
     cta: "Explore Adoption",
   },
 ];

@@ -8,12 +8,12 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Adoption",
   description:
-    "Digital workplace and AI adoption: training, enablement and reinforcement for Caribbean organizations.",
+    "Adoption for Digital Workspace and Enterprise Intelligence: onboarding, training, workshops and reinforcement for Caribbean organizations.",
   path: "/adoption",
   keywords: [
     "digital workplace adoption",
     "workplace training Caribbean",
-    "AI adoption workplace",
+    "enterprise intelligence adoption",
   ],
 });
 
@@ -41,7 +41,7 @@ export default function AdoptionPage() {
         visual="symbol-light"
         title="Make it part"
         titleAccent="of the work."
-        description="Make new technology fit the way people actually work: onboarding, practical learning, AI use cases, champions and continued reinforcement."
+        description="Help employees and organisations use digital workspace and enterprise intelligence successfully through onboarding, practical training, guidance, workshops and continuous improvement."
         primaryCta={{ label: "Build an Adoption Programme", href: "/contact" }}
       />
 

@@ -8,12 +8,12 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Deployment",
   description:
-    "Digital workplace deployment, migration and rollout: configuration, identity, security and production across the Caribbean.",
+    "Deploy Digital Workspace and Enterprise Intelligence: configuration, migration, security, integration, testing and rollout across the Caribbean.",
   path: "/deployment",
   keywords: [
-    "digital workplace deployment",
+    "digital workspace deployment",
+    "enterprise intelligence deployment",
     "workplace migration Caribbean",
-    "email and platform migration",
     "workplace rollout",
   ],
 });
@@ -28,13 +28,13 @@ const lifecycle = [
 ];
 
 const capabilities = [
-  "Cloud environment setup",
-  "Infrastructure configuration",
-  "Application and workload migration",
-  "AI integration setup",
-  "Platform migration",
+  "Workspace environment configuration",
+  "Enterprise intelligence setup",
+  "Platform and workload migration",
   "Identity integration",
   "Security configuration",
+  "Information source connection",
+  "Integration testing",
   "Data migration",
   "Production rollout",
   "Hypercare support",
@@ -49,7 +49,7 @@ export default function DeploymentPage() {
         visual="symbol-light"
         title="Get the foundation"
         titleAccent="right."
-        description="Configuration, migration, identity, security, rollout and the move into production."
+        description="Implement and configure digital workspace and enterprise intelligence solutions, including applicable migrations, security, integration, testing and rollout."
         primaryCta={{ label: "Plan a Deployment", href: "/contact" }}
       />
 
@@ -71,7 +71,7 @@ export default function DeploymentPage() {
         <div className="content-container">
           <SectionHeading
             title="What goes into deployment"
-            description="Each organization starts from a different place. The work covers cloud environment setup, infrastructure configuration, application and workload migration, identity, data, security and a controlled move into production."
+            description="Each organization starts from a different place. The work spans both core solutions: configuration, migration paths, identity, supported integrations, information, security and a controlled move into production."
             className="mb-8"
           />
           <CapabilityGrid items={capabilities} columns={2} />

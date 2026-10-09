@@ -5,8 +5,7 @@ import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
 const footerLinks = {
   solutions: [
     { href: "/digital-workspace", label: "Digital Workspace" },
-    { href: "/ai-integration", label: "AI Integration" },
-    { href: "/cloud-infrastructure", label: "Cloud Infrastructure" },
+    { href: "/enterprise-intelligence", label: "Enterprise Intelligence" },
   ],
   services: [
     { href: "/deployment", label: "Deployment" },
@@ -15,7 +14,7 @@ const footerLinks = {
   ],
   company: [
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    { href: "/contact", label: "Enquiry" },
     { href: "/privacy", label: "Privacy" },
     { href: "/terms", label: "Terms" },
   ],
@@ -29,8 +28,9 @@ export function SiteFooter() {
           <div className="lg:col-span-4">
             <GridLogo reversed symbolOnlyBelowSm={false} symbolSize={36} />
             <p className="mt-4 max-w-sm text-base leading-relaxed text-white/70 md:text-[17px] md:leading-relaxed lg:text-lg">
-              Digital workplace and AI integration, with deployment, administration
-              and adoption for organizations across the Caribbean.
+              Digital Workspace and Enterprise Intelligence, delivered through
+              deployment, administration and adoption for organizations across
+              the Caribbean.
             </p>
             <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-white/55 md:text-base lg:text-[17px] lg:leading-snug">
               People · Information · Apps · AI

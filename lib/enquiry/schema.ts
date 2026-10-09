@@ -8,7 +8,7 @@ export const ORGANIZATION_SIZES = [
 
 export const AREAS_OF_INTEREST = [
   "Digital Workspace",
-  "AI Integration",
+  "Enterprise Intelligence",
   "Deployment",
   "Migration",
   "Administration",

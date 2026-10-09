@@ -4,14 +4,14 @@ import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Contact",
+  title: "Enquiry",
   description:
-    "Contact #jointhegrid about digital workplace and AI integration across the Caribbean.",
+    "Enquire about Digital Workspace and Enterprise Intelligence from #jointhegrid across the Caribbean.",
   path: "/contact",
   keywords: [
-    "digital workplace Trinidad and Tobago",
-    "digital workplace Caribbean",
-    "AI integration Caribbean",
+    "digital workspace Trinidad and Tobago",
+    "digital workspace Caribbean",
+    "enterprise intelligence Caribbean",
   ],
 });
 
@@ -20,7 +20,7 @@ export default function ContactPage() {
     <section className="bg-primary-navy section-y text-white">
       <div className="content-container grid gap-10 lg:grid-cols-2 lg:gap-14">
         <div>
-          <SectionLabel tone="dark">Contact</SectionLabel>
+          <SectionLabel tone="dark">Enquiry</SectionLabel>
           <h1 className="heading-contact mt-2">
             Let&apos;s talk about your workplace.
           </h1>
