@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
+import { PageViewBeacon } from "@/components/analytics/page-view-beacon";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { CapabilityGrid } from "@/components/marketing/capability-grid";
 import { ServiceLinks } from "@/components/marketing/service-links";
@@ -35,6 +37,7 @@ const capabilities = [
 export default function EnterpriseIntelligencePage() {
   return (
     <>
+      <PageViewBeacon event="solution_view" name="ai-integration" />
       <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
@@ -74,7 +77,17 @@ export default function EnterpriseIntelligencePage() {
               Delivered through
             </p>
             <p className="mt-3 font-display text-2xl font-bold text-primary-navy md:text-[1.75rem]">
-              Deployment · Administration · Adoption
+              <Link href="/deployment" className="hover:text-infrastructure-blue">
+                Deployment
+              </Link>
+              {" · "}
+              <Link href="/administration" className="hover:text-infrastructure-blue">
+                Administration
+              </Link>
+              {" · "}
+              <Link href="/adoption" className="hover:text-infrastructure-blue">
+                Adoption
+              </Link>
             </p>
           </div>
         </div>
@@ -86,7 +99,10 @@ export default function EnterpriseIntelligencePage() {
             Employees spend less time searching and more time using information
             when retrieval, governance and adoption are planned together. Training
             and practical guidance sit inside{" "}
-            <span className="font-semibold text-white">Adoption</span>, not as a
+            <Link href="/adoption" className="font-semibold text-white hover:text-secondary-blue">
+              Adoption
+            </Link>
+            , not as a
             separate product category.
           </p>
         </div>

@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { LetsTalkButton } from "@/components/marketing/lets-talk-button";
+import { WHATSAPP_LETS_TALK_URL } from "@/lib/contact";
 import {
   PageHeroVisual,
   type PageHeroVisualKind,
@@ -83,11 +85,15 @@ export function PageHero({
           )}
           {(primaryCta || secondaryCta) && (
             <div className="mt-6 flex flex-wrap gap-3">
-              {primaryCta && (
-                <Button href={primaryCta.href} variant="primary" size="lg">
-                  {primaryCta.label}
-                </Button>
-              )}
+              {primaryCta &&
+                (primaryCta.label === "Let's Talk" &&
+                primaryCta.href === WHATSAPP_LETS_TALK_URL ? (
+                  <LetsTalkButton location="page_hero" size="lg" />
+                ) : (
+                  <Button href={primaryCta.href} variant="primary" size="lg">
+                    {primaryCta.label}
+                  </Button>
+                ))}
               {secondaryCta && (
                 <Button
                   href={secondaryCta.href}

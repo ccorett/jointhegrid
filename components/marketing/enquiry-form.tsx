@@ -11,6 +11,7 @@ import {
 } from "@/lib/enquiry/schema";
 import type { SendEnquiryResult } from "@/lib/enquiry/send-enquiry";
 import { SALES_EMAIL } from "@/lib/contact";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 const initialState: SendEnquiryResult | null = null;
@@ -61,6 +62,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
     initialState
   );
   const formRef = useRef<HTMLFormElement>(null);
+  const enquiryStarted = useRef(false);
   const errors: EnquiryFieldErrors =
     state?.status === "validation_error" ? state.errors : {};
 
@@ -95,6 +97,14 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
       ref={formRef}
       action={formAction}
       noValidate
+      onFocus={() => {
+        if (enquiryStarted.current) return;
+        enquiryStarted.current = true;
+        trackEvent("enquiry_start", { location: dark ? "enquiry_page" : "home_contact" });
+      }}
+      onSubmit={() => {
+        trackEvent("enquiry_submit", { location: dark ? "enquiry_page" : "home_contact" });
+      }}
       className={cn(
         "rounded-sm border p-6 md:p-7",
         dark ? "panel-border-dark bg-primary-navy" : "border-border bg-white"
@@ -112,17 +122,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
       )}
       {state?.status === "error" && (
         <p className="mb-4 text-base text-error md:text-[17px]" role="alert">
-          We could not send your enquiry. Please email{" "}
-          <a
-            href={`mailto:${SALES_EMAIL}`}
-            className={cn(
-              "font-semibold underline underline-offset-2",
-              dark ? "text-secondary-blue hover:text-white" : "text-infrastructure-blue"
-            )}
-          >
-            {SALES_EMAIL}
-          </a>{" "}
-          or use WhatsApp.
+          We could not send your enquiry. Please email {SALES_EMAIL} or use WhatsApp.
         </p>
       )}
 

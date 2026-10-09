@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { PageViewBeacon } from "@/components/analytics/page-view-beacon";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { LifecycleSteps } from "@/components/marketing/lifecycle-steps";
@@ -37,6 +39,7 @@ const programmes = [
 export default function AdoptionPage() {
   return (
     <>
+      <PageViewBeacon event="service_view" name="adoption" />
       <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
@@ -79,6 +82,17 @@ export default function AdoptionPage() {
             description="Workshops, champions, executive sessions and practical AI enablement are part of one adoption programme, not a separate catalogue of courses."
             className="mb-8"
           />
+          <p className="mb-8 max-w-3xl text-lg text-body-text md:text-[19px]">
+            Adoption programmes support teams using{" "}
+            <Link href="/digital-workspace" className="font-semibold text-infrastructure-blue hover:underline">
+              Digital Workspace
+            </Link>{" "}
+            and{" "}
+            <Link href="/ai-integration" className="font-semibold text-infrastructure-blue hover:underline">
+              Enterprise Intelligence
+            </Link>
+            .
+          </p>
           <CapabilityGrid items={programmes} columns={3} />
         </div>
       </section>

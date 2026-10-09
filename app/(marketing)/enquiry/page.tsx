@@ -1,6 +1,7 @@
 import { EnquiryForm } from "@/components/marketing/enquiry-form";
 import { SectionLabel } from "@/components/marketing/section-label";
-import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
+import { PHONE_DISPLAY, SALES_EMAIL } from "@/lib/contact";
+import { WhatsAppPhoneLink } from "@/components/marketing/whatsapp-phone-link";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
@@ -47,14 +48,12 @@ export default function ContactPage() {
               <p className="text-form-label font-semibold text-white/70">
                 WhatsApp
               </p>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppPhoneLink
+                location="enquiry_page"
                 className="text-contact-channel mt-1 block font-semibold text-white/90 hover:text-white"
               >
                 {PHONE_DISPLAY}
-              </a>
+              </WhatsAppPhoneLink>
             </div>
           </div>
         </div>

@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { CapabilityGrid } from "@/components/marketing/capability-grid";
 import { ServiceLinks } from "@/components/marketing/service-links";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { PageViewBeacon } from "@/components/analytics/page-view-beacon";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -35,6 +37,7 @@ const capabilities = [
 export default function DigitalWorkspacePage() {
   return (
     <>
+      <PageViewBeacon event="solution_view" name="digital-workspace" />
       <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
@@ -74,7 +77,17 @@ export default function DigitalWorkspacePage() {
               Delivered through
             </p>
             <p className="mt-3 font-display text-2xl font-bold text-primary-navy md:text-[1.75rem]">
-              Deployment · Administration · Adoption
+              <Link href="/deployment" className="hover:text-infrastructure-blue">
+                Deployment
+              </Link>
+              {" · "}
+              <Link href="/administration" className="hover:text-infrastructure-blue">
+                Administration
+              </Link>
+              {" · "}
+              <Link href="/adoption" className="hover:text-infrastructure-blue">
+                Adoption
+              </Link>
             </p>
           </div>
         </div>

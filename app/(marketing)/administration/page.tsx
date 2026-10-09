@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { PageViewBeacon } from "@/components/analytics/page-view-beacon";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { CapabilityGrid } from "@/components/marketing/capability-grid";
@@ -34,6 +36,7 @@ const capabilities = [
 export default function AdministrationPage() {
   return (
     <>
+      <PageViewBeacon event="service_view" name="administration" />
       <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
@@ -61,7 +64,19 @@ export default function AdministrationPage() {
           <p className="text-lg leading-relaxed text-body-text md:text-[19px]">
             Keep users, access, policies, security and information boundaries under
             control after deployment. Monitoring, backup, cost and governance need
-            regular attention as requirements change.
+            regular attention as requirements change. Administration applies across{" "}
+            <Link href="/digital-workspace" className="font-semibold text-infrastructure-blue hover:underline">
+              Digital Workspace
+            </Link>
+            ,{" "}
+            <Link href="/ai-integration" className="font-semibold text-infrastructure-blue hover:underline">
+              Enterprise Intelligence
+            </Link>
+            {" "}and{" "}
+            <Link href="/cloud-infrastructure" className="font-semibold text-infrastructure-blue hover:underline">
+              Cloud Infrastructure
+            </Link>
+            .
           </p>
         </div>
       </section>

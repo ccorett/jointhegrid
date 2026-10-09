@@ -3,13 +3,13 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Phase1HeroGrid } from "@/components/brand/phase1-hero-grid";
 import { BrandConnectionLines } from "@/components/brand/brand-connection-lines";
 import { Button } from "@/components/ui/button";
+import { LetsTalkButton } from "@/components/marketing/lets-talk-button";
+import { WhatsAppPhoneLink } from "@/components/marketing/whatsapp-phone-link";
 import { EnquiryForm } from "@/components/marketing/enquiry-form";
 import { SectionLabel } from "@/components/marketing/section-label";
 import {
   PHONE_DISPLAY,
   SALES_EMAIL,
-  WHATSAPP_LETS_TALK_URL,
-  WHATSAPP_URL,
 } from "@/lib/contact";
 import { pageMetadata } from "@/lib/seo";
 import { organizationJsonLd } from "@/lib/structured-data";
@@ -117,9 +117,7 @@ export default function HomePage() {
               #jointheGRID.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href={WHATSAPP_LETS_TALK_URL} size="lg">
-                Let&apos;s Talk
-              </Button>
+              <LetsTalkButton location="home_hero" size="lg" />
               <Button href="#solutions" variant="secondary" size="lg">
                 Explore Solutions
               </Button>
@@ -290,14 +288,12 @@ export default function HomePage() {
                 <p className="text-form-label font-semibold text-white/70">
                   WhatsApp
                 </p>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <WhatsAppPhoneLink
+                  location="home_contact"
                   className="text-contact-channel mt-1 block font-semibold text-white/90 hover:text-white"
                 >
                   {PHONE_DISPLAY}
-                </a>
+                </WhatsAppPhoneLink>
               </div>
             </div>
           </div>

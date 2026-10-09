@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { PageViewBeacon } from "@/components/analytics/page-view-beacon";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { LifecycleSteps } from "@/components/marketing/lifecycle-steps";
@@ -44,6 +46,7 @@ const capabilities = [
 export default function DeploymentPage() {
   return (
     <>
+      <PageViewBeacon event="service_view" name="deployment" />
       <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
@@ -76,6 +79,21 @@ export default function DeploymentPage() {
             description="Each organization starts from a different place. The work spans both core solutions: configuration, migration paths, identity, supported integrations, information, security and a controlled move into production."
             className="mb-8"
           />
+          <p className="mb-8 max-w-3xl text-lg text-body-text md:text-[19px]">
+            Explore{" "}
+            <Link href="/digital-workspace" className="font-semibold text-infrastructure-blue hover:underline">
+              Digital Workspace
+            </Link>
+            ,{" "}
+            <Link href="/ai-integration" className="font-semibold text-infrastructure-blue hover:underline">
+              Enterprise Intelligence
+            </Link>
+            {" "}and{" "}
+            <Link href="/cloud-infrastructure" className="font-semibold text-infrastructure-blue hover:underline">
+              Cloud Infrastructure
+            </Link>
+            .
+          </p>
           <CapabilityGrid items={capabilities} columns={2} />
         </div>
       </section>

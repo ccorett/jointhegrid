@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { LetsTalkButton } from "@/components/marketing/lets-talk-button";
 import { WHATSAPP_LETS_TALK_URL } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
@@ -32,9 +33,13 @@ export function PageCtaBand({
             <p className="text-lead mt-3 text-white/75">{description}</p>
           )}
         </div>
-        <Button href={href} size="lg" className="shrink-0">
-          {ctaLabel}
-        </Button>
+        {ctaLabel === "Let's Talk" ? (
+          <LetsTalkButton location="page_cta_band" size="lg" className="shrink-0" />
+        ) : (
+          <Button href={href} size="lg" className="shrink-0">
+            {ctaLabel}
+          </Button>
+        )}
       </div>
     </section>
   );

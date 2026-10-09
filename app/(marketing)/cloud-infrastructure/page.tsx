@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageViewBeacon } from "@/components/analytics/page-view-beacon";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
@@ -124,6 +125,7 @@ function FocusList({ items, dark }: { items: string[]; dark?: boolean }) {
 export default function CloudInfrastructurePage() {
   return (
     <>
+      <PageViewBeacon event="solution_view" name="cloud-infrastructure" />
       <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
@@ -179,7 +181,11 @@ export default function CloudInfrastructurePage() {
               >
                 Administration
               </Link>{" "}
-              covers monitoring, access, backup, cost and ongoing changes.
+              covers monitoring, access, backup, cost and ongoing changes.{" "}
+              <Link href="/adoption" className="font-semibold text-secondary-blue hover:text-white">
+                Adoption
+              </Link>{" "}
+              helps teams use cloud capability in everyday work.
             </p>
           </div>
           <FocusList items={administrationFocus} dark />

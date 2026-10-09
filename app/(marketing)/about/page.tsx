@@ -3,6 +3,7 @@ import { GridSymbol } from "@/components/brand/grid-symbol";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { PartnerProfileLink } from "@/components/marketing/partner-profile-link";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
@@ -68,6 +69,9 @@ export default function AboutPage() {
               and information environments already in place. Interoperability is
               part of the approach, not a separate product line.
             </p>
+            <div className="pt-2">
+              <PartnerProfileLink />
+            </div>
           </div>
           <div className="panel-border flex items-center justify-center bg-light-bg p-8 lg:p-10">
             <GridSymbol theme="light" size={100} />

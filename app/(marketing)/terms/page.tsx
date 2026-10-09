@@ -28,17 +28,26 @@ export default function TermsPage() {
       <section className="section-y-compact">
         <div className="content-container prose-width space-y-6 text-[17px] leading-relaxed text-body-text md:text-lg">
           <p>
-            These terms apply to your use of the #jointhegrid website and
-            related digital services from GRID. This is a placeholder summary until
-            formal terms are published.
+            These terms apply to your use of the #jointhegrid website operated by
+            Global Resilient Infrastructure &amp; Digitalisation Ltd. Formal
+            terms for specific client engagements are set out in separate
+            agreements with your organization.
           </p>
           <h2 className="font-display text-xl font-bold text-primary-navy md:text-2xl">
             Website use
           </h2>
           <p>
             Content on this site is provided for general information about our
-            digital workplace services. Specific engagements are governed by
-            separate agreements with your organization.
+            services. You agree to use the website lawfully and not to attempt
+            to disrupt its operation.
+          </p>
+          <h2 className="font-display text-xl font-bold text-primary-navy md:text-2xl">
+            Enquiries
+          </h2>
+          <p>
+            Submitting an enquiry does not create a binding contract. We will
+            respond in good faith and discuss scope directly with your
+            organization where appropriate.
           </p>
           <h2 className="font-display text-xl font-bold text-primary-navy md:text-2xl">
             Questions
@@ -53,7 +62,7 @@ export default function TermsPage() {
             </a>{" "}
             or visit our{" "}
             <Link href="/enquiry" className="font-medium text-infrastructure-blue hover:underline">
-              contact page
+              enquiry page
             </Link>
             .
           </p>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GridLogo } from "@/components/brand/grid-logo";
-import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
+import { PHONE_DISPLAY, SALES_EMAIL } from "@/lib/contact";
+import { WhatsAppPhoneLink } from "@/components/marketing/whatsapp-phone-link";
 import { cn } from "@/lib/utils";
 
 const footerLinkClass = cn(
@@ -98,14 +99,9 @@ export function SiteFooter() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={footerLinkClass}
-                  >
+                  <WhatsAppPhoneLink location="footer" className={footerLinkClass}>
                     {PHONE_DISPLAY}
-                  </a>
+                  </WhatsAppPhoneLink>
                 </li>
               </ul>
             </div>

@@ -116,7 +116,11 @@ export async function sendEnquiryMail(
   const user = process.env.SMTP_USER!.trim();
   const pass = process.env.SMTP_PASSWORD!.trim();
   const from = process.env.SMTP_FROM!.trim();
-  const to = process.env.CONTACT_TO_EMAIL!.trim();
+  const to = process.env
+    .CONTACT_TO_EMAIL!.split(",")
+    .map((address) => address.trim())
+    .filter(Boolean)
+    .join(", ");
 
   if (!Number.isFinite(port) || port <= 0) {
     console.error("[enquiry] Invalid SMTP_PORT value.");

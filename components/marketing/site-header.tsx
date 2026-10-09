@@ -4,8 +4,7 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { GridLogo } from "@/components/brand/grid-logo";
-import { Button } from "@/components/ui/button";
-import { WHATSAPP_LETS_TALK_URL } from "@/lib/contact";
+import { LetsTalkButton } from "@/components/marketing/lets-talk-button";
 import {
   servicesNavLinks,
   solutionsNavLinks,
@@ -295,14 +294,11 @@ export function SiteHeader() {
             </Link>
           </nav>
 
-          <Button
-            href={WHATSAPP_LETS_TALK_URL}
-            variant="primary"
+          <LetsTalkButton
+            location="header_desktop"
             size="md"
             className={cn(desktopNavRowHeight, "shrink-0 text-[16px] lg:text-[17px]")}
-          >
-            Let&apos;s Talk
-          </Button>
+          />
         </div>
 
         <button
@@ -359,15 +355,12 @@ export function SiteHeader() {
               Enquiry
             </Link>
             <div className="mt-6">
-              <Button
-                href={WHATSAPP_LETS_TALK_URL}
-                variant="primary"
+              <LetsTalkButton
+                location="header_mobile"
                 size="lg"
                 className="w-full text-base"
                 onClick={closeMobile}
-              >
-                Let&apos;s Talk
-              </Button>
+              />
             </div>
           </nav>
         </div>
