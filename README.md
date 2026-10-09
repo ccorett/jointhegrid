@@ -19,7 +19,7 @@ Open [http://localhost:43123](http://localhost:43123).
 
 ## Public contact email
 
-All customer-facing mailto links and enquiry delivery use **`sale@grid.co.tt`** via `SALES_EMAIL` in `lib/contact.ts`.
+All customer-facing mailto links and enquiry delivery use **`sales@grid.co.tt`** via `SALES_EMAIL` in `lib/contact.ts`.
 
 ## Enquiries
 
@@ -34,7 +34,7 @@ In **Vercel → Project → Settings → Environment Variables**, add (Productio
 - `SMTP_SECURE` (`true` or `false`)
 - `SMTP_USER`
 - `SMTP_PASSWORD`
-- `CONTACT_TO_EMAIL` (`sale@grid.co.tt`)
+- `CONTACT_TO_EMAIL` (`sales@grid.co.tt`)
 - `SMTP_FROM` (optional; e.g. `nexxgrid@gmail.com` if your provider requires a specific From address)
 
 Do not commit real passwords to GitHub. See `lib/enquiry/README.md` for behaviour and validation details.

@@ -53,9 +53,7 @@ export function escapeHtml(value: string): string {
     .replace(/'/g, "&#39;");
 }
 
-function buildSubject(payload: EnquiryPayload): string {
-  return `Website Enquiry: ${payload.organization} | ${payload.areaOfInterest}`;
-}
+const ENQUIRY_EMAIL_SUBJECT = "GRID Services Enquiry";
 
 function buildPlainText(payload: EnquiryPayload): string {
   const lines = [
@@ -144,10 +142,10 @@ export async function sendEnquiryMail(
 
   try {
     const info = await transporter.sendMail({
-      from: `"GRID Website" <${from}>`,
+      from: `"#jointheGRID Website" <${from}>`,
       to,
       replyTo: payload.workEmail,
-      subject: buildSubject(payload),
+      subject: ENQUIRY_EMAIL_SUBJECT,
       text: buildPlainText(payload),
       html: buildHtml(payload),
     });
