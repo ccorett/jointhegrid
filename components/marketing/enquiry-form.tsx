@@ -81,28 +81,6 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
     );
   }
 
-  if (state?.status === "pending_integration") {
-    return (
-      <div className="rounded-xl border border-border bg-light-bg p-8 md:p-10">
-        <h2 className="heading-section text-2xl text-primary-navy md:text-3xl">
-          Enquiry received
-        </h2>
-        <p className="mt-4 text-[17px] leading-relaxed text-secondary-text">
-          Your message has been validated and recorded (reference{" "}
-          <span className="font-mono text-sm">{state.referenceId.slice(0, 8)}</span>
-          ). Email delivery to our team is still being connected. Please use
-          WhatsApp if you need a faster response.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <WhatsAppButton />
-          <Button href={`mailto:sales@jointhegrid.net`} variant="secondary">
-            Email sales@jointhegrid.net
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <form
       ref={formRef}
@@ -278,7 +256,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
           disabled={pending}
           className="w-full text-[15px] md:text-[17px] sm:w-auto"
         >
-          {pending ? "Sending…" : "Send Enquiry"}
+          {pending ? "Sending..." : "Send Enquiry"}
         </Button>
       </div>
     </form>
