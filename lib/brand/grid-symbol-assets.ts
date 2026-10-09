@@ -1,16 +1,15 @@
 /** Canonical GRID symbol assets (official supplied artwork). */
 
 export const GRID_SYMBOL_LIGHT = {
-  src: "/brand/grid-symbol-light.png",
-  /** Updated after transparent export — intrinsic size for layout stability */
-  width: 1040,
-  height: 939,
+  src: "/brand/grid-symbol-light.webp",
+  width: 512,
+  height: 462,
 } as const;
 
 export const GRID_SYMBOL_DARK = {
-  src: "/brand/grid-symbol-dark.png",
-  width: 948,
-  height: 948,
+  src: "/brand/grid-symbol-dark.webp",
+  width: 512,
+  height: 512,
 } as const;
 
 export type GridSymbolTheme = "light" | "dark";

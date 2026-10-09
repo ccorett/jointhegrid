@@ -102,8 +102,8 @@ export default function HomePage() {
     <>
       <JsonLd data={organizationJsonLd()} />
       <section className="border-b border-border bg-white section-y-compact">
-        <div className="content-container grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-          <div>
+        <div className="content-container grid min-h-0 items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+          <div className="min-w-0">
             <p className="max-w-xl text-base font-bold leading-snug text-infrastructure-blue md:text-lg lg:text-xl">
               Digital Workspace + Enterprise Intelligence
             </p>
@@ -125,7 +125,10 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <Phase1HeroGrid className="w-full max-h-[min(520px,58vh)] lg:justify-self-end" />
+          <Phase1HeroGrid
+            priority
+            className="w-full max-h-[min(480px,52vh)] sm:max-h-[min(520px,58vh)] lg:max-h-[min(520px,58vh)] lg:justify-self-end"
+          />
         </div>
       </section>
 

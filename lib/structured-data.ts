@@ -22,7 +22,7 @@ export function organizationJsonLd() {
     url: SITE_ORIGIN,
     email: SALES_EMAIL,
     telephone: ORG_TELEPHONE,
-    logo: `${SITE_ORIGIN}/brand/grid-symbol-light.png`,
+    logo: `${SITE_ORIGIN}/brand/grid-symbol-light.webp`,
     address: {
       "@type": "PostalAddress",
       addressCountry: "TT",

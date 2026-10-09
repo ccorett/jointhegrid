@@ -41,7 +41,7 @@ export function GridSymbol({
       width={asset.width}
       height={asset.height}
       priority={priority}
-      unoptimized
+      sizes={`${size}px`}
       aria-hidden
       className={cn("shrink-0 object-contain", className)}
       style={{ width: size, height: size, maxWidth: size, maxHeight: size }}

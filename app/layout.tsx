@@ -11,7 +11,7 @@ const inter = Inter({
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["600", "700"],
 });
 
 const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();

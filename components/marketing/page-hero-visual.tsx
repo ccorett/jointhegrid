@@ -12,7 +12,14 @@ export function PageHeroVisual({
   className?: string;
 }) {
   if (kind === "hero-grid") {
-    return <Phase1HeroGrid className={cn("max-h-[min(420px,42vh)] w-full", className)} />;
+    return (
+      <Phase1HeroGrid
+        className={cn(
+          "w-full max-h-[min(380px,40vh)] sm:max-h-[min(420px,42vh)]",
+          className
+        )}
+      />
+    );
   }
   if (kind === "symbol-dark") {
     return (

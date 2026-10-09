@@ -42,11 +42,11 @@ export function PageHero({
     >
       <div
         className={cn(
-          "content-container grid items-center gap-8 lg:gap-12",
+          "content-container grid min-h-0 items-center gap-8 lg:gap-12",
           hasVisual && "lg:grid-cols-[1.05fr_0.95fr]"
         )}
       >
-        <div className={cn(!hasVisual && "max-w-4xl")}>
+        <div className={cn("min-w-0", !hasVisual && "max-w-4xl")}>
           {eyebrow && (
             <p
               className={cn(

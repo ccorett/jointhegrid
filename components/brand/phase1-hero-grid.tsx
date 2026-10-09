@@ -1,56 +1,40 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useState, useSyncExternalStore } from "react";
 import { cn } from "@/lib/utils";
 
-const HERO_IMAGE = "/brand/hero-connected-ecosystem.png";
+/** Official hero artwork intrinsic dimensions (layout stability). */
+export const HERO_ECOSYSTEM_WIDTH = 903;
+export const HERO_ECOSYSTEM_HEIGHT = 845;
 
-function subscribeReducedMotion(onChange: () => void) {
-  const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-  mq.addEventListener("change", onChange);
-  return () => mq.removeEventListener("change", onChange);
-}
+const HERO_IMAGE = "/brand/hero-connected-ecosystem.webp";
 
-function getReducedMotionSnapshot() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
+type Phase1HeroGridProps = {
+  className?: string;
+  /** Set on the homepage LCP candidate only. */
+  priority?: boolean;
+};
 
-export function Phase1HeroGrid({ className }: { className?: string }) {
-  const [visible, setVisible] = useState(false);
-  const reduced = useSyncExternalStore(
-    subscribeReducedMotion,
-    getReducedMotionSnapshot,
-    () => false
-  );
-
-  useEffect(() => {
-    if (reduced) return;
-    const t = requestAnimationFrame(() => setVisible(true));
-    return () => cancelAnimationFrame(t);
-  }, [reduced]);
-
-  const showHero = reduced || visible;
-
+export function Phase1HeroGrid({
+  className,
+  priority = false,
+}: Phase1HeroGridProps) {
   return (
     <figure
       className={cn(
-        "relative mx-auto w-full max-w-[620px]",
+        "relative mx-auto w-full min-h-0 max-w-[620px] shrink-0 overflow-hidden",
         className
       )}
+      style={{
+        aspectRatio: `${HERO_ECOSYSTEM_WIDTH} / ${HERO_ECOSYSTEM_HEIGHT}`,
+      }}
     >
       <Image
         src={HERO_IMAGE}
         alt="Illustration of a connected digital workplace linking people, applications, workflows, information and security."
-        width={903}
-        height={845}
-        priority
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 55vw, 620px"
-        className={cn(
-          "h-auto w-full select-none",
-          !reduced && "transition-[opacity,transform] duration-700 ease-out",
-          showHero ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
-        )}
+        width={HERO_ECOSYSTEM_WIDTH}
+        height={HERO_ECOSYSTEM_HEIGHT}
+        priority={priority}
+        sizes="(max-width: 640px) min(100vw, 620px), (max-width: 1024px) 55vw, 620px"
+        className="hero-grid-image h-full w-full select-none object-contain"
       />
     </figure>
   );
