@@ -19,7 +19,7 @@ Open [http://localhost:43123](http://localhost:43123).
 
 ## Public contact email
 
-All customer-facing mailto links and enquiry delivery use **`sale@grid.co.tt`** via `SALES_EMAIL` in `lib/contact.ts` (not `sales@jointhegrid.net`).
+All customer-facing mailto links and enquiry delivery use **`sale@grid.co.tt`** via `SALES_EMAIL` in `lib/contact.ts`.
 
 ## Enquiries
 
