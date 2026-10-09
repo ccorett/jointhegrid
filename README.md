@@ -17,6 +17,10 @@ npm run dev
 
 Open [http://localhost:43123](http://localhost:43123).
 
+## Public contact email
+
+All customer-facing mailto links and enquiry delivery use **`sale@grid.co.tt`** via `SALES_EMAIL` in `lib/contact.ts` (not `sales@jointhegrid.net`).
+
 ## Enquiries
 
 Contact form submissions are sent via SMTP (Nodemailer) from `lib/mail.ts`, triggered by the server action in `app/actions/submit-enquiry.ts`. Copy `.env.example` to `.env.local` for local testing.
