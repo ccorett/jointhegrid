@@ -16,11 +16,7 @@ export type SendEnquiryResult =
     }
   | {
       status: "error";
-      message: string;
     };
-
-const GENERIC_ERROR =
-  "Something went wrong while sending your enquiry. Please try again or use WhatsApp.";
 
 export async function sendEnquiry(
   raw: Record<string, string | undefined>,
@@ -32,10 +28,10 @@ export async function sendEnquiry(
   }
 
   if (options?.clientKey && isEnquiryRateLimited(options.clientKey)) {
-    return {
-      status: "error",
-      message: GENERIC_ERROR,
-    };
+    console.error("[enquiry] Rate limit exceeded.", {
+      clientKey: options.clientKey.slice(0, 8),
+    });
+    return { status: "error" };
   }
 
   const referenceId = crypto.randomUUID();
@@ -43,11 +39,13 @@ export async function sendEnquiry(
 
   if (!mailResult.ok) {
     if (mailResult.reason === "not_configured") {
-      console.error("[enquiry] SMTP environment variables are not configured.");
+      console.error("[enquiry] SMTP not configured; send aborted.", {
+        referenceId,
+      });
     } else {
-      console.error("[enquiry] SMTP send failed.", { referenceId });
+      console.error("[enquiry] SMTP delivery failed.", { referenceId });
     }
-    return { status: "error", message: GENERIC_ERROR };
+    return { status: "error" };
   }
 
   return { status: "delivered", referenceId };

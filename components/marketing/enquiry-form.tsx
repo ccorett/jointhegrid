@@ -10,6 +10,7 @@ import {
   type EnquiryFieldErrors,
 } from "@/lib/enquiry/schema";
 import type { SendEnquiryResult } from "@/lib/enquiry/send-enquiry";
+import { SALES_EMAIL } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
 const initialState: SendEnquiryResult | null = null;
@@ -99,7 +100,17 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
       )}
       {state?.status === "error" && (
         <p className="mb-4 text-base text-error md:text-[17px]" role="alert">
-          {state.message}
+          We could not send your enquiry. Please email{" "}
+          <a
+            href={`mailto:${SALES_EMAIL}`}
+            className={cn(
+              "font-semibold underline underline-offset-2",
+              dark ? "text-secondary-blue hover:text-white" : "text-infrastructure-blue"
+            )}
+          >
+            {SALES_EMAIL}
+          </a>{" "}
+          or use WhatsApp.
         </p>
       )}
 

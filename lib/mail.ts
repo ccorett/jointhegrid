@@ -1,47 +1,47 @@
 import nodemailer from "nodemailer";
 import type { EnquiryPayload } from "@/lib/enquiry/schema";
 
-const DEFAULT_FROM_ADDRESS = "nexxgrid@gmail.com";
+type SmtpLoggedError = {
+  message?: string;
+  code?: string;
+  command?: string;
+  response?: string;
+  responseCode?: number;
+};
 
-function parseSecure(value: string | undefined): boolean {
-  if (!value) return false;
-  const normalized = value.trim().toLowerCase();
-  return normalized === "true" || normalized === "1" || normalized === "yes";
-}
+const REQUIRED_ENV_VARS = [
+  "SMTP_HOST",
+  "SMTP_PORT",
+  "SMTP_USER",
+  "SMTP_PASSWORD",
+  "SMTP_FROM",
+  "CONTACT_TO_EMAIL",
+] as const;
 
-function getSmtpConfig() {
-  const host = process.env.SMTP_HOST?.trim();
-  const portRaw = process.env.SMTP_PORT?.trim();
-  const user = process.env.SMTP_USER?.trim();
-  const pass = process.env.SMTP_PASSWORD;
-
-  if (!host || !portRaw || !user || pass === undefined || pass === "") {
-    return null;
+export function getMissingSmtpEnvVars(): string[] {
+  const missing: string[] = [];
+  for (const name of REQUIRED_ENV_VARS) {
+    const value = process.env[name];
+    if (value === undefined || value.trim() === "") {
+      missing.push(name);
+    }
   }
+  return missing;
+}
 
-  const port = Number.parseInt(portRaw, 10);
-  if (!Number.isFinite(port) || port <= 0) {
-    return null;
+function logSmtpError(context: string, err: unknown): void {
+  if (err && typeof err === "object") {
+    const smtpErr = err as SmtpLoggedError;
+    console.error(`[enquiry] ${context}`, {
+      message: smtpErr.message,
+      code: smtpErr.code,
+      command: smtpErr.command,
+      response: smtpErr.response,
+      responseCode: smtpErr.responseCode,
+    });
+    return;
   }
-
-  return {
-    host,
-    port,
-    secure: parseSecure(process.env.SMTP_SECURE),
-    auth: { user, pass },
-  };
-}
-
-export function getContactToEmail(): string {
-  return process.env.CONTACT_TO_EMAIL?.trim() || "sale@grid.co.tt";
-}
-
-function getFromAddress(): string {
-  return (
-    process.env.SMTP_FROM?.trim() ||
-    process.env.SMTP_USER?.trim() ||
-    DEFAULT_FROM_ADDRESS
-  );
+  console.error(`[enquiry] ${context}`, { message: String(err) });
 }
 
 export function escapeHtml(value: string): string {
@@ -106,25 +106,46 @@ export type SendEnquiryMailResult =
 export async function sendEnquiryMail(
   payload: EnquiryPayload
 ): Promise<SendEnquiryMailResult> {
-  const smtp = getSmtpConfig();
-  if (!smtp) {
+  const missing = getMissingSmtpEnvVars();
+  if (missing.length > 0) {
+    console.error("[enquiry] Missing SMTP environment variables:", missing);
+    return { ok: false, reason: "not_configured" };
+  }
+
+  const host = process.env.SMTP_HOST!.trim();
+  const port = Number(process.env.SMTP_PORT!.trim());
+  const secure = process.env.SMTP_SECURE === "true";
+  const user = process.env.SMTP_USER!.trim();
+  const pass = process.env.SMTP_PASSWORD!.trim();
+  const from = process.env.SMTP_FROM!.trim();
+  const to = process.env.CONTACT_TO_EMAIL!.trim();
+
+  if (!Number.isFinite(port) || port <= 0) {
+    console.error("[enquiry] Invalid SMTP_PORT value.");
     return { ok: false, reason: "not_configured" };
   }
 
   const transporter = nodemailer.createTransport({
-    host: smtp.host,
-    port: smtp.port,
-    secure: smtp.secure,
-    auth: smtp.auth,
+    host,
+    port,
+    secure,
+    auth: {
+      user,
+      pass,
+    },
   });
 
   try {
+    await transporter.verify();
+  } catch (err) {
+    logSmtpError("SMTP verify failed", err);
+    return { ok: false, reason: "send_failed" };
+  }
+
+  try {
     const info = await transporter.sendMail({
-      from: {
-        name: "#jointhegrid Website",
-        address: getFromAddress(),
-      },
-      to: getContactToEmail(),
+      from: `"GRID Website" <${from}>`,
+      to,
       replyTo: payload.workEmail,
       subject: buildSubject(payload),
       text: buildPlainText(payload),
@@ -132,11 +153,13 @@ export async function sendEnquiryMail(
     });
 
     if (!info.messageId) {
+      console.error("[enquiry] SMTP sendMail returned without messageId.");
       return { ok: false, reason: "send_failed" };
     }
 
     return { ok: true, messageId: info.messageId };
-  } catch {
+  } catch (err) {
+    logSmtpError("SMTP sendMail failed", err);
     return { ok: false, reason: "send_failed" };
   } finally {
     transporter.close();
