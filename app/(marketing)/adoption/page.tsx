@@ -3,19 +3,21 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { LifecycleSteps } from "@/components/marketing/lifecycle-steps";
 import { CapabilityGrid } from "@/components/marketing/capability-grid";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Adoption",
+  title: "Technology Adoption Services | #jointheGRID",
   description:
-    "Adoption for Digital Workspace and Enterprise Intelligence: onboarding, training, workshops and reinforcement for Caribbean organizations.",
+    "Turn technology access into everyday use through practical learning, relevant use cases and continued reinforcement.",
   path: "/adoption",
-  keywords: [
-    "digital workplace adoption",
-    "workplace training Caribbean",
-    "enterprise intelligence adoption",
-  ],
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/#services" },
+  { name: "Adoption", path: "/adoption" },
+] as const;
 
 const programmes = [
   "Employee onboarding",
@@ -35,6 +37,7 @@ const programmes = [
 export default function AdoptionPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
         eyebrow="Services"

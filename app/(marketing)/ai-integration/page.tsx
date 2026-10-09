@@ -3,21 +3,21 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { CapabilityGrid } from "@/components/marketing/capability-grid";
 import { ServiceLinks } from "@/components/marketing/service-links";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Enterprise Intelligence",
+  title: "AI Integration for Organizations | #jointheGRID",
   description:
-    "Enterprise search, connected knowledge and intelligent assistance with secure access to organisational information. Deployment, administration and adoption across the Caribbean.",
+    "Integrate intelligent tools into everyday organizational work with practical controls, administration and adoption.",
   path: "/ai-integration",
-  keywords: [
-    "enterprise intelligence Caribbean",
-    "enterprise search",
-    "organisational knowledge",
-    "workplace intelligence",
-    "knowledge retrieval",
-  ],
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Solutions", path: "/#solutions" },
+  { name: "AI Integration", path: "/ai-integration" },
+] as const;
 
 const capabilities = [
   "Enterprise search",
@@ -35,6 +35,7 @@ const capabilities = [
 export default function EnterpriseIntelligencePage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
         eyebrow="Solutions"

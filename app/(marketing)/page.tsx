@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Phase1HeroGrid } from "@/components/brand/phase1-hero-grid";
 import { BrandConnectionLines } from "@/components/brand/brand-connection-lines";
 import { Button } from "@/components/ui/button";
@@ -11,20 +11,16 @@ import {
   WHATSAPP_LETS_TALK_URL,
   WHATSAPP_URL,
 } from "@/lib/contact";
+import { pageMetadata } from "@/lib/seo";
+import { organizationJsonLd } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "Digital Workspace + Enterprise Intelligence",
+export const metadata = pageMetadata({
+  title:
+    "#jointheGRID | Digital Workspace, AI Integration & Cloud Infrastructure",
   description:
-    "Digital Workspace and Enterprise Intelligence for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
-  keywords: [
-    "digital workspace Caribbean",
-    "enterprise intelligence",
-    "enterprise search Caribbean",
-    "digital workplace Trinidad and Tobago",
-    "workplace deployment Caribbean",
-    "workplace adoption",
-  ],
-};
+    "Digital workplace, AI integration and cloud infrastructure for organizations across the Caribbean. Deployment, administration and adoption from #jointheGRID.",
+  path: "/",
+});
 
 const solutions = [
   {
@@ -104,6 +100,7 @@ const services = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={organizationJsonLd()} />
       <section className="border-b border-border bg-white section-y-compact">
         <div className="content-container grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>

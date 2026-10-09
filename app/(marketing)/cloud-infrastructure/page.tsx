@@ -3,21 +3,21 @@ import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
 import { WHATSAPP_LETS_TALK_URL } from "@/lib/contact";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export const metadata = pageMetadata({
-  title: "Cloud Infrastructure",
+  title: "Cloud Infrastructure Services | #jointheGRID",
   description:
-    "Secure cloud environments for applications, data and digital workloads. Configuration, migration, security and ongoing administration across the Caribbean.",
+    "Secure cloud environments for applications, data and digital workloads, from deployment through ongoing administration.",
   path: "/cloud-infrastructure",
-  keywords: [
-    "cloud infrastructure Caribbean",
-    "cloud migration Trinidad and Tobago",
-    "cloud administration",
-    "workload migration",
-  ],
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Cloud Infrastructure", path: "/cloud-infrastructure" },
+] as const;
 
 const capabilities = [
   {
@@ -124,6 +124,7 @@ function FocusList({ items, dark }: { items: string[]; dark?: boolean }) {
 export default function CloudInfrastructurePage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
         eyebrow="Cloud Infrastructure"

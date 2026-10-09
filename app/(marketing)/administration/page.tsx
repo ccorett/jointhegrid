@@ -2,20 +2,21 @@ import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { CapabilityGrid } from "@/components/marketing/capability-grid";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Administration",
+  title: "Technology Administration Services | #jointheGRID",
   description:
-    "Administration for Digital Workspace and Enterprise Intelligence: access, configuration, security, licences, governance and ongoing support.",
+    "Ongoing management of users, access, licences, security, policies, resources and support.",
   path: "/administration",
-  keywords: [
-    "digital workspace administration",
-    "enterprise intelligence administration",
-    "workplace licensing Caribbean",
-    "identity and access management",
-  ],
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/#services" },
+  { name: "Administration", path: "/administration" },
+] as const;
 
 const capabilities = [
   "Workspace administration",
@@ -33,6 +34,7 @@ const capabilities = [
 export default function AdministrationPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
         eyebrow="Services"

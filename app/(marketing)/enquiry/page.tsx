@@ -1,22 +1,25 @@
 import { EnquiryForm } from "@/components/marketing/enquiry-form";
 import { SectionLabel } from "@/components/marketing/section-label";
 import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Enquiry",
+  title: "Enquiry | #jointheGRID",
   description:
-    "Enquire about Digital Workspace and Enterprise Intelligence from #jointhegrid across the Caribbean.",
+    "Send an enquiry about digital workspace, AI integration, cloud infrastructure and related services from #jointheGRID across the Caribbean.",
   path: "/enquiry",
-  keywords: [
-    "digital workspace Trinidad and Tobago",
-    "digital workspace Caribbean",
-    "enterprise intelligence Caribbean",
-  ],
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Enquiry", path: "/enquiry" },
+] as const;
 
 export default function ContactPage() {
   return (
+    <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
     <section className="bg-primary-navy section-y text-white">
       <div className="content-container grid gap-10 lg:grid-cols-2 lg:gap-14">
         <div>
@@ -58,5 +61,6 @@ export default function ContactPage() {
         <EnquiryForm variant="dark" />
       </div>
     </section>
+    </>
   );
 }

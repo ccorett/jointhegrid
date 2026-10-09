@@ -1,17 +1,25 @@
 import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SALES_EMAIL } from "@/lib/contact";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Terms of Service",
-  description: "Terms of service for #jointhegrid website and services.",
+  title: "Terms | #jointheGRID",
+  description:
+    "Terms governing use of the #jointheGRID website and related services from Global Resilient Infrastructure & Digitalisation Ltd.",
   path: "/terms",
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Terms", path: "/terms" },
+] as const;
 
 export default function TermsPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         eyebrow="Legal"
         title="Terms of Service"

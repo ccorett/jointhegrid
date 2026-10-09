@@ -1,17 +1,25 @@
 import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SALES_EMAIL } from "@/lib/contact";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Privacy Policy",
-  description: "Privacy policy for #jointhegrid.",
+  title: "Privacy | #jointheGRID",
+  description:
+    "How #jointheGRID collects, uses and protects information you share through the website and enquiry forms.",
   path: "/privacy",
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Privacy", path: "/privacy" },
+] as const;
 
 export default function PrivacyPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         eyebrow="Legal"
         title="Privacy Policy"

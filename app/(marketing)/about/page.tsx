@@ -3,23 +3,25 @@ import { GridSymbol } from "@/components/brand/grid-symbol";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Company",
+  title: "About #jointheGRID | Caribbean Technology Company",
   description:
-    "About THE GRID: Digital Workspace and Enterprise Intelligence from Trinidad & Tobago across the Caribbean.",
+    "Global Resilient Infrastructure & Digitalisation Ltd. delivers digital workspace, AI integration and cloud infrastructure across the Caribbean from Trinidad and Tobago.",
   path: "/about",
-  keywords: [
-    "digital workspace Caribbean",
-    "enterprise intelligence Caribbean",
-    "Trinidad and Tobago digital workplace",
-  ],
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+] as const;
 
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
         eyebrow="Company"

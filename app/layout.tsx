@@ -19,11 +19,12 @@ const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
 export const metadata: Metadata = {
   metadataBase: new URL("https://jointhegrid.net"),
   title: {
-    default: "#jointhegrid | Digital Workspace + Enterprise Intelligence",
-    template: "%s | #jointhegrid",
+    default:
+      "#jointheGRID | Digital Workspace, AI Integration & Cloud Infrastructure",
+    template: "%s",
   },
   description:
-    "Digital Workspace and Enterprise Intelligence for Caribbean organizations. Deployment, administration and adoption from Trinidad & Tobago across the region.",
+    "Digital workplace, AI integration and cloud infrastructure for organizations across the Caribbean. Deployment, administration and adoption from #jointheGRID.",
   ...(googleSiteVerification
     ? { verification: { google: googleSiteVerification } }
     : {}),

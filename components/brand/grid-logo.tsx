@@ -25,6 +25,7 @@ export function GridLogo({
   return (
     <Link
       href={href}
+      aria-label="#jointheGRID"
       className={cn(
         "inline-flex shrink-0 items-center gap-2.5 overflow-visible sm:gap-3",
         className

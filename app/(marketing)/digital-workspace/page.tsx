@@ -3,20 +3,21 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { CapabilityGrid } from "@/components/marketing/capability-grid";
 import { ServiceLinks } from "@/components/marketing/service-links";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Digital Workspace",
+  title: "Digital Workspace Solutions | #jointheGRID",
   description:
-    "Connect people, information and applications through secure productivity and collaboration. Deployment, administration and adoption across the Caribbean.",
+    "Bring communication, collaboration, information and everyday work into one connected and managed digital workplace.",
   path: "/digital-workspace",
-  keywords: [
-    "digital workspace Caribbean",
-    "digital workplace Trinidad and Tobago",
-    "collaboration platform deployment",
-    "workplace administration",
-  ],
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Solutions", path: "/#solutions" },
+  { name: "Digital Workspace", path: "/digital-workspace" },
+] as const;
 
 const capabilities = [
   "Business email and communication",
@@ -34,6 +35,7 @@ const capabilities = [
 export default function DigitalWorkspacePage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
         eyebrow="Solutions"

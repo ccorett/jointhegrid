@@ -3,20 +3,21 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { LifecycleSteps } from "@/components/marketing/lifecycle-steps";
 import { CapabilityGrid } from "@/components/marketing/capability-grid";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Deployment",
+  title: "Technology Deployment Services | #jointheGRID",
   description:
-    "Deploy Digital Workspace and Enterprise Intelligence: configuration, migration, security, integration, testing and rollout across the Caribbean.",
+    "Structured deployment covering configuration, migration, security, rollout and production readiness.",
   path: "/deployment",
-  keywords: [
-    "digital workspace deployment",
-    "enterprise intelligence deployment",
-    "workplace migration Caribbean",
-    "workplace rollout",
-  ],
 });
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/#services" },
+  { name: "Deployment", path: "/deployment" },
+] as const;
 
 const lifecycle = [
   "Discover",
@@ -43,6 +44,7 @@ const capabilities = [
 export default function DeploymentPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light
         eyebrow="Services"
