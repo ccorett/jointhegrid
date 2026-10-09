@@ -267,7 +267,7 @@ export default function HomePage() {
       <section id="contact" className="scroll-mt-20 border-t border-white/10 bg-primary-navy section-y text-white">
         <div className="content-container grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <SectionLabel tone="dark">Contact</SectionLabel>
+            <SectionLabel tone="dark">Enquiry</SectionLabel>
             <h2 className="heading-contact mt-2">
               Ready to talk about your workplace?
             </h2>
