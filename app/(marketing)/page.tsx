@@ -162,7 +162,7 @@ export default function HomePage() {
           <div className="mt-8 grid gap-px border border-border bg-border lg:grid-cols-2">
             {solutions.map((item) => (
               <article key={item.label} className="bg-white p-7 md:p-9 lg:p-10">
-                <p className="text-sm font-bold uppercase tracking-[0.16em] text-infrastructure-blue">
+                <p className="text-[15px] font-bold uppercase tracking-[0.16em] text-infrastructure-blue md:text-base">
                   {item.label}
                 </p>
                 <h3 className="heading-section mt-3 text-xl md:text-2xl lg:text-[1.75rem]">
@@ -206,7 +206,7 @@ export default function HomePage() {
           <div className="mt-8 grid gap-px border border-white/15 bg-white/10 lg:grid-cols-3">
             {services.map((item) => (
               <article key={item.name} className="bg-primary-navy p-7 md:p-8 lg:p-9">
-                <p className="text-sm font-bold uppercase tracking-[0.14em] text-secondary-blue">
+                <p className="text-[15px] font-bold uppercase tracking-[0.14em] text-secondary-blue md:text-base">
                   {item.name}
                 </p>
                 <h3 className="heading-section mt-2 text-xl md:text-2xl">

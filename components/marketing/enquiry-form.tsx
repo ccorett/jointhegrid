@@ -221,7 +221,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             aria-describedby={errors.organizationSize ? "organizationSize-error" : undefined}
             className={inputClass(!!errors.organizationSize, dark)}
           >
-            <option value="" disabled hidden>
+            <option value="" disabled>
               Select size
             </option>
             {ORGANIZATION_SIZES.map((size) => (
@@ -247,7 +247,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             aria-describedby={errors.areaOfInterest ? "areaOfInterest-error" : undefined}
             className={inputClass(!!errors.areaOfInterest, dark)}
           >
-            <option value="" disabled hidden>
+            <option value="" disabled>
               Select area
             </option>
             {AREAS_OF_INTEREST.map((area) => (
