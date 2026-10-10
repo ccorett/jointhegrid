@@ -274,7 +274,28 @@ export default function PrivacyPage() {
             </p>
           </PolicySection>
 
-          <PolicySection id="external-links" title="12. External links">
+          <PolicySection id="chatbot" title="12. Chatbot">
+            <p>
+              The website may provide an automated chatbot to assist visitors
+              with general questions about #jointheGRID and its services.
+            </p>
+            <p>
+              If you choose to use the chatbot, information you submit through
+              the conversation may be processed by the technology provider used
+              to operate the chatbot and by #jointheGRID where necessary to
+              respond to your request.
+            </p>
+            <p>
+              Do not submit passwords, financial credentials or other highly
+              sensitive information through the chatbot.
+            </p>
+            <p>
+              Use of the chatbot may also be subject to the privacy practices
+              of the third party technology provider operating the service.
+            </p>
+          </PolicySection>
+
+          <PolicySection id="external-links" title="13. External links">
             <p>
               The website may contain links to third party websites or services.
             </p>
@@ -289,7 +310,7 @@ export default function PrivacyPage() {
             </p>
           </PolicySection>
 
-          <PolicySection id="children" title="13. Children">
+          <PolicySection id="children" title="14. Children">
             <p>
               The #jointheGRID website and services are intended for organizations
               and business users.
@@ -300,7 +321,7 @@ export default function PrivacyPage() {
             </p>
           </PolicySection>
 
-          <PolicySection id="changes" title="14. Changes to this policy">
+          <PolicySection id="changes" title="15. Changes to this policy">
             <p>
               This Privacy Policy may be updated when our website, services,
               technology providers or legal obligations change.
@@ -311,7 +332,7 @@ export default function PrivacyPage() {
             </p>
           </PolicySection>
 
-          <PolicySection id="contact" title="15. Contact">
+          <PolicySection id="contact" title="16. Contact">
             <p className="font-medium text-primary-navy">
               GRID Ltd.
               <br />

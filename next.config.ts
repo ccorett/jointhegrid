@@ -9,8 +9,9 @@ const csp = [
   "img-src 'self' data: blob: https:",
   "font-src 'self'",
   "style-src 'self' 'unsafe-inline'",
-  "script-src 'self' 'unsafe-inline'",
-  "connect-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://app.fastbots.ai",
+  "connect-src 'self' https://app.fastbots.ai wss://app.fastbots.ai",
+  "frame-src 'self' https://app.fastbots.ai",
   "upgrade-insecure-requests",
 ].join("; ");
 
