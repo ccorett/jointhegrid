@@ -14,6 +14,7 @@ export function PageHeroVisual({
   if (kind === "hero-grid") {
     return (
       <Phase1HeroGrid
+        preload
         className={cn(
           "w-full max-h-[min(380px,40vh)] sm:max-h-[min(420px,42vh)]",
           className

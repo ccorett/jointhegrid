@@ -11,18 +11,44 @@ import {
 } from "@/lib/enquiry/schema";
 import type { SendEnquiryResult } from "@/lib/enquiry/send-enquiry";
 import { SALES_EMAIL } from "@/lib/contact";
-import { trackEvent } from "@/lib/analytics";
+import {
+  previousPageSlug,
+  trackEvent,
+  type AnalyticsEventPayload,
+} from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 const initialState: SendEnquiryResult | null = null;
 
-function FieldError({ id, message }: { id: string; message?: string }) {
+export type EnquirySource = "homepage" | "enquiry";
+
+function errorTextClass(dark: boolean) {
+  return dark ? "text-error-on-dark" : "text-error";
+}
+
+function FieldError({
+  id,
+  message,
+  dark,
+}: {
+  id: string;
+  message?: string;
+  dark: boolean;
+}) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-1.5 text-base text-error md:text-[17px]" role="alert">
+    <p
+      id={id}
+      className={cn("mt-1.5 text-base md:text-[17px]", errorTextClass(dark))}
+      role="alert"
+    >
       {message}
     </p>
   );
+}
+
+function RequiredMark({ dark }: { dark: boolean }) {
+  return <span className={errorTextClass(dark)}>*</span>;
 }
 
 const fieldFocusClass =
@@ -35,7 +61,7 @@ function inputClass(hasError: boolean, dark: boolean) {
     dark
       ? cn(
           "border-white/15 bg-primary-navy text-white placeholder:text-white/50 focus-visible:border-secondary-blue focus-visible:ring-secondary-blue/50 focus-visible:ring-offset-dark-band",
-          hasError && "border-error"
+          hasError && "border-error-on-dark"
         )
       : cn(
           "border-border text-body-text focus-visible:border-infrastructure-blue focus-visible:ring-infrastructure-blue/40",
@@ -53,9 +79,11 @@ function labelClass(dark: boolean) {
 
 type EnquiryFormProps = {
   variant?: "light" | "dark";
+  /** Page hosting the form, sent with enquiry analytics events. */
+  source: EnquirySource;
 };
 
-export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
+export function EnquiryForm({ variant = "light", source }: EnquiryFormProps) {
   const dark = variant === "dark";
   const [state, formAction, pending] = useActionState(
     submitEnquiryAction,
@@ -72,10 +100,17 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
     }
   }, [state]);
 
+  function eventPayload(): AnalyticsEventPayload {
+    const referrer = source === "enquiry" ? previousPageSlug() : undefined;
+    return referrer && referrer !== source
+      ? { location: source, referrer }
+      : { location: source };
+  }
+
   if (state?.status === "delivered") {
     return (
       <div
-        className="rounded-xl border border-border bg-white p-8 md:p-10"
+        className="rounded-sm border border-border bg-white p-8 md:p-10"
         role="status"
         aria-live="polite"
       >
@@ -100,10 +135,10 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
       onFocus={() => {
         if (enquiryStarted.current) return;
         enquiryStarted.current = true;
-        trackEvent("enquiry_start", { location: dark ? "enquiry_page" : "home_contact" });
+        trackEvent("enquiry_start", eventPayload());
       }}
       onSubmit={() => {
-        trackEvent("enquiry_submit", { location: dark ? "enquiry_page" : "home_contact" });
+        trackEvent("enquiry_submit", eventPayload());
       }}
       className={cn(
         "rounded-sm border p-6 md:p-7",
@@ -116,12 +151,19 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
         {state?.status === "error" ? "Enquiry could not be sent." : null}
       </div>
       {errors.form && (
-        <p id="form-error" className="mb-4 text-base text-error md:text-[17px]" role="alert">
+        <p
+          id="form-error"
+          className={cn("mb-4 text-base md:text-[17px]", errorTextClass(dark))}
+          role="alert"
+        >
           {errors.form}
         </p>
       )}
       {state?.status === "error" && (
-        <p className="mb-4 text-base text-error md:text-[17px]" role="alert">
+        <p
+          className={cn("mb-4 text-base md:text-[17px]", errorTextClass(dark))}
+          role="alert"
+        >
           We could not send your enquiry. Please email {SALES_EMAIL} or use WhatsApp.
         </p>
       )}
@@ -135,7 +177,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
       <div className="space-y-5">
         <div>
           <label htmlFor="fullName" className={labelClass(dark)}>
-            Full Name <span className="text-error">*</span>
+            Full Name <RequiredMark dark={dark} />
           </label>
           <input
             id="fullName"
@@ -149,12 +191,12 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             aria-describedby={errors.fullName ? "fullName-error" : undefined}
             className={inputClass(!!errors.fullName, dark)}
           />
-          <FieldError id="fullName-error" message={errors.fullName} />
+          <FieldError id="fullName-error" message={errors.fullName} dark={dark} />
         </div>
 
         <div>
           <label htmlFor="organization" className={labelClass(dark)}>
-            Organization <span className="text-error">*</span>
+            Organisation <RequiredMark dark={dark} />
           </label>
           <input
             id="organization"
@@ -168,12 +210,12 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             aria-describedby={errors.organization ? "organization-error" : undefined}
             className={inputClass(!!errors.organization, dark)}
           />
-          <FieldError id="organization-error" message={errors.organization} />
+          <FieldError id="organization-error" message={errors.organization} dark={dark} />
         </div>
 
         <div>
           <label htmlFor="workEmail" className={labelClass(dark)}>
-            Work Email <span className="text-error">*</span>
+            Work Email <RequiredMark dark={dark} />
           </label>
           <input
             id="workEmail"
@@ -187,7 +229,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             aria-describedby={errors.workEmail ? "workEmail-error" : undefined}
             className={inputClass(!!errors.workEmail, dark)}
           />
-          <FieldError id="workEmail-error" message={errors.workEmail} />
+          <FieldError id="workEmail-error" message={errors.workEmail} dark={dark} />
         </div>
 
         <div>
@@ -204,12 +246,12 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             aria-describedby={errors.phone ? "phone-error" : undefined}
             className={inputClass(!!errors.phone, dark)}
           />
-          <FieldError id="phone-error" message={errors.phone} />
+          <FieldError id="phone-error" message={errors.phone} dark={dark} />
         </div>
 
         <div>
           <label htmlFor="organizationSize" className={labelClass(dark)}>
-            Organization Size <span className="text-error">*</span>
+            Organisation Size <RequiredMark dark={dark} />
           </label>
           <select
             id="organizationSize"
@@ -230,12 +272,16 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
               </option>
             ))}
           </select>
-          <FieldError id="organizationSize-error" message={errors.organizationSize} />
+          <FieldError
+            id="organizationSize-error"
+            message={errors.organizationSize}
+            dark={dark}
+          />
         </div>
 
         <div>
           <label htmlFor="areaOfInterest" className={labelClass(dark)}>
-            Area of Interest <span className="text-error">*</span>
+            Area of Interest <RequiredMark dark={dark} />
           </label>
           <select
             id="areaOfInterest"
@@ -256,12 +302,16 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
               </option>
             ))}
           </select>
-          <FieldError id="areaOfInterest-error" message={errors.areaOfInterest} />
+          <FieldError
+            id="areaOfInterest-error"
+            message={errors.areaOfInterest}
+            dark={dark}
+          />
         </div>
 
         <div>
           <label htmlFor="message" className={labelClass(dark)}>
-            What are you looking to achieve? <span className="text-error">*</span>
+            What are you looking to achieve? <RequiredMark dark={dark} />
           </label>
           <textarea
             id="message"
@@ -274,7 +324,7 @@ export function EnquiryForm({ variant = "light" }: EnquiryFormProps) {
             aria-describedby={errors.message ? "message-error" : undefined}
             className={inputClass(!!errors.message, dark)}
           />
-          <FieldError id="message-error" message={errors.message} />
+          <FieldError id="message-error" message={errors.message} dark={dark} />
         </div>
       </div>
 

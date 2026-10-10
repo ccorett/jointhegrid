@@ -88,9 +88,9 @@ export default function AboutPage() {
             description="Everything connects here. #jointheGRID."
           />
           <p className="text-lg leading-relaxed text-white/80 md:text-[19px]">
-            THE GRID deploys, administers and adopts Digital Workspace and
-            Enterprise Intelligence with structure, control and practical
-            enablement for organizations across the Caribbean.
+            THE GRID deploys and administers Digital Workspace and Enterprise
+            Intelligence and helps teams adopt them, bringing structure, control
+            and practical enablement to organisations across the Caribbean.
           </p>
         </div>
       </section>
@@ -99,7 +99,7 @@ export default function AboutPage() {
         <div className="content-container">
           <SectionHeading
             title="Based in Trinidad & Tobago. Built to work across the Caribbean."
-            description="Based in Trinidad & Tobago with a Caribbean outlook. Projects are structured around the requirements of each organization."
+            description="Projects are structured around the requirements of each organisation."
           />
         </div>
       </section>

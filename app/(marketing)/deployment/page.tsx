@@ -38,7 +38,6 @@ const capabilities = [
   "Security configuration",
   "Information source connection",
   "Integration testing",
-  "Data migration",
   "Production rollout",
   "Hypercare support",
 ];
@@ -76,7 +75,7 @@ export default function DeploymentPage() {
         <div className="content-container">
           <SectionHeading
             title="What goes into deployment"
-            description="Each organization starts from a different place. The work spans both core solutions: configuration, migration paths, identity, supported integrations, information, security and a controlled move into production."
+            description="Each organisation starts from a different place. The work spans both core solutions: configuration, migration paths, identity, supported integrations, information, security and a controlled move into production."
             className="mb-8"
           />
           <p className="mb-8 max-w-3xl text-lg text-body-text md:text-[19px]">
@@ -90,7 +89,11 @@ export default function DeploymentPage() {
             </Link>
             .
           </p>
-          <CapabilityGrid items={capabilities} columns={2} />
+          <CapabilityGrid
+            items={capabilities}
+            columns={2}
+            className="sm:[&>li:last-child:nth-child(odd)]:col-span-2"
+          />
         </div>
       </section>
 

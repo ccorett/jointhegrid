@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
-import { PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/contact";
+import { PHONE_DISPLAY, SUPPORT_EMAIL, WHATSAPP_URL } from "@/lib/contact";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
-
-const TERMS_SUPPORT_EMAIL = "support@grid.co.tt";
 
 export const metadata = pageMetadata({
   title: "Terms of Service | #jointheGRID",
@@ -63,8 +61,8 @@ export default function TermsPage() {
       <section className="border-b border-border bg-light-bg section-y-compact">
         <div
           className={cn(
-            "content-container mx-auto max-w-[54rem]",
-            "space-y-10 text-base leading-relaxed text-body-text md:text-[17px] lg:text-lg lg:leading-relaxed"
+            "content-container",
+            "[&>*]:max-w-[48rem] space-y-10 text-base leading-relaxed text-body-text md:text-[17px] lg:text-lg lg:leading-relaxed"
           )}
         >
           <PolicySection id="about-terms" title="1. About these terms">
@@ -142,7 +140,7 @@ export default function TermsPage() {
           <PolicySection id="communication" title="5. Communication">
             <p>
               If you submit an enquiry, contact us by email or communicate with
-              us through WhatsApp, you authorize #jointheGRID to use the contact
+              us through WhatsApp, you authorise #jointheGRID to use the contact
               information you provide to respond to your request and continue
               relevant business discussions.
             </p>
@@ -262,12 +260,12 @@ export default function TermsPage() {
             <PolicyList
               items={[
                 "Submit malicious code",
-                "Attempt unauthorized access",
+                "Attempt unauthorised access",
                 "Interfere with website operation",
                 "Circumvent security controls",
                 "Submit fraudulent or misleading enquiries",
                 "Use automated systems in a manner that materially disrupts the website",
-                "Attempt to obtain information or access that you are not authorized to receive",
+                "Attempt to obtain information or access that you are not authorised to receive",
               ]}
             />
             <p>
@@ -283,7 +281,7 @@ export default function TermsPage() {
               professional advice.
             </p>
             <p>
-              Organizations remain responsible for obtaining appropriate
+              Organisations remain responsible for obtaining appropriate
               professional advice where required for their specific
               circumstances.
             </p>
@@ -417,11 +415,8 @@ export default function TermsPage() {
             </p>
             <p>
               Email:{" "}
-              <a
-                href={`mailto:${TERMS_SUPPORT_EMAIL}`}
-                className={linkClass}
-              >
-                {TERMS_SUPPORT_EMAIL}
+              <a href={`mailto:${SUPPORT_EMAIL}`} className={linkClass}>
+                {SUPPORT_EMAIL}
               </a>
             </p>
             <p>

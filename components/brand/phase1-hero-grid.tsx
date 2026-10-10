@@ -11,11 +11,14 @@ type Phase1HeroGridProps = {
   className?: string;
   /** Set on the homepage LCP candidate only. */
   priority?: boolean;
+  /** Preload when this artwork is the page's hero (LCP) image. */
+  preload?: boolean;
 };
 
 export function Phase1HeroGrid({
   className,
   priority = false,
+  preload = false,
 }: Phase1HeroGridProps) {
   return (
     <figure
@@ -33,6 +36,7 @@ export function Phase1HeroGrid({
         width={HERO_ECOSYSTEM_WIDTH}
         height={HERO_ECOSYSTEM_HEIGHT}
         priority={priority}
+        preload={preload}
         sizes="(max-width: 640px) min(100vw, 620px), (max-width: 1024px) 55vw, 620px"
         className="hero-grid-image h-full w-full select-none object-contain"
       />

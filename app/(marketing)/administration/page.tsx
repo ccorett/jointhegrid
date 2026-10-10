@@ -52,7 +52,7 @@ export default function AdministrationPage() {
         <div className="content-container">
           <SectionHeading
             title="Administration that fits your team"
-            description="Manage digital workspace and enterprise intelligence as operational environments. Some organizations need specialist support alongside internal ICT; others want a dedicated partner for ongoing management."
+            description="Manage digital workspace and enterprise intelligence as operational environments. Some organisations need specialist support alongside internal ICT; others want a dedicated partner for ongoing management."
             className="mb-8"
           />
           <CapabilityGrid items={capabilities} columns={2} />

@@ -19,7 +19,10 @@ Open [http://localhost:43123](http://localhost:43123).
 
 ## Public contact email
 
-All customer-facing mailto links and enquiry delivery use **`sales@grid.co.tt`** via `SALES_EMAIL` in `lib/contact.ts`.
+Contact details live in `lib/contact.ts`:
+
+- `SALES_EMAIL` (`sales@grid.co.tt`): Enquiry page, homepage contact, footer and enquiry delivery.
+- `SUPPORT_EMAIL` (`support@grid.co.tt`): Privacy Policy, Terms of Service and footer.
 
 ## Enquiries
 

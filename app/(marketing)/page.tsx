@@ -17,7 +17,7 @@ import { organizationJsonLd } from "@/lib/structured-data";
 export const metadata = pageMetadata({
   title: "#jointheGRID | Digital Workspace and Enterprise Intelligence",
   description:
-    "Digital Workspace and Enterprise Intelligence for organizations across the Caribbean. Deployment, administration and adoption from #jointheGRID.",
+    "Digital Workspace and Enterprise Intelligence for organisations across the Caribbean. Deployment, administration and adoption from #jointheGRID.",
   path: "/",
 });
 
@@ -239,7 +239,7 @@ export default function HomePage() {
               Based in Trinidad &amp; Tobago. Built to work across the Caribbean.
             </h2>
             <p className="text-lead mt-4 text-body-text">
-              GRID supports organizations with Digital Workspace and Enterprise
+              GRID supports organisations with Digital Workspace and Enterprise
               Intelligence, with deployment, administration and adoption delivered
               for the way the region works.
             </p>
@@ -253,7 +253,7 @@ export default function HomePage() {
               <li className="flex justify-between gap-4">
                 <span className="font-bold text-primary-navy">Outlook</span>
                 <span className="text-right text-body-text">
-                  Caribbean organizations &amp; regional capability
+                  Caribbean organisations &amp; regional capability
                 </span>
               </li>
             </ul>
@@ -296,7 +296,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <EnquiryForm variant="dark" />
+          <EnquiryForm variant="dark" source="homepage" />
         </div>
       </section>
     </>

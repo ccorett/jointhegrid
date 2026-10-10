@@ -36,7 +36,7 @@ export function SiteFooter() {
             <GridLogo reversed symbolOnlyBelowSm={false} symbolSize={36} />
             <p className="mt-4 max-w-sm text-base leading-relaxed text-white/80 md:text-[17px] md:leading-relaxed lg:text-lg">
               Digital Workspace and Enterprise Intelligence, delivered through
-              deployment, administration and adoption for organizations across
+              deployment, administration and adoption for organisations across
               the Caribbean.
             </p>
             <p className="mt-3 text-[15px] font-semibold uppercase tracking-[0.12em] text-white/70 md:text-base lg:text-[17px] lg:leading-snug">
@@ -114,7 +114,7 @@ export function SiteFooter() {
 
         <div className="mt-10 border-t border-white/10 pt-6">
           <p className="text-[15px] text-white/65 md:text-base">
-            © {new Date().getFullYear()} #jointhegrid
+            © {new Date().getFullYear()} GRID Ltd.
           </p>
         </div>
       </div>

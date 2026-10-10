@@ -67,9 +67,9 @@ export function validateEnquiry(
   else if (fullName.length > FIELD_LIMITS.fullName)
     errors.fullName = "Full name is too long.";
 
-  if (!organization) errors.organization = "Organization is required.";
+  if (!organization) errors.organization = "Organisation is required.";
   else if (organization.length > FIELD_LIMITS.organization)
-    errors.organization = "Organization name is too long.";
+    errors.organization = "Organisation name is too long.";
 
   if (!workEmail) errors.workEmail = "Work email is required.";
   else if (!EMAIL_PATTERN.test(workEmail) || workEmail.length > FIELD_LIMITS.workEmail)
@@ -79,7 +79,7 @@ export function validateEnquiry(
     errors.phone = "Phone number is too long.";
 
   if (!ORGANIZATION_SIZES.includes(organizationSize))
-    errors.organizationSize = "Select your organization size.";
+    errors.organizationSize = "Select your organisation size.";
 
   if (!AREAS_OF_INTEREST.includes(areaOfInterest))
     errors.areaOfInterest = "Select an area of interest.";

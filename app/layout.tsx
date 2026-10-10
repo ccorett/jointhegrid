@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Digital Workspace and Enterprise Intelligence for organizations across the Caribbean. Deployment, administration and adoption from #jointheGRID.",
+    "Digital Workspace and Enterprise Intelligence for organisations across the Caribbean. Deployment, administration and adoption from #jointheGRID.",
   ...(googleSiteVerification
     ? { verification: { google: googleSiteVerification } }
     : {}),

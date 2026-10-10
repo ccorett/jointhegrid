@@ -9,7 +9,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Enterprise Intelligence for Organizations | #jointheGRID",
+  title: "Enterprise Intelligence for Organisations | #jointheGRID",
   description:
     "Make organisational information accessible, searchable and useful with enterprise search, connected knowledge and practical governance.",
   path: "/enterprise-intelligence",

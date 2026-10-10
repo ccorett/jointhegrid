@@ -2,7 +2,6 @@
 
 import { WHATSAPP_URL } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
-import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 type WhatsAppPhoneLinkProps = {

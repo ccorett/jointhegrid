@@ -61,8 +61,8 @@ export default function PrivacyPage() {
       <section className="border-b border-border bg-light-bg section-y-compact">
         <div
           className={cn(
-            "content-container mx-auto max-w-[54rem]",
-            "space-y-10 text-base leading-relaxed text-body-text md:text-[17px] lg:text-lg lg:leading-relaxed"
+            "content-container",
+            "[&>*]:max-w-[48rem] space-y-10 text-base leading-relaxed text-body-text md:text-[17px] lg:text-lg lg:leading-relaxed"
           )}
         >
           <PolicySection id="about" title="1. About this policy">
@@ -93,10 +93,10 @@ export default function PrivacyPage() {
             <PolicyList
               items={[
                 "Full name",
-                "Organization name",
+                "Organisation name",
                 "Work email address",
                 "Telephone or WhatsApp number",
-                "Organization size",
+                "Organisation size",
                 "Area of interest",
                 "Information included in your enquiry or message",
               ]}
@@ -118,7 +118,7 @@ export default function PrivacyPage() {
             <PolicyList
               items={[
                 "Respond to enquiries",
-                "Understand your organization's requirements",
+                "Understand your organisation's requirements",
                 "Discuss our solutions and services",
                 "Prepare quotations, proposals or other requested information",
                 "Communicate with you about an existing or potential business relationship",
@@ -141,7 +141,7 @@ export default function PrivacyPage() {
               infrastructure.
             </p>
             <p>
-              The enquiry may be delivered to authorized #jointheGRID email
+              The enquiry may be delivered to authorised #jointheGRID email
               accounts so that a member of the team can respond.
             </p>
             <p>
@@ -157,7 +157,7 @@ export default function PrivacyPage() {
             </p>
             <p>
               If you choose to use WhatsApp, your interaction is also subject to
-              WhatsApp's own terms and privacy practices.
+              WhatsApp&apos;s own terms and privacy practices.
             </p>
             <p>
               Information you provide through WhatsApp may be used by #jointheGRID
@@ -229,7 +229,7 @@ export default function PrivacyPage() {
               security of our systems.
             </p>
             <p>
-              Information that is no longer required may be deleted, anonymized or
+              Information that is no longer required may be deleted, anonymised or
               otherwise securely disposed of where appropriate.
             </p>
           </PolicySection>
@@ -237,7 +237,7 @@ export default function PrivacyPage() {
           <PolicySection id="security" title="10. Information security">
             <p>
               Reasonable administrative and technical measures are used to protect
-              personal information from unauthorized access, loss, misuse,
+              personal information from unauthorised access, loss, misuse,
               alteration or disclosure.
             </p>
             <p>
@@ -291,7 +291,7 @@ export default function PrivacyPage() {
 
           <PolicySection id="children" title="13. Children">
             <p>
-              The #jointheGRID website and services are intended for organizations
+              The #jointheGRID website and services are intended for organisations
               and business users.
             </p>
             <p>
