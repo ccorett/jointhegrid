@@ -33,47 +33,52 @@ export default function AboutPage() {
       />
 
       <section className="border-b border-border bg-white section-y-compact">
-        <div className="content-container grid gap-10 lg:grid-cols-[1fr_auto] lg:items-start">
-          <div className="max-w-3xl space-y-5 text-lg text-body-text md:text-[19px]">
-            <p>
-              THE GRID connects people, information, applications and intelligent
-              technologies through secure, integrated digital environments. The
-              focus is productive collaboration and information that is accessible,
-              searchable and useful.
-            </p>
-            <p>
-              Specialization sits in{" "}
-              <Link href="/digital-workspace" className="font-semibold text-infrastructure-blue hover:underline">
+        <div className="content-container grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-x-12 xl:gap-x-16">
+          <div className="flex min-w-0 flex-col gap-6 lg:justify-center">
+            <p className="text-lg leading-relaxed text-body-text md:text-[19px] md:leading-relaxed">
+              THE GRID is a technology company focused on{" "}
+              <Link
+                href="/digital-workspace"
+                className="font-semibold text-infrastructure-blue hover:underline"
+              >
                 Digital Workspace
-              </Link>
-              {" "}and{" "}
-              <Link href="/enterprise-intelligence" className="font-semibold text-infrastructure-blue hover:underline">
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/enterprise-intelligence"
+                className="font-semibold text-infrastructure-blue hover:underline"
+              >
                 Enterprise Intelligence
               </Link>
-              , delivered through{" "}
-              <Link href="/deployment" className="font-semibold text-infrastructure-blue hover:underline">
+              . GRID delivers the{" "}
+              <Link
+                href="/deployment"
+                className="font-semibold text-infrastructure-blue hover:underline"
+              >
                 deployment
               </Link>
               ,{" "}
-              <Link href="/administration" className="font-semibold text-infrastructure-blue hover:underline">
+              <Link
+                href="/administration"
+                className="font-semibold text-infrastructure-blue hover:underline"
+              >
                 administration
-              </Link>
-              {" "}and{" "}
-              <Link href="/adoption" className="font-semibold text-infrastructure-blue hover:underline">
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/adoption"
+                className="font-semibold text-infrastructure-blue hover:underline"
+              >
                 adoption
-              </Link>
-              .
+              </Link>{" "}
+              of connected technology environments spanning workplace collaboration,
+              intelligent tools, applications and organisational data. The focus is
+              simple: bringing people, information, applications and AI together in
+              environments that are structured, manageable and connected.
             </p>
-            <p>
-              Solutions are designed to work with identity, security, applications
-              and information environments already in place. Interoperability is
-              part of the approach, not a separate product line.
-            </p>
-            <div className="pt-2">
-              <PartnerProfileLink />
-            </div>
+            <PartnerProfileLink className="w-fit" />
           </div>
-          <div className="panel-border flex items-center justify-center bg-light-bg p-8 lg:p-10">
+          <div className="panel-border flex items-center justify-center bg-light-bg p-7 sm:p-8 lg:p-9">
             <GridSymbol theme="light" size={100} />
           </div>
         </div>
