@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { GridSymbol } from "@/components/brand/grid-symbol";
 import { PageHero } from "@/components/marketing/page-hero";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageCtaBand } from "@/components/marketing/page-cta-band";
@@ -33,9 +32,9 @@ export default function AboutPage() {
       />
 
       <section className="border-b border-border bg-white section-y-compact">
-        <div className="content-container grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-x-12 xl:gap-x-16">
-          <div className="flex min-w-0 flex-col gap-6 lg:justify-center">
-            <p className="text-lg leading-relaxed text-body-text md:text-[19px] md:leading-relaxed">
+        <div className="content-container">
+          <div className="flex min-w-0 flex-col gap-6 lg:max-w-5xl xl:max-w-6xl">
+            <p className="text-left text-lg leading-relaxed text-body-text md:text-[19px] md:leading-relaxed lg:text-justify">
               THE GRID is a technology company focused on{" "}
               <Link
                 href="/digital-workspace"
@@ -77,9 +76,6 @@ export default function AboutPage() {
               environments that are structured, manageable and connected.
             </p>
             <PartnerProfileLink className="w-fit" />
-          </div>
-          <div className="panel-border flex items-center justify-center bg-light-bg p-7 sm:p-8 lg:p-9">
-            <GridSymbol theme="light" size={100} />
           </div>
         </div>
       </section>
