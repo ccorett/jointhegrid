@@ -115,7 +115,7 @@ export function EnquiryForm({ variant = "light", source }: EnquiryFormProps) {
         aria-live="polite"
       >
         <h2 className="heading-section text-2xl text-primary-navy md:text-3xl">
-          Thanks. Your enquiry is on the GRID.
+          Thanks for your enquiry.
         </h2>
         <p className="mt-4 text-[17px] leading-relaxed text-secondary-text">
           We&apos;ll review your message and get back to you.
