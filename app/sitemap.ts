@@ -4,8 +4,7 @@ import { SITE_ORIGIN } from "@/lib/site-url";
 const PUBLIC_PATHS = [
   "",
   "/digital-workspace",
-  "/ai-integration",
-  "/cloud-infrastructure",
+  "/enterprise-intelligence",
   "/deployment",
   "/administration",
   "/adoption",

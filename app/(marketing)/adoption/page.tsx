@@ -88,7 +88,7 @@ export default function AdoptionPage() {
               Digital Workspace
             </Link>{" "}
             and{" "}
-            <Link href="/ai-integration" className="font-semibold text-infrastructure-blue hover:underline">
+            <Link href="/enterprise-intelligence" className="font-semibold text-infrastructure-blue hover:underline">
               Enterprise Intelligence
             </Link>
             .

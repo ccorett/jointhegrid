@@ -1,8 +1,7 @@
 import { SALES_EMAIL } from "@/lib/contact";
 import { SITE_ORIGIN } from "@/lib/site-url";
 
-export const LEGAL_NAME =
-  "Global Resilient Infrastructure & Digitalisation Ltd.";
+export const LEGAL_NAME = "GRID Ltd.";
 export const BRAND_NAME = "#jointheGRID";
 export const ORG_TELEPHONE = "+1 868 483 4959";
 export const PARTNER_PROFILE_URL =

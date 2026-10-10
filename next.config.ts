@@ -57,8 +57,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/enterprise-intelligence",
-        destination: "/ai-integration",
+        source: "/ai-integration",
+        destination: "/enterprise-intelligence",
+        permanent: true,
+      },
+      {
+        source: "/cloud-infrastructure",
+        destination: "/digital-workspace",
         permanent: true,
       },
       {
@@ -68,12 +73,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/gemini-enterprise",
-        destination: "/ai-integration",
+        destination: "/enterprise-intelligence",
         permanent: true,
       },
       {
         source: "/hosting",
-        destination: "/cloud-infrastructure",
+        destination: "/digital-workspace",
         permanent: true,
       },
       {

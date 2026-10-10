@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
-import { PHONE_DISPLAY, SALES_EMAIL, WHATSAPP_URL } from "@/lib/contact";
+import { PHONE_DISPLAY, SUPPORT_EMAIL, WHATSAPP_URL } from "@/lib/contact";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export const metadata = pageMetadata({
   title: "Privacy | #jointheGRID",
   description:
-    "Privacy Policy for #jointheGRID: how Global Resilient Infrastructure & Digitalisation Ltd. collects, uses and protects information from website visitors and enquiries.",
+    "Privacy Policy for #jointheGRID: how GRID Ltd. collects, uses and protects information from website visitors and enquiries.",
   path: "/privacy",
 });
 
@@ -67,15 +67,15 @@ export default function PrivacyPage() {
         >
           <PolicySection id="about" title="1. About this policy">
             <p>
-              This Privacy Policy explains how Global Resilient Infrastructure
-              &amp; Digitalisation Ltd., operating as #jointheGRID, collects,
+              This Privacy Policy explains how GRID Ltd., operating as
+              #jointheGRID, collects,
               uses, stores and protects personal information when you visit our
               website or contact us through our online services.
             </p>
             <p>
               #jointheGRID is based in Trinidad and Tobago and provides Digital
-              Workspace, AI Integration and Cloud Infrastructure solutions across
-              the Caribbean.
+              Workspace and Enterprise Intelligence solutions across the
+              Caribbean.
             </p>
             <p>
               We aim to handle personal information responsibly and in accordance
@@ -264,8 +264,8 @@ export default function PrivacyPage() {
             </p>
             <p>
               Requests may be sent to:{" "}
-              <a href={`mailto:${SALES_EMAIL}`} className={linkClass}>
-                {SALES_EMAIL}
+              <a href={`mailto:${SUPPORT_EMAIL}`} className={linkClass}>
+                {SUPPORT_EMAIL}
               </a>
             </p>
             <p>
@@ -313,7 +313,7 @@ export default function PrivacyPage() {
 
           <PolicySection id="contact" title="15. Contact">
             <p className="font-medium text-primary-navy">
-              Global Resilient Infrastructure &amp; Digitalisation Ltd.
+              GRID Ltd.
               <br />
               #jointheGRID
               <br />
@@ -321,8 +321,8 @@ export default function PrivacyPage() {
             </p>
             <p>
               Email:{" "}
-              <a href={`mailto:${SALES_EMAIL}`} className={linkClass}>
-                {SALES_EMAIL}
+              <a href={`mailto:${SUPPORT_EMAIL}`} className={linkClass}>
+                {SUPPORT_EMAIL}
               </a>
             </p>
             <p>

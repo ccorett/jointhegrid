@@ -70,8 +70,7 @@ export default function TermsPage() {
           <PolicySection id="about-terms" title="1. About these terms">
             <p>
               These Terms of Service govern your use of the #jointheGRID website
-              operated by Global Resilient Infrastructure &amp; Digitalisation
-              Ltd.
+              operated by GRID Ltd.
             </p>
             <p>By accessing or using this website, you agree to these Terms of Service.</p>
             <p>
@@ -83,8 +82,7 @@ export default function TermsPage() {
           <PolicySection id="about-grid" title="2. About #jointheGRID">
             <p>
               #jointheGRID provides technology solutions and services in areas
-              including Digital Workspace, AI Integration and Cloud
-              Infrastructure.
+              including Digital Workspace and Enterprise Intelligence.
             </p>
             <p>
               Services may include Deployment, Administration and Adoption.
@@ -225,8 +223,7 @@ export default function TermsPage() {
             <p>
               Unless otherwise stated, the content and materials made available
               through this website are owned by, licensed to or used with
-              permission by Global Resilient Infrastructure &amp; Digitalisation
-              Ltd.
+              permission by GRID Ltd.
             </p>
             <p>This may include:</p>
             <PolicyList
@@ -339,8 +336,8 @@ export default function TermsPage() {
 
           <PolicySection id="liability" title="15. Limitation of liability">
             <p>
-              To the extent permitted by applicable law, Global Resilient
-              Infrastructure &amp; Digitalisation Ltd. will not be responsible
+              To the extent permitted by applicable law, GRID Ltd. will not be
+              responsible
               for indirect, incidental or consequential loss arising solely from
               the use of, inability to use or reliance on general information
               contained on this website.

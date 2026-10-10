@@ -68,13 +68,9 @@ export default function AdministrationPage() {
             <Link href="/digital-workspace" className="font-semibold text-infrastructure-blue hover:underline">
               Digital Workspace
             </Link>
-            ,{" "}
-            <Link href="/ai-integration" className="font-semibold text-infrastructure-blue hover:underline">
-              Enterprise Intelligence
-            </Link>
             {" "}and{" "}
-            <Link href="/cloud-infrastructure" className="font-semibold text-infrastructure-blue hover:underline">
-              Cloud Infrastructure
+            <Link href="/enterprise-intelligence" className="font-semibold text-infrastructure-blue hover:underline">
+              Enterprise Intelligence
             </Link>
             .
           </p>

@@ -15,10 +15,9 @@ import { pageMetadata } from "@/lib/seo";
 import { organizationJsonLd } from "@/lib/structured-data";
 
 export const metadata = pageMetadata({
-  title:
-    "#jointheGRID | Digital Workspace, AI Integration & Cloud Infrastructure",
+  title: "#jointheGRID | Digital Workspace and Enterprise Intelligence",
   description:
-    "Digital workplace, AI integration and cloud infrastructure for organizations across the Caribbean. Deployment, administration and adoption from #jointheGRID.",
+    "Digital Workspace and Enterprise Intelligence for organizations across the Caribbean. Deployment, administration and adoption from #jointheGRID.",
   path: "/",
 });
 
@@ -50,7 +49,7 @@ const solutions = [
       "Access governance",
       "Adoption and guidance",
     ],
-    href: "/ai-integration",
+    href: "/enterprise-intelligence",
     cta: "Explore Enterprise Intelligence",
   },
 ];
@@ -105,7 +104,7 @@ export default function HomePage() {
         <div className="content-container grid min-h-0 items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div className="min-w-0">
             <p className="max-w-xl text-base font-bold leading-snug text-infrastructure-blue md:text-lg lg:text-xl">
-              Digital Workspace + Enterprise Intelligence
+              Digital Workspace · Enterprise Intelligence
             </p>
             <h1 className="heading-hero mt-3 text-[2.5rem] text-primary-navy sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]">
               Everything connects here.

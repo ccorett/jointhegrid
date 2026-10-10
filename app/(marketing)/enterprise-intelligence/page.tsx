@@ -9,16 +9,16 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "AI Integration for Organizations | #jointheGRID",
+  title: "Enterprise Intelligence for Organizations | #jointheGRID",
   description:
-    "Integrate intelligent tools into everyday organizational work with practical controls, administration and adoption.",
-  path: "/ai-integration",
+    "Make organisational information accessible, searchable and useful with enterprise search, connected knowledge and practical governance.",
+  path: "/enterprise-intelligence",
 });
 
 const breadcrumbs = [
   { name: "Home", path: "/" },
   { name: "Solutions", path: "/#solutions" },
-  { name: "AI Integration", path: "/ai-integration" },
+  { name: "Enterprise Intelligence", path: "/enterprise-intelligence" },
 ] as const;
 
 const capabilities = [
@@ -37,7 +37,7 @@ const capabilities = [
 export default function EnterpriseIntelligencePage() {
   return (
     <>
-      <PageViewBeacon event="solution_view" name="ai-integration" />
+      <PageViewBeacon event="solution_view" name="enterprise-intelligence" />
       <BreadcrumbJsonLd items={[...breadcrumbs]} />
       <PageHero
         light

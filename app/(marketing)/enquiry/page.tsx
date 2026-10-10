@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Enquiry | #jointheGRID",
   description:
-    "Send an enquiry about digital workspace, AI integration, cloud infrastructure and related services from #jointheGRID across the Caribbean.",
+    "Send an enquiry about Digital Workspace, Enterprise Intelligence and related services from #jointheGRID across the Caribbean.",
   path: "/enquiry",
 });
 

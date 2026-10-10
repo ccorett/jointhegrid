@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { GridLogo } from "@/components/brand/grid-logo";
-import { PHONE_DISPLAY, SALES_EMAIL } from "@/lib/contact";
+import { PHONE_DISPLAY, SALES_EMAIL, SUPPORT_EMAIL } from "@/lib/contact";
 import { WhatsAppPhoneLink } from "@/components/marketing/whatsapp-phone-link";
 import { cn } from "@/lib/utils";
 
@@ -12,8 +12,7 @@ const footerLinkClass = cn(
 const footerLinks = {
   solutions: [
     { href: "/digital-workspace", label: "Digital Workspace" },
-    { href: "/ai-integration", label: "Enterprise Intelligence" },
-    { href: "/cloud-infrastructure", label: "Cloud Infrastructure" },
+    { href: "/enterprise-intelligence", label: "Enterprise Intelligence" },
   ],
   services: [
     { href: "/deployment", label: "Deployment" },
@@ -96,6 +95,11 @@ export function SiteFooter() {
                 <li>
                   <a href={`mailto:${SALES_EMAIL}`} className={footerLinkClass}>
                     {SALES_EMAIL}
+                  </a>
+                </li>
+                <li>
+                  <a href={`mailto:${SUPPORT_EMAIL}`} className={footerLinkClass}>
+                    {SUPPORT_EMAIL}
                   </a>
                 </li>
                 <li>

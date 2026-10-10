@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About #jointheGRID | Caribbean Technology Company",
   description:
-    "Global Resilient Infrastructure & Digitalisation Ltd. delivers digital workspace, AI integration and cloud infrastructure across the Caribbean from Trinidad and Tobago.",
+    "GRID Ltd. delivers Digital Workspace and Enterprise Intelligence across the Caribbean from Trinidad and Tobago.",
   path: "/about",
 });
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
                 Digital Workspace
               </Link>
               {" "}and{" "}
-              <Link href="/ai-integration" className="font-semibold text-infrastructure-blue hover:underline">
+              <Link href="/enterprise-intelligence" className="font-semibold text-infrastructure-blue hover:underline">
                 Enterprise Intelligence
               </Link>
               , delivered through{" "}

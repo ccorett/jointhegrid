@@ -9,11 +9,10 @@ export const ORGANIZATION_SIZES = [
 export const AREAS_OF_INTEREST = [
   "Digital Workspace",
   "Enterprise Intelligence",
-  "Cloud Infrastructure",
   "Deployment",
-  "Migration",
   "Administration",
   "Adoption",
+  "Migration",
   "Not Sure Yet",
 ] as const;
 
